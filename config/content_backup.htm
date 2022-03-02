@@ -14,6 +14,8 @@
 <p style="padding-left: 90px;">何謂動態網頁與靜態網頁?</p>
 <p style="padding-left: 60px;">在近端編輯完成 Github 倉儲資料後, 如何使用 token 或 SSH 方式將倉儲改版資料推送到遠端?</p>
 <p style="padding-left: 60px;"><a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 網際內容管理系統有哪些功能?</p>
+<p style="padding-left: 60px;"><a href="https://www.bosch.com/stories/bringing-open-source-to-mechanical-engineering/">https://www.bosch.com/stories/bringing-open-source-to-mechanical-engineering/</a> </p>
+<p style="padding-left: 90px;"><a href="https://github.com/boschresearch/pylife">https://github.com/boschresearch/pylife</a> </p>
 <div id="disqus_thread"></div>
 <p>
 <script>
@@ -34,8 +36,7 @@
     })();
 </script>
 </p>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<h2>CPython and Modules</h2>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><h2>CPython and Modules</h2>
 <h4>CPython:</h4>
 <p style="padding-left: 30px;"><a href="https://en.wikipedia.org/wiki/CPython">https://en.wikipedia.org/wiki/CPython</a></p>
 <p style="padding-left: 30px;"><a href="https://github.com/python/cpython">https://github.com/python/cpython</a></p>
@@ -57,13 +58,25 @@
 <p>reveal.js</p>
 <p>Pelican blog - blogger 同步 Google API (Oauth2)</p>
 <h2>Token and SSH</h2>
-<h1>Portable Python</h1>
+<h4>Token:</h4>
+<p style="padding-left: 30px;"><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token</a> </p>
+<p style="padding-left: 30px;">Github token 是一串可以用來替代 Github 帳號與密碼功能的字串, 可在登入 Github 帳號後, 至 <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> 設定. 每一個 token 都具備有效時間與權限範圍, 一般初學者可以只勾選 Token 的 repo 改版權限, 並選擇 30 天的有效時間. 之後再設法改用 SSH 對 Github 倉儲改版.</p>
+<h4>SSH:</h4>
+<p style="padding-left: 30px;"><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">https://docs.github.com/en/authentication/connecting-to-github-with-ssh</a> </p>
+<p style="padding-left: 30px;">Windows 10 環境中的 SSH 可以透過 <a href="https://www.putty.org/">https://www.putty.org/</a> 執行設定.</p>
+<p style="padding-left: 30px;">puttygen.exe 可用來建立 OpenSSL 格式的數位簽章, public key 送到使用者 Github 帳號下 settings 中的 SSH and GPG keys 區, 在隨身碟中則存放與 public key 成對的 Putty 格式 private key.</p>
+<p style="padding-left: 30px;">使用者在 Windows 10 使用 git + putty 時, 必須在啟動隨身系統時設定 GIT_SSH 變數至 putty 中的 plink.exe, 之後再利用 putty 設定連至 github.com 用的 session, 且在純 IPv6 環境中, 連至 github.com 的 session 除了必須指向隨身碟中的 private key 外, 還需要設定能同時支援 IPv6 與 IPv4 的 proxy server.</p>
+<p style="padding-left: 30px;">使用者希望透過 SSH 對 github 中的倉儲改版時, 必須使用 <a href="mailto:git@session_name:github_account/repository.git">git@session_name:github_account/repository.git</a> 連線.</p><h1>Portable Python</h1>
 <p>如何建立可攜 Python 程式環境?</p>
 <p>如何建立網際 Python 程式環境 (Brython)?</p>
 <p>從 <a href="https://drive.google.com/file/d/1TMPsHz6G01-pxkvXf9NFM8nFdtCHQv8D/view?usp=sharing">portable_python_wcm2022.7z</a> 下載的可攜程式環境有哪些功能?</p>
 <h1>Fossil SCM</h1>
-<h1>Tetris</h1>
+<p>利用 Fossil SCM 與 Google API 建立的網際伺服器範例: <a href="https://pj5073.cycu.org">https://pj5073.cycu.org</a></p>
+<p>如何在一台 2009 年出廠的電腦設定 Fossil SCM server?</p>
+<h2>PC2Server</h2>
+<p>大一與專一分別從 PC 硬體安裝 Windows 10 (利用 <a href="https://clonezilla.org/">https://clonezilla.org/</a> 硬碟開機磁區 clone) 之後再逐步設定如 <a href="https://pj5073.cycu.org">https://pj5073.cycu.org</a> 與 <a href="https://wcm.cycu.org">https://wcm.cycu.org</a> 的網際伺服器.</p><h1>Tetris</h1>
 <p><a href="https://levelup.gitconnected.com/writing-tetris-in-python-2a16bddb5318">https://levelup.gitconnected.com/writing-tetris-in-python-2a16bddb5318</a> </p>
 <p><a href="https://github.com/ondras/custom-tetris">https://github.com/ondras/custom-tetris</a> </p>
+<p><a href="https://github.com/topics/tetris?l=python">https://github.com/topics/tetris?l=python</a> </p>
 <p></p>
 <p style="padding-left: 30px;"></p>

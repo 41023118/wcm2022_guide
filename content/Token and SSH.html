@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='CPython and Modules.html'>CPython and Modules</a><li><a href='Local and Remote.html'>Local and Remote</a><li><a href='cmsimde.html'>cmsimde</a><li><a href='Token and SSH.html'>Token and SSH</a></li></ul><li><a href='Portable Python.html'>Portable Python</a><li><a href='Fossil SCM.html'>Fossil SCM</a><li><a href='Tetris.html'>Tetris</a></li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='CPython and Modules.html'>CPython and Modules</a><li><a href='Local and Remote.html'>Local and Remote</a><li><a href='cmsimde.html'>cmsimde</a><li><a href='Token and SSH.html'>Token and SSH</a></li></ul><li><a href='Portable Python.html'>Portable Python</a><li class='has-children'><a href='Fossil SCM.html'>Fossil SCM</a><ul class='dropdown'><li><a href='PC2Server.html'>PC2Server</a></li></ul><li class='has-children'><a href='Tetris.html'>Tetris</a><ul class='dropdown'><li><a href='run.html'>run</a></li>
                       </ul>
                 </nav>
               </div>
@@ -140,7 +140,15 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">cmsimde << <a href='cmsimde.html'>Previous</a> <a href='Portable Python.html'>Next</a> >> Portable Python<br /><h1>Token and SSH</h1>
-<br />cmsimde << <a href='cmsimde.html'>Previous</a> <a href='Portable Python.html'>Next</a> >> Portable Python</div>
+<h4>Token:</h4>
+<p style="padding-left: 30px;"><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token</a> </p>
+<p style="padding-left: 30px;">Github token 是一串可以用來替代 Github 帳號與密碼功能的字串, 可在登入 Github 帳號後, 至 <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> 設定. 每一個 token 都具備有效時間與權限範圍, 一般初學者可以只勾選 Token 的 repo 改版權限, 並選擇 30 天的有效時間. 之後再設法改用 SSH 對 Github 倉儲改版.</p>
+<h4>SSH:</h4>
+<p style="padding-left: 30px;"><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">https://docs.github.com/en/authentication/connecting-to-github-with-ssh</a> </p>
+<p style="padding-left: 30px;">Windows 10 環境中的 SSH 可以透過 <a href="https://www.putty.org/">https://www.putty.org/</a> 執行設定.</p>
+<p style="padding-left: 30px;">puttygen.exe 可用來建立 OpenSSL 格式的數位簽章, public key 送到使用者 Github 帳號下 settings 中的 SSH and GPG keys 區, 在隨身碟中則存放與 public key 成對的 Putty 格式 private key.</p>
+<p style="padding-left: 30px;">使用者在 Windows 10 使用 git + putty 時, 必須在啟動隨身系統時設定 GIT_SSH 變數至 putty 中的 plink.exe, 之後再利用 putty 設定連至 github.com 用的 session, 且在純 IPv6 環境中, 連至 github.com 的 session 除了必須指向隨身碟中的 private key 外, 還需要設定能同時支援 IPv6 與 IPv4 的 proxy server.</p>
+<p style="padding-left: 30px;">使用者希望透過 SSH 對 github 中的倉儲改版時, 必須使用 <a href="mailto:git@session_name:github_account/repository.git">git@session_name:github_account/repository.git</a> 連線.</p><br />cmsimde << <a href='cmsimde.html'>Previous</a> <a href='Portable Python.html'>Next</a> >> Portable Python</div>
         
     <!-- footer -->
       <div class="container">
