@@ -140,12 +140,24 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">Token and SSH << <a href='Token and SSH.html'>Previous</a> <a href='Fossil SCM.html'>Next</a> >> Fossil SCM<br /><h1>Portable Python</h1>
-<p>何謂可攜式 Python 程式環境?</p>
-<p style="padding-left: 30px;">首先 Python 是一種解譯式程式語言, 與 C 或 C++ 程式語言在程式碼能夠執行之前, 是最大的差別, 因為 Python 程式寫好後, 可以直接利用解譯器執行, 使用者不需要手動執行程式碼的編譯, 而是由解譯器在執行前即時將程式碼轉換為可執行檔案.</p>
+<h4>何謂可攜式 Python 程式環境?</h4>
+<h4 style="padding-left: 30px;">Python 程式如何執行?</h4>
+<p style="padding-left: 30px;">首先 Python 是一種解譯式 (Interpreted) 程式語言, 與 C 或 C++ 程式語言最大的差別是, C/C++ 程式碼通常必須透過編譯 (Compile) 與連結 (Link) 的過程, 將原始碼轉為可執行的格式 (在 Windows 操作系統為 .exe 檔案), 而 Python 程式寫好後, 可以直接利用解譯器執行, 使用者不需要手動執行程式碼的編譯, 而是由解譯器在執行前即時將程式碼轉換為可執行檔案.</p>
+<p style="padding-left: 30px;">在 <a href="https://www.geeksforgeeks.org/internal-working-of-python/">geeksforgeeks 網站</a>, 以下列敘述說明 Python 程式如何執行:</p>
+<p style="padding-left: 30px;">Python is an object-oriented programming language like Java. Python is called an interpreted language. Python uses code modules that are interchangeable instead of a single long list of instructions that was standard for functional programming languages. The standard implementation of python is called "cpython". It is the default and widely used implementation of Python.</p>
+<p style="padding-left: 30px;">Python doesn’t convert its code into machine code, something that hardware can understand. It actually converts it into something called byte code. So within python, compilation happens, but it’s just not into a machine language. It is into byte code (.pyc or .pyo) and this byte code can’t be understood by the CPU. So we need an interpreter called the python virtual machine to execute the byte codes</p>
+<p style="padding-left: 30px;">針對 Python 程式的"編譯"過程, 則說明如下:</p>
+<p style="padding-left: 30px;">The Python program is converted into byte code. Byte code is a fixed set of instructions that represent arithmetic, comparison, memory operations, etc. It can run on any operating system and hardware. The byte code instructions are created in the .pyc file. The .pyc file is not explicitly created as Python handles it internally but it can be viewed with the following command:</p>
+<p style="padding-left: 30px;">python -m py_compile hello.py</p>
+<p style="padding-left: 30px;">-m and py_compile represent module and module name respectively. This module is responsible to generate .pyc file. The compiler creates a directory named  __pycache__ where it stores the hello.cpython-39.pyc file (若採用 Python 3.9 版次編譯器).</p>
+<p style="padding-left: 30px;">至於針對 Python 程式的"解譯"執行過程, 則說明如下:</p>
+<p style="padding-left: 30px;">The next step involves converting the byte code (.pyc file) into machine code. This step is necessary as the computer can understand only machine code (binary code). Python Virtual Machine (PVM) first understands the operating system and processor in the computer and then converts it into machine code. Further, these machine code instructions are executed by processor and the results are displayed.</p>
+<h4 style="padding-left: 30px;">Python 解譯器的類別:</h4>
 <p style="padding-left: 30px;">最早的 Python 解譯器以 C 程式語言編寫, 稱為 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a>, 以 Python 編寫的 Python 解譯器稱為 <a href="https://en.wikipedia.org/wiki/PyPy">Pypy</a>, 以 .NET 技術編寫的 Python 解譯器稱為 <a href="https://en.wikipedia.org/wiki/IronPython">Ironpython</a>, 以 Java 編寫的 Python 解譯器稱為 <a href="https://en.wikipedia.org/wiki/Jython">Jython</a>, 以 Javascript 編寫的 Python 解譯器稱為 <a href="https://brython.info/">Brython</a>. 以 Rust 編寫的 Python 解譯器稱為 <a href="https://github.com/RustPython/RustPython">RustPython</a>.</p>
+<h4 style="padding-left: 30px;">建立可攜 Python 程式環境的目的:</h4>
 <p style="padding-left: 30px;">一般在 Windows 10 中使用 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a> 都是透過操作系統安裝, 將 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a> 解譯器登錄在操作系統的 <a href="https://en.wikipedia.org/wiki/Windows_Registry">Registry</a> 中. 只不過配置在操作系統的 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a> 解譯器若在使用過程中, 透過 <a href="https://pypi.org/project/pip/">pip</a> 安裝額外的模組後, 當電腦輔助設計室中的電腦重新開機後, 操作系統將會因為安裝防寫套件而恢復原先所安裝無額外模組的狀態.</p>
-<p style="padding-left: 30px;">網際內容管理與協同產品設計實習課程為了讓使用者可以隨身帶著 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a> 解譯器, 因此自行繞過 Windows 10 操作系統的 Registry 登錄, 設法以批次檔案在虛擬的硬碟 (y:) 啟動 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a> 解譯環境.</p>
-<p style="padding-left: 30px;">此外, 配置在 USB 隨身碟的可攜 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a> 程式環境, 除了可執行一般 Python 程式外, 可自行安裝所需模組, 也可用來執行 <a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 動態與靜態網站編輯.</p>
+<p style="padding-left: 30px;">網際內容管理與協同產品設計實習課程為了<span style="background-color: #ffff99;">讓使用者可以隨身帶著 <a href="https://en.wikipedia.org/wiki/CPython" style="background-color: #ffff99;">CPython</a> 解譯器</span>, 因此繞過 Windows 10 操作系統的 Registry 登錄, 設法以批次檔案在虛擬的硬碟 (y:) 啟動 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a> 解譯環境.</p>
+<p style="padding-left: 30px;">此外, 配置在 USB 隨身碟的可攜 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a> 程式環境, 除了可執行一般 Python 程式外, 也可自行安裝所需模組, 並用於 <a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 動態與靜態網站編輯.</p>
 <p style="padding-left: 30px;">可攜程式環境中除 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a>, 還可配置 <a href="https://www.msys2.org/">MSYS2</a> C/C++ 編譯系統. 針對 <a href="https://www.scintilla.org/SciTE.html">SciTE</a>, <a href="https://github.com/solvespace/solvespace">Solvespace</a>, <a href="https://github.com/Range-Software/range3">Range3</a>, <a href="https://github.com/CoppeliaRobotics">CoppeliaSim</a> 等開源套件執行編譯.</p>
 <p>如何建立可攜 Python 程式環境?</p>
 <p>如何建立網際 Python 程式環境 (Brython)?</p>
