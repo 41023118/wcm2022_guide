@@ -68,7 +68,24 @@
 <p style="padding-left: 30px;">使用者在 Windows 10 使用 git + putty 時, 必須在啟動隨身系統時設定 GIT_SSH 變數 (<a href="https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables">Git 環境變數</a>) 至 putty 中的 plink.exe, 之後再利用 putty 設定連至 github.com 用的 session, 且在純 IPv6 環境中, 連至 github.com 的 session 除了必須指向隨身碟中的 private key 外, 還需要設定能同時支援 IPv6 與 IPv4 的 proxy server.</p>
 <p style="padding-left: 30px;">使用者希望透過 SSH 對 github 中的倉儲改版時, 必須使用 <a href="mailto:git@session_name:github_account/repository.git">git@session_name:github_account/repository.git</a> 連線.</p>
 <p style="padding-left: 30px;">有關 GIT_SSH 變數：</p>
-<p style="padding-left: 60px;">GIT_SSH, if specified, is a program that is invoked instead of ssh when Git tries to connect to an SSH host. It is invoked like $GIT_SSH [username@]host [-p &lt;port&gt;] &lt;command&gt;. Note that this isn’t the easiest way to customize how ssh is invoked; it won’t support extra command-line parameters, so you’d have to write a wrapper script and set GIT_SSH to point to it. It’s probably easier just to use the ~/.ssh/config file for that.</p><h1>Portable Python</h1>
+<p style="padding-left: 60px;">GIT_SSH, if specified, is a program that is invoked instead of ssh when Git tries to connect to an SSH host. It is invoked like $GIT_SSH [username@]host [-p &lt;port&gt;] &lt;command&gt;. Note that this isn’t the easiest way to customize how ssh is invoked; it won’t support extra command-line parameters, so you’d have to write a wrapper script and set GIT_SSH to point to it. It’s probably easier just to use the ~/.ssh/config file for that.</p><h1>IPv6 setup</h1>
+<p>&lt;!- 配合 Wink 檔案將 js 檔案設定如下 --&gt;</p>
+<script>
+var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
+</script>
+<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
+<div class="winkVideoContainerClass"><video class="winkVideoClass" data-dirname="/static" data-varname="winkVideoData" height="600" muted="true" width="800">
+<source src="/downloads/wcm_w2_2.mp4" type="video/mp4"/></video>
+<div class="winkVideoOverlayClass"></div>
+<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
+<div class="winkVideoControlBarProgressRightClass"></div>
+<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
+<div class="winkVideoControlBarProgressThumbClass"></div>
+</div>
+<div class="winkVideoPlayOverlayClass"></div>
+</div><h1>Portable Python</h1>
 <h4>何謂可攜式 Python 程式環境?</h4>
 <h4 style="padding-left: 30px;">Python 程式如何執行?</h4>
 <p style="padding-left: 30px;">首先 Python 是一種解譯式 (Interpreted) 程式語言, 與 C 或 C++ 程式語言最大的差別是, C/C++ 程式碼通常必須透過編譯 (Compile) 與連結 (Link) 的過程, 將原始碼轉為可執行的格式 (在 Windows 操作系統為 .exe 檔案), 而 Python 程式寫好後, 可以直接利用解譯器執行, 使用者不需要手動執行程式碼的編譯, 而是由解譯器在執行前即時將程式碼轉換為可執行檔案.</p>
@@ -84,7 +101,7 @@
 <p style="padding-left: 30px;">However, the interpreter inside the PVM translates the program line by line thereby consuming a lot of time. To overcome this, a compiler known as Just In Time (JIT) is added to PVM. JIT compiler improves the execution speed of the Python program. This compiler is not used in all Python environments like CPython which is standard Python software.</p>
 <p style="padding-left: 30px;">To execute the hello.cpython-39.pyc we can use the following command:</p>
 <p style="padding-left: 60px;">Y:\tmp\python_ex&gt;python __pycache__\hello.cpython-39.pyc</p>
-<p style="padding-left: 30px;">至於有關 python.exe 與 pythonw.exe 的差別, 則參見<a href="https://stackoverflow.com/questions/9705982/pythonw-exe-or-python-exe">這裡的說明</a>.</p>
+<p style="padding-left: 30px;">至於有關 python.exe 與 pythonw.exe 的差別, 則參見<a href="https://stackoverflow.com/questions/9705982/pythonw-exe-or-python-exe">這裡的說明</a>. 至於 SciTE 設定 python.properties 中, 使用 pythonw.exe -u 表示除了採非同步 (asynchronous) 執行模式外, 同時 force the stdout and stderr streams to be unbuffered; but has no effect on stdin.</p>
 <h4 style="padding-left: 30px;">Python 解譯器的類別:</h4>
 <p style="padding-left: 30px;">最早的 Python 解譯器以 C 程式語言編寫, 稱為 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a>, 以 Python 編寫的 Python 解譯器稱為 <a href="https://en.wikipedia.org/wiki/PyPy">Pypy</a>, 以 .NET 技術編寫的 Python 解譯器稱為 <a href="https://en.wikipedia.org/wiki/IronPython">Ironpython</a>, 以 Java 編寫的 Python 解譯器稱為 <a href="https://en.wikipedia.org/wiki/Jython">Jython</a>, 以 Javascript 編寫的 Python 解譯器稱為 <a href="https://brython.info/">Brython</a>. 以 Rust 編寫的 Python 解譯器稱為 <a href="https://github.com/RustPython/RustPython">RustPython</a>.</p>
 <h4 style="padding-left: 30px;">建立可攜 Python 程式環境的目的:</h4>
