@@ -61,6 +61,29 @@
 <h4>Token:</h4>
 <p style="padding-left: 30px;"><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token</a></p>
 <p style="padding-left: 30px;">Github token 是一串可以用來替代 Github 帳號與密碼功能的字串, 可在登入 Github 帳號後, 至 <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> 設定. 每一個 token 都具備有效時間與權限範圍, 一般初學者可以只勾選 Token 的 repo 改版權限, 並選擇 30 天的有效時間. 之後再設法改用 SSH 對 Github 倉儲改版.</p>
+<script>
+var winkVideoData1 = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+</script>
+<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData1" height="630" muted="true" width="1008">
+<source src="/downloads/token_wink/github_token.mp4" type="video/mp4"/></video>
+<div class="winkVideoOverlayClass"></div>
+<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
+<div class="winkVideoControlBarProgressRightClass"></div>
+<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
+<div class="winkVideoControlBarProgressThumbClass"></div>
+</div>
+<div class="winkVideoPlayOverlayClass"></div>
+</div>
 <h4>SSH:</h4>
 <p style="padding-left: 30px;"><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">https://docs.github.com/en/authentication/connecting-to-github-with-ssh</a></p>
 <p style="padding-left: 30px;">Windows 10 環境中的 SSH 可以透過 <a href="https://www.putty.org/">https://www.putty.org/</a> 執行設定.</p>
@@ -68,12 +91,11 @@
 <p style="padding-left: 30px;">使用者在 Windows 10 使用 git + putty 時, 必須在啟動隨身系統時設定 GIT_SSH 變數 (<a href="https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables">Git 環境變數</a>) 至 putty 中的 plink.exe, 之後再利用 putty 設定連至 github.com 用的 session, 且在純 IPv6 環境中, 連至 github.com 的 session 除了必須指向隨身碟中的 private key 外, 還需要設定能同時支援 IPv6 與 IPv4 的 proxy server.</p>
 <p style="padding-left: 30px;">使用者希望透過 SSH 對 github 中的倉儲改版時, 必須使用 <a href="mailto:git@session_name:github_account/repository.git">git@session_name:github_account/repository.git</a> 連線.</p>
 <p style="padding-left: 30px;">有關 GIT_SSH 變數：</p>
-<p style="padding-left: 60px;">GIT_SSH, if specified, is a program that is invoked instead of ssh when Git tries to connect to an SSH host. It is invoked like $GIT_SSH [username@]host [-p &lt;port&gt;] &lt;command&gt;. Note that this isn’t the easiest way to customize how ssh is invoked; it won’t support extra command-line parameters, so you’d have to write a wrapper script and set GIT_SSH to point to it. It’s probably easier just to use the ~/.ssh/config file for that.</p>
-<h2>Mac and RDT</h2>
-<p>在 Mac Air 使用 Remote DeskTop (RDT) 連接到遠端的 Windows 10 電腦, 啟動 Wink 後, 可以在 Preferences 中, 利用 <span style="background-color: #ffff99;">Mac Air 鍵盤中的 fn + F1 鍵取代 Pause</span>, 就可以在 Wink 專案中以 fn + F1 取得當下的電腦操作畫面.</p>
+<p style="padding-left: 60px;">GIT_SSH, if specified, is a program that is invoked instead of ssh when Git tries to connect to an SSH host. It is invoked like $GIT_SSH [username@]host [-p &lt;port&gt;] &lt;command&gt;. Note that this isn’t the easiest way to customize how ssh is invoked; it won’t support extra command-line parameters, so you’d have to write a wrapper script and set GIT_SSH to point to it. It’s probably easier just to use the ~/.ssh/config file for that.</p><h2>Mac and RDT</h2>
+<p>在 Mac Air 使用 <a href="https://en.wikipedia.org/wiki/Remote_desktop_software">Remote DeskTop</a> (RDT) 連接到遠端的 Windows 10 電腦, 啟動 Wink 後, 可以在 Preferences 中, 利用 <span style="background-color: #ffff99;">Mac Air 鍵盤中的 fn + F1 鍵取代 Pause</span>, 就可以在 Wink 專案中以 fn + F1 取得當下的電腦操作畫面.</p>
 <p>在台灣的機械工程專業使用者, 若要使用 Mac 電腦, 經常會碰到許多瓶頸, 主要原因是一般大學或研究所以上的課程, 似乎都以 Windows 操作系統為主, 因此造成機械工程師無法在 Mac 電腦上進行產品開發設計的錯誤印象.</p>
-<p>從<a href="https://mde.tw/cp2021/content/%E5%AD%B8%E7%BF%92%E7%A8%8B%E5%BC%8F.html">學習程式</a>這個頁面, 可以得知目前流程的操作系統只要分為 Unix 與 Windows 兩大支, MacOS 源自 Unix 中的 <a href="https://en.wikipedia.org/wiki/Berkeley_Software_Distribution">BSD</a>, 而 Windows 操作系統在 2004 版本 (2020.04 釋出) 之後, 已經能夠<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install">安裝</a> <a href="https://docs.microsoft.com/en-us/windows/wsl/about">WSL</a> (Windows Subsystem for Linux), 以獨特的 Microsoft 架構使用許多 Linux 操作系統具備的指令與套件.</p>
-<p>Windows 納入 WSL 之後, 讓原先在 Windows, Unix-based (包含 Linux) 與 MacOS 等不同操作系統的差異越來越小, 再加上部分機械工程相關的套件已經全雲端化 (例如: Onshape), 機械工程師只要選擇合用的套件與工具, 無論使用何種電腦或手機, 身處哪一種操作系統, 都能夠在完成相同的產品開發或維護任務.</p><h1>IPv6 setup</h1>
+<p>從<a href="https://mde.tw/cp2021/content/%E5%AD%B8%E7%BF%92%E7%A8%8B%E5%BC%8F.html">學習程式</a>這個頁面, 可以得知目前流程的操作系統主要分為 Unix 與 Windows 兩大支, MacOS 源自 Unix 中的 <a href="https://en.wikipedia.org/wiki/Berkeley_Software_Distribution">BSD</a>, 而 Windows 操作系統在 2004 版本 (2020.04 釋出) 之後, 已經能夠<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install">安裝</a> <a href="https://docs.microsoft.com/en-us/windows/wsl/about">WSL</a> (Windows Subsystem for Linux), 以獨特的 Microsoft 架構使用許多 Linux 操作系統具備的指令與套件.</p>
+<p>Windows 納入 WSL 之後, 讓原先在 Windows, Unix-based (包含 Linux) 與 MacOS 等不同操作系統的差異越來越小, 再加上部分機械工程相關的套件已經全雲端化 (例如: <a href="https://www.onshape.com/en/">Onshape</a>), 機械工程師只要選擇合用的套件與工具, 無論使用何種電腦或手機, 身處哪一種操作系統, 都能夠完成相同的產品開發或維護任務.</p><h1>IPv6 setup</h1>
 <p>利用 <a href="https://www.debugmode.com/wink/">Wink</a> 建立電腦操作流程影片時, 必須注意:</p>
 <ol>
 <li>可以與 ShareX 共用 <a href="https://www.ffmpeg.org/download.html#build-windows">ffmpeg.exe</a>.</li>
