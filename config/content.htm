@@ -197,13 +197,20 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <p style="padding-left: 30px;">此外, 配置在 USB 隨身碟的可攜 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a> 程式環境, 除了可執行一般 Python 程式外, 也可自行安裝所需模組, 並用於 <a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 動態與靜態網站編輯.</p>
 <p style="padding-left: 30px;">可攜程式環境中除 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a>, 還可配置 <a href="https://www.msys2.org/">MSYS2</a> C/C++ 編譯系統. 針對 <a href="https://www.scintilla.org/SciTE.html">SciTE</a>, <a href="https://github.com/solvespace/solvespace">Solvespace</a>, <a href="https://github.com/Range-Software/range3">Range3</a>, <a href="https://github.com/CoppeliaRobotics">CoppeliaSim</a> 等開源套件執行編譯.</p>
 <h4>如何建立可攜 Python 程式環境?</h4>
-<p style="padding-left: 30px;">能放入 USB 隨身碟的 Python 程式環境包含兩個部分:</p>
+<p style="padding-left: 30px;">能放入 USB 隨身碟執行的 Python 程式環境包含兩個部分:</p>
 <p style="padding-left: 60px;">(1) Python 解譯器系統檔案</p>
 <p style="padding-left: 60px;">(2) 可攜啟動設定批次檔 (例如: <a href="/downloads/start_ipv6.bat">start_ipv6.bat</a>)</p>
-<p style="padding-left: 30px;">要在 Windows 操作系統中取得各版本的 Python 解譯器系統檔案, 也有兩種方法:</p>
-<p style="padding-left: 60px;">(1) 從官方網站下載安裝檔 (例如: <a href="https://www.python.org/ftp/python/3.10.2/">3.10.2 版</a>的 <a href="https://www.python.org/ftp/python/3.10.2/python-3.10.2-amd64.exe">python-3.10.2-amd64.exe)</a>, 手動安裝 Python, 取下安裝內容後, 解除安裝程式</p>
-<p style="padding-left: 60px;">(2) 利用 <a href="/downloads/gen_portable_python.py">gen_portable_python.py</a>, 從 Python 官方網站下載基本的 .msi 檔案 (例如 <a href="https://www.python.org/ftp/python/3.10.2/amd64/">3.10.2 版</a>中的 core.msi, dev.msi, exe.msi, lib.msi, tcltk.msi 與 tools.msi), 然後利用 msiexec.exe 解開安裝檔.</p>
-<p>如何建立網際 Python 程式環境 (Brython)?</p>
+<p style="padding-left: 30px;">要在 Windows 操作系統中, 取得各版本的 Python 解譯器系統檔案, 也有兩種方法:</p>
+<p style="padding-left: 60px;">(1) 從官方網站下載安裝檔 (例如: <a href="https://www.python.org/ftp/python/3.10.2/">3.10.2 版</a>的 <a href="https://www.python.org/ftp/python/3.10.2/python-3.10.2-amd64.exe">python-3.10.2-amd64.exe)</a>, 手動安裝 Python, 取下安裝內容後, 解除安裝程式.</p>
+<p style="padding-left: 60px;">(2) 利用 <a href="/downloads/gen_portable_python.py">gen_portable_python.py</a>, 從 Python 官方網站下載基本的 .msi 檔案 (例如 <a href="https://www.python.org/ftp/python/3.10.2/amd64/">3.10.2 版</a>中的 core.msi, dev.msi, exe.msi, lib.msi, tcltk.msi 與 tools.msi), 然後利用 <a href="https://docs.microsoft.com/zh-tw/windows-server/administration/windows-commands/msiexec">msiexec.exe</a> 配合 <a href="https://docs.microsoft.com/zh-tw/windows/win32/msi/targetdir">targetdir</a> 屬性解開各安裝檔.</p>
+<p>以下將要結合 <a href="https://www.scintilla.org/SciTE.html">SciTE</a>, <a href="https://github.com/TinyCC/tinycc">Tiny C Compiler</a> 與 <a href="https://www.python.org/ftp/python/3.10.2/">Python 3.10.2</a>, 建立一個可攜版的 CPython 與 <a href="https://en.wikipedia.org/wiki/ANSI_C">ANSI C</a> 執行環境.</p>
+<ol>
+<li>從 <a href="http://download.savannah.gnu.org/releases/tinycc/">http://download.savannah.gnu.org/releases/tinycc/</a> 下載 <a href="http://download.savannah.gnu.org/releases/tinycc/tcc-0.9.27-win64-bin.zip">tcc-0.9.27-win64-bin.zip</a>.</li>
+<li>從 <a href="https://www.scintilla.org/SciTEDownload.html">https://www.scintilla.org/SciTEDownload.html</a> 下載 <a href="https://www.scintilla.org/wscite521.zip">wscite521.zip</a>.</li>
+<li>利用 Python 3.9.5 (或先前的 Python3 舊版可攜程式) 執行 <a href="/downloads/gen_portable_python.py">gen_portable_python.py</a> 取得 Python310 解譯器系統檔案.</li>
+</ol>
+<h4>如何建立網際 Python 程式環境 (Brython)?</h4>
+<p style="padding-left: 30px;">例如: <a href="https://mde.tw/wcm2022_guide/content/run.html">run</a> 頁面.</p>
 <p>從 <a href="https://drive.google.com/file/d/1TMPsHz6G01-pxkvXf9NFM8nFdtCHQv8D/view?usp=sharing">portable_python_wcm2022.7z</a> 下載的可攜程式環境有哪些功能?</p>
 <p><span style="background-color: #ffff99;">請注意: 以下的 .7z 檔案下載, 只允許在系上網段上下載</span>.</p>
 <ol>
@@ -211,7 +218,7 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <li><a href="http://wcm.cycu.org:88/portable_python_wcm2022.7z">portable_python_wcm2022.7z</a> (file size: 513 MB, extracted size: 2.3 G, 這是專門為 <a href="https://mde.tw/wcm2022">wcm2022</a> 課程打造的可攜程式套件, 適合選修學員下載後在任何 Windows 10 中以隨身碟啟動後操作)</li>
 <li><a href="http://wcm.cycu.org:88/drive.7z">drive.7z</a> (file size: 2.6 MB, extracted size: 10 MB, 只包含 PUTTY, tcc, wscite 與 tmp 目錄, 採用 Hybrid 方式設定, 可與目前電腦輔助設計室中 SSD 硬碟所安裝的 Python 3.9.5 與 <a href="https://git-scm.com/download/win">Portablegit</a> 結合, 使用者只需自行設定啟動後的 home_ipv6 目錄與 home_ipv6/Desktop 目錄後即可以最輕薄便捷的方式將 SSH key 存入隨身碟, 並將個人與分組倉儲存入隨身碟啟動後的 tmp 目錄進行操作).</li>
 </ol>
-<p>以下利用 Wink3 影片說明以 Hybrid 方式啟動的 USB 隨身碟如何建立? 以及使用上與全 USB 隨身碟可攜程式系統的差別:</p>
+<p>以下利用 Wink3 影片說明以 Hybrid 方式啟動的 USB 隨身碟如何建立? 以及使用上與完整 USB 隨身碟可攜程式系統的差別:</p>
 <p>Hybrid 可攜程式系統是只將必要檔案配置到 USB 隨身碟, 其餘檔案則使用已經存在電腦上的內容, 主要包含 Python 3.9.5 解譯程式 (863 MB) 與 Portblegit 2.31.1 (285 MB).</p>
 <p>Hybrid 可攜程式系統優點:</p>
 <ol>
