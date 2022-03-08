@@ -6,6 +6,9 @@
 <p style="padding-left: 30px;">在系上網段, 可以直接連線到 <a href="http://wcm.cycu.org:88/">http://wcm.cycu.org:88/</a> 下載 <a href="http://wcm.cycu.org:88/portable_python_wcm2022.7z">http://wcm.cycu.org:88/portable_python_wcm2022.7z</a> (下載 513 MB, 解開壓縮後 2.3GB)</p>
 <p style="padding-left: 30px;">假如是在其他網段, 則可下載 <a href="https://drive.google.com/file/d/1TMPsHz6G01-pxkvXf9NFM8nFdtCHQv8D/view?usp=sharing">portable_python_wcm2022.7z</a> (下載 513 MB, 解開壓縮後 2.3GB, under wcm2022 At mde) - 包含 Python 3.9.5, Portablegit, Scite, ShareX, Wink, GitEtensions 等工具.</p>
 <p style="padding-left: 30px;">請利用 <a href="https://www.7-zip.org">https://www.7-zip.org</a> 將 portable_python_wcm2022.7z 解開壓縮至 USB 3.0 以上規格的隨身碟.</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff99;">請注意: 以下的 .7z 檔案下載, 只允許在系上網段上下載</span>.</p>
+<p style="padding-left: 30px;"><a href="http://wcm.cycu.org:88/portable_python_wcm2022.7z">portable_python_wcm2022.7z</a> (file size: 513 MB, extracted size: 2.3 G, 這是專門為 <a href="https://mde.tw/wcm2022">wcm2022</a> 課程打造的可攜程式套件, 適合選修學員下載後在任何 Windows 10 中以隨身碟啟動後操作)</p>
+<p style="padding-left: 30px;"><a href="http://wcm.cycu.org:88/drive.7z">drive.7z</a> (file size: 2.6 MB, extracted size: 10 MB, 只包含 PUTTY, tcc, wscite 與 tmp 目錄, 採用 Hybrid 方式設定, 可與目前電腦輔助設計室中 SSD 硬碟所安裝的 Python 3.9.5 與 <a href="https://git-scm.com/download/win">Portablegit</a> 結合, 使用者只需自行設定啟動後的 home_ipv6 目錄與 home_ipv6/Desktop 目錄後即可以最輕薄便捷的方式將 SSH key 存入隨身碟, 並將個人與分組倉儲存入隨身碟啟動後的 tmp 目錄進行操作).</p>
 <h4 style="padding-left: 30px;">問題:</h4>
 <p style="padding-left: 60px;">可攜式 Python 程式是如何製作的?</p>
 <p style="padding-left: 60px;">可攜 Python 程式有哪些功能?</p>
@@ -14,8 +17,8 @@
 <p style="padding-left: 90px;">何謂動態網頁與靜態網頁?</p>
 <p style="padding-left: 60px;">在近端編輯完成 Github 倉儲資料後, 如何使用 token 或 SSH 方式將倉儲改版資料推送到遠端?</p>
 <p style="padding-left: 60px;"><a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 網際內容管理系統有哪些功能?</p>
-<p style="padding-left: 60px;"><a href="https://www.bosch.com/stories/bringing-open-source-to-mechanical-engineering/">https://www.bosch.com/stories/bringing-open-source-to-mechanical-engineering/</a> </p>
-<p style="padding-left: 90px;"><a href="https://github.com/boschresearch/pylife">https://github.com/boschresearch/pylife</a> </p>
+<p style="padding-left: 60px;"><a href="https://www.bosch.com/stories/bringing-open-source-to-mechanical-engineering/">https://www.bosch.com/stories/bringing-open-source-to-mechanical-engineering/</a></p>
+<p style="padding-left: 90px;"><a href="https://github.com/boschresearch/pylife">https://github.com/boschresearch/pylife</a></p>
 <div id="disqus_thread"></div>
 <p>
 <script>
@@ -171,7 +174,7 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <div class="winkVideoPlayOverlayClass"></div>
 </div><h1>Portable Python</h1>
 <h4>何謂可攜式 Python 程式環境?</h4>
-<h4 style="padding-left: 30px;">Python 程式如何執行?</h4>
+<h4 style="padding-left: 30px;">Python 程式是如何執行的?</h4>
 <p style="padding-left: 30px;">首先 Python 是一種解譯式 (Interpreted) 程式語言, 與 C 或 C++ 程式語言最大的差別是, C/C++ 程式碼通常必須透過編譯 (Compile) 與連結 (Link) 的過程, 將原始碼轉為可執行的格式 (在 Windows 操作系統為 .exe 檔案), 而 Python 程式寫好後, 可以直接利用解譯器執行, 使用者不需要手動執行程式碼的編譯, 而是由解譯器在執行前即時將程式碼轉換為可執行檔案.</p>
 <p style="padding-left: 30px;">在 <a href="https://www.geeksforgeeks.org/internal-working-of-python/">geeksforgeeks 網站</a>, 以下列敘述說明 Python 程式如何執行:</p>
 <p style="padding-left: 30px;">Python is an object-oriented programming language like Java. Python is called an interpreted language. Python uses code modules that are interchangeable instead of a single long list of instructions that was standard for functional programming languages. The standard implementation of python is called "cpython". It is the default and widely used implementation of Python.</p>
@@ -193,9 +196,33 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <p style="padding-left: 30px;">網際內容管理與協同產品設計實習課程為了<span style="background-color: #ffff99;">讓使用者可以隨身帶著 <a href="https://en.wikipedia.org/wiki/CPython" style="background-color: #ffff99;">CPython</a> 解譯器</span>, 因此繞過 Windows 10 操作系統的 Registry 登錄, 設法以批次檔案在虛擬的硬碟 (y:) 啟動 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a> 解譯環境.</p>
 <p style="padding-left: 30px;">此外, 配置在 USB 隨身碟的可攜 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a> 程式環境, 除了可執行一般 Python 程式外, 也可自行安裝所需模組, 並用於 <a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 動態與靜態網站編輯.</p>
 <p style="padding-left: 30px;">可攜程式環境中除 <a href="https://en.wikipedia.org/wiki/CPython">CPython</a>, 還可配置 <a href="https://www.msys2.org/">MSYS2</a> C/C++ 編譯系統. 針對 <a href="https://www.scintilla.org/SciTE.html">SciTE</a>, <a href="https://github.com/solvespace/solvespace">Solvespace</a>, <a href="https://github.com/Range-Software/range3">Range3</a>, <a href="https://github.com/CoppeliaRobotics">CoppeliaSim</a> 等開源套件執行編譯.</p>
-<p>如何建立可攜 Python 程式環境?</p>
+<h4>如何建立可攜 Python 程式環境?</h4>
+<p style="padding-left: 30px;">能放入 USB 隨身碟的 Python 程式環境包含兩個部分:</p>
+<p style="padding-left: 60px;">(1) Python 解譯器系統檔案</p>
+<p style="padding-left: 60px;">(2) 可攜啟動設定批次檔 (例如: <a href="/downloads/start_ipv6.bat">start_ipv6.bat</a>)</p>
+<p style="padding-left: 30px;">要在 Windows 操作系統中取得各版本的 Python 解譯器系統檔案, 也有兩種方法:</p>
+<p style="padding-left: 60px;">(1) 從官方網站下載安裝檔 (例如: <a href="https://www.python.org/ftp/python/3.10.2/">3.10.2 版</a>的 <a href="https://www.python.org/ftp/python/3.10.2/python-3.10.2-amd64.exe">python-3.10.2-amd64.exe)</a>, 手動安裝 Python, 取下安裝內容後, 解除安裝程式</p>
+<p style="padding-left: 60px;">(2) 利用 <a href="/downloads/gen_portable_python.py">gen_portable_python.py</a>, 從 Python 官方網站下載基本的 .msi 檔案 (例如 <a href="https://www.python.org/ftp/python/3.10.2/amd64/">3.10.2 版</a>中的 core.msi, dev.msi, exe.msi, lib.msi, tcltk.msi 與 tools.msi), 然後利用 msiexec.exe 解開安裝檔.</p>
 <p>如何建立網際 Python 程式環境 (Brython)?</p>
-<p>從 <a href="https://drive.google.com/file/d/1TMPsHz6G01-pxkvXf9NFM8nFdtCHQv8D/view?usp=sharing">portable_python_wcm2022.7z</a> 下載的可攜程式環境有哪些功能?</p><h1>Fossil SCM</h1>
+<p>從 <a href="https://drive.google.com/file/d/1TMPsHz6G01-pxkvXf9NFM8nFdtCHQv8D/view?usp=sharing">portable_python_wcm2022.7z</a> 下載的可攜程式環境有哪些功能?</p>
+<p><span style="background-color: #ffff99;">請注意: 以下的 .7z 檔案下載, 只允許在系上網段上下載</span>.</p>
+<ol>
+<li><a href="http://wcm.cycu.org:88/compile_copsim_cd2022.7z">compile_copsim_cd2022.7z</a> (file size: 5 GB, extracted size: 17.3 GB, 包含除了 NX1980 之外的所有課程相關可攜程式套件, 是專門為 <a href="https://mde.tw/cd2022">cd2022</a> 課程學員打造的套件).</li>
+<li><a href="http://wcm.cycu.org:88/portable_python_wcm2022.7z">portable_python_wcm2022.7z</a> (file size: 513 MB, extracted size: 2.3 G, 這是專門為 <a href="https://mde.tw/wcm2022">wcm2022</a> 課程打造的可攜程式套件, 適合選修學員下載後在任何 Windows 10 中以隨身碟啟動後操作)</li>
+<li><a href="http://wcm.cycu.org:88/drive.7z">drive.7z</a> (file size: 2.6 MB, extracted size: 10 MB, 只包含 PUTTY, tcc, wscite 與 tmp 目錄, 採用 Hybrid 方式設定, 可與目前電腦輔助設計室中 SSD 硬碟所安裝的 Python 3.9.5 與 <a href="https://git-scm.com/download/win">Portablegit</a> 結合, 使用者只需自行設定啟動後的 home_ipv6 目錄與 home_ipv6/Desktop 目錄後即可以最輕薄便捷的方式將 SSH key 存入隨身碟, 並將個人與分組倉儲存入隨身碟啟動後的 tmp 目錄進行操作).</li>
+</ol>
+<p>以下利用 Wink3 影片說明以 Hybrid 方式啟動的 USB 隨身碟如何建立? 以及使用上與全 USB 隨身碟可攜程式系統的差別:</p>
+<p>Hybrid 可攜程式系統是只將必要檔案配置到 USB 隨身碟, 其餘檔案則使用已經存在電腦上的內容, 主要包含 Python 3.9.5 解譯程式 (863 MB) 與 Portblegit 2.31.1 (285 MB).</p>
+<p>Hybrid 可攜程式系統優點:</p>
+<ol>
+<li>初始 USB 隨身碟只需複製 10.5 MB 的資料 (只自帶 PUTTY (4.3 MB), tcc (1.7 MB), tmp 與 wscite (4.3 MB)).</li>
+<li>使用電腦 SSD 上所安裝的 Python 與 Portablegit, 執行速度會比一般 USB 隨身碟快.</li>
+</ol>
+<p>Hybrid 可攜程式系統缺點:</p>
+<ol>
+<li>在未修改 Python Script 目錄中的 .exe 可執行檔之前, 必須透過 .py 執行, 例如: 命令列 中輸入 leo 並無法執行執行, 必須採用 import leo.core.runLeo;leo.core.runLeo.run()</li>
+<li>若在裝有還原卡的電腦, 未修改 Python 系統模組路徑之前, 所安裝的額外模組無法放入 USB 隨身碟中.</li>
+</ol><h1>Fossil SCM</h1>
 <p>利用 Fossil SCM 與 Google API 建立的網際伺服器範例: <a href="https://pj5073.cycu.org">https://pj5073.cycu.org</a></p>
 <p>如何在一台 2009 年出廠的電腦設定 Fossil SCM server?</p>
 <h2>PC2Server</h2>
