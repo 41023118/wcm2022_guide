@@ -161,7 +161,27 @@ var winkVideoData = {
 <p>此一設定將牽涉批次檔案, subst 指令與系統環境變數設定.</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/dqPIjhL3LhE" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/x8DEYTOSNYQ" title="YouTube video player" width="560"></iframe></p>
-<p><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b59b1bbb43e57/raw/5879f4ce419c53cf01b9b86be6a15a30d5e52c92/1agrp_2022">w3 1a 分組結果</a></p><h1>IPv6 setup</h1>
+<p><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b59b1bbb43e57/raw/5879f4ce419c53cf01b9b86be6a15a30d5e52c92/1agrp_2022">w3 1a 分組結果</a></p>
+<h2>如何建立個人網頁</h2>
+<p>IPv6 setup</p>
+<p>建立 github 帳號</p>
+<p>建立 wcm2022 倉儲 - 利用 <a href="https://github.com/wcm2022/wcm2022">https://github.com/wcm2022/wcm2022</a> 倉儲作為樣板, 連結後點擊 Use this template, 以便建立自己的 wcm2022 倉儲.</p>
+<p>利用 C:\2021_cadlab_portable 啟動系統</p>
+<p>git clone --recurse-submodules <a href="https://github.com/mdecourse/wcm2022.git">https://github.com/mdecourse/wcm2022.git</a></p>
+<p>使用 git 指令需要三個 git config 設定:</p>
+<ol>
+<li>git config --global user.name "使用者 github 帳號"</li>
+<li>git config --global user.email "使用者登記在 github 的 email"</li>
+<li>git config --global http.proxy <a href="http://[2001:288:6004:17::42]:3128">http://[2001:288:6004:17::42]:3128</a></li>
+</ol>
+<p>git config 設定後會在 y:\home_ipv6 存為 .gitconfig</p>
+<p>git config 代表要針對 git 進行設定, 其中包含提交身分與代理主機</p>
+<p>git config --global 代表設定要存入 y:\home_ipv6 目錄, 假如不使用 --global 表示只有在目前這個命令列執行階段有效, 沒有使用 --global 所下的設定內容, 不會存入 y:\home_ipv6 目錄.</p>
+<p>一旦完成 git clone --recurse-submodules <a href="https://github.com/mdecourse/wcm2022.git">https://github.com/mdecourse/wcm2022.git</a> 命令的執行, 遠端倉儲會被 clone 一份當下的內容到近端的 wcm2022 目錄.</p>
+<p>接下來要進入 wcm2022 倉儲目錄啟動編輯系統, 對倉儲內容進行修改.</p>
+<p>cd wcm2022 表示要 change directory 到 wcm2022</p>
+<p>cd .. 表示要更換目錄回到上一個目錄</p>
+<p>cd tmp 表示要更換目錄到 tmp 目錄</p><h1>IPv6 setup</h1>
 <p>利用 <a href="https://www.debugmode.com/wink/">Wink</a> 建立電腦操作流程影片時, 必須注意:</p>
 <ol>
 <li>可以與 ShareX 共用 <a href="https://www.ffmpeg.org/download.html#build-windows">ffmpeg.exe</a>.</li>
