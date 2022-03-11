@@ -1,200 +1,60 @@
-<!DOCTYPE html><html>
-        <head>
-        <title>WCM_GUIDE</title>
-        <meta charset="utf-8">
-<meta property="head" content="H2">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
-        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
-        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
-        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
-        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
-        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
-        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
-        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
-        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
-        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
-        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
-        
-        <style type='text/css'>
-            .site-section {
-            background-color: #FFFF;
-            padding: 40px 40px;
-            }
-            body > div > div.dropdown.open {
-                display: block;
-            }
-        </style>
-    
-        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
-        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
-        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
-        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
-        <script src="tipuesearch_content.js"></script>
-        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
-        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
-        <!-- for Wink3 -->
-        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
-        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
-        <script>
-            /* original tipuesearch
-            $(document).ready(function() {
-                 $('#tipue_search_input').tipuesearch();
-            });
-            */
-            // customed doSearch
-            function doSearch() {
-                $('#tipue_search_input').tipuesearch({
-                    newWindow: true, 
-                    minimumLength: 2,
-                    wholeWords: false, // for search 中文
-                });
-            }
-            $(document).ready(doSearch);
-        </script>
-        
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
-<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
-<script type="text/javascript">SyntaxHighlighter.all();</script>
-<!-- 暫時不用
-<script src="./../cmsimde/static/fengari-web.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
-<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
--->
-<!-- for Brython 暫時不用
-<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
-<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
--->
-<style>
-img.add_border {
-    border: 3px solid blue;
-}
-</style>
-
-</head>
-<body>
-<div class='container-fluid'><nav>
-        
-    <div class="site-wrap">
-
-    <div class="site-mobile-menu">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
-      </div>
-      <div class="site-mobile-menu-body"></div>
-    </div>
-    
-            <header class="site-navbar py-4 bg-white" role="banner">
-              <div class="container-fluid">
-                <div class="row align-items-center">
-                <h1>wcm2022_guide 網際內容管理系統導引</h1>
-                <div class="pl-4">
-                    <form>
-                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
-                    </form>
-                </div>
-                  <!-- <div class="col-11 col-xl-2">
-                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">wcm2022_guide 網際內容管理系統導引</a></h1> 
-                  </div>
-                  -->
-                  <div class="col-12 col-md-10 d-none d-xl-block">
-                    <nav class="site-navigation position-relative text-right" role="navigation">
-    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
-                        <li class="active has-children"><a href="index.html">Home</a>
-                        <ul class="dropdown">
-                            <li><a href="sitemap.html">Site Map</a></li>
-                            <li><a href="./../reveal/index.html">reveal</a></li>
-                            <li><a href="./../blog/index.html">blog</a></li>
-                        </ul>
-                      </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='CPython and Modules.html'>CPython and Modules</a><li><a href='Local and Remote.html'>Local and Remote</a><li><a href='cmsimde.html'>cmsimde</a><li><a href='Token and SSH.html'>Token and SSH</a><li><a href='Mac and RDT.html'>Mac and RDT</a><li><a href='Wink.html'>Wink</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li class='has-children'><a href='如何建立個人網頁.html'>如何建立個人網頁</a><ul class='dropdown'><li><a href='cms.html'>cms</a></li></li></ul></ul><li><a href='IPv6 setup.html'>IPv6 setup</a><li><a href='Portable Python.html'>Portable Python</a><li class='has-children'><a href='Fossil SCM.html'>Fossil SCM</a><ul class='dropdown'><li><a href='PC2Server.html'>PC2Server</a></li></ul><li class='has-children'><a href='Tetris.html'>Tetris</a><ul class='dropdown'><li><a href='run.html'>run</a></li>
-                      </ul>
-                </nav>
-              </div>
-              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-              </div>
-
-            </div>
-          </div>
-          
-        </header>
-    <div id="tipue_search_content">Tetris << <a href='Tetris.html'>Previous</a> <br /><h1>run</h1>
+<h2>run</h2>
 <p><a href="https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China#Construction_details">ROC 國旗規格</a> <a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E6%97%97#%E8%A7%84%E6%A0%BC">PROC 國旗規格</a> <a href="https://en.wikipedia.org/wiki/Flag_of_the_United_States#Specifications">USA 國旗規格</a></p>
 <p><a href="https://gist.github.com/mdecourse/05930b1775b77293523b59b1bbb43e57">Gist Brython scripts</a></p>
 <p><a href="https://mde.tw/cp2021/content/%E8%A7%A3%E9%A1%8C%E7%B7%B4%E7%BF%92.html">解題練習</a></p>
 <p><a href="https://mde.tw/cp2021/content/Cango.html">Cango</a></p>
-<script src="./../cmsimde/static/brython.js">
-</script>
-<script src="./../cmsimde/static/brython_stdlib.js"></script>
+<script src="/static/brython.js">// <![CDATA[
+
+// ]]></script>
+<script src="/static/brython_stdlib.js"></script>
 <!-- for ggame -->
 <p>
-<script src="./../cmsimde/static/jquery-3.3.1.min.js"></script>
-<script src="./../cmsimde/static/jquery-ui.1.12.1.min.js"></script>
-<script src="./../cmsimde/static/pixi-3.0.5.min.js"></script>
-<script src="./../cmsimde/static/buzz-1.2.1.js"></script>
-<script src="./../cmsimde/static/bs.js"></script>
-<script src="./../downloads/brython_modules.js"></script>
+<script src="/static/jquery-3.3.1.min.js"></script>
+<script src="/static/jquery-ui.1.12.1.min.js"></script>
+<script src="/static/pixi-3.0.5.min.js"></script>
+<script src="/static/buzz-1.2.1.js"></script>
+<script src="/static/bs.js"></script>
+<script src="/downloads/brython_modules.js"></script>
 </p>
 <!-- Cango 程式庫 -->
 <p>
-<script src="./../cmsimde/static/Cango-24v03-min.js"></script>
-<script src="./../cmsimde/static/CangoAxes-6v01-min.js"></script>
-<script src="./../cmsimde/static/gearUtils-09.js"></script>
-<script src="./../cmsimde/static/SVGpathUtils-6v03-min.js"></script>
-<script src="./../cmsimde/static/sylvester.js"></script>
-<script src="./../cmsimde/static/PrairieDraw.js"></script>
+<script src="/static/Cango-24v03-min.js"></script>
+<script src="/static/CangoAxes-6v01-min.js"></script>
+<script src="/static/gearUtils-09.js"></script>
+<script src="/static/SVGpathUtils-6v03-min.js"></script>
+<script src="/static/sylvester.js"></script>
+<script src="/static/PrairieDraw.js"></script>
 </p>
 <!-- for Konva 程式庫 -->
 <p>
-<script src="./../cmsimde/static/konva.min.js"></script>
-<script>
+<script src="/static/konva.min.js"></script>
+<script>// <![CDATA[
 window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
 }
-</script>
+// ]]></script>
 </p>
 <p><!-- 導入 FileSaver 與 filereader --></p>
 <p>
-<script src="./../cmsimde/static/ace/FileSaver.min.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/filereader.js" type="text/javascript"></script>
+<script type="text/javascript" src="/static/ace/FileSaver.min.js"></script>
+<script type="text/javascript" src="/static/ace/filereader.js"></script>
 </p>
 <p><!-- 導入 ace --></p>
 <p>
-<script src="./../cmsimde/static/ace/ace.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/ext-language_tools.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/mode-python3.js" type="text/javascript"></script>
-<script src="./../cmsimde/static/ace/snippets/python.js" type="text/javascript"></script>
+<script type="text/javascript" src="/static/ace/ace.js"></script>
+<script type="text/javascript" src="/static/ace/ext-language_tools.js"></script>
+<script type="text/javascript" src="/static/ace/mode-python3.js"></script>
+<script type="text/javascript" src="/static/ace/snippets/python.js"></script>
 </p>
 <p><!-- 請注意, 這裡使用 Javascript 將 localStorage["py_src"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
 <p>
-<script type="text/javascript">
+<script type="text/javascript">// <![CDATA[
 function doSave(storage_id, filename){
     var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
     filename = document.getElementById(filename).value
     saveAs(blob, filename+".py");
 }
-</script>
+// ]]></script>
 </p>
 <p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC flag</button><button id="procflag">PROC flag</button><button id="usaflag">USA flag</button><button id="drawgrid">Draw Grid</button><button id="grid_rect">Random Rect</button><button id="rect_walk">Rect Walk</button><button id="rect_u_walk">Rect U Walk</button><button id="rect_rev_u_walk">Rect rev U Walk</button><button id="sgcr">單節貪食蛇</button><button id="cfrr">5 個紅點方塊</button><button id="snake">Snake</button><button id="bsnake">BSnake</button><button id="auto_guess">auto_guess</button><button id="ball">ball</button><button id="bezier">bezier</button><button id="big_lotto">big_lotto</button><button id="brython_kw">brython_kw</button><button id="bunny">bunny</button><button id="cango_spur">cango_spur</button><button id="cango_spur1">cango_spur1</button><button id="cango_three_gears">cango_three_gears</button><button id="clear">clear</button><button id="clock">clock</button><button id="convert_temp">convert_temp</button><button id="deepmerge">deepmerge</button><button id="display_stl">display_stl</button><button id="draw">draw</button><button id="ex1">ex1</button><button id="ex2">ex2</button><button id="ex3">ex3</button><button id="ex4">ex4</button><button id="fibo">fibo</button><button id="fourbar">fourbar</button><button id="guess_a_number">guess_a_number</button><button id="hw1_1">hw1_1</button><button id="hw1_2">hw1_2</button><button id="keycode">Keycode</button><button id="knova1">knova1</button><button id="merge3">merge3</button><button id="power_lotto">power_lotto</button><button id="spur">spur</button><button id="spur_w_form">spur_w_form</button><button id="stl_binary_ascii">stl_binary_ascii</button><button id="stl_writer">stl_writer</button><button id="tetris">Tetris</button><button id="turtle1">turtle1</button><button id="turtle2">turtle2</button><button id="turtle3">turtle3</button><button id="turtle4">turtle4</button><button id="turtle5">turtle5</button><button id="turtle6">turtle6</button><button id="turtle7">turtle7</button><button id="turtle8">turtle8</button><button id="twl_link_ik">twl_link_ik</button><button id="webcam">webcam</button><button id="websocket">websocket</button><button id="ycqsort">ycqsort</button></p>
 <p><!-- ######################  editor1 開始 ###################### --></p>
@@ -202,7 +62,7 @@ function doSave(storage_id, filename){
 <div id="kw_editor1" style="width: 600px; height: 300px;"></div>
 <p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
 <p><!-- 存擋表單開始 --></p>
-<form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src1', 'kw_filename1');" type="submit" value="Save"/></form>
+<form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text">.py</label> <input onclick="doSave('kw_py_src1', 'kw_filename1');" type="submit" value="Save"></form>
 <p><!-- 存擋表單結束 --></p>
 <p></p>
 <p><!-- 執行與清除按鈕開始 --></p>
@@ -218,7 +78,7 @@ function doSave(storage_id, filename){
 <div class="col-md-0" height="1" id="graphics-column" width="1"></div>
 <p><!-- ######################  editor1 結束 ###################### --></p>
 <p><!-- 以下可以開始利用 editor1 的設定編寫對應 Brython 程式 -->
-<script type="text/python3">
+<script type="text/python3">// <![CDATA[
 from browser import document as doc
 import ace
 
@@ -254,10 +114,10 @@ doc['kw_clear_console1'].bind('click', Ace1.clear_console)
 doc['clear_bd1'].bind('click', clear_bd1)
 # 呼叫函式執行
 run1()
-</script>
+// ]]></script>
 <!-- 以上為內建程式, 頁面可透過 ?src=gist_url 執行 --></p>
 <p><!-- add 1 to 100 開始 -->
-<script type="text/python3">
+<script type="text/python3">// <![CDATA[
 from browser import document as doc
 import ace
 
@@ -576,55 +436,5 @@ tetris_url = "https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b5
 tetris = button2(tetris_url)
 doc["tetris"].bind("click", tetris.do)
 ################################## tetris end
-</script>
-</p><br />Tetris << <a href='Tetris.html'>Previous</a> </div>
-        
-    <!-- footer -->
-      <div class="container">
-        <div class="row pt-3 mx-auto">
-            <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-        </div>
-      </div>
-    <!-- for footer -->
-    
-        </div> <!-- for site wrap -->
-            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
-            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
-            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
-            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
-            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
-            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
-            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
-            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
-            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
-            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
-            <script src="../cmsimde/static/chimper/js/aos.js"></script>
-            <!--
-            <script src="../cmsimde/static/chimper/js/typed.js"></script>
-                    <script>
-                    var typed = new Typed('.typed-words', {
-                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
-                    typeSpeed: 80,
-                    backSpeed: 80,
-                    backDelay: 4000,
-                    startDelay: 1000,
-                    loop: true,
-                    showCursor: true
-                    });
-                    </script>
-            -->
-            <script src="../cmsimde/static/chimper/js/main.js"></script>
-        
-<!-- 啟用 LaTeX equations 編輯 -->
-  <!-- <script>
-  MathJax = {
-    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
-  };
-  </script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
-    </body></html>
-        
+// ]]></script>
+</p>
