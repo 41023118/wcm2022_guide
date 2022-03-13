@@ -195,124 +195,7 @@ var winkVideoData = {
 <p>url = uniform resource locator</p>
 <p><a href="https://zh.wikipedia.org/wiki/统一资源定位符">https://zh.wikipedia.org/wiki/统一资源定位符</a></p>
 <p><a href="/downloads/run.txt">run.txt</a></p>
-<h3>run2</h3>
-<p><a href="https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China#Construction_details">ROC 國旗規格</a> <a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E6%97%97#%E8%A7%84%E6%A0%BC">PROC 國旗規格</a> <a href="https://en.wikipedia.org/wiki/Flag_of_the_United_States#Specifications">USA 國旗規格</a></p>
-<p><a href="https://gist.github.com/mdecourse/05930b1775b77293523b59b1bbb43e57">Gist Brython scripts</a></p>
-<p><a href="https://mde.tw/cp2021/content/%E8%A7%A3%E9%A1%8C%E7%B7%B4%E7%BF%92.html">解題練習</a></p>
-<p><a href="https://mde.tw/cp2021/content/Cango.html">Cango</a></p>
-<script src="/static/brython.js">
-</script>
-<script src="/static/brython_stdlib.js"></script>
-<!-- for ggame -->
 <p>
-<script src="/static/jquery-3.3.1.min.js"></script>
-<script src="/static/jquery-ui.1.12.1.min.js"></script>
-<script src="/static/pixi-3.0.5.min.js"></script>
-<script src="/static/buzz-1.2.1.js"></script>
-<script src="/static/bs.js"></script>
-<script src="/downloads/brython_modules.js"></script>
-</p>
-<!-- Cango 程式庫 -->
-<p>
-<script src="/static/Cango-24v03-min.js"></script>
-<script src="/static/CangoAxes-6v01-min.js"></script>
-<script src="/static/gearUtils-09.js"></script>
-<script src="/static/SVGpathUtils-6v03-min.js"></script>
-<script src="/static/sylvester.js"></script>
-<script src="/static/PrairieDraw.js"></script>
-</p>
-<!-- for Konva 程式庫 -->
-<p>
-<script src="/static/konva.min.js"></script>
-<script>
-window.onload=function(){
-brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
-}
-</script>
-</p>
-<p><!-- 導入 FileSaver 與 filereader --></p>
-<p>
-<script src="/static/ace/FileSaver.min.js" type="text/javascript"></script>
-<script src="/static/ace/filereader.js" type="text/javascript"></script>
-</p>
-<p><!-- 導入 ace --></p>
-<p>
-<script src="/static/ace/ace.js" type="text/javascript"></script>
-<script src="/static/ace/ext-language_tools.js" type="text/javascript"></script>
-<script src="/static/ace/mode-python3.js" type="text/javascript"></script>
-<script src="/static/ace/snippets/python.js" type="text/javascript"></script>
-</p>
-<p><!-- 請注意, 這裡使用 Javascript 將 localStorage["py_src"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
-<p>
-<script type="text/javascript">
-function doSave(storage_id, filename){
-    var blob = new Blob([localStorage[storage_id]], {type: "text/plain;charset=utf-8"});
-    filename = document.getElementById(filename).value
-    saveAs(blob, filename+".py");
-}
-</script>
-</p>
-<p><button id="add1to100">add 1 to 100</button><button id="p261">p261</button><button id="rocflag">ROC flag</button><button id="procflag">PROC flag</button><button id="usaflag">USA flag</button><button id="drawgrid">Draw Grid</button><button id="grid_rect">Random Rect</button><button id="rect_walk">Rect Walk</button><button id="rect_u_walk">Rect U Walk</button><button id="rect_rev_u_walk">Rect rev U Walk</button><button id="sgcr">單節貪食蛇</button><button id="cfrr">5 個紅點方塊</button><button id="snake">Snake</button><button id="bsnake">BSnake</button><button id="auto_guess">auto_guess</button><button id="ball">ball</button><button id="bezier">bezier</button><button id="big_lotto">big_lotto</button><button id="brython_kw">brython_kw</button><button id="bunny">bunny</button><button id="cango_spur">cango_spur</button><button id="cango_spur1">cango_spur1</button><button id="cango_three_gears">cango_three_gears</button><button id="clear">clear</button><button id="clock">clock</button><button id="convert_temp">convert_temp</button><button id="deepmerge">deepmerge</button><button id="display_stl">display_stl</button><button id="draw">draw</button><button id="ex1">ex1</button><button id="ex2">ex2</button><button id="ex3">ex3</button><button id="ex4">ex4</button><button id="fibo">fibo</button><button id="fourbar">fourbar</button><button id="guess_a_number">guess_a_number</button><button id="hw1_1">hw1_1</button><button id="hw1_2">hw1_2</button><button id="keycode">Keycode</button><button id="knova1">knova1</button><button id="merge3">merge3</button><button id="power_lotto">power_lotto</button><button id="spur">spur</button><button id="spur_w_form">spur_w_form</button><button id="stl_binary_ascii">stl_binary_ascii</button><button id="stl_writer">stl_writer</button><button id="tetris">Tetris</button><button id="turtle1">turtle1</button><button id="turtle2">turtle2</button><button id="turtle3">turtle3</button><button id="turtle4">turtle4</button><button id="turtle5">turtle5</button><button id="turtle6">turtle6</button><button id="turtle7">turtle7</button><button id="turtle8">turtle8</button><button id="twl_link_ik">twl_link_ik</button><button id="webcam">webcam</button><button id="websocket">websocket</button><button id="ycqsort">ycqsort</button></p>
-<p><!-- ######################  editor1 開始 ###################### --></p>
-<p><!-- 用來顯示程式碼的 editor 區域 --></p>
-<div id="kw_editor1" style="width: 600px; height: 300px;"></div>
-<p><!-- 以下的表單與按鈕與前面的 Javascript doSave 函式以及 FileSaver.min.js 互相配合 --></p>
-<p><!-- 存擋表單開始 --></p>
-<form><label>Filename: <input id="kw_filename" placeholder="input file name" type="text"/>.py</label> <input onclick="doSave('kw_py_src1', 'kw_filename1');" type="submit" value="Save"/></form>
-<p><!-- 存擋表單結束 --></p>
-<p></p>
-<p><!-- 執行與清除按鈕開始 --></p>
-<p><button id="kw_run1">Run</button> <button id="kw_show_console1">Output</button> <button id="kw_clear_console1">清除輸出區</button><button id="clear_bd1">清除繪圖區</button><button onclick="window.location.reload()">Reload</button></p>
-<p><!-- 執行與清除按鈕結束 --></p>
-<p></p>
-<p><!-- 程式執行 ouput 區 --></p>
-<div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
-<p><!-- Brython 程式執行的結果, 都以 brython_div 作為切入位置 --></p>
-<p><!-- 這裡的畫布 id 為 brython_div --></p>
-<div id="brython_div"></div>
-<!-- graphics-column is for ggame -->
-<div class="col-md-0" height="1" id="graphics-column" width="1"></div>
-<p><!-- ######################  editor1 結束 ###################### --></p>
-<p><!-- 以下可以開始利用 editor1 的設定編寫對應 Brython 程式 -->
-<script type="text/python3">
-from browser import document as doc
-import ace
-
-# 清除畫布
-def clear_bd1(ev):
-    # 注意這裡清除的畫布 id 為 brython_div
-    bd = doc["brython_div"]
-    bd.clear()
-Ace1 = ace.Editor(editor_id="kw_editor1", console_id="kw_console1", container_id="kw__container1", storage_id="kw_py_src1" )
-# 從 gist 取出程式碼後, 放入 editor 作為 default 程式
-def run1():
-    # 利用 get 取下 src 變數值
-    try:
-        url = doc.query["src"]
-    except:
-        url = "https://gist.githubusercontent.com/mdecourse/0229a8a017091476a79700b8a190f185/raw/c3a6deaf717f8f2739a4b1392a5ab10936e9693a/from_1_add_to_10_1.py"
-    prog = open(url).read()
-
-    # 將程式載入編輯區
-    Ace1.editor.setValue(prog)
-    Ace1.editor.scrollToRow(0)
-    Ace1.editor.gotoLine(0)
-    # 直接執行程式
-    #ns = {'__name__':'__main__'}
-    #exec(prog, ns)
-    # 按下 run 按鈕
-    Ace1.run()
-
-# 執行程式, 顯示輸出結果與清除輸出結果及對應按鈕綁定
-doc['kw_run1'].bind('click', Ace1.run)
-doc['kw_show_console1'].bind('click', Ace1.show_console)
-doc['kw_clear_console1'].bind('click', Ace1.clear_console)
-doc['clear_bd1'].bind('click', clear_bd1)
-# 呼叫函式執行
-run1()
-</script>
-<!-- 以上為內建程式, 頁面可透過 ?src=gist_url 執行 --></p>
-<p><!-- add 1 to 100 開始 -->
 <script type="text/python3">
 from browser import document as doc
 import ace
@@ -633,7 +516,33 @@ tetris = button2(tetris_url)
 doc["tetris"].bind("click", tetris.do)
 ################################## tetris end
 </script>
-</p><h1>IPv6 setup</h1>
+</p><h2>WCMS</h2>
+<p>所謂的全球資訊網內容管理系統 (Web Content Management System, WCMS), 指的就是:</p>
+<p style="padding-left: 30px;"><a href="https://en.wikipedia.org/wiki/Web_content_management_system">https://en.wikipedia.org/wiki/Web_content_management_system</a> </p>
+<p style="padding-left: 30px;">上列網頁說明: A web content management system (WCM or WCMS) is a software content management system (<a href="https://en.wikipedia.org/wiki/Content_management_system">CMS</a>) specifically for <a href="https://en.wikipedia.org/wiki/Web_content">web content</a>.</p>
+<p style="padding-left: 30px;">表示採用全球資訊網協定的內容管理系統才稱為 WCMS. 有些內容管理系統 (<a href="https://en.wikipedia.org/wiki/Content_management_system">CMS</a>) 並不是在全球資訊網架構下進行存取.</p>
+<p style="padding-left: 30px;">常見的 <a href="https://en.wikipedia.org/wiki/Content_management_system">CMS</a> 系統: <a href="https://en.wikipedia.org/wiki/List_of_content_management_systems">https://en.wikipedia.org/wiki/List_of_content_management_systems</a></p>
+<p>Blog 不僅是一種 CMS, 且是 Weblog 的簡稱, 中文稱為網誌. 以下要介紹的是 <a href="https://en.wikipedia.org/wiki/Blogger_(service)">Blogger</a>. 除了要求每位學員要利用 @gm 帳號建立個人的 <a href="https://en.wikipedia.org/wiki/Blogger_(service)">Blogger</a> 網誌外, 還要說明如何透過 <a href="https://developers.google.com/blogger">https://developers.google.com/blogger</a>, 利用 Python 程式建立或修改 <a href="https://en.wikipedia.org/wiki/Blogger_(service)">Blogger</a> 網誌中的文章.</p>
+<p>利用 <a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 網際內容管理套件所建立的倉儲與網站, 除了三層表單式的網頁外, 還自帶 <a href="https://blog.getpelican.com/">Pelican 網誌</a> (例如: <a href="https://mde.tw/lab/blog/">https://mde.tw/lab/blog/</a>) 與 <a href="https://revealjs.com/">Reveal.js</a> 簡報系統 (例如: <a href="https://mde.tw/wcm2022/reveal/">https://mde.tw/wcm2022/reveal/</a>).</p>
+<p>以下將分別介紹如何使用:</p>
+<ol>
+<li>@gm 帳號建立個人 Blogger 網誌</li>
+<li><a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 中的 Pelican 建立網誌</li>
+<li><a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 中的 Reveal.js 建立全球資訊網上的簡報系統</li>
+<li>Python 程式同步 Blogger 與 Pelican 網誌上的文章</li>
+</ol>
+<p>其中將牽涉到 <a href="https://leoeditor.com/">Leo Editor</a> 與 <a href="https://cloud.google.com/apis">https://cloud.google.com/apis</a> 的應用.</p>
+<p>建立個人 Blogger 的操作步驟如下:</p>
+<ol>
+<li>登入個人的 @gm 帳號</li>
+<li>連結到 <a href="https://www.blogger.com">https://www.blogger.com</a>, 以上列 @gm 帳號登入</li>
+<li>利用 "Create Your Blog" 按鈕建立網誌</li>
+<li>參考 Beginning Google Blogger 電子書以及 <a href="https://link.springer.com/content/pdf/10.1007%2F978-1-4302-2666-6_12.pdf">Blogger 章節</a>內容設定個人 Blogger 網誌</li>
+</ol>
+<p>Leo Editor 基本操作:</p>
+<p></p>
+<p></p>
+<p style="padding-left: 30px;"></p><h1>IPv6 setup</h1>
 <p>利用 <a href="https://www.debugmode.com/wink/">Wink</a> 建立電腦操作流程影片時, 必須注意:</p>
 <ol>
 <li>可以與 ShareX 共用 <a href="https://www.ffmpeg.org/download.html#build-windows">ffmpeg.exe</a>.</li>
