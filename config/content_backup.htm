@@ -520,7 +520,7 @@ doc["tetris"].bind("click", tetris.do)
 <p>電腦輔助設計室中的 <a href="https://www.asus.com/tw/Networking-IoT-Servers/WiFi-Routers/ASUS-WiFi-Routers/RT-AC66U-plus/">Wifi Gigabit 路由器(分享器)</a>設定(2022/03/13 <a href="https://www.tp-link.com/tw/home-networking/wifi-router/archer-ax72/">同一價位機種</a>), 原先採 WAN 接到 NAT 的 output 集線器, 必須經過兩次路由才能連外, 且無法啟動 IPv6 網路連線.</p>
 <p>經將 WAN 直接連到系主幹後, 將 IPv6 以 Passthrough 設定後, 可讓手機或筆電經由 810WIFI 連線後取得雙協定支援網路.</p>
 <p>筆電透過 810WIFI 連線後 IPv4 部分為內部網路 192.168.50.X, 而 IPv6 部分則擁有兩個由學校配發的 IPv6 網路位址, 可用來設定 <a href="https://support.microsoft.com/en-us/windows/how-to-use-remote-desktop-5fe128d5-8fb1-7a23-3b8a-41e636865e8c">Remote Desktop</a>、WWW 或 Fossil SCM 伺服器.</p>
-<p></p>
+<p>以下說明影片就是在將 Wifi router 設為 IPv6/IPv4 雙網路協定後的使用流程:</p>
 <script>
 var winkVideoData2 = {
   dataVersion: 1,
@@ -542,7 +542,22 @@ var winkVideoData2 = {
 <div class="winkVideoControlBarProgressThumbClass"></div>
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
-</div><h2>WCMS</h2>
+</div>
+<p>若要將畫面中的 master 分支內容合併至內建 main 分之後, <a href="https://www.cloudbees.com/blog/git-delete-branch-how-to-for-both-local-and-remote">可以使用</a> git delete 刪除 master 分支:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Y:\mdecycu\wcm2022_guide&gt;git branch -d master
+Deleted branch master (was 5c2b8db).
+
+Y:\mdecycu\wcm2022_guide&gt;git branch
+* main
+
+Y:\mdecycu\wcm2022_guide&gt;git push --delete origin master
+To mdecycu:mdecycu/wcm2022_guide.git
+ - [deleted]         master</pre>
+<p>git branch -d master 指令是用來刪除近端倉儲的 master 分支.</p>
+<p>git branch 是查驗目前工作目錄(working directory)所在分支.</p>
+<p>git push --delete origin master 則是透過 git push 刪除遠端倉儲中的 master 分支.</p>
+<p></p>
+<p></p><h2>WCMS</h2>
 <p>所謂的全球資訊網內容管理系統 (Web Content Management System, WCMS), 指的就是:</p>
 <p style="padding-left: 30px;"><a href="https://en.wikipedia.org/wiki/Web_content_management_system">https://en.wikipedia.org/wiki/Web_content_management_system</a></p>
 <p style="padding-left: 30px;">上列網頁說明: A web content management system (WCM or WCMS) is a software content management system (<a href="https://en.wikipedia.org/wiki/Content_management_system">CMS</a>) specifically for <a href="https://en.wikipedia.org/wiki/Web_content">web content</a>.</p>

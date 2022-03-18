@@ -543,7 +543,7 @@ var winkVideoData2 = {
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
 </div>
-<p>若要將畫面中的 master 分支內容合併至內建 main 分之後, <a href="https://www.cloudbees.com/blog/git-delete-branch-how-to-for-both-local-and-remote">可以使用</a> git delete 刪除 master 分支:</p>
+<p>將畫面中的 master 分支內容合併至內建 main 分支後, <a href="https://www.cloudbees.com/blog/git-delete-branch-how-to-for-both-local-and-remote">可以使用</a> git delete 刪除近端倉儲的 master 分支, 並用 git push --delete 刪除遠端倉儲分支:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Y:\mdecycu\wcm2022_guide&gt;git branch -d master
 Deleted branch master (was 5c2b8db).
 
@@ -553,6 +553,9 @@ Y:\mdecycu\wcm2022_guide&gt;git branch
 Y:\mdecycu\wcm2022_guide&gt;git push --delete origin master
 To mdecycu:mdecycu/wcm2022_guide.git
  - [deleted]         master</pre>
+<p>git branch -d master 指令是用來刪除近端倉儲的 master 分支.</p>
+<p>git branch 則可用來查驗目前工作目錄(working directory)所在分支.</p>
+<p>git push --delete origin master 則是透過 git push 刪除遠端(url 名稱存為 origin)倉儲中的 master 分支.</p>
 <p></p>
 <p></p><h2>WCMS</h2>
 <p>所謂的全球資訊網內容管理系統 (Web Content Management System, WCMS), 指的就是:</p>
