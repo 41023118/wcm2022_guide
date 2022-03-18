@@ -521,7 +521,30 @@ doc["tetris"].bind("click", tetris.do)
 <h4>HW1:</h4>
 <p style="padding-left: 30px;">請設法比較以下三個檔案的差異, <a href="https://files.gitter.im/61e97cbb6da03739848ec746/JQwy/w4_hw1.zip">w4_hw1.zip</a></p>
 <p style="padding-left: 30px;">可以使用 <a href="http://kdiff3.sourceforge.net/">http://kdiff3.sourceforge.net/</a> 工具對三個檔案進行比較.</p>
-<p style="padding-left: 30px;">若使用程式方法讀近三個檔案後, 逐行比較內容.</p><h2>Wifi</h2>
+<p style="padding-left: 30px;">若使用程式方法讀近三個檔案後, 逐行比較內容.</p>
+<p><a href="/downloads/w4_diff/w4_diff_note.txt">w4_diff_note.txt</a></p>
+<script>
+var winkVideoData2 = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+</script>
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData2" height="630" muted="true" width="1008">
+<source src="/downloads/w4_diff/w4_diff.mp4" type="video/mp4"/></video>
+<div class="winkVideoOverlayClass"></div>
+<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
+<div class="winkVideoControlBarProgressRightClass"></div>
+<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
+<div class="winkVideoControlBarProgressThumbClass"></div>
+</div>
+<div class="winkVideoPlayOverlayClass"></div>
+</div><h2>Wifi</h2>
 <p>電腦輔助設計室中的 <a href="https://www.asus.com/tw/Networking-IoT-Servers/WiFi-Routers/ASUS-WiFi-Routers/RT-AC66U-plus/">Wifi Gigabit 路由器(分享器)</a>設定(2022/03/13 <a href="https://www.tp-link.com/tw/home-networking/wifi-router/archer-ax72/">同一價位機種</a>), 原先採 WAN 接到 NAT 的 output 集線器, 必須經過兩次路由才能連外, 且無法啟動 IPv6 網路連線.</p>
 <p>經將 WAN 直接連到系主幹後, 將 IPv6 以 Passthrough 設定後, 可讓手機或筆電經由 810WIFI 連線後取得雙協定支援網路.</p>
 <p>筆電透過 810WIFI 連線後 IPv4 部分為內部網路 192.168.50.X, 而 IPv6 部分則擁有兩個由學校配發的 IPv6 網路位址, 可用來設定 <a href="https://support.microsoft.com/en-us/windows/how-to-use-remote-desktop-5fe128d5-8fb1-7a23-3b8a-41e636865e8c">Remote Desktop</a>、WWW 或 Fossil SCM 伺服器.</p>

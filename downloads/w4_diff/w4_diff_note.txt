@@ -1,0 +1,22 @@
+<script>// <![CDATA[
+var winkVideoData2 = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+// ]]></script>
+<div class="winkVideoContainerClass"><video width="1008" height="630" autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData2" muted="true">
+<source src="/downloads/w4_wifi/w4_wifi.mp4" type="video/mp4" /></video>
+<div class="winkVideoOverlayClass"></div>
+<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
+<div class="winkVideoControlBarProgressRightClass"></div>
+<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
+<div class="winkVideoControlBarProgressThumbClass"></div>
+</div>
+<div class="winkVideoPlayOverlayClass"></div>
+</div>
