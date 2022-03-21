@@ -915,7 +915,93 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 </ol><h1>Fossil SCM</h1>
 <p>利用 Fossil SCM 與 Google API 建立的網際伺服器範例: <a href="https://pj5073.cycu.org">https://pj5073.cycu.org</a></p>
 <p>如何在一台 2009 年出廠的電腦設定 Fossil SCM server?</p>
-<h2>PC2Server</h2>
+<p>Windows:</p>
+<p></p>
+<p>Ubuntu:</p>
+<p>stunnel.conf</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[https]
+accept = :443
+accept = :::443
+cert = /etc/letsencrypt/live/c3.cycu.org/fullchain.pem
+key = /etc/letsencrypt/live/c3.cycu.org/privkey.pem 
+exec = /usr/bin/fossil
+execargs = /usr/bin/fossil http /home/pj2022/repository/pj2022.fossil --https --nojail</pre>
+<p>flask_oauth2.ini</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[uwsgi]
+socket = :8080
+uid = pj2022 
+gid = pj2022 
+plugins-dir = /usr/lib/uwsgi/plugins/
+plugin = python3
+master = true
+process = 4
+threads = 2
+chdir = /home/pj2022/fossiloauth
+wsgi-file = /home/pj2022/fossiloauth/wsgi.py</pre>
+<p>nginx /etc/nginx/sites-available/default</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># for redirect to https
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    root /home/pj2022/pj2022/;
+    index index.html;
+}
+
+# for fossiloauth
+server {
+    listen 8443 ssl default_server;
+    listen [::]:8443 ssl default_server;
+    
+    location / {
+        include uwsgi_params;
+        uwsgi_pass  127.0.0.1:8080;
+    }
+    
+    ssl_certificate /etc/letsencrypt/live/c3.cycu.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/c3.cycu.org/privkey.pem;
+    ssl_session_timeout 5m;
+    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
+    ssl_prefer_server_ciphers on;
+    try_files $uri $uri/ =404;
+}
+
+# for fossilapp
+server {
+    listen 9443 ssl default_server;
+    listen [::]:9443 ssl default_server;
+    
+    location / {
+        include uwsgi_params;
+        uwsgi_pass  127.0.0.1:8081;
+    }
+    
+    ssl_certificate /etc/letsencrypt/live/c3.cycu.org/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/c3.cycu.org/privkey.pem;
+    ssl_session_timeout 5m;
+    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
+    ssl_prefer_server_ciphers on;
+    try_files $uri $uri/ =404;
+}
+</pre>
+<p>/etc/systemd/system/cmsimde.service</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[Unit]
+Description=uWSGI to serve CMSiMDE
+After=network.target
+   
+[Service]
+User=pj2022
+Group=pj2022
+WorkingDirectory=/home/pj2022/uwsgi_ini
+ExecStart=/usr/bin/uwsgi --emperor /home/pj2022/uwsgi_ini
+   
+[Install]
+WantedBy=multi-user.target
+
+</pre>
+<p></p>
+<p></p><h2>PC2Server</h2>
 <p>大一與專一分別從 PC 硬體安裝 Windows 10 (利用 <a href="https://clonezilla.org/">https://clonezilla.org/</a> 硬碟開機磁區 clone) 之後再逐步設定如 <a href="https://pj5073.cycu.org">https://pj5073.cycu.org</a> 與 <a href="https://wcm.cycu.org">https://wcm.cycu.org</a> 的網際伺服器.</p><h1>Tetris</h1>
 <p><a href="https://levelup.gitconnected.com/writing-tetris-in-python-2a16bddb5318">https://levelup.gitconnected.com/writing-tetris-in-python-2a16bddb5318</a></p>
 <p><a href="https://github.com/ondras/custom-tetris">https://github.com/ondras/custom-tetris</a></p>
