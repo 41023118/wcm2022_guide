@@ -1,5 +1,5 @@
 <h1>About</h1>
-<p>由於網際內容管理課程要求每一位學員利用 <a href="https://pages.github.com/">Github Pages</a> 建立名稱為 wcm2022 的倉儲以及網頁. 因此需要在近端執行 Python 程式, 且需要 flask flask_cors bs4 lxml pelican markdown leo pyopenssl 等 Python 模組.</p>
+<p>網際內容管理課程要求每一位學員利用 <a href="https://github.com/mdecycu/cmsimde">cmsimde</a> 與 <a href="https://pages.github.com/">Github Pages</a> 建立名稱為 wcm2022 的倉儲以及網頁. 因此需要在近端執行 Python 程式, 且需要 flask flask_cors bs4 lxml pelican markdown leo pyopenssl 等 Python 模組.</p>
 <h4 style="padding-left: 30px;">問題:</h4>
 <p style="padding-left: 60px;">何謂 <a href="https://docs.python.org/3/tutorial/modules.html">Python 模組</a>?</p>
 <h4>下載可攜程式檔案:</h4>
@@ -933,6 +933,17 @@ import fossilapp
 
 # run cmsimde dynamic site with production waitress
 serve(fossilapp.app, host='127.0.0.1', port=5001, url_scheme='https')</pre>
+<p>nssm install fossiloauth</p>
+<p>C:\compile_copsim\data\Python395\python.exe waitress_server.py</p>
+<p>waitress_server.py</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># pip install waitress
+from waitress import serve
+
+# under cmsimde import fossilapp
+import fossiloauth
+
+# run cmsimde dynamic site with production waitress
+serve(fossiloauth.app, host='127.0.0.1', port=5000, url_scheme='https')</pre>
 <p>stunnel.conf</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">; for single repository server: fossil_server
 [https]
