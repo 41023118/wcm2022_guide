@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='CPython and Modules.html'>CPython and Modules</a><li><a href='Local and Remote.html'>Local and Remote</a><li><a href='cmsimde.html'>cmsimde</a><li><a href='Token and SSH.html'>Token and SSH</a><li><a href='Mac and RDT.html'>Mac and RDT</a><li><a href='Wink.html'>Wink</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li><a href='OneDrive.html'>OneDrive</a><li class='has-children'><a href='Webpage.html'>Webpage</a><ul class='dropdown'><li><a href='cms.html'>cms</a></li></ul><li class='has-children'><a href='PME.html'>PME</a><ul class='dropdown'><li><a href='Brython.html'>Brython</a></li></ul><li><a href='Wifi.html'>Wifi</a><li><a href='WCMS.html'>WCMS</a><li><a href='Code.html'>Code</a></li></ul><li><a href='IPv6 setup.html'>IPv6 setup</a><li><a href='Portable Python.html'>Portable Python</a><li class='has-children'><a href='Fossil SCM.html'>Fossil SCM</a><ul class='dropdown'><li><a href='PC2Server.html'>PC2Server</a></li></ul><li class='has-children'><a href='Tetris.html'>Tetris</a><ul class='dropdown'><li><a href='run.html'>run</a></li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='Local and Remote.html'>Local and Remote</a><li><a href='cmsimde.html'>cmsimde</a><li><a href='Token and SSH.html'>Token and SSH</a><li><a href='Mac and RDT.html'>Mac and RDT</a><li><a href='Wink.html'>Wink</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li><a href='OneDrive.html'>OneDrive</a><li class='has-children'><a href='Webpage.html'>Webpage</a><ul class='dropdown'><li><a href='cms.html'>cms</a></li></ul><li class='has-children'><a href='PME.html'>PME</a><ul class='dropdown'><li><a href='Brython.html'>Brython</a></li></ul><li><a href='Wifi.html'>Wifi</a><li><a href='WCMS.html'>WCMS</a><li><a href='Code.html'>Code</a></li></ul><li><a href='IPv6 setup.html'>IPv6 setup</a><li><a href='Portable Python.html'>Portable Python</a><li class='has-children'><a href='Fossil SCM.html'>Fossil SCM</a><ul class='dropdown'><li><a href='PC2Server.html'>PC2Server</a></li></ul><li class='has-children'><a href='Tetris.html'>Tetris</a><ul class='dropdown'><li><a href='run.html'>run</a></li>
                       </ul>
                 </nav>
               </div>
@@ -143,6 +143,7 @@ img.add_border {
 <p>這裡所指的 Wink 為 3.0 版, 來自 <a href="https://www.debugmode.com/wink/">https://www.debugmode.com/wink/</a> 是一套免費 (Freeware) 的電腦操作流程影片錄製軟體, 與 <a href="https://github.com/ShareX/ShareX">ShareX</a> 相同的是, 兩套軟體的影片製作核心都是採用 <a href="https://www.ffmpeg.org/download.html">ffmpeg.exe</a>. 不同的地方在於: <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 沒有開源, 可能是採用 C++ 編寫 (因為除了 Windows 版本, 還有 Linux, 但卻沒有 Mac), 且 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 可以在主影格 (Key frame) 中加入文字說明, 以及 html 按鈕. 比較適合用來製作需要較多文字說明輔助的教學影片. 至於 <a href="https://github.com/ShareX/ShareX">ShareX</a> 是一套採用 C# 編寫的開源套件, 適合製作加上搭配語音或說明字幕的操作教學影片.</p>
 <p>由作者提供的 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 使用教學影片可以參考 <a href="https://mde.tw/cmstemplate/content/Wink.html">https://mde.tw/cmstemplate/content/Wink.html</a></p>
 <p>以下的影片將說明如何將利用 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 製作的 mp4 教學影片嵌入 cmsimde 動態與靜態網頁, 而且能在手機上觀看:</p>
+<p>
 <script>
 var winkVideoData = {
   dataVersion: 1,
@@ -153,6 +154,7 @@ var winkVideoData = {
   },
 };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData" height="630" muted="true" width="1008">
 <source src="./../downloads/cmsimde_wink/wink2cmsimde.mp4" type="video/mp4"/></video>
@@ -165,7 +167,8 @@ var winkVideoData = {
 <div class="winkVideoControlBarProgressThumbClass"></div>
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
-</div><br />Mac and RDT << <a href='Mac and RDT.html'>Previous</a> <a href='Topics.html'>Next</a> >> Topics</div>
+</div>
+<br />Mac and RDT << <a href='Mac and RDT.html'>Previous</a> <a href='Topics.html'>Next</a> >> Topics</div>
         
     <!-- footer -->
       <div class="container">

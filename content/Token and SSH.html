@@ -128,7 +128,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='CPython and Modules.html'>CPython and Modules</a><li><a href='Local and Remote.html'>Local and Remote</a><li><a href='cmsimde.html'>cmsimde</a><li><a href='Token and SSH.html'>Token and SSH</a><li><a href='Mac and RDT.html'>Mac and RDT</a><li><a href='Wink.html'>Wink</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li><a href='OneDrive.html'>OneDrive</a><li class='has-children'><a href='Webpage.html'>Webpage</a><ul class='dropdown'><li><a href='cms.html'>cms</a></li></ul><li class='has-children'><a href='PME.html'>PME</a><ul class='dropdown'><li><a href='Brython.html'>Brython</a></li></ul><li><a href='Wifi.html'>Wifi</a><li><a href='WCMS.html'>WCMS</a><li><a href='Code.html'>Code</a></li></ul><li><a href='IPv6 setup.html'>IPv6 setup</a><li><a href='Portable Python.html'>Portable Python</a><li class='has-children'><a href='Fossil SCM.html'>Fossil SCM</a><ul class='dropdown'><li><a href='PC2Server.html'>PC2Server</a></li></ul><li class='has-children'><a href='Tetris.html'>Tetris</a><ul class='dropdown'><li><a href='run.html'>run</a></li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='Local and Remote.html'>Local and Remote</a><li><a href='cmsimde.html'>cmsimde</a><li><a href='Token and SSH.html'>Token and SSH</a><li><a href='Mac and RDT.html'>Mac and RDT</a><li><a href='Wink.html'>Wink</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li><a href='OneDrive.html'>OneDrive</a><li class='has-children'><a href='Webpage.html'>Webpage</a><ul class='dropdown'><li><a href='cms.html'>cms</a></li></ul><li class='has-children'><a href='PME.html'>PME</a><ul class='dropdown'><li><a href='Brython.html'>Brython</a></li></ul><li><a href='Wifi.html'>Wifi</a><li><a href='WCMS.html'>WCMS</a><li><a href='Code.html'>Code</a></li></ul><li><a href='IPv6 setup.html'>IPv6 setup</a><li><a href='Portable Python.html'>Portable Python</a><li class='has-children'><a href='Fossil SCM.html'>Fossil SCM</a><ul class='dropdown'><li><a href='PC2Server.html'>PC2Server</a></li></ul><li class='has-children'><a href='Tetris.html'>Tetris</a><ul class='dropdown'><li><a href='run.html'>run</a></li>
                       </ul>
                 </nav>
               </div>
@@ -140,10 +140,12 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">cmsimde << <a href='cmsimde.html'>Previous</a> <a href='Mac and RDT.html'>Next</a> >> Mac and RDT<br /><h1>Token and SSH</h1>
+<p>Remote Desktop - Windows, Ubuntu, Mac</p>
 <h4>Token:</h4>
 <p style="padding-left: 30px;"><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token</a></p>
 <p style="padding-left: 30px;">Github token 是一串可以用來替代 Github 帳號與密碼功能的字串, 可在登入 Github 帳號後, 至 <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> 設定. 每一個 token 都具備有效時間與權限範圍, 一般初學者可以只勾選 Token 的 repo 改版權限, 並選擇 30 天的有效時間. 之後再設法改用 SSH 對 Github 倉儲改版.</p>
 <p>以下影片說明如何使用 Personal Access Token 執行 git push:</p>
+<p>
 <script>
 var winkVideoData1 = {
   dataVersion: 1,
@@ -154,6 +156,7 @@ var winkVideoData1 = {
   },
 };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData1" height="630" muted="true" width="1008">
 <source src="./../downloads/token_wink/github_token.mp4" type="video/mp4"/></video>
@@ -176,6 +179,7 @@ var winkVideoData1 = {
 <p style="padding-left: 30px;">有關 GIT_SSH 變數：</p>
 <p style="padding-left: 60px;">GIT_SSH, if specified, is a program that is invoked instead of ssh when Git tries to connect to an SSH host. It is invoked like $GIT_SSH [username@]host [-p &lt;port&gt;] &lt;command&gt;. Note that this isn’t the easiest way to customize how ssh is invoked; it won’t support extra command-line parameters, so you’d have to write a wrapper script and set GIT_SSH to point to it. It’s probably easier just to use the ~/.ssh/config file for that.</p>
 <p>以下影片說明如何在 Windows IPv6 環境下, 利用 PUTTY 以 SSH 協定執行 git push:</p>
+<p>
 <script>
 var winkVideoData2 = {
   dataVersion: 1,
@@ -186,6 +190,7 @@ var winkVideoData2 = {
   },
 };
 </script>
+</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData2" height="630" muted="true" width="1008">
 <source src="./../downloads/ssh_wink/wink_ssh.mp4" type="video/mp4"/></video>
 <div class="winkVideoOverlayClass"></div>
@@ -197,7 +202,8 @@ var winkVideoData2 = {
 <div class="winkVideoControlBarProgressThumbClass"></div>
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
-</div><br />cmsimde << <a href='cmsimde.html'>Previous</a> <a href='Mac and RDT.html'>Next</a> >> Mac and RDT</div>
+</div>
+<br />cmsimde << <a href='cmsimde.html'>Previous</a> <a href='Mac and RDT.html'>Next</a> >> Mac and RDT</div>
         
     <!-- footer -->
       <div class="container">
