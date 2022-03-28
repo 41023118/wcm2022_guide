@@ -1,0 +1,1 @@
+var tipuesearch = {"pages":[{"title":"About","text":"內容管理網誌 課程倉儲: https://github.com/mdecycu/wcm2022_guide 內容管理: https://mde.tw/wcm2022_guide/ 課程投影片: https://mde.tw/wcm2022_guide/reveal 課程網誌: https://mde.tw/wcm2022_guide/blog","tags":"misc","url":"./pages/about/"},{"title":"2022 Fall 網際內容管理","text":"2022 網際內容管理. Blogger 與 Pelican 網誌 同步","tags":"Misc","url":"./2022-WCM.html"}]};

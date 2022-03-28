@@ -162,7 +162,8 @@ var winkVideoData = {
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/dqPIjhL3LhE" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/x8DEYTOSNYQ" title="YouTube video player" width="560"></iframe></p>
 <p><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b59b1bbb43e57/raw/5879f4ce419c53cf01b9b86be6a15a30d5e52c92/1agrp_2022">w3 1a 分組結果</a></p>
-<h2>Webpage</h2>
+<h2>OneDrive</h2>
+<p>自 2022.07 起 @gm 帳號的儲存空間只限 3GB, 為共享更大容量 (5TB) 的儲存空間, 請各學員至 <a href="https://www.microsoft.com/zh-tw/education/products/office">https://www.microsoft.com/zh-tw/education/products/office</a>, 以 @gm 帳號申請 OneDrive 儲存權限.</p><h2>Webpage</h2>
 <p>IPv6 setup</p>
 <p>建立 github 帳號</p>
 <p>建立 wcm2022 倉儲 - 利用 <a href="https://github.com/wcm2022/wcm2022">https://github.com/wcm2022/wcm2022</a> 倉儲作為樣板, 連結後點擊 Use this template, 以便建立自己的 wcm2022 倉儲.</p>
@@ -933,6 +934,17 @@ import fossilapp
 
 # run cmsimde dynamic site with production waitress
 serve(fossilapp.app, host='127.0.0.1', port=5001, url_scheme='https')</pre>
+<p>nssm install fossiloauth</p>
+<p>C:\compile_copsim\data\Python395\python.exe waitress_server.py</p>
+<p>waitress_server.py</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># pip install waitress
+from waitress import serve
+
+# under cmsimde import fossilapp
+import fossiloauth
+
+# run cmsimde dynamic site with production waitress
+serve(fossiloauth.app, host='127.0.0.1', port=5000, url_scheme='https')</pre>
 <p>stunnel.conf</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">; for single repository server: fossil_server
 [https]
