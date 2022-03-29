@@ -42,7 +42,7 @@
 <p>在網際內容管理課程中除了透過 http(s) 協定, 以瀏覽器解取 Remote 端全球資訊網伺服器中的資料外, 還透過 git 以 https 或 ssh 網路協定, 將改版資料推向 Github Remote 端.</p>
 <p>PC to PC connection - python -m http.server, flask server, nginx server, fossil scm server, filezilla server, Ubuntu server.</p>
 <p>PC Hardware + Windows 10 + <a href="https://nfu.onthehub.com/WebStore/Welcome.aspx">License</a></p>
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
 <p>Python http.server</p>
 <p>nginx WWW server</p>
 <p>Fossil SCM server</p>
@@ -50,25 +50,20 @@
 <p>Wide Are Network</p>
 <p>Remote Desktop</p>
 <h2>cmsimde</h2>
-<p>動態網頁 - localhost 與 remote site</p>
-<p>靜態網頁 - Github Pages 與 nginx</p>
-<p>Leo Editor</p>
-<p>reveal.js</p>
-<p>Pelican blog - blogger 同步 Google API (Oauth2)</p>
-<p style="padding-left: 30px;"><a href="https://www.blogger.com">https://www.blogger.com</a> </p><h2>Token and SSH</h2>
-=======
-<p>Remote Desktop - Windows, Ubuntu, Mac</p><h2>cmsimde</h2>
 <p><a href="https://github.com/mdecycu/cmsimde">https://github.com/mdecycu/cmsimde</a></p>
 <p>動態網頁 - localhost 與 remote site, 若在 init.py 中將 ip 設為 127.0.0.1 則在 localhost 啟動, 若設為外部 IP 則可以從 internet 中任何一台電腦的瀏覽器連接.</p>
 <p>靜態網頁 - 在動態網頁系統登入後, 可以利用 generate_pages 按鈕將動態網頁轉進 content 目錄, 並結合 cmsimde/static, downloads、images、blog、reveal 等目錄, 可在全球資訊網伺服器 (如 Github Pages、nginx 或 Fossil SCM server 中以純 html、javascript 及 css 檔案進行伺服.</p>
 <p>Leo Editor - cmsimde 中的 Pelican blog 與 Reveal.js 專案檔位於 config/pelican.leo 與 reveal.leo, 可以利用 Leo Editor 編輯.</p>
 <p>reveal.js - 位於 config/reveal.leo</p>
-<p>Pelican blog - 位於 config/pelican.leo, 可以透過 Python 程式讓 Pelican blog 內容與 blogger 同步, 其中需要執行 Google API (Oauth2) 延伸程式.</p><h2>Token and SSH</h2>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; d634a3eaee3ed31232c20acb3c3934489f726297
+<p>Pelican blog - 位於 config/pelican.leo, 可以透過 Python 程式讓 Pelican blog 內容與 blogger 同步, 其中需要執行 Google API (Oauth2) 延伸程式.</p>
+<p style="padding-left: 30px;"><a href="https://www.blogger.com">https://www.blogger.com</a></p>
+<h2>Token and SSH</h2>
+<p>Remote Desktop - Windows, Ubuntu, Mac</p>
 <h4>Token:</h4>
 <p style="padding-left: 30px;"><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token</a></p>
 <p style="padding-left: 30px;">Github token 是一串可以用來替代 Github 帳號與密碼功能的字串, 可在登入 Github 帳號後, 至 <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> 設定. 每一個 token 都具備有效時間與權限範圍, 一般初學者可以只勾選 Token 的 repo 改版權限, 並選擇 30 天的有效時間. 之後再設法改用 SSH 對 Github 倉儲改版.</p>
 <p>以下影片說明如何使用 Personal Access Token 執行 git push:</p>
+<p>
 <script>
 var winkVideoData1 = {
   dataVersion: 1,
@@ -79,6 +74,7 @@ var winkVideoData1 = {
   },
 };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData1" height="630" muted="true" width="1008">
 <source src="/downloads/token_wink/github_token.mp4" type="video/mp4"/></video>
@@ -101,6 +97,7 @@ var winkVideoData1 = {
 <p style="padding-left: 30px;">有關 GIT_SSH 變數：</p>
 <p style="padding-left: 60px;">GIT_SSH, if specified, is a program that is invoked instead of ssh when Git tries to connect to an SSH host. It is invoked like $GIT_SSH [username@]host [-p &lt;port&gt;] &lt;command&gt;. Note that this isn’t the easiest way to customize how ssh is invoked; it won’t support extra command-line parameters, so you’d have to write a wrapper script and set GIT_SSH to point to it. It’s probably easier just to use the ~/.ssh/config file for that.</p>
 <p>以下影片說明如何在 Windows IPv6 環境下, 利用 PUTTY 以 SSH 協定執行 git push:</p>
+<p>
 <script>
 var winkVideoData2 = {
   dataVersion: 1,
@@ -111,6 +108,7 @@ var winkVideoData2 = {
   },
 };
 </script>
+</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData2" height="630" muted="true" width="1008">
 <source src="/downloads/ssh_wink/wink_ssh.mp4" type="video/mp4"/></video>
 <div class="winkVideoOverlayClass"></div>
@@ -132,6 +130,7 @@ var winkVideoData2 = {
 <p>這裡所指的 Wink 為 3.0 版, 來自 <a href="https://www.debugmode.com/wink/">https://www.debugmode.com/wink/</a> 是一套免費 (Freeware) 的電腦操作流程影片錄製軟體, 與 <a href="https://github.com/ShareX/ShareX">ShareX</a> 相同的是, 兩套軟體的影片製作核心都是採用 <a href="https://www.ffmpeg.org/download.html">ffmpeg.exe</a>. 不同的地方在於: <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 沒有開源, 可能是採用 C++ 編寫 (因為除了 Windows 版本, 還有 Linux, 但卻沒有 Mac), 且 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 可以在主影格 (Key frame) 中加入文字說明, 以及 html 按鈕. 比較適合用來製作需要較多文字說明輔助的教學影片. 至於 <a href="https://github.com/ShareX/ShareX">ShareX</a> 是一套採用 C# 編寫的開源套件, 適合製作加上搭配語音或說明字幕的操作教學影片.</p>
 <p>由作者提供的 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 使用教學影片可以參考 <a href="https://mde.tw/cmstemplate/content/Wink.html">https://mde.tw/cmstemplate/content/Wink.html</a></p>
 <p>以下的影片將說明如何將利用 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 製作的 mp4 教學影片嵌入 cmsimde 動態與靜態網頁, 而且能在手機上觀看:</p>
+<p>
 <script>
 var winkVideoData = {
   dataVersion: 1,
@@ -142,6 +141,7 @@ var winkVideoData = {
   },
 };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData" height="630" muted="true" width="1008">
 <source src="/downloads/cmsimde_wink/wink2cmsimde.mp4" type="video/mp4"/></video>
@@ -170,7 +170,8 @@ var winkVideoData = {
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/x8DEYTOSNYQ" title="YouTube video player" width="560"></iframe></p>
 <p><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b59b1bbb43e57/raw/5879f4ce419c53cf01b9b86be6a15a30d5e52c92/1agrp_2022">w3 1a 分組結果</a></p>
 <h2>OneDrive</h2>
-<p>自 2022.07 起 @gm 帳號的儲存空間只限 3GB, 為共享更大容量 (5TB) 的儲存空間, 請各學員至 <a href="https://www.microsoft.com/zh-tw/education/products/office">https://www.microsoft.com/zh-tw/education/products/office</a>, 以 @gm 帳號申請 OneDrive 儲存權限.</p><h2>Webpage</h2>
+<p>自 2022.07 起 @gm 帳號的儲存空間只限 3GB, 為共享更大容量 (5TB) 的儲存空間, 請各學員至 <a href="https://www.microsoft.com/zh-tw/education/products/office">https://www.microsoft.com/zh-tw/education/products/office</a>, 以 @gm 帳號申請 OneDrive 儲存權限.</p>
+<h2>Webpage</h2>
 <p>IPv6 setup</p>
 <p>建立 github 帳號</p>
 <p>建立 wcm2022 倉儲 - 利用 <a href="https://github.com/wcm2022/wcm2022">https://github.com/wcm2022/wcm2022</a> 倉儲作為樣板, 連結後點擊 Use this template, 以便建立自己的 wcm2022 倉儲.</p>
@@ -532,6 +533,7 @@ doc["tetris"].bind("click", tetris.do)
 <p style="padding-left: 30px;">可以使用 <a href="http://kdiff3.sourceforge.net/">http://kdiff3.sourceforge.net/</a> 工具對三個檔案進行比較.</p>
 <p style="padding-left: 30px;">若使用程式方法讀進三個檔案後, 逐行比較內容.</p>
 <p><a href="/downloads/w4_diff/w4_diff_note.txt">w4_diff_note.txt</a></p>
+<p>
 <script>
 var winkVideoData2 = {
   dataVersion: 1,
@@ -542,6 +544,7 @@ var winkVideoData2 = {
   },
 };
 </script>
+</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData2" height="630" muted="true" width="1008">
 <source src="/downloads/w4_diff/w4_diff.mp4" type="video/mp4"/></video>
 <div class="winkVideoOverlayClass"></div>
@@ -560,8 +563,10 @@ var winkVideoData2 = {
 <p><a href="/downloads/w4_diff/w4_1.txt">w4_1.txt</a></p>
 <p><a href="/downloads/w4_diff/w4_2.txt">w4_2.txt</a></p>
 <p><a href="/downloads/w4_diff/w4_3.txt">w4_3.txt</a></p>
+<p>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
+</p>
 <!-- for ggame -->
 <p>
 <script src="/static/jquery-3.3.1.min.js"></script>
@@ -759,6 +764,7 @@ run3()
 <p>經將 WAN 直接連到系主幹後, 將 IPv6 以 Passthrough 設定後, 可讓手機或筆電經由 810WIFI 連線後取得雙協定支援網路.</p>
 <p>筆電透過 810WIFI 連線後 IPv4 部分為內部網路 192.168.50.X, 而 IPv6 部分則擁有兩個由學校配發的 IPv6 網路位址, 可用來設定 <a href="https://support.microsoft.com/en-us/windows/how-to-use-remote-desktop-5fe128d5-8fb1-7a23-3b8a-41e636865e8c">Remote Desktop</a>、WWW 或 Fossil SCM 伺服器.</p>
 <p>以下說明影片就是在將 Wifi router 設為 IPv6/IPv4 雙網路協定後的使用流程:</p>
+<p>
 <script>
 var winkVideoData2 = {
   dataVersion: 1,
@@ -769,6 +775,7 @@ var winkVideoData2 = {
   },
 };
 </script>
+</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData2" height="630" muted="true" width="1008">
 <source src="/downloads/w4_wifi/w4_wifi.mp4" type="video/mp4"/></video>
 <div class="winkVideoOverlayClass"></div>
@@ -851,9 +858,11 @@ To mdecycu:mdecycu/wcm2022_guide.git
 <li>以下 <a href="https://www.debugmode.com/wink/">Wink</a> 影片設定超文件檔案: <a href="/downloads/wink_script_and_setup.txt">wink_script_and_setup.txt</a></li>
 </ol>
 <p><!--配合 Wink 檔案將 js 檔案設定如下--></p>
+<p>
 <script>
 var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData" height="630" muted="true" width="1008">
 <source src="/downloads/wcm_w2_2.mp4" type="video/mp4"/></video>
@@ -1126,9 +1135,11 @@ WantedBy=multi-user.target
 <p><a href="https://gist.github.com/mdecourse/05930b1775b77293523b59b1bbb43e57">Gist Brython scripts</a></p>
 <p><a href="https://mde.tw/cp2021/content/%E8%A7%A3%E9%A1%8C%E7%B7%B4%E7%BF%92.html">解題練習</a></p>
 <p><a href="https://mde.tw/cp2021/content/Cango.html">Cango</a></p>
+<p>
 <script src="/static/brython.js">
 </script>
 <script src="/static/brython_stdlib.js"></script>
+</p>
 <!-- for ggame -->
 <p>
 <script src="/static/jquery-3.3.1.min.js"></script>

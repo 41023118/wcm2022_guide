@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2022-03-28T21:44:04+08:00</updated><entry><title>2022 Fall 網際內容管理</title><link href="./2022-WCM.html" rel="alternate"></link><published>2022-03-28T11:00:00+08:00</published><updated>2022-03-28T21:44:04+08:00</updated><author><name>kmolab</name></author><id>tag:None,2022-03-28:./2022-WCM.html</id><summary type="html">&lt;p&gt;2022 網際內容管理.&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;2022 網際內容管理.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理</title><link href="./" rel="alternate"></link><link href="./feeds/all.atom.xml" rel="self"></link><id>./</id><updated>2022-03-29T10:47:38+08:00</updated><entry><title>2022 Spring 網際內容管理</title><link href="./2022-WCM.html" rel="alternate"></link><published>2022-03-28T11:00:00+08:00</published><updated>2022-03-29T10:47:38+08:00</updated><author><name>kmolab</name></author><id>tag:None,2022-03-28:./2022-WCM.html</id><summary type="html">&lt;p&gt;2022 Spring 網際內容管理.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2022 Spring 網際內容管理.&lt;/p&gt;
 
 
+&lt;h2&gt;網誌&lt;/h2&gt;
+&lt;p&gt;網誌指的是利用全球資訊網紀錄特定事件始末.&lt;/p&gt;
+&lt;p&gt;許多事件發展流程有其特定的情境, 網誌通常會從筆者的視角加以觀察, 試著讓讀者了解事情是如何發生, 如何被處理, 以及如何暫時告一段落. &lt;/p&gt;
+&lt;p&gt;就以網際內容管理這一門課程來說, 其源起是因為製造與商業管理整合下, 透過全球資訊網來部署產品生命週期, 應該是一項合理的規劃. 其中牽涉機械設計、自動化工程、資訊管理與工業管理等領域知識的整合.&lt;/p&gt;
+&lt;p&gt;只不過要將產品開發過程中的電腦輔助設計流程, 以及自動化製程規劃的模擬套上全球資訊網介面, 就免不了必須先對全球資訊網前後端程式技術有通盤了解, 才能著手將 2D 與 3D 產品設計資訊逐步部署到伺服器, 由客戶端的瀏覽器進行互動擷取.&lt;/p&gt;
+&lt;p&gt;並且隨著發想中的產品逐步成形, 越靠近工業管理端的規劃時, 產、銷、人、發、財交互形成的各種作業研究, 在企業資源管理與產品生命週期管理的技術不斷演進下, 各領域人馬的網誌, 理應精彩萬分.&lt;/p&gt;
+&lt;p&gt;但快速的時間進程與各項技術版本的變化更迭, 讓許多事件來不及被用網誌詳細記錄之前, 就已經失去效用, &lt;/p&gt;
+&lt;p&gt;因此, 全球資訊網記事誌只能盡力而為, 在內容失效前就必須設法廣為散播. 將 &lt;a href="https://blog.getpelican.com/"&gt;Pelican 網誌&lt;/a&gt; 與 Google &lt;a href="https://www.blogger.com"&gt;Blogger&lt;/a&gt; 內容同步整合, 應該是個可行方案.&lt;/p&gt;
 &lt;h2&gt;&lt;a href="https://www.blogger.com"&gt;Blogger&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;與 &lt;a href="https://blog.getpelican.com/"&gt;Pelican 網誌&lt;/a&gt;同步&lt;/p&gt;</content><category term="Misc"></category><category term="2022FallWCM"></category></entry></feed>
+&lt;p&gt;將 &lt;a href="https://www.blogger.com"&gt;Blogger&lt;/a&gt; 內容與 &lt;a href="https://blog.getpelican.com/"&gt;Pelican 網誌&lt;/a&gt;同步的原理很簡單, 就是在編寫 &lt;a href="https://blog.getpelican.com/"&gt;Pelican 網誌&lt;/a&gt; 內容後, 把格式轉為 &lt;a href="https://www.blogger.com"&gt;Blogger&lt;/a&gt; 網誌編輯所需的超文件, 然後根據 &lt;a href="https://www.blogger.com"&gt;Blogger&lt;/a&gt; id 與權限設定, 同時發布在兩個不同的網誌系統上.&lt;/p&gt;
+&lt;p&gt;由於 &lt;a href="https://blog.getpelican.com/"&gt;Pelican 網誌&lt;/a&gt; 採用 Github 倉儲管理, 因此每次編輯都有提交版本, 而 &lt;a href="https://www.blogger.com"&gt;Blogger&lt;/a&gt; 則只列出最新編輯後的內容版本.&lt;/p&gt;
+&lt;p&gt;將網誌內容透過程式方法發布到 &lt;a href="https://www.blogger.com"&gt;Blogger&lt;/a&gt; 所依賴的是 Google 提供的 &lt;a href="https://developers.google.com/blogger"&gt;Blogger API&lt;/a&gt;, 目前已經到了第三版.&lt;/p&gt;
+&lt;p&gt;現在透過 AI 技術已經可以讓產品生命週期過程中的許多機器, 自行以程式方法發布網誌, 除了按照規劃時間列出各項產品開發與製造的統計資料外, 透過語意資料庫與不斷的作文練習, 寫出來的網誌已經越來越&lt;a href="https://www.youtube.com/watch?v=moZbwurFhVE"&gt;神乎其技&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b59b1bbb43e57/raw/738223b424c3f5f12961070aa8a75185177420b6/pygame_to_brython_tetris.py"&gt;Tetris&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;今年&lt;a href="https://mde.tw/wcm2022_guide"&gt;網際內容管理&lt;/a&gt;課程的主題是 &lt;a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b59b1bbb43e57/raw/738223b424c3f5f12961070aa8a75185177420b6/pygame_to_brython_tetris.py"&gt;Tetris&lt;/a&gt;, 也就是一個採用 &lt;a href="https://brython.info/"&gt;Brython&lt;/a&gt; 編寫的線上遊戲. 透過分組協同, 我們想要從個人電腦的硬體拆解與組裝開始, 逐一探討下列主題:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;個人電腦的組成 - &lt;a href="https://link.springer.com/book/10.1007/978-1-4684-6419-1"&gt;Understanding Personal Computer Hardware&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;個人電腦的操作系統 - &lt;a href="https://link.springer.com/book/10.1007/978-3-642-20432-6"&gt;Unix Operating System&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;學校提供那些數位資源? - &lt;a href="https://web.lib.nfu.edu.tw/pub/pomii/webpage/Promote/SSL-VPNguide.pdf"&gt;VPN&lt;/a&gt;、&lt;a href="https://software.nfu.edu.tw/"&gt;校園授權軟體&lt;/a&gt;、&lt;a href="https://link.springer.com/"&gt;英文電子書&lt;/a&gt;、&lt;a href="https://www.autodesk.com/education/edu-software"&gt;Inventor&lt;/a&gt;、&lt;a href="https://www.solidworks.com/"&gt;Solidworks&lt;/a&gt;、&lt;a href="https://www.plm.automation.siemens.com/global/en/products/nx/"&gt;NX&lt;/a&gt;、&lt;a href="https://www.comsol.com/"&gt;Comsol&lt;/a&gt;、&lt;a href="https://www.microsoft.com/zh-tw/education/products/office"&gt;Office 365 教育版&lt;/a&gt; 含 5TB OneDrive 空間&lt;/li&gt;
+&lt;li&gt;硬碟磁區如何複製 - &lt;a href="https://clonezilla.org/"&gt;clonezilla&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;在硬碟上安裝 Windows 10&lt;/li&gt;
+&lt;li&gt;在 &lt;a href="https://www.virtualbox.org/"&gt;Virtualbox&lt;/a&gt; 上安裝 Windows 10&lt;/li&gt;
+&lt;li&gt;在 &lt;a href="https://www.virtualbox.org/"&gt;Virtualbox&lt;/a&gt; 上安裝 &lt;a href="https://cdimage.ubuntu.com/daily-live/current/"&gt;Ubuntu 22.04&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;在 Windows 10 上配置可攜 Python 程式系統&lt;/li&gt;
+&lt;li&gt;在 &lt;a href="https://cdimage.ubuntu.com/daily-live/current/"&gt;Ubuntu 22.04&lt;/a&gt; 上配置 Python3 程式系統&lt;/li&gt;
+&lt;li&gt;在 Windows 10 上配置 nginx 全球資訊網伺服器&lt;/li&gt;
+&lt;li&gt;在 &lt;a href="https://cdimage.ubuntu.com/daily-live/current/"&gt;Ubuntu 22.04&lt;/a&gt; 上配置 nginx 全球資訊網伺服器&lt;/li&gt;
+&lt;li&gt;在 Windows 10 上配置 &lt;a href="https://github.com/wcm2022/wcm2022"&gt;wcm2022&lt;/a&gt; 動態與靜態伺服器&lt;/li&gt;
+&lt;li&gt;在 &lt;a href="https://cdimage.ubuntu.com/daily-live/current/"&gt;Ubuntu 22.04&lt;/a&gt; 上配置 &lt;a href="https://github.com/wcm2022/wcm2022"&gt;wcm2022&lt;/a&gt; 動態與靜態伺服器&lt;/li&gt;
+&lt;li&gt;在 Windows 10 上配置 &lt;a href="https://www2.fossil-scm.org"&gt;Fossil SCM&lt;/a&gt; 全球資訊網伺服器&lt;/li&gt;
+&lt;li&gt;將 &lt;a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b59b1bbb43e57/raw/738223b424c3f5f12961070aa8a75185177420b6/pygame_to_brython_tetris.py"&gt;Tetris&lt;/a&gt; 配置到上述各系統中&lt;/li&gt;
+&lt;/ul&gt;</content><category term="Misc"></category><category term="2022FallWCM"></category></entry></feed>
