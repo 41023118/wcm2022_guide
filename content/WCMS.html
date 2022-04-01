@@ -1,0 +1,220 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>WCM_GUIDE</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 -->
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container-fluid'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>wcm2022_guide 網際內容管理系統導引</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">wcm2022_guide 網際內容管理系統導引</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='Local and Remote.html'>Local and Remote</a><li><a href='cmsimde.html'>cmsimde</a><li><a href='Token and SSH.html'>Token and SSH</a><li><a href='Mac and RDT.html'>Mac and RDT</a><li><a href='Wink.html'>Wink</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li><a href='OneDrive.html'>OneDrive</a><li class='has-children'><a href='Webpage.html'>Webpage</a><ul class='dropdown'><li><a href='cms.html'>cms</a></li></ul><li class='has-children'><a href='PME.html'>PME</a><ul class='dropdown'><li><a href='Brython.html'>Brython</a></li></ul><li><a href='Wifi.html'>Wifi</a><li><a href='WCMS.html'>WCMS</a><li><a href='Code.html'>Code</a><li class='has-children'><a href='Server.html'>Server</a><ul class='dropdown'><li><a href='Win10.html'>Win10</a></li></li></ul></ul><li><a href='IPv6 setup.html'>IPv6 setup</a><li><a href='Portable Python.html'>Portable Python</a><li class='has-children'><a href='Fossil SCM.html'>Fossil SCM</a><ul class='dropdown'><li><a href='PC2Server.html'>PC2Server</a></li></ul><li class='has-children'><a href='Tetris.html'>Tetris</a><ul class='dropdown'><li><a href='run.html'>run</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">Wifi << <a href='Wifi.html'>Previous</a> <a href='Code.html'>Next</a> >> Code<br /><h1>WCMS</h1>
+<p>所謂的全球資訊網內容管理系統 (Web Content Management System, WCMS), 指的就是:</p>
+<p style="padding-left: 30px;"><a href="https://en.wikipedia.org/wiki/Web_content_management_system">https://en.wikipedia.org/wiki/Web_content_management_system</a></p>
+<p style="padding-left: 30px;">上列網頁說明: A web content management system (WCM or WCMS) is a software content management system (<a href="https://en.wikipedia.org/wiki/Content_management_system">CMS</a>) specifically for <a href="https://en.wikipedia.org/wiki/Web_content">web content</a>.</p>
+<p style="padding-left: 30px;">表示採用全球資訊網協定的內容管理系統才稱為 WCMS. 有些內容管理系統 (<a href="https://en.wikipedia.org/wiki/Content_management_system">CMS</a>) 並不是在全球資訊網架構下進行存取.</p>
+<p style="padding-left: 30px;">常見的 <a href="https://en.wikipedia.org/wiki/Content_management_system">CMS</a> 系統: <a href="https://en.wikipedia.org/wiki/List_of_content_management_systems">https://en.wikipedia.org/wiki/List_of_content_management_systems</a></p>
+<p>Blog 不僅是一種 CMS, 且是 Weblog 的簡稱, 中文稱為網誌. 以下要介紹的是 <a href="https://en.wikipedia.org/wiki/Blogger_(service)">Blogger</a>. 除了要求每位學員要利用 @gm 帳號建立個人的 <a href="https://en.wikipedia.org/wiki/Blogger_(service)">Blogger</a> 網誌外, 還要說明如何透過 <a href="https://developers.google.com/blogger">https://developers.google.com/blogger</a>, 利用 Python 程式建立或修改 <a href="https://en.wikipedia.org/wiki/Blogger_(service)">Blogger</a> 網誌中的文章.</p>
+<p>利用 <a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 網際內容管理套件所建立的倉儲與網站, 除了三層表單式的網頁外, 還自帶 <a href="https://blog.getpelican.com/">Pelican 網誌</a> (例如: <a href="https://mde.tw/lab/blog/">https://mde.tw/lab/blog/</a>) 與 <a href="https://revealjs.com/">Reveal.js</a> 簡報系統 (例如: <a href="https://mde.tw/wcm2022/reveal/">https://mde.tw/wcm2022/reveal/</a>).</p>
+<p>以下將分別介紹如何使用:</p>
+<ol>
+<li>@gm 帳號建立個人 Blogger 網誌</li>
+<li><a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 中的 Pelican 建立網誌</li>
+<li><a href="https://github.com/mdecourse/cmsimde">cmsimde</a> 中的 Reveal.js 建立全球資訊網上的簡報系統</li>
+<li>Python 程式同步 Blogger 與 Pelican 網誌上的文章</li>
+</ol>
+<p>其中將牽涉到 <a href="https://leoeditor.com/">Leo Editor</a> 與 <a href="https://cloud.google.com/apis">https://cloud.google.com/apis</a> 的應用.</p>
+<p>建立個人 Blogger 的操作步驟如下:</p>
+<ol>
+<li>登入個人的 @gm 帳號</li>
+<li>連結到 <a href="https://www.blogger.com">https://www.blogger.com</a>, 以上列 @gm 帳號登入</li>
+<li>利用 "Create Your Blog" 按鈕建立網誌</li>
+<li>參考 <a href="https://link.springer.com/book/10.1007/978-1-4302-3013-7">Beginning Google Blogger</a> 電子書以及 <a href="https://link.springer.com/content/pdf/10.1007%2F978-1-4302-2666-6_12.pdf">Blogger 章節</a>內容設定個人 Blogger 網誌</li>
+</ol>
+<p>Leo Editor 基本操作:</p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/leoeditor">https://mde.tw/leoeditor</a> </p>
+<p style="padding-left: 30px;"><a href="http://mde.tw/cp2019/blog/2019-Fall-Leo-Editor.html">http://mde.tw/cp2019/blog/2019-Fall-Leo-Editor.html</a></p>
+<p>利用 Python 修改 Blogger 文章:</p>
+<p>Pelican 與 Blogger 網誌內容同步:</p>
+<br />Wifi << <a href='Wifi.html'>Previous</a> <a href='Code.html'>Next</a> >> Code</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
