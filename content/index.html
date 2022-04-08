@@ -127,7 +127,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='Local and Remote.html'>Local and Remote</a><li><a href='cmsimde.html'>cmsimde</a><li><a href='Token and SSH.html'>Token and SSH</a><li><a href='Mac and RDT.html'>Mac and RDT</a><li><a href='Wink.html'>Wink</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li class='has-children'><a href='Webpage.html'>Webpage</a><ul class='dropdown'><li><a href='cms.html'>cms</a></li></ul><li class='has-children'><a href='PME.html'>PME</a><ul class='dropdown'><li><a href='Brython.html'>Brython</a></li></ul><li><a href='Wifi.html'>Wifi</a><li><a href='WCMS.html'>WCMS</a><li><a href='Code.html'>Code</a></li></ul><li><a href='IPv6 setup.html'>IPv6 setup</a><li><a href='Portable Python.html'>Portable Python</a><li class='has-children'><a href='Fossil SCM.html'>Fossil SCM</a><ul class='dropdown'><li><a href='PC2Server.html'>PC2Server</a></li></ul><li class='has-children'><a href='Tetris.html'>Tetris</a><ul class='dropdown'><li><a href='run.html'>run</a></li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='Local and Remote.html'>Local and Remote</a><li><a href='cmsimde.html'>cmsimde</a><li><a href='Token and SSH.html'>Token and SSH</a><li><a href='Mac and RDT.html'>Mac and RDT</a><li><a href='Wink.html'>Wink</a></li></ul><li class='has-children'><a href='Topics.html'>Topics</a><ul class='dropdown'><li><a href='OneDrive.html'>OneDrive</a><li class='has-children'><a href='Webpage.html'>Webpage</a><ul class='dropdown'><li><a href='cms.html'>cms</a></li></ul><li class='has-children'><a href='PME.html'>PME</a><ul class='dropdown'><li><a href='Brython.html'>Brython</a></li></ul><li><a href='Wifi.html'>Wifi</a><li><a href='WCMS.html'>WCMS</a><li><a href='Code.html'>Code</a><li class='has-children'><a href='Server.html'>Server</a><ul class='dropdown'><li><a href='Win10.html'>Win10</a></li></ul><li><a href='IPv6 setup.html'>IPv6 setup</a></li></ul><li><a href='Portable Python.html'>Portable Python</a><li class='has-children'><a href='Fossil SCM.html'>Fossil SCM</a><ul class='dropdown'><li><a href='PC2Server.html'>PC2Server</a></li></ul><li class='has-children'><a href='Tetris.html'>Tetris</a><ul class='dropdown'><li><a href='run.html'>run</a></li>
                       </ul>
                 </nav>
               </div>
@@ -144,7 +144,8 @@ img.add_border {
 <p style="padding-left: 60px;">何謂 <a href="https://docs.python.org/3/tutorial/modules.html">Python 模組</a>?</p>
 <h4>下載可攜程式檔案:</h4>
 <p style="padding-left: 30px;">在系上網段, 可以直接連線到 <a href="http://wcm.cycu.org:88/">http://wcm.cycu.org:88/</a> 下載 <a href="http://wcm.cycu.org:88/portable_python_wcm2022.7z">portable_python_wcm2022.7z</a> (file size: 513 MB, extracted size: 2.3 G, 這是專門為 <a href="https://mde.tw/wcm2022">wcm2022</a> 課程打造的可攜程式套件, 適合選修學員下載後在任何 Windows 10 中以隨身碟啟動後操作)</p>
-<p style="padding-left: 30px;">在電腦輔助設計室中使用 USB 中的隨身程式系統, 則可以下載 <a href="http://wcm.cycu.org:88/drive.7z">drive.7z</a> (file size: 2.6 MB, extracted size: 10 MB, 只包含 PUTTY, tcc, wscite 與 tmp 目錄, 採用 Hybrid 方式設定, 可與目前電腦輔助設計室中 SSD 硬碟所安裝的 Python 3.9.5 與 <a href="https://git-scm.com/download/win">Portablegit</a> 結合, 使用者只需自行設定啟動後的 home_ipv6 目錄與 home_ipv6/Desktop 目錄後即可以最輕薄便捷的方式將 SSH key 存入隨身碟, 並將個人與分組倉儲存入隨身碟啟動後的 tmp 目錄進行操作).</p>
+<p style="padding-left: 30px;">在電腦輔助設計室中使用 USB 中的隨身程式系統, 則可以下載 <a href="http://wcm.cycu.org:88/drive.7z">drive.7z</a> (file size: 2.6 MB, extracted size: 10 MB, 只包含 PUTTY (目前使用 0.76 版), tcc, wscite 與 tmp 目錄, 採用 Hybrid 方式設定, 可與目前電腦輔助設計室中 SSD 硬碟所安裝的 Python 3.9.5 與 <a href="https://git-scm.com/download/win">Portablegit</a> 結合, 使用者只需自行設定啟動後的 home_ipv6 目錄與 home_ipv6/Desktop 目錄後即可以最輕薄便捷的方式將 SSH key 存入隨身碟, 並將個人與分組倉儲存入隨身碟啟動後的 tmp 目錄進行操作).</p>
+<p style="padding-left: 30px;">使用 Hybrid 方式啟動可攜程式系統時, Python/Scripts/ 目錄中的 pip.exe、leo.exe 與 pelican.exe, 必須利用 <a href="https://mh-nexus.de/en/hxd/">HxD</a> 修改 Python.exe 檔案位置的絕對路徑 (是否能夠修改為啟動系統的相對路徑, 也就是直接改為 Python.exe?).</p>
 <p style="padding-left: 30px;">假如是在其他網段, 則可下載 <a href="https://drive.google.com/file/d/1TMPsHz6G01-pxkvXf9NFM8nFdtCHQv8D/view?usp=sharing">portable_python_wcm2022.7z</a> (下載 513 MB, 解開壓縮後 2.3GB, under wcm2022 At mde) - 包含 Python 3.9.5, Portablegit, Scite, ShareX, Wink, GitEtensions 等工具.</p>
 <p style="padding-left: 30px;">請利用 <a href="https://www.7-zip.org">https://www.7-zip.org</a> 將 portable_python_wcm2022.7z 解開壓縮至 USB 3.0 以上規格的隨身碟.</p>
 <h4 style="padding-left: 30px;">問題:</h4>
@@ -176,8 +177,7 @@ img.add_border {
     })();
 </script>
 </p>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<br /> <a href='Local and Remote.html'>Next</a> >> Local and Remote</div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><br /> <a href='Local and Remote.html'>Next</a> >> Local and Remote</div>
         
     <!-- footer -->
       <div class="container">

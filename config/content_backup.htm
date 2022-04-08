@@ -4,7 +4,8 @@
 <p style="padding-left: 60px;">何謂 <a href="https://docs.python.org/3/tutorial/modules.html">Python 模組</a>?</p>
 <h4>下載可攜程式檔案:</h4>
 <p style="padding-left: 30px;">在系上網段, 可以直接連線到 <a href="http://wcm.cycu.org:88/">http://wcm.cycu.org:88/</a> 下載 <a href="http://wcm.cycu.org:88/portable_python_wcm2022.7z">portable_python_wcm2022.7z</a> (file size: 513 MB, extracted size: 2.3 G, 這是專門為 <a href="https://mde.tw/wcm2022">wcm2022</a> 課程打造的可攜程式套件, 適合選修學員下載後在任何 Windows 10 中以隨身碟啟動後操作)</p>
-<p style="padding-left: 30px;">在電腦輔助設計室中使用 USB 中的隨身程式系統, 則可以下載 <a href="http://wcm.cycu.org:88/drive.7z">drive.7z</a> (file size: 2.6 MB, extracted size: 10 MB, 只包含 PUTTY, tcc, wscite 與 tmp 目錄, 採用 Hybrid 方式設定, 可與目前電腦輔助設計室中 SSD 硬碟所安裝的 Python 3.9.5 與 <a href="https://git-scm.com/download/win">Portablegit</a> 結合, 使用者只需自行設定啟動後的 home_ipv6 目錄與 home_ipv6/Desktop 目錄後即可以最輕薄便捷的方式將 SSH key 存入隨身碟, 並將個人與分組倉儲存入隨身碟啟動後的 tmp 目錄進行操作).</p>
+<p style="padding-left: 30px;">在電腦輔助設計室中使用 USB 中的隨身程式系統, 則可以下載 <a href="http://wcm.cycu.org:88/drive.7z">drive.7z</a> (file size: 2.6 MB, extracted size: 10 MB, 只包含 PUTTY (目前使用 0.76 版), tcc, wscite 與 tmp 目錄, 採用 Hybrid 方式設定, 可與目前電腦輔助設計室中 SSD 硬碟所安裝的 Python 3.9.5 與 <a href="https://git-scm.com/download/win">Portablegit</a> 結合, 使用者只需自行設定啟動後的 home_ipv6 目錄與 home_ipv6/Desktop 目錄後即可以最輕薄便捷的方式將 SSH key 存入隨身碟, 並將個人與分組倉儲存入隨身碟啟動後的 tmp 目錄進行操作).</p>
+<p style="padding-left: 30px;">使用 Hybrid 方式啟動可攜程式系統時, Python/Scripts/ 目錄中的 pip.exe、leo.exe 與 pelican.exe, 必須利用 <a href="https://mh-nexus.de/en/hxd/">HxD</a> 修改 Python.exe 檔案位置的絕對路徑 (是否能夠修改為啟動系統的相對路徑, 也就是直接改為 Python.exe?).</p>
 <p style="padding-left: 30px;">假如是在其他網段, 則可下載 <a href="https://drive.google.com/file/d/1TMPsHz6G01-pxkvXf9NFM8nFdtCHQv8D/view?usp=sharing">portable_python_wcm2022.7z</a> (下載 513 MB, 解開壓縮後 2.3GB, under wcm2022 At mde) - 包含 Python 3.9.5, Portablegit, Scite, ShareX, Wink, GitEtensions 等工具.</p>
 <p style="padding-left: 30px;">請利用 <a href="https://www.7-zip.org">https://www.7-zip.org</a> 將 portable_python_wcm2022.7z 解開壓縮至 USB 3.0 以上規格的隨身碟.</p>
 <h4 style="padding-left: 30px;">問題:</h4>
@@ -36,23 +37,32 @@
     })();
 </script>
 </p>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<h2>Local and Remote</h2>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><h2>Local and Remote</h2>
 <p>Local 指的是近端, 也就是使用者所使用的個人電腦、平板或手機, 而 Remote 則指能夠讓近端透過各種網路協定擷取資料的伺服器.</p>
 <p>在網際內容管理課程中除了透過 http(s) 協定, 以瀏覽器解取 Remote 端全球資訊網伺服器中的資料外, 還透過 git 以 https 或 ssh 網路協定, 將改版資料推向 Github Remote 端.</p>
 <p>PC to PC connection - python -m http.server, flask server, nginx server, fossil scm server, filezilla server, Ubuntu server.</p>
 <p>PC Hardware + Windows 10 + <a href="https://nfu.onthehub.com/WebStore/Welcome.aspx">License</a></p>
-<p>Remote Desktop - Windows, Ubuntu, Mac</p><h2>cmsimde</h2>
+<p>Python http.server</p>
+<p>nginx WWW server</p>
+<p>Fossil SCM server</p>
+<p>Local Area Network</p>
+<p>Wide Are Network</p>
+<p>Remote Desktop</p>
+<h2>cmsimde</h2>
 <p><a href="https://github.com/mdecycu/cmsimde">https://github.com/mdecycu/cmsimde</a></p>
 <p>動態網頁 - localhost 與 remote site, 若在 init.py 中將 ip 設為 127.0.0.1 則在 localhost 啟動, 若設為外部 IP 則可以從 internet 中任何一台電腦的瀏覽器連接.</p>
 <p>靜態網頁 - 在動態網頁系統登入後, 可以利用 generate_pages 按鈕將動態網頁轉進 content 目錄, 並結合 cmsimde/static, downloads、images、blog、reveal 等目錄, 可在全球資訊網伺服器 (如 Github Pages、nginx 或 Fossil SCM server 中以純 html、javascript 及 css 檔案進行伺服.</p>
-<p>Leo Editor</p>
-<p>reveal.js</p>
-<p>Pelican blog - blogger 同步 Google API (Oauth2)</p><h2>Token and SSH</h2>
+<p>Leo Editor - cmsimde 中的 Pelican blog 與 Reveal.js 專案檔位於 config/pelican.leo 與 reveal.leo, 可以利用 Leo Editor 編輯.</p>
+<p>reveal.js - 位於 config/reveal.leo</p>
+<p>Pelican blog - 位於 config/pelican.leo, 可以透過 Python 程式讓 Pelican blog 內容與 blogger 同步, 其中需要執行 Google API (Oauth2) 延伸程式.</p>
+<p style="padding-left: 30px;"><a href="https://www.blogger.com">https://www.blogger.com</a></p>
+<h2>Token and SSH</h2>
+<p>Remote Desktop - Windows, Ubuntu, Mac</p>
 <h4>Token:</h4>
 <p style="padding-left: 30px;"><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token</a></p>
 <p style="padding-left: 30px;">Github token 是一串可以用來替代 Github 帳號與密碼功能的字串, 可在登入 Github 帳號後, 至 <a href="https://github.com/settings/tokens">https://github.com/settings/tokens</a> 設定. 每一個 token 都具備有效時間與權限範圍, 一般初學者可以只勾選 Token 的 repo 改版權限, 並選擇 30 天的有效時間. 之後再設法改用 SSH 對 Github 倉儲改版.</p>
 <p>以下影片說明如何使用 Personal Access Token 執行 git push:</p>
+<p>
 <script>
 var winkVideoData1 = {
   dataVersion: 1,
@@ -63,6 +73,7 @@ var winkVideoData1 = {
   },
 };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData1" height="630" muted="true" width="1008">
 <source src="/downloads/token_wink/github_token.mp4" type="video/mp4"/></video>
@@ -85,6 +96,7 @@ var winkVideoData1 = {
 <p style="padding-left: 30px;">有關 GIT_SSH 變數：</p>
 <p style="padding-left: 60px;">GIT_SSH, if specified, is a program that is invoked instead of ssh when Git tries to connect to an SSH host. It is invoked like $GIT_SSH [username@]host [-p &lt;port&gt;] &lt;command&gt;. Note that this isn’t the easiest way to customize how ssh is invoked; it won’t support extra command-line parameters, so you’d have to write a wrapper script and set GIT_SSH to point to it. It’s probably easier just to use the ~/.ssh/config file for that.</p>
 <p>以下影片說明如何在 Windows IPv6 環境下, 利用 PUTTY 以 SSH 協定執行 git push:</p>
+<p>
 <script>
 var winkVideoData2 = {
   dataVersion: 1,
@@ -95,6 +107,7 @@ var winkVideoData2 = {
   },
 };
 </script>
+</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData2" height="630" muted="true" width="1008">
 <source src="/downloads/ssh_wink/wink_ssh.mp4" type="video/mp4"/></video>
 <div class="winkVideoOverlayClass"></div>
@@ -116,6 +129,7 @@ var winkVideoData2 = {
 <p>這裡所指的 Wink 為 3.0 版, 來自 <a href="https://www.debugmode.com/wink/">https://www.debugmode.com/wink/</a> 是一套免費 (Freeware) 的電腦操作流程影片錄製軟體, 與 <a href="https://github.com/ShareX/ShareX">ShareX</a> 相同的是, 兩套軟體的影片製作核心都是採用 <a href="https://www.ffmpeg.org/download.html">ffmpeg.exe</a>. 不同的地方在於: <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 沒有開源, 可能是採用 C++ 編寫 (因為除了 Windows 版本, 還有 Linux, 但卻沒有 Mac), 且 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 可以在主影格 (Key frame) 中加入文字說明, 以及 html 按鈕. 比較適合用來製作需要較多文字說明輔助的教學影片. 至於 <a href="https://github.com/ShareX/ShareX">ShareX</a> 是一套採用 C# 編寫的開源套件, 適合製作加上搭配語音或說明字幕的操作教學影片.</p>
 <p>由作者提供的 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 使用教學影片可以參考 <a href="https://mde.tw/cmstemplate/content/Wink.html">https://mde.tw/cmstemplate/content/Wink.html</a></p>
 <p>以下的影片將說明如何將利用 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 製作的 mp4 教學影片嵌入 cmsimde 動態與靜態網頁, 而且能在手機上觀看:</p>
+<p>
 <script>
 var winkVideoData = {
   dataVersion: 1,
@@ -126,6 +140,7 @@ var winkVideoData = {
   },
 };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData" height="630" muted="true" width="1008">
 <source src="/downloads/cmsimde_wink/wink2cmsimde.mp4" type="video/mp4"/></video>
@@ -153,6 +168,8 @@ var winkVideoData = {
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/dqPIjhL3LhE" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/x8DEYTOSNYQ" title="YouTube video player" width="560"></iframe></p>
 <p><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b59b1bbb43e57/raw/5879f4ce419c53cf01b9b86be6a15a30d5e52c92/1agrp_2022">w3 1a 分組結果</a></p>
+<h2>OneDrive</h2>
+<p>自 2022.07 起 @gm 帳號的儲存空間只限 3GB, 為共享更大容量 (5TB) 的儲存空間, 請各學員至 <a href="https://www.microsoft.com/zh-tw/education/products/office">https://www.microsoft.com/zh-tw/education/products/office</a>, 以 @gm 帳號申請 OneDrive 儲存權限.</p>
 <h2>Webpage</h2>
 <p>IPv6 setup</p>
 <p>建立 github 帳號</p>
@@ -515,6 +532,7 @@ doc["tetris"].bind("click", tetris.do)
 <p style="padding-left: 30px;">可以使用 <a href="http://kdiff3.sourceforge.net/">http://kdiff3.sourceforge.net/</a> 工具對三個檔案進行比較.</p>
 <p style="padding-left: 30px;">若使用程式方法讀進三個檔案後, 逐行比較內容.</p>
 <p><a href="/downloads/w4_diff/w4_diff_note.txt">w4_diff_note.txt</a></p>
+<p>
 <script>
 var winkVideoData2 = {
   dataVersion: 1,
@@ -525,6 +543,7 @@ var winkVideoData2 = {
   },
 };
 </script>
+</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData2" height="630" muted="true" width="1008">
 <source src="/downloads/w4_diff/w4_diff.mp4" type="video/mp4"/></video>
 <div class="winkVideoOverlayClass"></div>
@@ -543,8 +562,10 @@ var winkVideoData2 = {
 <p><a href="/downloads/w4_diff/w4_1.txt">w4_1.txt</a></p>
 <p><a href="/downloads/w4_diff/w4_2.txt">w4_2.txt</a></p>
 <p><a href="/downloads/w4_diff/w4_3.txt">w4_3.txt</a></p>
+<p>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
+</p>
 <!-- for ggame -->
 <p>
 <script src="/static/jquery-3.3.1.min.js"></script>
@@ -742,6 +763,7 @@ run3()
 <p>經將 WAN 直接連到系主幹後, 將 IPv6 以 Passthrough 設定後, 可讓手機或筆電經由 810WIFI 連線後取得雙協定支援網路.</p>
 <p>筆電透過 810WIFI 連線後 IPv4 部分為內部網路 192.168.50.X, 而 IPv6 部分則擁有兩個由學校配發的 IPv6 網路位址, 可用來設定 <a href="https://support.microsoft.com/en-us/windows/how-to-use-remote-desktop-5fe128d5-8fb1-7a23-3b8a-41e636865e8c">Remote Desktop</a>、WWW 或 Fossil SCM 伺服器.</p>
 <p>以下說明影片就是在將 Wifi router 設為 IPv6/IPv4 雙網路協定後的使用流程:</p>
+<p>
 <script>
 var winkVideoData2 = {
   dataVersion: 1,
@@ -752,6 +774,7 @@ var winkVideoData2 = {
   },
 };
 </script>
+</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData2" height="630" muted="true" width="1008">
 <source src="/downloads/w4_wifi/w4_wifi.mp4" type="video/mp4"/></video>
 <div class="winkVideoOverlayClass"></div>
@@ -825,7 +848,63 @@ To mdecycu:mdecycu/wcm2022_guide.git
 <p></p>
 <p></p>
 <p style="padding-left: 30px;"></p>
-<h1>IPv6 setup</h1>
+<h2>Server</h2>
+<p>若我們讀一下 <a href="https://www.cambridge.org/core/journals/proceedings-of-the-design-society-design-conference/article/conception-of-a-digital-twin-in-mechanical-engineering-a-case-study-in-technical-product-development/2E2916B3DC1F42028CD2CDACAB6FA6AC">CONCEPTION OF A DIGITAL TWIN IN MECHANICAL ENGINEERING – A CASE STUDY IN TECHNICAL PRODUCT DEVELOPMENT</a> 這篇文章. 應該不難體會傳統的機械工程領域應該要置入大量的 IT 科技, 朝向能應用於整個產品生命週期的 Digital Twin 架構邁進.</p>
+<p>Digital Twin is defined as "a virtual dynamic representation of a physical system, which is connected to it over the entire life cycle for bidirectional data exchange." (<a href="https://www.researchgate.net/publication/342115737_WHAT_IS_A_DIGITAL_TWIN_-_DEFINITIONS_AND_INSIGHTS_FROM_AN_INDUSTRIAL_CASE_STUDY_IN_TECHNICAL_PRODUCT_DEVELOPMENT">Trauer et al., 2020</a>)</p>
+<p>The term of a Digital Twin is part of a broader context and is located at the intersection of the three<br/>research areas virtual product development, cyber-physical systems and product lifecycle<br/>management. (<a href="https://www.researchgate.net/publication/306223791_Digital_Twin_Mitigating_Unpredictable_Undesirable_Emergent_Behavior_in_Complex_Systems">Grieves and Vickers, 2017</a>).</p>
+<hr/>
+<p>針對能夠應用於網際內容管理課程使用的 <a href="/downloads/HPE_ProLiant_ML_10_v2_Server.pdf">HPE_ProLiant_ML_10_v2_Server.pdf</a> 伺服器, 除了解電腦硬體規格與配置外, 還需在實體操作系統與虛擬操作系統中安裝設定網際內容管理系統, 包括 cmsimde 動態與靜態網站, 以及 Fossil SCM server.</p>
+<p>IT 技術:</p>
+<p style="padding-left: 30px;">操作系統: <a href="https://docs.microsoft.com/zh-tw/windows/release-health/status-windows-10-21h2">Windows 10 21H2</a> + <a href="https://docs.microsoft.com/zh-tw/windows/wsl/compare-versions">WSL</a>, <a href="https://cdimage.ubuntu.com/daily-live/current/">Ubuntu 22.04</a></p>
+<p style="padding-left: 30px;">MSYS2: <a href="https://www.msys2.org/">https://www.msys2.org/</a></p>
+<p style="padding-left: 30px;">CMake: <a href="https://cmake.org/">https://cmake.org/</a></p>
+<p style="padding-left: 30px;">Putty: <a href="https://www.putty.org/">https://www.putty.org/</a></p>
+<p style="padding-left: 30px;">Git: <a href="https://git-scm.com/download/win">https://git-scm.com/download/win</a></p>
+<p style="padding-left: 30px;">WWW server: <a href="https://nginx.org/">nginx.org</a></p>
+<p style="padding-left: 30px;">Proxy: <a href="https://www.stunnel.org/">https://www.stunnel.org/</a></p>
+<p style="padding-left: 30px;">NSSM: <a href="https://nssm.cc/">https://nssm.cc/</a></p>
+<p style="padding-left: 30px;">Fossil SCM: <a href="https://www2.fossil-scm.org">https://www2.fossil-scm.org</a></p>
+<p style="padding-left: 30px;">Flask: <a href="https://flask.palletsprojects.com/en/2.1.x/">https://flask.palletsprojects.com/en/2.1.x/</a></p>
+<p style="padding-left: 30px;">Python: <a href="https://www.python.org/">https://www.python.org/</a></p>
+<p style="padding-left: 30px;">uwsgi: <a href="https://uwsgi-docs.readthedocs.io/en/latest/">https://uwsgi-docs.readthedocs.io/en/latest/</a></p>
+<p style="padding-left: 30px;">Oauth2: <a href="https://oauth.net/2/">https://oauth.net/2/</a></p>
+<p style="padding-left: 30px;">Google API: <a href="https://cloud.google.com/apis/docs/overview">https://cloud.google.com/apis/docs/overview</a></p>
+<p style="padding-left: 30px;">fossilapp: <a href="https://github.com/mdecycu/fossilapp">https://github.com/mdecycu/fossilapp</a></p>
+<p style="padding-left: 30px;">fossiloauth: <a href="https://github.com/mdecycu/fossiloauth">https://github.com/mdecycu/fossiloauth</a></p>
+<p style="padding-left: 30px;">Heroku: <a href="https://www.heroku.com/">https://www.heroku.com/</a></p>
+<p>CAX:</p>
+<p style="padding-left: 30px;">NX: NX12、NX1980、NX2008 - NXOpen Python API </p>
+<p style="padding-left: 30px;">Solvespace: <a href="https://solvespace.com">https://solvespace.com</a></p>
+<p style="padding-left: 30px;">CoppeliaSim: <a href="https://coppeliarobotics.com/">https://coppeliarobotics.com/</a></p>
+<p style="padding-left: 30px;">Webots: <a href="https://cyberbotics.com/">https://cyberbotics.com/</a></p>
+<p style="padding-left: 30px;">Range3: <a href="https://github.com/Range-Software/range3">https://github.com/Range-Software/range3</a></p>
+<p style="padding-left: 30px;">NGSolve: <a href="https://ngsolve.org/">https://ngsolve.org/</a></p>
+<p><img caption="false" height="300" src="/images/ml10_v2_1.jpg" width="400"/></p>
+<p><img alt="" height="300" src="/images/ml10_v2_2.jpg" width="400"/></p>
+<p><img alt="" height="300" src="/images/ml10_v2_3.jpg" width="400"/></p>
+<p><img alt="" height="300" src="/images/ml10_v2_4.jpg" width="400"/></p><h3>Win10</h3>
+<p>在 HP Proliant ML 10 伺服器上安裝 Virtualbox 與 Windows 10 過程影片:</p>
+<p>Wink 影片嵌入 cmsimde 超文件檔案: <a href="/downloads/w7_hp_virtualbox_win/w7_hp_virtualbox_win.txt">w7_hp_virtualbox_win.txt</a></p>
+<p>Wink 影片嵌入 blog 超文件檔案: <a href="/downloads/embed_wink_into_blog.txt">embed_wink_into_blog.txt</a></p>
+<p><!--配合 Wink 檔案將 js 檔案設定如下--></p>
+<p>
+<script>
+var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
+</script>
+</p>
+<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData" height="630" muted="true" width="1008">
+<source src="/downloads/w7_hp_virtualbox_win/w7_hp_virtualbox_win.mp4" type="video/mp4"/></video>
+<div class="winkVideoOverlayClass"></div>
+<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
+<div class="winkVideoControlBarProgressRightClass"></div>
+<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
+<div class="winkVideoControlBarProgressThumbClass"></div>
+</div>
+<div class="winkVideoPlayOverlayClass"></div>
+</div><h2>IPv6 setup</h2>
 <p>利用 <a href="https://www.debugmode.com/wink/">Wink</a> 建立電腦操作流程影片時, 必須注意:</p>
 <ol>
 <li>可以與 ShareX 共用 <a href="https://www.ffmpeg.org/download.html#build-windows">ffmpeg.exe</a>.</li>
@@ -834,9 +913,11 @@ To mdecycu:mdecycu/wcm2022_guide.git
 <li>以下 <a href="https://www.debugmode.com/wink/">Wink</a> 影片設定超文件檔案: <a href="/downloads/wink_script_and_setup.txt">wink_script_and_setup.txt</a></li>
 </ol>
 <p><!--配合 Wink 檔案將 js 檔案設定如下--></p>
+<p>
 <script>
 var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData" height="630" muted="true" width="1008">
 <source src="/downloads/wcm_w2_2.mp4" type="video/mp4"/></video>
@@ -849,8 +930,7 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <div class="winkVideoControlBarProgressThumbClass"></div>
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
-</div>
-<h1>Portable Python</h1>
+</div><h1>Portable Python</h1>
 <h4>何謂可攜式 Python 程式環境?</h4>
 <h4 style="padding-left: 30px;">Python 程式是如何執行的?</h4>
 <p style="padding-left: 30px;">首先 Python 是一種解譯式 (Interpreted) 程式語言, 與 C 或 C++ 程式語言最大的差別是, C/C++ 程式碼通常必須透過編譯 (Compile) 與連結 (Link) 的過程, 將原始碼轉為可執行的格式 (在 Windows 操作系統為 .exe 檔案), 而 Python 程式寫好後, 可以直接利用解譯器執行, 使用者不需要手動執行程式碼的編譯, 而是由解譯器在執行前即時將程式碼轉換為可執行檔案.</p>
@@ -1109,9 +1189,11 @@ WantedBy=multi-user.target
 <p><a href="https://gist.github.com/mdecourse/05930b1775b77293523b59b1bbb43e57">Gist Brython scripts</a></p>
 <p><a href="https://mde.tw/cp2021/content/%E8%A7%A3%E9%A1%8C%E7%B7%B4%E7%BF%92.html">解題練習</a></p>
 <p><a href="https://mde.tw/cp2021/content/Cango.html">Cango</a></p>
+<p>
 <script src="/static/brython.js">
 </script>
 <script src="/static/brython_stdlib.js"></script>
+</p>
 <!-- for ggame -->
 <p>
 <script src="/static/jquery-3.3.1.min.js"></script>
