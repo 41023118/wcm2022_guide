@@ -38,17 +38,19 @@
 </script>
 </p>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><h2>Local and Remote</h2>
-<p>Local 指的是近端, 也就是使用者所使用的個人電腦、平板或手機, 而 Remote 則指能夠讓近端透過各種網路協定擷取資料的伺服器.</p>
-<p>在網際內容管理課程中除了透過 http(s) 協定, 以瀏覽器解取 Remote 端全球資訊網伺服器中的資料外, 還透過 git 以 https 或 ssh 網路協定, 將改版資料推向 Github Remote 端.</p>
+<p>Local 指的是近端, 也就是使用者所使用的個人電腦、平板或手機, 而 Remote 則指能夠讓近端透過各種網路協定擷取資料的伺服器電腦.</p>
+<p>在網際內容管理課程中除了透過 http(s) 協定, 以瀏覽器解取 Remote 端全球資訊網伺服器中的資料外, 還透過 git 以 https、sftp 或 ssh 網路協定, 用於擷取檔案, 或將改版資料推向 Github Remote 端.</p>
 <p>PC to PC connection - python -m http.server, flask server, nginx server, fossil scm server, filezilla server, Ubuntu server.</p>
 <p>PC Hardware + Windows 10 + <a href="https://nfu.onthehub.com/WebStore/Welcome.aspx">License</a></p>
-<p>Python http.server</p>
-<p>nginx WWW server</p>
+<p>Python http.server - 簡單的 WWW server, 可用於電腦間的檔案攫取.</p>
+<p>nginx WWW server - 常用的 WWW server, 可透過設定, 讓特定 IP 可以連線.</p>
+<p style="padding-left: 30px;"><a href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy">pgp</a> 與 <a href="https://www.gpg4win.org/">https://www.gpg4win.org/</a></p>
+<p style="padding-left: 60px;"><a href="https://www.gnupg.org/gph/en/manual.pdf">https://www.gnupg.org/gph/en/manual.pdf</a> </p>
+<p style="padding-left: 30px;">請問如何設定 nginx, 讓其中所伺服的檔案只允許系上電腦下載.</p>
 <p>Fossil SCM server</p>
 <p>Local Area Network</p>
 <p>Wide Are Network</p>
-<p>Remote Desktop</p>
-<h2>cmsimde</h2>
+<p>Remote Desktop</p><h2>cmsimde</h2>
 <p><a href="https://github.com/mdecycu/cmsimde">https://github.com/mdecycu/cmsimde</a></p>
 <p>動態網頁 - localhost 與 remote site, 若在 init.py 中將 ip 設為 127.0.0.1 則在 localhost 啟動, 若設為外部 IP 則可以從 internet 中任何一台電腦的瀏覽器連接.</p>
 <p>靜態網頁 - 在動態網頁系統登入後, 可以利用 generate_pages 按鈕將動態網頁轉進 content 目錄, 並結合 cmsimde/static, downloads、images、blog、reveal 等目錄, 可在全球資訊網伺服器 (如 Github Pages、nginx 或 Fossil SCM server 中以純 html、javascript 及 css 檔案進行伺服.</p>
