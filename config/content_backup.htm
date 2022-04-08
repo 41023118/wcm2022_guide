@@ -4,7 +4,8 @@
 <p style="padding-left: 60px;">何謂 <a href="https://docs.python.org/3/tutorial/modules.html">Python 模組</a>?</p>
 <h4>下載可攜程式檔案:</h4>
 <p style="padding-left: 30px;">在系上網段, 可以直接連線到 <a href="http://wcm.cycu.org:88/">http://wcm.cycu.org:88/</a> 下載 <a href="http://wcm.cycu.org:88/portable_python_wcm2022.7z">portable_python_wcm2022.7z</a> (file size: 513 MB, extracted size: 2.3 G, 這是專門為 <a href="https://mde.tw/wcm2022">wcm2022</a> 課程打造的可攜程式套件, 適合選修學員下載後在任何 Windows 10 中以隨身碟啟動後操作)</p>
-<p style="padding-left: 30px;">在電腦輔助設計室中使用 USB 中的隨身程式系統, 則可以下載 <a href="http://wcm.cycu.org:88/drive.7z">drive.7z</a> (file size: 2.6 MB, extracted size: 10 MB, 只包含 PUTTY, tcc, wscite 與 tmp 目錄, 採用 Hybrid 方式設定, 可與目前電腦輔助設計室中 SSD 硬碟所安裝的 Python 3.9.5 與 <a href="https://git-scm.com/download/win">Portablegit</a> 結合, 使用者只需自行設定啟動後的 home_ipv6 目錄與 home_ipv6/Desktop 目錄後即可以最輕薄便捷的方式將 SSH key 存入隨身碟, 並將個人與分組倉儲存入隨身碟啟動後的 tmp 目錄進行操作).</p>
+<p style="padding-left: 30px;">在電腦輔助設計室中使用 USB 中的隨身程式系統, 則可以下載 <a href="http://wcm.cycu.org:88/drive.7z">drive.7z</a> (file size: 2.6 MB, extracted size: 10 MB, 只包含 PUTTY (目前使用 0.76 版), tcc, wscite 與 tmp 目錄, 採用 Hybrid 方式設定, 可與目前電腦輔助設計室中 SSD 硬碟所安裝的 Python 3.9.5 與 <a href="https://git-scm.com/download/win">Portablegit</a> 結合, 使用者只需自行設定啟動後的 home_ipv6 目錄與 home_ipv6/Desktop 目錄後即可以最輕薄便捷的方式將 SSH key 存入隨身碟, 並將個人與分組倉儲存入隨身碟啟動後的 tmp 目錄進行操作).</p>
+<p style="padding-left: 30px;">使用 Hybrid 方式啟動可攜程式系統時, Python/Scripts/ 目錄中的 pip.exe、leo.exe 與 pelican.exe, 必須利用 <a href="https://mh-nexus.de/en/hxd/">HxD</a> 修改 Python.exe 檔案位置的絕對路徑 (是否能夠修改為啟動系統的相對路徑, 也就是直接改為 Python.exe?).</p>
 <p style="padding-left: 30px;">假如是在其他網段, 則可下載 <a href="https://drive.google.com/file/d/1TMPsHz6G01-pxkvXf9NFM8nFdtCHQv8D/view?usp=sharing">portable_python_wcm2022.7z</a> (下載 513 MB, 解開壓縮後 2.3GB, under wcm2022 At mde) - 包含 Python 3.9.5, Portablegit, Scite, ShareX, Wink, GitEtensions 等工具.</p>
 <p style="padding-left: 30px;">請利用 <a href="https://www.7-zip.org">https://www.7-zip.org</a> 將 portable_python_wcm2022.7z 解開壓縮至 USB 3.0 以上規格的隨身碟.</p>
 <h4 style="padding-left: 30px;">問題:</h4>
@@ -36,8 +37,7 @@
     })();
 </script>
 </p>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<h2>Local and Remote</h2>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><h2>Local and Remote</h2>
 <p>Local 指的是近端, 也就是使用者所使用的個人電腦、平板或手機, 而 Remote 則指能夠讓近端透過各種網路協定擷取資料的伺服器.</p>
 <p>在網際內容管理課程中除了透過 http(s) 協定, 以瀏覽器解取 Remote 端全球資訊網伺服器中的資料外, 還透過 git 以 https 或 ssh 網路協定, 將改版資料推向 Github Remote 端.</p>
 <p>PC to PC connection - python -m http.server, flask server, nginx server, fossil scm server, filezilla server, Ubuntu server.</p>
@@ -884,6 +884,8 @@ To mdecycu:mdecycu/wcm2022_guide.git
 <p><img alt="" height="300" src="/images/ml10_v2_3.jpg" width="400"/></p>
 <p><img alt="" height="300" src="/images/ml10_v2_4.jpg" width="400"/></p><h3>Win10</h3>
 <p>在 HP Proliant ML 10 伺服器上安裝 Virtualbox 與 Windows 10 過程影片:</p>
+<p>Wink 影片嵌入 cmsimde 超文件檔案: <a href="/downloads/w7_hp_virtualbox_win/w7_hp_virtualbox_win.txt">w7_hp_virtualbox_win.txt</a></p>
+<p>Wink 影片嵌入 blog 超文件檔案: <a href="/downloads/embed_wink_into_blog.txt">embed_wink_into_blog.txt</a></p>
 <p><!--配合 Wink 檔案將 js 檔案設定如下--></p>
 <p>
 <script>
@@ -902,7 +904,7 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <div class="winkVideoControlBarProgressThumbClass"></div>
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
-</div><h1>IPv6 setup</h1>
+</div><h2>IPv6 setup</h2>
 <p>利用 <a href="https://www.debugmode.com/wink/">Wink</a> 建立電腦操作流程影片時, 必須注意:</p>
 <ol>
 <li>可以與 ShareX 共用 <a href="https://www.ffmpeg.org/download.html#build-windows">ffmpeg.exe</a>.</li>
