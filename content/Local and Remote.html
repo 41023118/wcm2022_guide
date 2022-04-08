@@ -147,13 +147,29 @@ img.add_border {
 <p>Python http.server - 簡單的 WWW server, 可用於電腦間的檔案攫取.</p>
 <p>nginx WWW server - 常用的 WWW server, 可透過設定, 讓特定 IP 可以連線.</p>
 <p style="padding-left: 30px;"><a href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy">pgp</a> 與 <a href="https://www.gpg4win.org/">https://www.gpg4win.org/</a></p>
-<p style="padding-left: 60px;"><a href="https://www.gnupg.org/gph/en/manual.pdf">https://www.gnupg.org/gph/en/manual.pdf</a> </p>
+<p style="padding-left: 60px;"><a href="https://www.gnupg.org/gph/en/manual.pdf">https://www.gnupg.org/gph/en/manual.pdf</a></p>
 <p style="padding-left: 30px;">請問如何設定 nginx, 讓其中所伺服的檔案只允許系上電腦下載.</p>
 <p style="padding-left: 30px;">請問如何利用 gpg4win 查驗所下載的 nginx 檔案與官方網站所附的數位簽章吻合.</p>
 <p>Fossil SCM server</p>
 <p>Local Area Network</p>
 <p>Wide Are Network</p>
-<p>Remote Desktop</p><br />About << <a href='About.html'>Previous</a> <a href='cmsimde.html'>Next</a> >> cmsimde</div>
+<p>Remote Desktop</p>
+<p>只允許系上 IPv6 網段擷取伺服器 port 88 的 nginx 設定:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">       server {
+        listen       [::]:88 ipv6only=off;
+        listen       88;
+        
+        #allow 140.130.XX.0/24;
+        allow 2001:288:6004:XX::0/32;
+        deny all;
+        
+        location / {
+            root C:/pj2022/nginx-1.20.2/spring2022;
+        }
+        
+        autoindex on;
+    }</pre>
+<p></p><br />About << <a href='About.html'>Previous</a> <a href='cmsimde.html'>Next</a> >> cmsimde</div>
         
     <!-- footer -->
       <div class="container">
