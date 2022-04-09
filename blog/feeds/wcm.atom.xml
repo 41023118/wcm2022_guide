@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理 - wcm</title><link href="./" rel="alternate"></link><link href="./feeds/wcm.atom.xml" rel="self"></link><id>./</id><updated>2022-04-09T22:40:33+08:00</updated><entry><title>wcm2022 w7 review</title><link href="./wcm2022-w7-review.html" rel="alternate"></link><published>2022-04-09T11:00:00+08:00</published><updated>2022-04-09T22:40:33+08:00</updated><author><name>kmolab</name></author><id>tag:None,2022-04-09:./wcm2022-w7-review.html</id><summary type="html">&lt;p&gt;wcm2022 進行至第七週總共探討下列主題:&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;wcm2022 進行至第七週總共探討下列主題:&lt;/p&gt;
+
+
+&lt;!-- css and js for Wink3, 以下影片共用設定--&gt;
+&lt;p&gt;&lt;link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" /&gt;&lt;/p&gt;
+&lt;script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"&gt;&lt;/script&gt;
+
+&lt;h2&gt;IPv6 網路設定&lt;/h2&gt;
+&lt;p&gt;說明如何利用 bat 執行設定 IPv6 網路連線&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/DDIQTTk6HZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;script&gt;
+var winkVideoData_ipv6 = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
+&lt;/script&gt;
+&lt;/p&gt;
+&lt;!-- 接下來將 mp4 檔案從 downloads 目錄取出 --&gt;
+&lt;div class="winkVideoContainerClass"&gt;&lt;video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_ipv6" height="630" muted="true" width="1008"&gt;
+&lt;source src="./../downloads/wcm_w2_2.mp4" type="video/mp4"/&gt;&lt;/video&gt;
+&lt;div class="winkVideoOverlayClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarClass"&gt;&lt;button class="winkVideoControlBarPlayButtonClass"&gt;&lt;/button&gt; &lt;button class="winkVideoControlBarPauseButtonClass"&gt;&lt;/button&gt;
+&lt;div class="winkVideoControlBarProgressLeftClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressEmptyMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressRightClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressFilledMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressThumbClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="winkVideoPlayOverlayClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;建立可攜程式系統&lt;/h2&gt;
+&lt;p&gt;以下將介紹如何建立可攜式程式系統:&lt;/p&gt;
+&lt;p&gt;此一設定將牽涉批次檔案, subst 指令與系統環境變數設定.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/dqPIjhL3LhE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/x8DEYTOSNYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/p&gt;
+
+&lt;p&gt;以下為第七週課程內容 review:&lt;/p&gt;
+&lt;script&gt;
+var winkVideoData_review = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
+&lt;/script&gt;
+&lt;/p&gt;
+&lt;!-- 接下來將 mp4 檔案從 downloads 目錄取出 --&gt;
+&lt;div class="winkVideoContainerClass"&gt;&lt;video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_review" height="630" muted="true" width="1008"&gt;
+&lt;source src="./../downloads/w7_review/w7_review.mp4" type="video/mp4"/&gt;&lt;/video&gt;
+&lt;div class="winkVideoOverlayClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarClass"&gt;&lt;button class="winkVideoControlBarPlayButtonClass"&gt;&lt;/button&gt; &lt;button class="winkVideoControlBarPauseButtonClass"&gt;&lt;/button&gt;
+&lt;div class="winkVideoControlBarProgressLeftClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressEmptyMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressRightClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressFilledMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressThumbClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="winkVideoPlayOverlayClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;建立 Wink 教學影片&lt;/h2&gt;
+&lt;p&gt;以下影片說明如何將 Wink 3.0 製作的 mp4 教學影片嵌入網頁中:&lt;/p&gt;
+&lt;script&gt;
+var winkVideoData_wink = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+&lt;/script&gt;
+&lt;/p&gt;
+&lt;!-- 接下來將 mp4 檔案從 downloads 目錄取出 --&gt;
+&lt;div class="winkVideoContainerClass"&gt;&lt;video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_wink" height="630" muted="true" width="1008"&gt;
+&lt;source src="./../downloads/cmsimde_wink/wink2cmsimde.mp4" type="video/mp4"/&gt;&lt;/video&gt;
+&lt;div class="winkVideoOverlayClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarClass"&gt;&lt;button class="winkVideoControlBarPlayButtonClass"&gt;&lt;/button&gt; &lt;button class="winkVideoControlBarPauseButtonClass"&gt;&lt;/button&gt;
+&lt;div class="winkVideoControlBarProgressLeftClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressEmptyMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressRightClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressFilledMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressThumbClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="winkVideoPlayOverlayClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h1&gt;810WIFI 連線&lt;/h1&gt;
+&lt;h2&gt;建立 wcm2022&lt;/h2&gt;
+&lt;p&gt;網際內容管理課程要求每位學員都必須建立 Github 帳號, 並自行利用 submodule 方式建立 cmsimde 動態與靜態網頁, 相關教學影片如下:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/1RbrSOfnFd4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;h1&gt;以 token 推送&lt;/h1&gt;
+&lt;p&gt;以下影片說明如何使用 Personal Access Token 執行 git push:&lt;/p&gt;
+&lt;script&gt;
+var winkVideoData_token = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+&lt;/script&gt;
+&lt;/p&gt;
+&lt;!-- 接下來將 mp4 檔案從 downloads 目錄取出 --&gt;
+&lt;div class="winkVideoContainerClass"&gt;&lt;video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_token" height="630" muted="true" width="1008"&gt;
+&lt;source src="./../downloads/token_wink/github_token.mp4" type="video/mp4"/&gt;&lt;/video&gt;
+&lt;div class="winkVideoOverlayClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarClass"&gt;&lt;button class="winkVideoControlBarPlayButtonClass"&gt;&lt;/button&gt; &lt;button class="winkVideoControlBarPauseButtonClass"&gt;&lt;/button&gt;
+&lt;div class="winkVideoControlBarProgressLeftClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressEmptyMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressRightClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressFilledMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressThumbClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="winkVideoPlayOverlayClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h1&gt;以 ssh 推送&lt;/h1&gt;
+&lt;p&gt;以下影片說明如何在 Windows IPv6 環境下, 利用 PUTTY 以 SSH 協定執行 git push:&lt;/p&gt;
+&lt;script&gt;
+var winkVideoData_ssh = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+&lt;/script&gt;
+&lt;/p&gt;
+&lt;div class="winkVideoContainerClass"&gt;&lt;video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_ssh" height="630" muted="true" width="1008"&gt;
+&lt;source src="./../downloads/ssh_wink/wink_ssh.mp4" type="video/mp4"/&gt;&lt;/video&gt;
+&lt;div class="winkVideoOverlayClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarClass"&gt;&lt;button class="winkVideoControlBarPlayButtonClass"&gt;&lt;/button&gt; &lt;button class="winkVideoControlBarPauseButtonClass"&gt;&lt;/button&gt;
+&lt;div class="winkVideoControlBarProgressLeftClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressEmptyMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressRightClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressFilledMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressThumbClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="winkVideoPlayOverlayClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;配置 Brython 環境&lt;/h2&gt;
+&lt;h2&gt;設定 Pelican 網誌&lt;/h2&gt;
+&lt;h1&gt;Blogger 網誌同步&lt;/h1&gt;
+&lt;h2&gt;計算機概論&lt;/h2&gt;
+&lt;h1&gt;電腦硬體拆解&lt;/h1&gt;
+&lt;h2&gt;建立 Virtualbox 虛擬主機&lt;/h2&gt;
+&lt;h1&gt;安裝配置 nginx&lt;/h1&gt;
+&lt;p&gt;以下說明 nginx 安裝流程:&lt;/p&gt;
+&lt;script&gt;
+var winkVideoData_nginx = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
+&lt;/script&gt;
+&lt;!-- 接下來將 mp4 檔案從 downloads 目錄取出 --&gt;
+&lt;div class="winkVideoContainerClass"&gt;&lt;video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_nginx" height="630" muted="true" width="1008"&gt;
+&lt;source src="./../downloads/w7_nginx/w7_nginx.mp4" type="video/mp4"/&gt;&lt;/video&gt;
+&lt;div class="winkVideoOverlayClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarClass"&gt;&lt;button class="winkVideoControlBarPlayButtonClass"&gt;&lt;/button&gt; &lt;button class="winkVideoControlBarPauseButtonClass"&gt;&lt;/button&gt;
+&lt;div class="winkVideoControlBarProgressLeftClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressEmptyMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressRightClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressFilledMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressThumbClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="winkVideoPlayOverlayClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h1&gt;Windows 10 虛擬主機&lt;/h1&gt;
+&lt;p&gt;在 HP Proliant ML 10 伺服器上安裝 Virtualbox 與 Windows 10 過程影片:&lt;/p&gt;
+&lt;script&gt;
+var winkVideoData_win10 = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
+&lt;/script&gt;
+&lt;/p&gt;
+&lt;!-- 接下來將 mp4 檔案從 downloads 目錄取出 --&gt;
+&lt;div class="winkVideoContainerClass"&gt;&lt;video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_win10" height="630" muted="true" width="1008"&gt;
+&lt;source src="./../downloads/w7_hp_virtualbox_win/w7_hp_virtualbox_win.mp4" type="video/mp4"/&gt;&lt;/video&gt;
+&lt;div class="winkVideoOverlayClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarClass"&gt;&lt;button class="winkVideoControlBarPlayButtonClass"&gt;&lt;/button&gt; &lt;button class="winkVideoControlBarPauseButtonClass"&gt;&lt;/button&gt;
+&lt;div class="winkVideoControlBarProgressLeftClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressEmptyMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressRightClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressFilledMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressThumbClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="winkVideoPlayOverlayClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h1&gt;Ubuntu 22.04 虛擬主機&lt;/h1&gt;
+&lt;h2&gt;Fossil SCM server&lt;/h2&gt;
+&lt;h2&gt;Tetris on Brython&lt;/h2&gt;</content><category term="wcm"></category><category term="2022SpringWCM"></category></entry></feed>
