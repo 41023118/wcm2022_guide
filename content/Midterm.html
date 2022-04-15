@@ -2,7 +2,7 @@
         <head>
         <title>WCM_GUIDE</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -139,34 +139,30 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">OneDrive << <a href='OneDrive.html'>Previous</a> <a href='cms.html'>Next</a> >> cms<br /><h1>Webpage</h1>
-<p>IPv6 setup</p>
-<p>建立 github 帳號</p>
-<p>建立 wcm2022 倉儲 - 利用 <a href="https://github.com/wcm2022/wcm2022">https://github.com/wcm2022/wcm2022</a> 倉儲作為樣板, 連結後點擊 Use this template, 以便建立自己的 wcm2022 倉儲.</p>
-<p>利用 C:\2021_cadlab_portable 啟動系統</p>
-<p>git clone --recurse-submodules https://github.com/mdecycu/wcm2022.git</p>
-<p>使用 git 指令需要三個 git config 設定:</p>
-<ol>
-<li>git config --global user.name "使用者 github 帳號"</li>
-<li>git config --global user.email "使用者登記在 github 的 email"</li>
-<li>git config --global http.proxy <a href="http://[2001:288:6004:17::42]:3128">http://[2001:288:6004:17::42]:3128</a></li>
-</ol>
-<p>git config 設定後會在 y:\home_ipv6 存為 .gitconfig</p>
-<p>git config 代表要針對 git 進行設定, 其中包含提交身分與代理主機</p>
-<p>git config --global 代表設定要存入 y:\home_ipv6 目錄, 假如不使用 --global 表示只有在目前這個命令列執行階段有效, 沒有使用 --global 所下的設定內容, 不會存入 y:\home_ipv6 目錄.</p>
-<p>一旦完成 git clone --recurse-submodules https://github.com/mdecycu/wcm2022.git 命令的執行, 遠端倉儲會被 clone 一份當下的內容到近端的 wcm2022 目錄.</p>
-<p>接下來要進入 wcm2022 倉儲目錄啟動編輯系統, 對倉儲內容進行修改.</p>
-<p>cd wcm2022 表示要 change directory 到 wcm2022</p>
-<p>cd .. 表示要更換目錄回到上一個目錄</p>
-<p>cd tmp 表示要更換目錄到 tmp 目錄</p>
-<p>cls 表示 clear screen 清除畫面</p>
-<p>dir 表示要顯示 directory 目錄的內容</p>
-<p>任何網路工具都有 client 與 server 的身分差別</p>
-<p>browser (瀏覽器) 是 http (hypertext transfer protocol) 超文件傳輸協定的 client</p>
-<p>http 的 server 為 www 伺服器</p>
-<p>git 為 github 全球資訊網的 client</p>
-<p>github 可視為 git 協定的伺服器 (以 ruby 寫的 www 伺服器, 但具備解析 git 倉儲內容的伺服器)</p>
-<br />OneDrive << <a href='OneDrive.html'>Previous</a> <a href='cms.html'>Next</a> >> cms</div>
+    <div id="tipue_search_content">IPv6 setup << <a href='IPv6 setup.html'>Previous</a> <a href='Portable Python.html'>Next</a> >> Portable Python<br /><h1>Midterm</h1>
+<h4>期中課程內容整理</h4>
+<p style="padding-left: 30px;"><a href="https://mde.tw/wcm2022_guide/blog/wcm2022-w7-review.html">https://mde.tw/wcm2022_guide/blog/wcm2022-w7-review.html</a> </p>
+<h4 style="padding-left: 30px;">網路設定:</h4>
+<p style="padding-left: 60px;">開機後關閉自動 Proxy 設定, 改為手動且關閉 IPv4 網路協定. 這三個動作可以透過開機後, 在防毒軟體正式啟動前, 利用 <a href="https://github.com/mdecourse/wcm2022/files/7819340/cadlab_network_setup.zip">cadlab_network_setup.zip</a> 中的批次檔案採管理員身分執行後, 即可以程式方式完成設定.</p>
+<h4 style="padding-left: 30px;">建立可攜系統:</h4>
+<p style="padding-left: 60px;">在電腦輔助設計室可以直接下載 <a href="http://wcm.cycu.org:88/portable_python_wcm2022.7z">portable_python_wcm2022.7z</a>, 若是採用 810WIFI 連網, 則可透過 ::4 代理主機上網 (需要連線密碼) 後下載. 若需要更完整可以編輯連結 C/C++ 程式的可攜系統 (例如: 利用 NX12, NX1980 或 NX2008 等系統的 <a href="https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/ugopen_doc/index.html">UG Open C</a> (<a href="https://mde.tw/cd2022_guide/downloads/nxopen/UG_Open-API_Programming.pdf">架構</a>) 編寫延伸程式時), 則可下載 <a href="http://wcm.cycu.org:88/compile_copsim_cd2022.7z">compile_copsim_cd2022.7z</a>.</p>
+<h4 style="padding-left: 30px;">網頁配置與部署:</h4>
+<p style="padding-left: 60px;">動態網頁與靜態網頁: <a href="https://github.com/mdecycu/cmsimde">cmsimde</a> 網際內容管理系統的動態網頁採用 <a href="https://flask.palletsprojects.com/en/2.1.x/">Flask</a> 編寫, 需要 Python 與<a href="https://mde.tw/cmstemplate/content/CMSiMDE.html">特定模組</a>才可執行 (例如: 近端可攜系統、遠端伺服器與 <a href="https://www.heroku.com/">Heroku</a>), 而靜態網頁則只包含 html、css 與 Javascript, 可以利用 <a href="https://pages.github.com/">Github Pages</a> 或 <a href="http://nginx.org/">Nginx</a> 執行伺服.</p>
+<h4 style="padding-left: 30px;">網際多媒體內容建置:</h4>
+<p style="padding-left: 60px;">任何 Windows 環境中的操作過程, 可以透過 Wink 拍攝操作影片, 並嵌入網頁 (包括 <a href="https://github.com/mdecycu/cmsimde">cmsimde</a>、blog 與簡報)中.</p>
+<h4 style="padding-left: 30px;">Github 上的個人與分組倉儲:</h4>
+<p style="padding-left: 60px;">建立個人或分組倉儲可以利用 <a href="https://github.com/wcm2022/wcm2022">https://github.com/wcm2022/wcm2022</a> 作為 template.</p>
+<h4 style="padding-left: 30px;">倉儲改版協定:</h4>
+<p style="padding-left: 60px;">將倉儲改版後, 可以利用<a href="https://mde.tw/wcm2022_guide/content/Token%20and%20SSH.html"> token 或 ssh 方式進行提交</a>.</p>
+<h4 style="padding-left: 30px;">協同產品設計:</h4>
+<p style="padding-left: 60px;">以上利用各種開源套件建立網頁的目的, 是讓機械工程相關人員可以利用電腦與網路進行協同產品設計.</p>
+<p style="padding-left: 60px;">協同產品設計流程中包括編寫網頁前端與伺服器後端的程式, 與各種 CAD/CAE/CAM 系統進行互動, 終極目標是能將所設計的產品在虛實整合中, 以最佳化效能完成 <a href="https://en.wikipedia.org/wiki/Digital_twin">digital twin</a> 系統, 讓產品生命週期過程中的各方人士都能取得最大利益.</p>
+<h4 style="padding-left: 30px;">其他學習主題:</h4>
+<p style="padding-left: 60px;">能不能將計算機程式所開發的程式, 透過分組協同方式多人合作下, 將持續改進的程式部署在個人與分組網頁, 部署在 Pelican 與 Blogger 網誌, 部署在 Reveal.js 簡報系統上?</p>
+<p style="padding-left: 60px;">會不會運用實體 Windows 10、虛擬 Windows 10、實體 Ubuntu 22.04、虛擬 Ubuntu 22.04、 Github、Gitlab、Bitbucket 以及 Heroku, 配置部署上述個人或分組協同所完成的網際內容 (網頁與前後端整合程式)?</p>
+<h4 style="padding-left: 30px;">期中考週之後的主題:</h4>
+<p style="padding-left: 60px;">配置 Brython 環境<br/>設定 Pelican 網誌<br/>Blogger 網誌同步<br/>計算機概論<br/>電腦硬體拆解<br/>建立 Virtualbox 虛擬主機<br/>Fossil SCM server<br/>Tetris on Brython</p>
+<pre></pre><br />IPv6 setup << <a href='IPv6 setup.html'>Previous</a> <a href='Portable Python.html'>Next</a> >> Portable Python</div>
         
     <!-- footer -->
       <div class="container">

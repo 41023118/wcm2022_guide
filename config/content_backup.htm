@@ -184,7 +184,7 @@ var winkVideoData2 = {
 <h2>Wink</h2>
 <p>這裡所指的 Wink 為 3.0 版, 來自 <a href="https://www.debugmode.com/wink/">https://www.debugmode.com/wink/</a> 是一套免費 (Freeware) 的電腦操作流程影片錄製軟體, 與 <a href="https://github.com/ShareX/ShareX">ShareX</a> 相同的是, 兩套軟體的影片製作核心都是採用 <a href="https://www.ffmpeg.org/download.html">ffmpeg.exe</a>. 不同的地方在於: <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 沒有開源, 可能是採用 C++ 編寫 (因為除了 Windows 版本, 還有 Linux, 但卻沒有 Mac), 且 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 可以在主影格 (Key frame) 中加入文字說明, 以及 html 按鈕. 比較適合用來製作需要較多文字說明輔助的教學影片. 至於 <a href="https://github.com/ShareX/ShareX">ShareX</a> 是一套採用 C# 編寫的開源套件, 適合製作加上搭配語音或說明字幕的操作教學影片.</p>
 <p>由作者提供的 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 使用教學影片可以參考 <a href="https://mde.tw/cmstemplate/content/Wink.html">https://mde.tw/cmstemplate/content/Wink.html</a></p>
-<p>以下的影片將說明如何將利用 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 製作的 mp4 教學影片嵌入 cmsimde 動態與靜態網頁, 而且能在手機上觀看:</p>
+<p>以下影片說明如何將 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 製作的 mp4 教學影片嵌入 cmsimde 動態與靜態網頁, 而且能在手機上觀看:</p>
 <p>
 <script>
 var winkVideoData = {
@@ -209,8 +209,7 @@ var winkVideoData = {
 <div class="winkVideoControlBarProgressThumbClass"></div>
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
-</div>
-<h1>Topics</h1>
+</div><h1>Topics</h1>
 <h4>IPv6 網路設定:</h4>
 <p>w1 說明如何在電腦輔助設計室中設定 IPv6 網路連線, 主要步驟是關閉操作系統自動偵測 Proxy, 改為手動設定後, 取消 IPv4 網路協定. 而這三個動作可以透過開機後, 在防毒軟體正式啟動前, 利用 <a href="https://github.com/mdecourse/wcm2022/files/7819340/cadlab_network_setup.zip">cadlab_network_setup.zip</a> 中的批次檔案採管理員身分執行後, 即可以程式方式完成設定.</p>
 <p>相關教學影片如下:</p>
@@ -1006,7 +1005,27 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <div class="winkVideoControlBarProgressThumbClass"></div>
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
-</div><h1>Portable Python</h1>
+</div><h1>Midterm</h1>
+<h4>期中課程內容整理</h4>
+<p style="padding-left: 30px;"><a href="https://mde.tw/wcm2022_guide/blog/wcm2022-w7-review.html">https://mde.tw/wcm2022_guide/blog/wcm2022-w7-review.html</a> </p>
+<p style="padding-left: 30px;">網路設定:</p>
+<p style="padding-left: 60px;">開機後關閉自動 Proxy 設定, 改為手動且關閉 IPv4 網路協定. 這三個動作可以透過開機後, 在防毒軟體正式啟動前, 利用 <a href="https://github.com/mdecourse/wcm2022/files/7819340/cadlab_network_setup.zip">cadlab_network_setup.zip</a> 中的批次檔案採管理員身分執行後, 即可以程式方式完成設定.</p>
+<p style="padding-left: 30px;">建立可攜系統:</p>
+<p style="padding-left: 60px;">在電腦輔助設計室可以直接下載 <a href="http://wcm.cycu.org:88/portable_python_wcm2022.7z">portable_python_wcm2022.7z</a>, 若是採用 810WIFI 連網, 則可透過 ::4 代理主機上網 (需要連線密碼) 後下載. 若需要更完整可以編輯連結 C/C++ 程式的可攜系統 (例如: 利用 NX12, NX1980 或 NX2008 等系統的 <a href="https://docs.plm.automation.siemens.com/data_services/resources/nx/12/nx_api/custom/en_US/ugopen_doc/index.html">UG Open C</a> (<a href="https://mde.tw/cd2022_guide/downloads/nxopen/UG_Open-API_Programming.pdf">架構</a>) 編寫延伸程式時), 則可下載 <a href="http://wcm.cycu.org:88/compile_copsim_cd2022.7z">compile_copsim_cd2022.7z</a>.</p>
+<p style="padding-left: 30px;">網頁配置與部署:</p>
+<p style="padding-left: 60px;">動態網頁與靜態網頁: <a href="https://github.com/mdecycu/cmsimde">cmsimde</a> 網際內容管理系統的動態網頁採用 <a href="https://flask.palletsprojects.com/en/2.1.x/">Flask</a> 編寫, 需要 Python 與<a href="https://mde.tw/cmstemplate/content/CMSiMDE.html">特定模組</a>才可執行 (例如: 近端可攜系統、遠端伺服器與 <a href="https://www.heroku.com/">heroku</a>), 而靜態網頁則只包含 html、css 與 Javascript, 可以利用 <a href="https://pages.github.com/">Github Pages</a> 或 <a href="http://nginx.org/">Nginx</a> 執行伺服.</p>
+<p style="padding-left: 30px;">網際多媒體內容建置:</p>
+<p style="padding-left: 60px;">任何 Windows 環境中的操作過程, 可以透過 Wink 拍攝操作影片, 並嵌入網頁 (包括 <a href="https://github.com/mdecycu/cmsimde">cmsimde</a>、blog 與簡報)中.</p>
+<p style="padding-left: 30px;">Github 上的個人與分組倉儲:</p>
+<p style="padding-left: 60px;">建立個人或分組倉儲可以利用 <a href="https://github.com/wcm2022/wcm2022">https://github.com/wcm2022/wcm2022</a> 作為 template.</p>
+<p style="padding-left: 30px;">倉儲改版協定:</p>
+<p style="padding-left: 60px;">將倉儲改版後, 可以利用<a href="https://mde.tw/wcm2022_guide/content/Token%20and%20SSH.html"> token 或 ssh 方式進行提交</a>.</p>
+<p style="padding-left: 30px;">協同產品設計:</p>
+<p style="padding-left: 60px;">以上利用各種開源套件建立網頁的目的, 是讓機械工程相關人員可以利用電腦與網路進行協同產品設計.</p>
+<p style="padding-left: 60px;">協同產品設計流程中包括編寫網頁前端與伺服器後端的程式, 與各種 CAD/CAE/CAM 系統進行互動, 終極目標是能將所設計的產品在虛實整合中, 以最佳化效能完成 <a href="https://en.wikipedia.org/wiki/Digital_twin">digital twin</a> 系統, 讓產品生命週期過程中的各方人士都能取得最大利益.</p>
+<h4 style="padding-left: 30px;">期中考週之後的主題:</h4>
+<p style="padding-left: 60px;">配置 Brython 環境<br/>設定 Pelican 網誌<br/>Blogger 網誌同步<br/>計算機概論<br/>電腦硬體拆解<br/>建立 Virtualbox 虛擬主機<br/>Fossil SCM server<br/>Tetris on Brython</p>
+<pre></pre><h1>Portable Python</h1>
 <h4>何謂可攜式 Python 程式環境?</h4>
 <h4 style="padding-left: 30px;">Python 程式是如何執行的?</h4>
 <p style="padding-left: 30px;">首先 Python 是一種解譯式 (Interpreted) 程式語言, 與 C 或 C++ 程式語言最大的差別是, C/C++ 程式碼通常必須透過編譯 (Compile) 與連結 (Link) 的過程, 將原始碼轉為可執行的格式 (在 Windows 操作系統為 .exe 檔案), 而 Python 程式寫好後, 可以直接利用解譯器執行, 使用者不需要手動執行程式碼的編譯, 而是由解譯器在執行前即時將程式碼轉換為可執行檔案.</p>
@@ -1066,8 +1085,7 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <ol>
 <li>在未修改 Python Script 目錄中的 .exe 可執行檔之前, 必須透過 .py 執行, 例如: 命令列 中輸入 leo 並無法執行執行, 必須採用 import leo.core.runLeo;leo.core.runLeo.run()</li>
 <li>若在裝有還原卡的電腦, 未修改 Python 系統模組路徑之前, 所安裝的額外模組無法放入 USB 隨身碟中.</li>
-</ol>
-<h1>Fossil SCM</h1>
+</ol><h1>Fossil SCM</h1>
 <p>利用 Fossil SCM 與 Google API 建立的網際伺服器範例: <a href="https://pj5073.cycu.org">https://pj5073.cycu.org</a></p>
 <p>如何在一台 2009 年出廠的電腦設定 Fossil SCM server?</p>
 <p>Windows:</p>
