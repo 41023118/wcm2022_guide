@@ -209,7 +209,35 @@ var winkVideoData = {
 <div class="winkVideoControlBarProgressThumbClass"></div>
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
-</div><h1>Topics</h1>
+</div><h2>Nginx</h2>
+<p><a href="https://nginx.org/">https://nginx.org/</a> 可以在 Windows 與 Ubuntu 中安裝.</p>
+<p>Nginx 設定為 WWW 網際下載主機:</p>
+<p>nginx.conf</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">server {
+    # 原先可以接受 IPv4 網路連線, 目前覆蓋為 comment
+    #listen       80;
+    # 設定接受 IPv6 網路連線
+    listen [::]:80;
+    # 原先採 localhost 伺服器連線, 目前覆蓋為註解
+    #server_name  localhost;
+    # 只允許系上 IPv6 網路連線
+    allow 2001:288:6004:17::0/32;
+    # 除系上網段外, 其餘網段均拒絕連線
+    deny all;
+    
+    location / {
+        # 網際根目錄
+        root E:/downloads;
+        # 利用帳號密碼認證後才可連線
+        auth_basic "For Authorized Users Only!";
+        auth_basic_user_file C:/pj2022/nginx-1.20.2/.htpasswd; 
+    }
+    # 設定為列出各檔案與目錄的索引內容
+    autoindex on;
+}</pre>
+<p>.htpasswd 利用 <a href="https://www.apachelounge.com/download/">Apache</a> 中的 htpasswd.exe 建立.</p>
+<p>htpasswd -c c:/location_of_password_file/.htpasswd username</p>
+<p></p><h1>Topics</h1>
 <h4>IPv6 網路設定:</h4>
 <p>w1 說明如何在電腦輔助設計室中設定 IPv6 網路連線, 主要步驟是關閉操作系統自動偵測 Proxy, 改為手動設定後, 取消 IPv4 網路協定. 而這三個動作可以透過開機後, 在防毒軟體正式啟動前, 利用 <a href="https://github.com/mdecourse/wcm2022/files/7819340/cadlab_network_setup.zip">cadlab_network_setup.zip</a> 中的批次檔案採管理員身分執行後, 即可以程式方式完成設定.</p>
 <p>相關教學影片如下:</p>
@@ -222,8 +250,7 @@ var winkVideoData = {
 <p>此一設定將牽涉批次檔案, subst 指令與系統環境變數設定.</p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/dqPIjhL3LhE" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="315" src="https://www.youtube.com/embed/x8DEYTOSNYQ" title="YouTube video player" width="560"></iframe></p>
-<p><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b59b1bbb43e57/raw/5879f4ce419c53cf01b9b86be6a15a30d5e52c92/1agrp_2022">w3 1a 分組結果</a></p>
-<h2>OneDrive</h2>
+<p><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b59b1bbb43e57/raw/5879f4ce419c53cf01b9b86be6a15a30d5e52c92/1agrp_2022">w3 1a 分組結果</a></p><h2>OneDrive</h2>
 <p>自 2022.07 起 @gm 帳號的儲存空間只限 3GB, 為共享更大容量 (5TB) 的儲存空間, 請各學員至 <a href="https://www.microsoft.com/zh-tw/education/products/office">https://www.microsoft.com/zh-tw/education/products/office</a>, 以 @gm 帳號申請 OneDrive 儲存權限.</p>
 <h2>Webpage</h2>
 <p>IPv6 setup</p>
@@ -1006,6 +1033,7 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
 </div><h1>Midterm</h1>
+<p><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/e00a3b68d4defee1987d18cc998b377a/raw/3582dddbb1f6deecec9fcce65f191a2415e4d7a5/j5_w8_grp.py">五專倉儲與網頁連結</a></p>
 <h4>期中課程內容整理</h4>
 <p style="padding-left: 30px;"><a href="https://mde.tw/wcm2022_guide/blog/wcm2022-w7-review.html">https://mde.tw/wcm2022_guide/blog/wcm2022-w7-review.html</a></p>
 <h4 style="padding-left: 30px;">網路設定:</h4>
@@ -1027,8 +1055,10 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <p style="padding-left: 60px;">能不能將計算機程式所開發的程式, 透過分組協同方式多人合作下, 將持續改進的程式部署在個人與分組網頁, 部署在 Pelican 與 Blogger 網誌, 部署在 Reveal.js 簡報系統上?</p>
 <p style="padding-left: 60px;">會不會運用實體 Windows 10、虛擬 Windows 10、實體 Ubuntu 22.04、虛擬 Ubuntu 22.04、 Github、Gitlab、Bitbucket 以及 Heroku, 配置部署上述個人或分組協同所完成的網際內容 (網頁與前後端整合程式)?</p>
 <h4 style="padding-left: 30px;">期中考週之後的主題:</h4>
-<p style="padding-left: 60px;">配置 Brython 環境<br/>設定 Pelican 網誌<br/>Blogger 網誌同步<br/>計算機概論<br/>電腦硬體拆解<br/>建立 Virtualbox 虛擬主機<br/>Fossil SCM server<br/>Tetris on Brython</p>
-<h2>Digital Thread</h2>
+<p style="padding-left: 60px;">配置 Brython 環境<br/>設定 Pelican 網誌<br/>Blogger 網誌同步<br/>計算機概論<br/>電腦硬體拆解<br/>建立 Virtualbox 虛擬主機<br/>Fossil SCM server<br/>Tetris on Brython</p><h2>四技任務</h2>
+<p>請利用期中考週的課程時段 (09:10 - 11:00), 在 <a href="https://github.com/mdecycu/wcm2022_guide/blob/main/downloads/w8_ansic/w8_project.wnk">w8_project.wnk</a> 專案的頁面內容引導下, 加入各頁面的說明字串, 完成後請將 Wink 影片放入個人網頁 (頁面標題為 H1 midterm) 與個人 Pelican 網誌中 (Slug 設為 midterm).</p><h2>五專任務</h2>
+<p>請自行利用 @gm Google email 帳號登記 <a href="https://www.blogger.com">Blogger</a> 網誌系統 (請以個人的 Github 帳號登錄個人網誌 domain, 例如: <a href="https://github_帳號.blogspot.com">https://github_帳號.blogspot.com</a>)</p>
+<p>並在個人 Blogger 中分別以計算機概論與網際內容管理課程內容摘要與心得, 建立至少兩篇網誌文章.</p><h2>Digital Thread</h2>
 <p>Digital Twin (數位雙生) 與 Digital Thread (數位緒)</p>
 <p><a href="https://www.aerospacemanufacturinganddesign.com/article/amd-080910-f-35-joint-strike-fighter-digital-thread/">The Digital Thread - Key to F-35 Joint Strike Fighter Affordability</a></p>
 <p><a href="https://dspace.mit.edu/bitstream/handle/1721.1/114857/Engineering-design-digital-thread-Singh-Willcox.pdf?sequence=1&amp;isAllowed=y">Engineering Design with Digital Thread</a> (From mit.edu)</p>
