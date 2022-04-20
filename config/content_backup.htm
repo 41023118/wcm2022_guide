@@ -237,6 +237,7 @@ var winkVideoData = {
 }</pre>
 <p>.htpasswd 利用 <a href="https://www.apachelounge.com/download/">Apache</a> 中的 htpasswd.exe 建立.</p>
 <p>htpasswd -c c:/location_of_password_file/.htpasswd username</p>
+<p>上述指令在命令列視窗中執行後, 需要輸入兩次與 username 對應的驗證密碼.</p>
 <p></p><h1>Topics</h1>
 <h4>IPv6 網路設定:</h4>
 <p>w1 說明如何在電腦輔助設計室中設定 IPv6 網路連線, 主要步驟是關閉操作系統自動偵測 Proxy, 改為手動設定後, 取消 IPv4 網路協定. 而這三個動作可以透過開機後, 在防毒軟體正式啟動前, 利用 <a href="https://github.com/mdecourse/wcm2022/files/7819340/cadlab_network_setup.zip">cadlab_network_setup.zip</a> 中的批次檔案採管理員身分執行後, 即可以程式方式完成設定.</p>
@@ -1060,9 +1061,19 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <p>請自行利用 @gm Google email 帳號登記 <a href="https://www.blogger.com">Blogger</a> 網誌系統 (請以個人的 Github 帳號登錄個人網誌 domain, 例如: <a href="https://github_帳號.blogspot.com">https://github_帳號.blogspot.com</a>)</p>
 <p>並在個人 Blogger 中分別以計算機概論與網際內容管理課程內容摘要與心得, 建立至少兩篇網誌文章.</p><h2>Digital Thread</h2>
 <p>Digital Twin (數位雙生) 與 Digital Thread (數位緒)</p>
+<p><a href="https://www.ptc.com/en/blogs/corporate/what-is-a-digital-thread">https://www.ptc.com/en/blogs/corporate/what-is-a-digital-thread</a> </p>
 <p><a href="https://www.aerospacemanufacturinganddesign.com/article/amd-080910-f-35-joint-strike-fighter-digital-thread/">The Digital Thread - Key to F-35 Joint Strike Fighter Affordability</a></p>
 <p><a href="https://dspace.mit.edu/bitstream/handle/1721.1/114857/Engineering-design-digital-thread-Singh-Willcox.pdf?sequence=1&amp;isAllowed=y">Engineering Design with Digital Thread</a> (From mit.edu)</p>
 <p><a href="https://www.gardnerweb.com/articles/what-are-digital-twins-and-digital-threads">What Are Digital Twins and Digital Threads?</a></p>
+<p><a href="https://blog.samtec.com/post/the-digital-thread/">https://blog.samtec.com/post/the-digital-thread/</a> </p>
+<p><a href="https://www.3dcadworld.com/3d-cad-promotes-functioning-digital-thread/">https://www.3dcadworld.com/3d-cad-promotes-functioning-digital-thread/</a> </p>
+<p><a href="https://www.gray.com/insights/what-the-digital-thread-means-for-the-future-of-design-and-manufacturing/">https://www.gray.com/insights/what-the-digital-thread-means-for-the-future-of-design-and-manufacturing/</a> </p>
+<p></p><h3>RDT</h3>
+<p><a href="https://en.wikipedia.org/wiki/Remote_desktop_software">Remote DeskTop</a></p>
+<p>以下批次檔案指令可以透過 Windows 遠端桌面 client 連接至遠端指定電腦:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">REM https://docs.microsoft.com/zh-tw/windows-server/administration/windows-commands/mstsc
+%windir%\system32\mstsc.exe /v:2001:288:6004:XX:XXXX::XX</pre>
+<p></p>
 <pre></pre><h1>Portable Python</h1>
 <h4>何謂可攜式 Python 程式環境?</h4>
 <h4 style="padding-left: 30px;">Python 程式是如何執行的?</h4>
