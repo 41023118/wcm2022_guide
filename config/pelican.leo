@@ -53,6 +53,7 @@
 </v>
 </v>
 <v t="leo.20170710022054.1"><vh>可以另建節點存放 markdown 目錄下的 md 檔案</vh></v>
+<v t="leo.20220419055847.1"><vh>URL</vh></v>
 <v t="leo.20170710022041.1"><vh>@path markdown</vh>
 <v t="leo.20180115115910.1"><vh>2022</vh>
 <v t="leo.20180423103639.1"><vh>2022 Fall WCM 課程</vh>
@@ -64,6 +65,12 @@
 <v t="leo.20220409215337.1"><vh>w7 review</vh>
 <v t="leo.20220409215349.1"><vh>@clean 20220409.md</vh>
 <v t="leo.20220409215521.1"><vh>第七週教學回顧</vh></v>
+</v>
+</v>
+<v t="leo.20220419055320.1"><vh>w9_wcm</vh>
+<v t="leo.20220419055352.1"><vh>@clean 20220419.md</vh>
+<v t="leo.20220419060307.1"><vh>網際內容管理策略</vh></v>
+<v t="leo.20220419055847.1"></v>
 </v>
 </v>
 </v>
@@ -549,6 +556,90 @@ Fossil SCM server
 
 Tetris on Brython
 ----
+
+</t>
+<t tx="leo.20220419055320.1"></t>
+<t tx="leo.20220419055352.1">@language md
+---
+Title: w9 網際內容管理策略
+Date: 2022-04-19 11:00
+Category: wcm
+Tags: 2022SpringWCM
+Slug: wcm2022-w9-wcm-stratege
+Author: kmolab
+---
+
+將課程資料的靜態網頁以 [Github Pages] 伺服, 除了方便學員查驗各週的改版內容外, 還能直接以瀏覽器擷取. 方便性高, 但是, 免費的 [Github] 帳號只能透過公開的倉儲使用 [Github Pages].
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+@others
+
+</t>
+<t tx="leo.20220419055847.1">[Github Pages]: https://pages.github.com/
+[Github]: https://github.com
+[Gitlab]: https://gitlab.com
+[Gitlab 原始碼]: https://gitlab.com/gitlab-org/gitlab
+[Waitress]: https://docs.pylonsproject.org/projects/waitress/en/latest/
+[uwsgi]: https://uwsgi-docs.readthedocs.io/en/latest/
+[Fossil SCM]: https://fossil-scm.org
+[NGINX]: https://nginx.org
+[Apache]: https://www.apachelounge.com/download/</t>
+<t tx="leo.20220419060307.1">當期課程網站
+----
+
+為了方便性, 當期的課程網站, 仍採 [Github Pages] 伺服靜態網站. 使用的方法很簡單, 只要建立 public [Github] 倉儲, 然後透過倉儲的 settings, 啟動倉儲的 [Github Pages] 功能, 並指定從倉儲 main 分支中的 index.html 導引靜態網頁內容即可.
+
+先前課程網站
+----
+
+當期課程結束後, 課程對應倉儲將轉為 private, 然後將倉儲內容移至工作站中的電腦, 以 [NGINX] 伺服靜態網頁, 在 Windows 則以 [Waitress] 伺服動態網頁, 在 Ubuntu 則以 [uwsgi] 伺服動態網頁.
+
+Windows [NGINX] nginx.conf 設定:
+
+&lt;pre class="brush: jscript"&gt;
+worker_processes  1;
+events {
+    worker_connections  1024;
+}
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    sendfile        on;
+
+    server {
+        listen [::]:80;
+        allow 2001:288:6004:XX::0/32;
+        deny all;
+        
+        location / {
+            root E:/downloads;
+            auth_basic "For Authorized Users Only!";
+            auth_basic_user_file C:/password/.htpasswd; 
+        }
+        
+        location /f/ {
+            alias f:/;
+            auth_basic "For Authorized Users Only!";
+            auth_basic_user_file C:/password/.htpasswd; 
+        }
+        
+        location /g/ {
+            alias g:/;
+            auth_basic "For Authorized Users Only!";
+            auth_basic_user_file C:/password/.htpasswd; 
+            }
+        } # ends server
+} # ends http
+&lt;/pre&gt;
+
+從上面 [NGINX] 的設定檔案可以看出, 儘管只使用簡單的 [Apache] htpasswd 帳號與密碼控管連線, 但只允許特定網段連線的設定, 已經比將所有資料全部在 [Github Pages] 開放穩當很多. 因為從教學的角度來看, 許多引用的資料可能會因為時空轉變, 原先自由授權的內容轉為特定出版品而改變使用授權, 一旦透過帳號與密碼管控, 就只是提供課程使用, 管理上比較簡便單純.
+
+
+
+
 
 </t>
 <t tx="yen.20170108171605.1"></t>
