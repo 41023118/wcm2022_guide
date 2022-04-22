@@ -2,7 +2,7 @@
         <head>
         <title>WCM_GUIDE</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -139,36 +139,56 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Wink << <a href='Wink.html'>Previous</a> <a href='Topics.html'>Next</a> >> Topics<br /><h1>Nginx</h1>
-<p><a href="https://nginx.org/">https://nginx.org/</a> 可以在 Windows 與 Ubuntu 中安裝.</p>
-<p>Nginx 設定為 WWW 網際下載主機:</p>
-<p>nginx.conf</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">server {
-    # 原先可以接受 IPv4 網路連線, 目前覆蓋為 comment
-    #listen       80;
-    # 設定接受 IPv6 網路連線
-    listen [::]:80;
-    # 原先採 localhost 伺服器連線, 目前覆蓋為註解
-    #server_name  localhost;
-    # 只允許系上 IPv6 網路連線
-    allow 2001:288:6004:17::0/32;
-    # 除系上網段外, 其餘網段均拒絕連線
-    deny all;
-    
-    location / {
-        # 網際根目錄
-        root E:/downloads;
-        # 利用帳號密碼認證後才可連線
-        auth_basic "For Authorized Users Only!";
-        auth_basic_user_file C:/pj2022/nginx-1.20.2/.htpasswd; 
-    }
-    # 設定為列出各檔案與目錄的索引內容
-    autoindex on;
-}</pre>
-<p>.htpasswd 利用 <a href="https://www.apachelounge.com/download/">Apache</a> 中的 htpasswd.exe 建立.</p>
-<p>htpasswd -c c:/location_of_password_file/.htpasswd username</p>
-<p>上述指令在命令列視窗中執行後, 需要輸入兩次與 username 對應的驗證密碼.</p>
-<p></p><br />Wink << <a href='Wink.html'>Previous</a> <a href='Topics.html'>Next</a> >> Topics</div>
+    <div id="tipue_search_content">設定 Pelican 網誌 << <a href='設定 Pelican 網誌.html'>Previous</a> <a href='計算機概論.html'>Next</a> >> 計算機概論<br /><h1>Blogger 網誌</h1>
+<p>將 w9j_midterm Wink 影片嵌入 cmsimde 頁面的超文件:</p>
+<p>請注意: 同一個頁面中的每一個 Wink 影片都 必須有獨一的 winkVideoData 變數, 以下採用 winkVideoData_blogger 作為影片對應變數名稱.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script&gt;// &lt;![CDATA[
+var winkVideoData_blogger = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+// ]]&gt;&lt;/script&gt;
+&lt;!-- 接下來將 mp4 檔案從 downloads 目錄取出 --&gt;
+&lt;div class="winkVideoContainerClass"&gt;&lt;video width="1008" height="630" autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_blogger" muted="true"&gt;
+&lt;source src="./../downloads/w9j_midterm/w9j_midterm.mp4" type="video/mp4" /&gt;&lt;/video&gt;
+&lt;div class="winkVideoOverlayClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarClass"&gt;&lt;button class="winkVideoControlBarPlayButtonClass"&gt;&lt;/button&gt; &lt;button class="winkVideoControlBarPauseButtonClass"&gt;&lt;/button&gt;
+&lt;div class="winkVideoControlBarProgressLeftClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressEmptyMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressRightClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressFilledMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressThumbClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="winkVideoPlayOverlayClass"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>以下為利用 @gm 電子郵箱建立 Blogger 網誌的流程, 其中若使用 Proxy, 則需暫時關閉, 否則 Blogger 會以同一個 IP (Proxy server IP) 同時申請多個網誌的認定禁止新建網誌.</p>
+<script>
+var winkVideoData_blogger = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+</script>
+<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_blogger" height="630" muted="true" width="1008">
+<source src="./../downloads/w9j_midterm/w9j_midterm.mp4" type="video/mp4"/></video>
+<div class="winkVideoOverlayClass"></div>
+<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
+<div class="winkVideoControlBarProgressRightClass"></div>
+<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
+<div class="winkVideoControlBarProgressThumbClass"></div>
+</div>
+<div class="winkVideoPlayOverlayClass"></div>
+</div><br />設定 Pelican 網誌 << <a href='設定 Pelican 網誌.html'>Previous</a> <a href='計算機概論.html'>Next</a> >> 計算機概論</div>
         
     <!-- footer -->
       <div class="container">

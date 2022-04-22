@@ -184,6 +184,31 @@ var winkVideoData2 = {
 <h2>Wink</h2>
 <p>這裡所指的 Wink 為 3.0 版, 來自 <a href="https://www.debugmode.com/wink/">https://www.debugmode.com/wink/</a> 是一套免費 (Freeware) 的電腦操作流程影片錄製軟體, 與 <a href="https://github.com/ShareX/ShareX">ShareX</a> 相同的是, 兩套軟體的影片製作核心都是採用 <a href="https://www.ffmpeg.org/download.html">ffmpeg.exe</a>. 不同的地方在於: <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 沒有開源, 可能是採用 C++ 編寫 (因為除了 Windows 版本, 還有 Linux, 但卻沒有 Mac), 且 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 可以在主影格 (Key frame) 中加入文字說明, 以及 html 按鈕. 比較適合用來製作需要較多文字說明輔助的教學影片. 至於 <a href="https://github.com/ShareX/ShareX">ShareX</a> 是一套採用 C# 編寫的開源套件, 適合製作加上搭配語音或說明字幕的操作教學影片.</p>
 <p>由作者提供的 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 使用教學影片可以參考 <a href="https://mde.tw/cmstemplate/content/Wink.html">https://mde.tw/cmstemplate/content/Wink.html</a></p>
+<p>將 Wink 影片嵌入 cmsimde 網頁的超文件:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script&gt;// &lt;![CDATA[
+var winkVideoData = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+// ]]&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;!-- 接下來將 mp4 檔案從 downloads 目錄取出 --&gt;
+&lt;div class="winkVideoContainerClass"&gt;&lt;video width="1008" height="630" autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData" muted="true"&gt;
+&lt;source src="/downloads/cmsimde_wink/wink2cmsimde.mp4" type="video/mp4" /&gt;&lt;/video&gt;
+&lt;div class="winkVideoOverlayClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarClass"&gt;&lt;button class="winkVideoControlBarPlayButtonClass"&gt;&lt;/button&gt; &lt;button class="winkVideoControlBarPauseButtonClass"&gt;&lt;/button&gt;
+&lt;div class="winkVideoControlBarProgressLeftClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressEmptyMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressRightClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressFilledMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressThumbClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="winkVideoPlayOverlayClass"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
 <p>以下影片說明如何將 <a href="https://www.debugmode.com/wink/">Wink 3.0</a> 製作的 mp4 教學影片嵌入 cmsimde 動態與靜態網頁, 而且能在手機上觀看:</p>
 <p>
 <script>
@@ -1115,7 +1140,7 @@ print = document["print"]
 print <= "直接將資料列在頁面"
 </script><h2>設定 Pelican 網誌</h2>
 <p><a href="https://blog.getpelican.com/">Pelican</a> 網誌系統採 Python 編寫, 可以讓使用者以 Markdown 格式編寫網誌文章後, 經由 Python 程式轉為網誌超文件內容. 由於一般的網誌系統採用日期排序外, 還提供關鍵字搜尋、分類與索引的功能, 因此 Pelican 的功能就是從每一篇文章中取出中文字索引資料後, 存為 Javascript 與 Json 格式檔案, 以供關鍵字搜尋之用. 詳細流程可以參考:</p>
-<p><a href="https://www.snaums.de/informatik/tipue-search-engine.html">https://www.snaums.de/informatik/tipue-search-engine.html</a> </p>
+<p><a href="https://www.snaums.de/informatik/tipue-search-engine.html">https://www.snaums.de/informatik/tipue-search-engine.html</a></p>
 <p>從 <a href="https://docs.getpelican.com/en/latest/">https://docs.getpelican.com/en/latest/</a> Pelican 文件中可以進一步了解 Pelican Blog 的運作方式.</p>
 <p>在網際內容管理課程中, 採用 Leo Editor 專案來管理 Pelican Blog 的設定檔案、Markdown 與 Cli 執行. 其目的有:</p>
 <ol>
@@ -1123,7 +1148,56 @@ print <= "直接將資料列在頁面"
 <li>可以讓每一位餐與協同的人員各自維護一個 Leo Editor 專案檔, 只導入與自己有關的設定、延伸程式以及網誌文章</li>
 <li>可以利用 Leo Editor 節點指令, 製作網誌文章轉檔程式, 利用 Google Blogger API, 將 <a href="https://mde.tw/lab/blog/sync-pelican-and-blogger-content.html">Pelican 網誌同步至 Blogger</a></li>
 </ol>
-<h2>計算機概論</h2>
+<h3>Blogger 網誌</h3>
+<p>將 w9j_midterm Wink 影片嵌入 cmsimde 頁面的超文件:</p>
+<p>請注意: 同一個頁面中的每一個 Wink 影片都 必須有獨一的 winkVideoData 變數, 以下採用 winkVideoData_blogger 作為影片對應變數名稱.</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script&gt;// &lt;![CDATA[
+var winkVideoData_blogger = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+// ]]&gt;&lt;/script&gt;
+&lt;!-- 接下來將 mp4 檔案從 downloads 目錄取出 --&gt;
+&lt;div class="winkVideoContainerClass"&gt;&lt;video width="1008" height="630" autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData_blogger" muted="true"&gt;
+&lt;source src="/downloads/w9j_midterm/w9j_midterm.mp4" type="video/mp4" /&gt;&lt;/video&gt;
+&lt;div class="winkVideoOverlayClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarClass"&gt;&lt;button class="winkVideoControlBarPlayButtonClass"&gt;&lt;/button&gt; &lt;button class="winkVideoControlBarPauseButtonClass"&gt;&lt;/button&gt;
+&lt;div class="winkVideoControlBarProgressLeftClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressEmptyMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressRightClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressFilledMiddleClass"&gt;&lt;/div&gt;
+&lt;div class="winkVideoControlBarProgressThumbClass"&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="winkVideoPlayOverlayClass"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>以下為利用 @gm 電子郵箱建立 Blogger 網誌的流程, 其中若使用 Proxy, 則需暫時關閉, 否則 Blogger 會以同一個 IP (Proxy server IP) 同時申請多個網誌的認定禁止新建網誌.</p>
+<script>
+var winkVideoData_blogger = {
+  dataVersion: 1,
+  frameRate: 10,
+  buttonFrameLength: 5,
+  buttonFrameOffset: 2,
+  frameStops: {
+  },
+};
+</script>
+<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
+<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData_blogger" height="630" muted="true" width="1008">
+<source src="/downloads/w9j_midterm/w9j_midterm.mp4" type="video/mp4"/></video>
+<div class="winkVideoOverlayClass"></div>
+<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
+<div class="winkVideoControlBarProgressLeftClass"></div>
+<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
+<div class="winkVideoControlBarProgressRightClass"></div>
+<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
+<div class="winkVideoControlBarProgressThumbClass"></div>
+</div>
+<div class="winkVideoPlayOverlayClass"></div>
+</div><h2>計算機概論</h2>
 <p><a href="http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S210">電機系的計算機概論課程</a> (<a href="http://ocw.aca.ntu.edu.tw/ocw_files/101S210/101S210_CS01L01.pdf">講義</a>)</p>
 <p style="padding-left: 30px;">課程概述</p>
 <p style="padding-left: 30px;">這是專門設計給電機系一年級同學修習的計算機概論課程, 其目的在教授計算機科學的基礎技術及知識. 同時亦著重C/C++相關程式設計的技巧. 最終希望讓同學有足夠的能力修習進階計算機相關課程, 以及利用計算機來解決日後研究議題.</p>
