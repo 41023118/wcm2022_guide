@@ -139,34 +139,15 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Win10 << <a href='Win10.html'>Previous</a> <a href='Heroku.html'>Next</a> >> Heroku<br /><h1>IPv6 setup</h1>
-<p>利用 <a href="https://www.debugmode.com/wink/">Wink</a> 建立電腦操作流程影片時, 必須注意:</p>
-<ol>
-<li>可以與 ShareX 共用 <a href="https://www.ffmpeg.org/download.html#build-windows">ffmpeg.exe</a>.</li>
-<li>為了讓影片能在手機觀看, video 標註中必須帶有 autoplay 與 controls 屬性.</li>
-<li>video 標註的大小必須與 <a href="https://www.debugmode.com/wink/">Wink</a> 專案檔中的設定相符, 合適的尺寸大小: width="1008" height="630".</li>
-<li>以下 <a href="https://www.debugmode.com/wink/">Wink</a> 影片設定超文件檔案: <a href="./../downloads/wink_script_and_setup.txt">wink_script_and_setup.txt</a></li>
-</ol>
-<p><!--配合 Wink 檔案將 js 檔案設定如下--></p>
-<p>
-<script>
-var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
-</script>
-</p>
-<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData" height="630" muted="true" width="1008">
-<source src="./../downloads/wcm_w2_2.mp4" type="video/mp4"/></video>
-<div class="winkVideoOverlayClass"></div>
-<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
-<div class="winkVideoControlBarProgressLeftClass"></div>
-<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
-<div class="winkVideoControlBarProgressRightClass"></div>
-<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
-<div class="winkVideoControlBarProgressThumbClass"></div>
-</div>
-<div class="winkVideoPlayOverlayClass"></div>
-</div>
-<br />Win10 << <a href='Win10.html'>Previous</a> <a href='Heroku.html'>Next</a> >> Heroku</div>
+    <div id="tipue_search_content">IPv6 setup << <a href='IPv6 setup.html'>Previous</a> <a href='Midterm.html'>Next</a> >> Midterm<br /><h1>Heroku</h1>
+<p>在近端 IPv6 網段, 可以從<a href="http://wcm.cycu.org:88/github/cp2020/content/index.html?q=heroku">這裡</a>查詢與 Heroku 有關的資料.</p>
+<p>Heroku 是一個雲端應用程式服務, 可以用來伺服靜態網頁, 也可以用來執行 Python + Flask 編寫的動態網頁. 在 Heroku 免費帳號下, 若希望執行 cmsimde 動態網頁, 必須將 config/content.htm 轉為 Postgresql 資料庫儲存.</p>
+<p>假如近端使用 IPv6 上網, 則更新 Heroku cli 之前, 必須先設定雙網路支援的 Proxy Server:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">set HTTP_PROXY=http://kmolab:kmolab10@[2001:288:6004:xx::xx]:3128
+set HTTPS_PROXY=http://kmolab:kmolab10@[2001:288:6004:xx::xx]:3128
+
+c:\heroku\bin\heroku update</pre>
+<p></p><br />IPv6 setup << <a href='IPv6 setup.html'>Previous</a> <a href='Midterm.html'>Next</a> >> Midterm</div>
         
     <!-- footer -->
       <div class="container">

@@ -1033,7 +1033,16 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <div class="winkVideoControlBarProgressThumbClass"></div>
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
-</div><h1>Midterm</h1>
+</div>
+<h2>Heroku</h2>
+<p>在近端 IPv6 網段, 可以從<a href="http://wcm.cycu.org:88/github/cp2020/content/index.html?q=heroku">這裡</a>查詢與 Heroku 有關的資料.</p>
+<p>Heroku 是一個雲端應用程式服務, 可以用來伺服靜態網頁, 也可以用來執行 Python + Flask 編寫的動態網頁. 在 Heroku 免費帳號下, 若希望執行 cmsimde 動態網頁, 必須將 config/content.htm 轉為 Postgresql 資料庫儲存.</p>
+<p>假如近端使用 IPv6 上網, 則更新 Heroku cli 之前, 必須先設定雙網路支援的 Proxy Server:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">set HTTP_PROXY=http://kmolab:kmolab10@[2001:288:6004:xx::xx]:3128
+set HTTPS_PROXY=http://kmolab:kmolab10@[2001:288:6004:xx::xx]:3128
+
+c:\heroku\bin\heroku update</pre>
+<p></p><h1>Midterm</h1>
 <p><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/e00a3b68d4defee1987d18cc998b377a/raw/3582dddbb1f6deecec9fcce65f191a2415e4d7a5/j5_w8_grp.py">五專倉儲與網頁連結</a></p>
 <h4>期中課程內容整理</h4>
 <p style="padding-left: 30px;"><a href="https://mde.tw/wcm2022_guide/blog/wcm2022-w7-review.html">https://mde.tw/wcm2022_guide/blog/wcm2022-w7-review.html</a></p>
