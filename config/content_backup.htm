@@ -1065,7 +1065,7 @@ c:\heroku\bin\heroku update</pre>
 <p style="padding-left: 60px;">能不能將計算機程式所開發的程式, 透過分組協同方式多人合作下, 將持續改進的程式部署在個人與分組網頁, 部署在 Pelican 與 Blogger 網誌, 部署在 Reveal.js 簡報系統上?</p>
 <p style="padding-left: 60px;">會不會運用實體 Windows 10、虛擬 Windows 10、實體 Ubuntu 22.04、虛擬 Ubuntu 22.04、 Github、Gitlab、Bitbucket 以及 Heroku, 配置部署上述個人或分組協同所完成的網際內容 (網頁與前後端整合程式)?</p>
 <h4 style="padding-left: 30px;">期中考週之後的主題:</h4>
-<p style="padding-left: 60px;">配置 Brython 環境<br/>設定 Pelican 網誌<br/>Blogger 網誌同步<br/>計算機概論<br/>電腦硬體拆解<br/>建立 Virtualbox 虛擬主機<br/>Fossil SCM server<br/>Tetris on Brython</p><h2>四技任務</h2>
+<p style="padding-left: 60px;">配置 Brython 環境<br/>設定 Pelican 網誌<br/><a href="https://mde.tw/lab/blog/sync-pelican-and-blogger-content.html">Blogger 網誌同步</a><br/>計算機概論<br/>電腦硬體拆解<br/>建立 Virtualbox 虛擬主機<br/>Fossil SCM server<br/>Tetris on Brython</p><h2>四技任務</h2>
 <p>請利用期中考週的課程時段 (09:10 - 11:00), 在 <a href="https://github.com/mdecycu/wcm2022_guide/blob/main/downloads/w8_ansic/w8_project.wnk">w8_project.wnk</a> 專案的頁面內容引導下, 加入各頁面的說明字串, 完成後請將 Wink 影片放入個人網頁 (頁面標題為 H1 midterm) 與個人 Pelican 網誌中 (Slug 設為 midterm).</p><h2>五專任務</h2>
 <p>請自行利用 @gm Google email 帳號登記 <a href="https://www.blogger.com">Blogger</a> 網誌系統 (請以個人的 Github 帳號登錄個人網誌 domain, 例如: <a href="https://github_帳號.blogspot.com">https://github_帳號.blogspot.com</a>)</p>
 <p>並在個人 Blogger 中分別以計算機概論與網際內容管理課程內容摘要與心得, 建立至少兩篇網誌文章.</p><h2>配置 Brython</h2>
@@ -1085,7 +1085,20 @@ brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
 print("Brython 程式")
 &lt;/script&gt;</pre>
 <p>在 Brython 程式中的 print() 將會列印至 Web Developer Tools 中的 console 頁面.</p>
-<p>假如希望列印資料直接呈現在頁面, 則可以利用 &lt;div id="print"&gt;&lt;/div&gt;</p>
+<p>假如希望列印資料直接呈現在頁面, 則可以利用 Brython 中的 html 與 document 模組完成:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
+&lt;script src="/static/brython_stdlib.js"&gt;&lt;/script&gt;
+&lt;script&gt;// &lt;![CDATA[
+window.onload=function(){
+brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
+}
+// ]]&gt;&lt;/script&gt;
+&lt;div id="print"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import html, document
+print = document["print"]
+print &lt;= "直接將資料列在頁面"
+&lt;/script&gt;</pre>
 <p></p>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -1098,8 +1111,71 @@ brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
 <script type="text/python3">
 from browser import html, document
 print = document["print"]
-print <= "Brython 程式"
-</script><h2>Digital Thread</h2>
+print <= "直接將資料列在頁面"
+</script><h2>設定 Pelican 網誌</h2>
+<p><a href="https://blog.getpelican.com/">Pelican</a> 網誌系統採 Python 編寫, 可以讓使用者以 Markdown 格式編寫網誌文章後, 經由 Python 程式轉為網誌超文件內容. 由於一般的網誌系統採用日期排序外, 還提供關鍵字搜尋、分類與索引的功能, 因此 Pelican 的功能就是從每一篇文章中取出中文字索引資料後, 存為 Javascript 與 Json 格式檔案, 以供關鍵字搜尋之用. 詳細流程可以參考:</p>
+<p><a href="https://www.snaums.de/informatik/tipue-search-engine.html">https://www.snaums.de/informatik/tipue-search-engine.html</a> </p>
+<p>從 <a href="https://docs.getpelican.com/en/latest/">https://docs.getpelican.com/en/latest/</a> Pelican 文件中可以進一步了解 Pelican Blog 的運作方式.</p>
+<p>在網際內容管理課程中, 採用 Leo Editor 專案來管理 Pelican Blog 的設定檔案、Markdown 與 Cli 執行. 其目的有:</p>
+<ol>
+<li>可以更有效管理 Pelican Blog 相關內容</li>
+<li>可以讓每一位餐與協同的人員各自維護一個 Leo Editor 專案檔, 只導入與自己有關的設定、延伸程式以及網誌文章</li>
+<li>可以利用 Leo Editor 節點指令, 製作網誌文章轉檔程式, 利用 Google Blogger API, 將 <a href="https://mde.tw/lab/blog/sync-pelican-and-blogger-content.html">Pelican 網誌同步至 Blogger</a></li>
+</ol>
+<h2>計算機概論</h2>
+<p><a href="http://ocw.aca.ntu.edu.tw/ntu-ocw/ocw/cou/101S210">電機系的計算機概論課程</a> (<a href="http://ocw.aca.ntu.edu.tw/ocw_files/101S210/101S210_CS01L01.pdf">講義</a>)</p>
+<p style="padding-left: 30px;">課程概述</p>
+<p style="padding-left: 30px;">這是專門設計給電機系一年級同學修習的計算機概論課程, 其目的在教授計算機科學的基礎技術及知識. 同時亦著重C/C++相關程式設計的技巧. 最終希望讓同學有足夠的能力修習進階計算機相關課程, 以及利用計算機來解決日後研究議題.</p>
+<p style="padding-left: 30px;">課程內容包括:</p>
+<ol>
+<li>資料類: 資料儲存、資料結構、資料庫</li>
+<li>系統類: 計算機結構，作業系統，網路</li>
+<li>科學類: 演算法, 程式語言, 人工智慧</li>
+</ol>
+<p style="padding-left: 30px;">課程目標</p>
+<p style="padding-left: 30px;">使同學對計算機科學中的術語、法則、理論、應用及技術有基本的了解.</p>
+<p><a href="http://class-qry.acad.ncku.edu.tw/crm/course_map/course.php?dept=E1&amp;cono=E113000">機械系的計算機概論</a></p>
+<p style="padding-left: 30px;">本課程內容包含三大部份: 電腦入門實務, C++程式語言, 以及Matlab 程式語言, 以作為專業機械課程之基礎工具.</p>
+<p style="padding-left: 30px;">目標: 建立機械系同學基礎程式撰寫能力, 並訓練使用基本工具軟體的能力, 以為未來應用到專業機械領域課程所需.</p>
+<p style="padding-left: 30px;">課程教育目標:</p>
+<ol>
+<li>教育學生瞭解數學、科學及工程的原理, 並以系統化的方法解決機械工程的問題</li>
+<li>培育具領導力、創造力及國際觀之機械工程人才</li>
+</ol>
+<p><a href="http://web.csie.ndhu.edu.tw/sclo/project/ppt.html">資工系的計算機概論</a></p>
+<p>有關上列提到的 Matlab:</p>
+<p style="padding-left: 30px;"><a href="https://www.mathworks.com/content/dam/mathworks/fact-sheet/using-matlab-with-python-cheat-sheet.pdf">Using Matlab and Python Together</a></p>
+<p style="padding-left: 30px;"><a href="https://num.math.uni-goettingen.de/~schulz/data/pythonVSmatII.pdf">Exploring Python as Matlab alternative</a></p>
+<p style="padding-left: 30px;"><a href="https://mas-dse.github.io/DSE200/cheat_sheets/1_python/6_2_NumPy_for_MATLAB_users.pdf">numpy for Matlab users</a></p>
+<p style="padding-left: 30px;"><a href="https://www.cs.miyazaki-u.ac.jp/~date/lectures/2013ic/tutorial_slides.pdf">Python for Matlab Users</a> (2012)</p>
+<p style="padding-left: 30px;"><a href="https://www.researchgate.net/publication/328175547_MatLab_vs_Python_vs_R">MatLab vs. Python vs. R</a> (2017)</p>
+<p style="padding-left: 60px;">After reviewing all three of the programs in depth, we have reached the conclusion that Python is the best language to be taught in a classroom environment.  This is because it is easy to use and will allow students access to open source coding that can be found online when performing more difficult analysis.</p>
+<p style="padding-left: 30px;"><a href="https://www.enthought.com/wp-content/uploads/2022/03/Enthought-MATLAB-to-Python-White-Paper_.pdf">Migrating MATLAB to Python</a> (2022)</p>
+<p style="padding-left: 30px;"></p>
+<p></p><h2>電腦硬體拆解</h2>
+<p><a href="/downloads/HPE ProLiant ML350p Gen8.pdf">HPE ProLiant ML350p Gen8</a> (<a href="/downloads/HPE ProLiant ML350p Gen8_user_guide.pdf">user guide</a>) (2014 ~ )</p>
+<p><a href="https://mde.tw/wcm2022_guide/downloads/HPE_ProLiant_ML_10_v2_Server.pdf">HPE Proliant ML10 v2 server</a> (2015 ~ )</p>
+<p><a href="https://project.mde.tw/blog/yen-dian-nao-fu-zhu-she-ji-shi-dian-nao-pei-zhi.html">Asus Skylake MD790/I7-6700</a> (服役期間: 2016-2021)</p>
+<p><a href="https://ark.intel.com/content/www/tw/zh/ark/products/37212/intel-pentium-processor-e5200-2m-cache-2-50-ghz-800-mhz-fsb.html">Intel E5200 CPU computer</a> (服役期間: 2010-2016)</p>
+<p><a href="https://cadlab.mde.tw/post/cadlab-ji-jie-she-ji-xi-wang-lu-pei-zhi-tu.html">機械設計系網路配置圖</a></p>
+<p>command line get BIOS date:</p>
+<p style="padding-left: 30px;">Windows: systeminfo</p>
+<p style="padding-left: 30px;">Ubuntu:</p>
+<p style="padding-left: 60px;">sudo dmidecode -s bios-release-date</p>
+<p style="padding-left: 60px;">sudo dmidecode -s system-product-name</p>
+<p>Run remote desktop client</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Y:\&gt;REM https://docs.microsoft.com/zh-tw/windows-server/administration/windows-commands/mstsc
+
+Y:\&gt;C:\Windows\system32\mstsc.exe /v:2001:288:6004:XX:XXXX::XX</pre>
+<p></p><h2>建立 Virtualbox 虛擬主機</h2>
+<p><a href="https://www.virtualbox.org/">https://www.virtualbox.org/</a></p>
+<p>修改 vdi UUID:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">C:\Users\admin\Downloads&gt;"C:\Program Files\Oracle\VirtualBox\VBoxManage.exe" internalcommands sethduuid wcm_w7.vdi</pre>
+<p><a href="https://mde.tw/wcm2022_guide/content/Win10.html">建立 Win10 虛擬主機</a></p>
+<p>建立 Ubuntu 虛擬主機</p>
+<p><a href="http://wcm.cycu.org:88/wcm_w7_vdi.7z">wcm_w7_vdi.7z</a></p>
+<p><a href="http://wcm.cycu.org:88/wcm_w8.7z">wcm_w8.7z</a></p><h2>Fossil SCM server</h2>
+<p><a href="https://mde.tw/pj5073">https://mde.tw/pj5073</a> </p><h2>Tetris on Brython</h2><h2>Digital Thread</h2>
 <p>Digital Twin (數位雙生) 與 Digital Thread (數位緒)</p>
 <p><a href="https://www.ptc.com/en/blogs/corporate/what-is-a-digital-thread">https://www.ptc.com/en/blogs/corporate/what-is-a-digital-thread</a></p>
 <p><a href="https://www.aerospacemanufacturinganddesign.com/article/amd-080910-f-35-joint-strike-fighter-digital-thread/">The Digital Thread - Key to F-35 Joint Strike Fighter Affordability</a></p>
