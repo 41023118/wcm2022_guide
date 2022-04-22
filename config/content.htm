@@ -1068,16 +1068,60 @@ c:\heroku\bin\heroku update</pre>
 <p style="padding-left: 60px;">配置 Brython 環境<br/>設定 Pelican 網誌<br/>Blogger 網誌同步<br/>計算機概論<br/>電腦硬體拆解<br/>建立 Virtualbox 虛擬主機<br/>Fossil SCM server<br/>Tetris on Brython</p><h2>四技任務</h2>
 <p>請利用期中考週的課程時段 (09:10 - 11:00), 在 <a href="https://github.com/mdecycu/wcm2022_guide/blob/main/downloads/w8_ansic/w8_project.wnk">w8_project.wnk</a> 專案的頁面內容引導下, 加入各頁面的說明字串, 完成後請將 Wink 影片放入個人網頁 (頁面標題為 H1 midterm) 與個人 Pelican 網誌中 (Slug 設為 midterm).</p><h2>五專任務</h2>
 <p>請自行利用 @gm Google email 帳號登記 <a href="https://www.blogger.com">Blogger</a> 網誌系統 (請以個人的 Github 帳號登錄個人網誌 domain, 例如: <a href="https://github_帳號.blogspot.com">https://github_帳號.blogspot.com</a>)</p>
-<p>並在個人 Blogger 中分別以計算機概論與網際內容管理課程內容摘要與心得, 建立至少兩篇網誌文章.</p><h2>Digital Thread</h2>
+<p>並在個人 Blogger 中分別以計算機概論與網際內容管理課程內容摘要與心得, 建立至少兩篇網誌文章.</p><h2>配置 Brython</h2>
+<p>在動態網頁中配置 Brython:</p>
+<p>導入 Brython 程式庫:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
+&lt;script src="/static/brython_stdlib.js"&gt;&lt;/script&gt;</pre>
+<p>啟動 Brython:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script&gt;
+window.onload=function(){
+brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
+}
+&lt;/script&gt;</pre>
+<p>其中的 pythonpath 可以將 Python 模組放入後, 以 import 引用.</p>
+<p>完成上述 Brython 程式庫導入與啟動後, 就可以利用:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script type="text/python3"&gt;
+print("Brython 程式")
+&lt;/script&gt;</pre>
+<p>在 Brython 程式中的 print() 將會列印至 Web Developer Tools 中的 console 頁面.</p>
+<p>假如希望列印資料直接呈現在頁面, 則可以利用 Brython 中的 html 與 document 模組完成:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
+&lt;script src="/static/brython_stdlib.js"&gt;&lt;/script&gt;
+&lt;script&gt;// &lt;![CDATA[
+window.onload=function(){
+brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
+}
+// ]]&gt;&lt;/script&gt;
+&lt;div id="print"&gt;&lt;/div&gt;
+&lt;script type="text/python3"&gt;
+from browser import html, document
+print = document["print"]
+print &lt;= "直接將資料列在頁面"
+&lt;/script&gt;</pre>
+<p></p>
+<script src="/static/brython.js"></script>
+<script src="/static/brython_stdlib.js"></script>
+<script>
+window.onload=function(){
+brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
+}
+</script>
+<div id="print"></div>
+<script type="text/python3">
+from browser import html, document
+print = document["print"]
+print <= "直接將資料列在頁面"
+</script><h2>Digital Thread</h2>
 <p>Digital Twin (數位雙生) 與 Digital Thread (數位緒)</p>
-<p><a href="https://www.ptc.com/en/blogs/corporate/what-is-a-digital-thread">https://www.ptc.com/en/blogs/corporate/what-is-a-digital-thread</a> </p>
+<p><a href="https://www.ptc.com/en/blogs/corporate/what-is-a-digital-thread">https://www.ptc.com/en/blogs/corporate/what-is-a-digital-thread</a></p>
 <p><a href="https://www.aerospacemanufacturinganddesign.com/article/amd-080910-f-35-joint-strike-fighter-digital-thread/">The Digital Thread - Key to F-35 Joint Strike Fighter Affordability</a></p>
 <p><a href="https://dspace.mit.edu/bitstream/handle/1721.1/114857/Engineering-design-digital-thread-Singh-Willcox.pdf?sequence=1&amp;isAllowed=y">Engineering Design with Digital Thread</a> (From mit.edu)</p>
 <p><a href="https://www.gardnerweb.com/articles/what-are-digital-twins-and-digital-threads">What Are Digital Twins and Digital Threads?</a></p>
-<p><a href="https://blog.samtec.com/post/the-digital-thread/">https://blog.samtec.com/post/the-digital-thread/</a> </p>
-<p><a href="https://www.3dcadworld.com/3d-cad-promotes-functioning-digital-thread/">https://www.3dcadworld.com/3d-cad-promotes-functioning-digital-thread/</a> </p>
-<p><a href="https://www.gray.com/insights/what-the-digital-thread-means-for-the-future-of-design-and-manufacturing/">https://www.gray.com/insights/what-the-digital-thread-means-for-the-future-of-design-and-manufacturing/</a> </p>
-<p><a href="https://www.capvidia.com/blog/best-step-file-to-use-ap203-vs-ap214-vs-ap242">https://www.capvidia.com/blog/best-step-file-to-use-ap203-vs-ap214-vs-ap242</a> </p>
+<p><a href="https://blog.samtec.com/post/the-digital-thread/">https://blog.samtec.com/post/the-digital-thread/</a></p>
+<p><a href="https://www.3dcadworld.com/3d-cad-promotes-functioning-digital-thread/">https://www.3dcadworld.com/3d-cad-promotes-functioning-digital-thread/</a></p>
+<p><a href="https://www.gray.com/insights/what-the-digital-thread-means-for-the-future-of-design-and-manufacturing/">https://www.gray.com/insights/what-the-digital-thread-means-for-the-future-of-design-and-manufacturing/</a></p>
+<p><a href="https://www.capvidia.com/blog/best-step-file-to-use-ap203-vs-ap214-vs-ap242">https://www.capvidia.com/blog/best-step-file-to-use-ap203-vs-ap214-vs-ap242</a></p>
 <p></p><h3>RDT</h3>
 <p><a href="https://en.wikipedia.org/wiki/Remote_desktop_software">Remote DeskTop</a></p>
 <p>以下批次檔案指令可以透過 Windows 遠端桌面 client 連接至遠端指定電腦:</p>
