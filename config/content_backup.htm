@@ -234,7 +234,8 @@ var winkVideoData = {
 <div class="winkVideoControlBarProgressThumbClass"></div>
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
-</div><h2>Nginx</h2>
+</div>
+<p>也可以直接取 Wink 影片相關的 css, js 與 mp4 URL 位址, 放入 Blogger 文章中, 例如: <a href="https://wcm2023.blogspot.com/2022/04/w9jblogger-wink.html">https://wcm2023.blogspot.com/2022/04/w9jblogger-wink.html</a> </p><h2>Nginx</h2>
 <p><a href="https://nginx.org/">https://nginx.org/</a> 可以在 Windows 與 Ubuntu 中安裝.</p>
 <p>Nginx 設定為 WWW 網際下載主機:</p>
 <p>nginx.conf</p>
@@ -1150,6 +1151,7 @@ print <= "直接將資料列在頁面"
 </ol>
 <h3>Blogger 網誌</h3>
 <p>將 w9j_midterm Wink 影片嵌入 cmsimde 頁面的超文件:</p>
+<p>請注意: 同一個頁面中的每一個 Wink 影片都 必須有獨一的 winkVideoData 變數, 以下採用 winkVideoData_blogger 作為影片對應變數名稱.</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script&gt;// &lt;![CDATA[
 var winkVideoData_blogger = {
   dataVersion: 1,
