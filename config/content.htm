@@ -1119,7 +1119,25 @@ c:\heroku\bin\heroku update</pre>
 <p><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/e00a3b68d4defee1987d18cc998b377a/raw/8d10f6db758cf7a0768cad6024e46339db628724/1a_midterm.py">midterm 查驗</a></p>
 <div id="brython_div" style="padding-left: 30px;"><a href="https://s40723207.github.io/wcm2022/blog/midterm.html">40723207 blog</a> <a href="https://s40723207.github.io/wcm2022/content/midterm.html">40723207 cms</a><br/><a href="https://s40723229.github.io/wcm2022/blog/midterm.html">40723229 blog</a> <a href="https://s40723229.github.io/wcm2022/content/midterm.html">40723229 cms</a><br/><a href="https://s40723245.github.io/wcm2022/blog/midterm.html">40723245 blog</a> <a href="https://s40723245.github.io/wcm2022/content/midterm.html">40723245 cms</a><br/><a href="https://40823132.github.io/wcm2022/blog/midterm.html">40823132 blog</a><br/><a href="https://41023112.github.io/wcm2022/content/midterm.html">41023112 cms</a><br/><a href="https://41023121.github.io/wcm2022/content/midterm.html">41023121 cms</a><br/><a href="https://shih1717.github.io/wcm2022/content/midterm.html">41023143 cms</a><br/><a href="https://Xiang0502.github.io/wcm2022/content/midterm.html">41023147 cms</a><br/><a href="https://zeromarurei.github.io/wcm2022/content/midterm.html">41023154 cms</a></div><h2>五專任務</h2>
 <p>請自行利用 @gm Google email 帳號登記 <a href="https://www.blogger.com">Blogger</a> 網誌系統 (請以個人的 Github 帳號登錄個人網誌 domain, 例如: <a href="https://github_帳號.blogspot.com">https://github_帳號.blogspot.com</a>)</p>
-<p>並在個人 Blogger 中分別以計算機概論與網際內容管理課程內容摘要與心得, 建立至少兩篇網誌文章.</p><h2>配置 Brython</h2>
+<p>並在個人 Blogger 中分別以計算機概論與網際內容管理課程內容摘要與心得, 建立至少兩篇網誌文章.</p>
+<p>希望透過線上程式讀取學員學號與 blogger 帳號, 然後直接在網頁上建立各學員的 blogger 連結:</p>
+<p>第一步: 先設法以 Brython (Browser Python, 也就是可以直接在網頁上執行的 Python), <a href="https://mde.tw/wcm2022_guide/content/run.html">讀取</a> <a href="https://mde.tw/studlist/2022spring/5j.txt">https://mde.tw/studlist/2022spring/5j.txt</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document
+
+brython_div = document["brython_div"]
+
+# 根據 href 與 content 將 html 元件中的 anchor 插入頁面
+def makeLink(href, content):
+    brython_div &lt;= html.A(content, href=href)
+    brython_div &lt;= html.BR()
+
+# 將 5j 學號、帳號、組別與 blogger 的網址設為 studlist_url
+studlist_url = "https://mde.tw/studlist/2022spring/5j.txt"
+# 利用 open() 與 read() 讀出資料
+data = open(studlist_url).read()
+print(data)</pre>
+<p></p><h2>配置 Brython</h2>
 <p>在動態網頁中配置 Brython:</p>
 <p>導入 Brython 程式庫:</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
