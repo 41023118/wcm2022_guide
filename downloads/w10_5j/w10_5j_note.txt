@@ -1,0 +1,25 @@
+# 從 browser 模組導入 html 物件
+from browser import html
+# 從 browser 模組導入 document 物件
+from browser import document
+ 
+# 利用 document 物件, 設定超文件中, id 為 brython_div 的標註,
+# 將其與變數 brython_div 進行對應
+brython_div = document["brython_div"]
+ 
+# 根據 href 與 content 將 html 元件中的 anchor 插入頁面
+# 以下三行在定義一個函式 (function), 名稱為 makeLink(), 
+# 其中需要輸入兩個變數
+# Python 程式語法是透過縮排 (indentation) 來界定程式執行範圍
+# Python 的縮排內定為四個 spaces
+def makeLink(href, content):
+    # 利用 html 物件中的 A 方法 (物件中的函式),
+    # A 代表可以從 html 物件中產生 Anchor 連結的功能
+    brython_div <= html.A(content, href=href)
+    brython_div <= html.BR()
+ 
+# 將 5j 學號、帳號、組別與 blogger 的網址設為 studlist_url
+studlist_url = "https://mde.tw/studlist/2022spring/5j.txt"
+# 利用 open() 與 read() 讀出資料
+data = open(studlist_url).read()
+print(data)
