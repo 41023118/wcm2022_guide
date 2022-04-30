@@ -2,7 +2,7 @@
         <head>
         <title>WCM_GUIDE</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -139,25 +139,17 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">WCMS << <a href='WCMS.html'>Previous</a> <a href='Server.html'>Next</a> >> Server<br /><h1>Code</h1>
-<p><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
-<p style="padding-left: 30px;"><a href="https://code.visualstudio.com/learn">學習使用 Visual Studio Code 寫程式</a></p>
-<p style="padding-left: 60px;">From File &gt; Preferences &gt; Settings (macOS: Code &gt; Preferences &gt; Settings), search for telemetry, and set the Telemetry: Telemetry Level setting to off. This will silence all telemetry events from VS Code going forward.</p>
-<p style="padding-left: 60px;"><a href="https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare-pack">Live Share Extension Pack</a></p>
-<p style="padding-left: 90px;"><a href="https://code.visualstudio.com/learn/collaboration/live-share">學習使用 Live Share</a></p>
-<p style="padding-left: 60px;"><a href="https://code.visualstudio.com/docs/editor/intellisense#_intellisense-features">IntelliSense</a></p>
-<p style="padding-left: 30px;">Web-based: <a href="https://vscode.dev/">https://vscode.dev/</a></p>
-<p>電子書:</p>
-<p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-1-4842-6901-5">Visual Studio Code Distilled</a> (2021)</p>
-<p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-1-4842-7344-9">Optimizing Visual Studio Code for Python Development</a> (2021)</p>
-<p style="padding-left: 30px;"><a href="https://link.springer.com/book/10.1007/978-1-4842-7064-6">PowerShell for Beginner</a>s (2021)</p>
-<p>專案:</p>
-<p style="padding-left: 30px;"><a href="https://github.com/boltex/leojs">https://github.com/boltex/leojs</a></p>
-<p style="padding-left: 60px;"><a href="https://link.springer.com/book/10.1007/978-1-4842-7011-0">Essential TypeScript 4</a> (2021)</p>
-<p></p>
-<p></p>
-<p style="padding-left: 30px;"></p>
-<br />WCMS << <a href='WCMS.html'>Previous</a> <a href='Server.html'>Next</a> >> Server</div>
+    <div id="tipue_search_content">建立 Virtualbox 虛擬主機 << <a href='建立 Virtualbox 虛擬主機.html'>Previous</a> <a href='Fossil SCM server.html'>Next</a> >> Fossil SCM server<br /><h1>Ubuntu2204</h1>
+<p>利用 Ubuntu 22.04 建立能夠啟動 cmsimde 動態網頁, 並能以 XeTeX 編譯 .tex 的虛擬主機.</p>
+<p>先以 Ubuntu 22.04 安裝 Virtualbox 虛擬主機.</p>
+<p>安裝 Ubuntu 22.04 後:</p>
+<p>sudo apt update</p>
+<p>sudo apt upgrade</p>
+<p>sudo apt install -y texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-standard-kai ttf-mscorefonts-installer librsvg2-bin texlive-fonts-extra</p>
+<p>sudo apt install python3-pip</p>
+<p>sudo pip3 install flask flask_cors bs4 lxml pelican markdown leo pyopenssl</p>
+<p>之後可以 xelatex project_file.tex 三次後完成 project_file.pdf 的編譯轉檔.</p>
+<p>然後再利用 cmsimde 動態網站協同編輯 project_file.tex, 並伺服 project+_file.pdf</p><br />建立 Virtualbox 虛擬主機 << <a href='建立 Virtualbox 虛擬主機.html'>Previous</a> <a href='Fossil SCM server.html'>Next</a> >> Fossil SCM server</div>
         
     <!-- footer -->
       <div class="container">

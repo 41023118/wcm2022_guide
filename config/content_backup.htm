@@ -176,7 +176,9 @@ var winkVideoData2 = {
 </div>
 <div class="winkVideoPlayOverlayClass"></div>
 </div>
-<h2>Mac and RDT</h2>
+<h3>YubiKey</h3>
+<p><a href="https://www.yubico.com/">YubiKey</a> 可用於 <a href="https://www.nytimes.com/wirecutter/reviews/best-security-keys/">Multi-factor Authentication</a>, 也可用於 Github SSH 連線.</p>
+<p style="padding-left: 30px;"><a href="https://github.com/drduh/YubiKey-Guide">https://github.com/drduh/YubiKey-Guide</a></p><h2>Mac and RDT</h2>
 <p>在 Mac Air 使用 <a href="https://en.wikipedia.org/wiki/Remote_desktop_software">Remote DeskTop</a> (RDT) 連接到遠端的 Windows 10 電腦, 啟動 Wink 後, 可以在 Preferences 中, 利用 <span style="background-color: #ffff99;">Mac Air 鍵盤中的 fn + F1 鍵取代 Pause</span>, 就可以在 Wink 專案中以 fn + F1 取得當下的電腦操作畫面.</p>
 <p>在台灣的機械工程專業使用者, 若要使用 Mac 電腦, 經常會碰到許多瓶頸, 主要原因是一般大學或研究所以上的課程, 似乎都以 Windows 操作系統為主, 因此造成機械工程師無法在 Mac 電腦上進行產品開發設計的錯誤印象.</p>
 <p>從<a href="https://mde.tw/cp2021/content/%E5%AD%B8%E7%BF%92%E7%A8%8B%E5%BC%8F.html">學習程式</a>這個頁面, 可以得知目前流程的操作系統主要分為 Unix 與 Windows 兩大支, MacOS 源自 Unix 中的 <a href="https://en.wikipedia.org/wiki/Berkeley_Software_Distribution">BSD</a>, 而 Windows 操作系統在 2004 版本 (2020.04 釋出) 之後, 已經能夠<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install">安裝</a> <a href="https://docs.microsoft.com/en-us/windows/wsl/about">WSL</a> (Windows Subsystem for Linux), 以獨特的 Microsoft 架構使用許多 Linux 操作系統具備的指令與套件.</p>
@@ -1162,7 +1164,7 @@ var winkVideoData_brython_open_read = {
 <div class="winkVideoPlayOverlayClass"></div>
 </div>
 <p>靈活運用上述 Brython 程式碼, 再加上 Heroku 上的 Flask 程式, 可以直接從教務主機中擷取資料:</p>
-<p style="padding-left: 30px;"><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/e00a3b68d4defee1987d18cc998b377a/raw/7fbe903bbfcc72c6107fbad71d4c11c776bbdc05/w10_5j_ajax.py">輸入學期與課程代號, 取出修課學員學號</a></p><h2>配置 Brython</h2>
+<p style="padding-left: 30px;"><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/e00a3b68d4defee1987d18cc998b377a/raw/b1ab86e88df787b0fbc2ed627c532287d9c2cefc/w10_5j_ajax.py">輸入學期與課程代號, 取出修課學員學號</a></p><h2>配置 Brython</h2>
 <p>在動態網頁中配置 Brython:</p>
 <p>導入 Brython 程式庫:</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
@@ -1327,7 +1329,17 @@ Y:\&gt;C:\Windows\system32\mstsc.exe /v:2001:288:6004:XX:XXXX::XX</pre>
 <p>建立 Ubuntu 虛擬主機</p>
 <p><a href="http://wcm.cycu.org:88/wcm_w7_vdi.7z">wcm_w7_vdi.7z</a></p>
 <p><a href="http://wcm.cycu.org:88/wcm_w8.7z">wcm_w8.7z</a></p>
-<h3>Ubuntu2204</h3><h2>Fossil SCM server</h2>
+<h3>Ubuntu2204</h3>
+<p>利用 Ubuntu 22.04 建立能夠啟動 cmsimde 動態網頁, 並能以 XeTeX 編譯 .tex 的虛擬主機.</p>
+<p>先以 Ubuntu 22.04 安裝 Virtualbox 虛擬主機.</p>
+<p>安裝 Ubuntu 22.04 後:</p>
+<p>sudo apt update</p>
+<p>sudo apt upgrade</p>
+<p>sudo apt install -y texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-standard-kai ttf-mscorefonts-installer librsvg2-bin texlive-fonts-extra</p>
+<p>sudo apt install python3-pip</p>
+<p>sudo pip3 install flask flask_cors bs4 lxml pelican markdown leo pyopenssl</p>
+<p>之後可以 xelatex project_file.tex 三次後完成 project_file.pdf 的編譯轉檔.</p>
+<p>然後再利用 cmsimde 動態網站協同編輯 project_file.tex, 並伺服 project+_file.pdf</p><h2>Fossil SCM server</h2>
 <p><a href="https://mde.tw/pj5073">https://mde.tw/pj5073</a> </p><h2>Tetris on Brython</h2>
 <p><a href="https://mde.tw/wcm2022_guide/content/run?src=https://gist.githubusercontent.com/mdecourse/05930b1775b77293523b59b1bbb43e57/raw/738223b424c3f5f12961070aa8a75185177420b6/pygame_to_brython_tetris.py">Tetris on Brython</a></p><h2>Digital Thread</h2>
 <p>Digital Twin (數位雙生) 與 Digital Thread (數位緒)</p>
