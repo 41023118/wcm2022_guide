@@ -179,7 +179,7 @@ var winkVideoData2 = {
 <h3>YubiKey</h3>
 <p><a href="https://www.yubico.com/">YubiKey</a> 可用於 <a href="https://www.nytimes.com/wirecutter/reviews/best-security-keys/">Multi-factor Authentication</a>, 也可用於 Github SSH 連線.</p>
 <p style="padding-left: 30px;">Based on <a href="https://support.yubico.com/hc/en-us/articles/4403770046354-How-to-select-the-correct-YubiKey">https://support.yubico.com/hc/en-us/articles/4403770046354-How-to-select-the-correct-YubiKey</a></p>
-<p style="padding-left: 60px;">The YubiKey is an extra layer of security to your online accounts. When logging into an account with a YubiKey registered, the user must have the account login credentials (username+password), and the YubiKey registered to the account. This physical layer of protection prevents many account takeovers that can be done virtually. <br/><br/>Yubico offers plenty of different form-factors for the YubiKey as well as different options for the connectors. To choose your YubiKey, ask yourself the following questions:</p>
+<p style="padding-left: 60px;">The YubiKey is an extra layer of security to your online accounts. When logging into an account with a YubiKey registered, the user must have the account login credentials (username+password), and the YubiKey registered to the account. This physical layer of protection prevents many account takeovers that can be done virtually. </p>
 <p style="padding-left: 30px;"><a href="https://github.com/drduh/YubiKey-Guide">https://github.com/drduh/YubiKey-Guide</a></p>
 <p style="padding-left: 60px;">This is a guide to using <a href="https://www.yubico.com/products/yubikey-hardware/" rel="nofollow">YubiKey</a> as a <a href="https://security.stackexchange.com/questions/38924/how-does-storing-gpg-ssh-private-keys-on-smart-cards-compare-to-plain-usb-drives" rel="nofollow">SmartCard</a> for storing GPG encryption, signing and authentication keys, which can also be used for SSH.</p>
 <p style="padding-left: 60px;">Keys stored on YubiKey are non-exportable (as opposed to file-based keys that are stored on disk) and are convenient for everyday use. Instead of having to remember and enter passphrases to unlock SSH/GPG keys, YubiKey needs only a physical touch after being unlocked with a PIN. All signing and encryption operations happen on the card, rather than in OS memory.</p>
@@ -1362,8 +1362,9 @@ Y:\&gt;C:\Windows\system32\mstsc.exe /v:2001:288:6004:XX:XXXX::XX</pre>
 <p>以下批次檔案指令可以透過 Windows 遠端桌面 client 連接至遠端指定電腦:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">REM https://docs.microsoft.com/zh-tw/windows-server/administration/windows-commands/mstsc
 %windir%\system32\mstsc.exe /v:2001:288:6004:XX:XXXX::XX</pre>
+<h1>Development</h1>
 <p></p>
-<pre></pre><h1>Portable Python</h1>
+<pre></pre><h2>Portable Python</h2>
 <h4>何謂可攜式 Python 程式環境?</h4>
 <h4 style="padding-left: 30px;">Python 程式是如何執行的?</h4>
 <p style="padding-left: 30px;">首先 Python 是一種解譯式 (Interpreted) 程式語言, 與 C 或 C++ 程式語言最大的差別是, C/C++ 程式碼通常必須透過編譯 (Compile) 與連結 (Link) 的過程, 將原始碼轉為可執行的格式 (在 Windows 操作系統為 .exe 檔案), 而 Python 程式寫好後, 可以直接利用解譯器執行, 使用者不需要手動執行程式碼的編譯, 而是由解譯器在執行前即時將程式碼轉換為可執行檔案.</p>
@@ -1423,7 +1424,7 @@ Y:\&gt;C:\Windows\system32\mstsc.exe /v:2001:288:6004:XX:XXXX::XX</pre>
 <ol>
 <li>在未修改 Python Script 目錄中的 .exe 可執行檔之前, 必須透過 .py 執行, 例如: 命令列 中輸入 leo 並無法執行執行, 必須採用 import leo.core.runLeo;leo.core.runLeo.run()</li>
 <li>若在裝有還原卡的電腦, 未修改 Python 系統模組路徑之前, 所安裝的額外模組無法放入 USB 隨身碟中.</li>
-</ol><h1>Fossil SCM</h1>
+</ol><h2>Fossil SCM</h2>
 <p>利用 Fossil SCM 與 Google API 建立的網際伺服器範例: <a href="https://pj5073.cycu.org">https://pj5073.cycu.org</a></p>
 <p>如何在一台 2009 年出廠的電腦設定 Fossil SCM server?</p>
 <p>Windows:</p>
@@ -1608,15 +1609,12 @@ WantedBy=multi-user.target
 
 </pre>
 <p></p>
-<p></p>
-<h2>PC2Server</h2>
-<p>大一與專一分別從 PC 硬體安裝 Windows 10 (利用 <a href="https://clonezilla.org/">https://clonezilla.org/</a> 硬碟開機磁區 clone) 之後再逐步設定如 <a href="https://pj5073.cycu.org">https://pj5073.cycu.org</a> 與 <a href="https://wcm.cycu.org">https://wcm.cycu.org</a> 的網際伺服器.</p>
-<h1>Tetris</h1>
+<p></p><h3>PC2Server</h3>
+<p>大一與專一分別從 PC 硬體安裝 Windows 10 (利用 <a href="https://clonezilla.org/">https://clonezilla.org/</a> 硬碟開機磁區 clone) 之後再逐步設定如 <a href="https://pj5073.cycu.org">https://pj5073.cycu.org</a> 與 <a href="https://wcm.cycu.org">https://wcm.cycu.org</a> 的網際伺服器.</p><h2>Tetris</h2>
 <p><a href="https://levelup.gitconnected.com/writing-tetris-in-python-2a16bddb5318">https://levelup.gitconnected.com/writing-tetris-in-python-2a16bddb5318</a></p>
 <p><a href="https://github.com/ondras/custom-tetris">https://github.com/ondras/custom-tetris</a></p>
 <p><a href="https://github.com/topics/tetris?l=python">https://github.com/topics/tetris?l=python</a></p>
-<p></p>
-<h2>run</h2>
+<p></p><h3>run</h3>
 <p><a href="https://en.wikipedia.org/wiki/Flag_of_the_Republic_of_China#Construction_details">ROC 國旗規格</a> <a href="https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD%E5%9B%BD%E6%97%97#%E8%A7%84%E6%A0%BC">PROC 國旗規格</a> <a href="https://en.wikipedia.org/wiki/Flag_of_the_United_States#Specifications">USA 國旗規格</a></p>
 <p><a href="https://gist.github.com/mdecourse/05930b1775b77293523b59b1bbb43e57">Gist Brython scripts</a></p>
 <p><a href="https://mde.tw/cp2021/content/%E8%A7%A3%E9%A1%8C%E7%B7%B4%E7%BF%92.html">解題練習</a></p>
@@ -2057,3 +2055,8 @@ doc["tetris"].bind("click", tetris.do)
 ################################## tetris end
 </script>
 </p>
+<h1>Leo Editor</h1>
+<p>原始碼: <a href="https://github.com/leo-editor/leo-editor">https://github.com/leo-editor/leo-editor</a></p>
+<p>在 Windows 使用 Leo Editor 6.6.1 版:</p>
+<p>下載 Leo Editor 之後, 用新版本的 leo 目錄取代原來位於 Y:\Python395\Lib\site-packages 目錄下的 leo 目錄即可.</p>
+<p>在系上網段<a href="http://wcm.cycu.org:88/leo661.7z">下載 Leo 6.6.1</a></p>

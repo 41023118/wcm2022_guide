@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理 - wcm</title><link href="./" rel="alternate"></link><link href="./feeds/wcm.atom.xml" rel="self"></link><id>./</id><updated>2022-04-19T19:04:24+08:00</updated><entry><title>w9 網際內容管理策略</title><link href="./wcm2022-w9-wcm-stratege.html" rel="alternate"></link><published>2022-04-19T11:00:00+08:00</published><updated>2022-04-19T19:04:24+08:00</updated><author><name>kmolab</name></author><id>tag:None,2022-04-19:./wcm2022-w9-wcm-stratege.html</id><summary type="html">&lt;p&gt;將課程資料的靜態網頁以 &lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt; 伺服, 除了方便學員查驗各週的改版內容外, 還能直接以瀏覽器擷取. 方便性高, 但是, 免費的 &lt;a href="https://github.com"&gt;Github&lt;/a&gt; 帳號只能透過公開的倉儲使用 &lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>網際內容管理 - wcm</title><link href="./" rel="alternate"></link><link href="./feeds/wcm.atom.xml" rel="self"></link><id>./</id><updated>2022-05-11T11:00:00+08:00</updated><entry><title>w11 寫 Pelican 網誌</title><link href="./wcm2022-w11-write-pelican-blog.html" rel="alternate"></link><published>2022-05-11T11:00:00+08:00</published><updated>2022-05-02T00:04:56+08:00</updated><author><name>kmolab</name></author><id>tag:None,2022-05-11:./wcm2022-w11-write-pelican-blog.html</id><summary type="html">&lt;p&gt;&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; 是一個建立網誌系統的輔助程式套件, 以 Python 編寫, 使用者可以使用 &lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Markdown&lt;/a&gt; 格式建立文章, 然後交由 &lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; 轉為網際日誌超文件檔案.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;&lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; 是一個建立網誌系統的輔助程式套件, 以 Python 編寫, 使用者可以使用 &lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Markdown&lt;/a&gt; 格式建立文章, 然後交由 &lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; 轉為網際日誌超文件檔案.&lt;/p&gt;
+
+
+&lt;h1&gt;何謂網誌?&lt;/h1&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Blog"&gt;Blog&lt;/a&gt; 中文稱為部落格, 全稱為 Weblog. 通常指一種依照日期逆向順序排列的敘事網站內容. 使用者可以透過關鍵字查詢網誌內容, 也可以透過各種分類方式列出網誌文章. 其中包括按照文章主題、作者與關鍵字排列閱讀網誌內容.&lt;/p&gt;
+&lt;p&gt;由於網誌作者每新增一篇文章, 網站就必須重新配置文章分類連結、作者提供文章連結以及關鍵字查詢更新等整合事項, 因此將一篇文章發布在網誌系統的工作流程通常由程式進行轉檔, 而 &lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; 就是負責將使用者所提供的各篇文章內容整合轉檔為網誌系統的工具之一.&lt;/p&gt;
+&lt;h1&gt;如何寫網誌?&lt;/h1&gt;
+&lt;h2&gt;網誌關鍵內容&lt;/h2&gt;
+&lt;p&gt;利用 &lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Markdown&lt;/a&gt; 編寫 &lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; 網誌文章的最前頭, 必須要提供文章標題 (Title), 文章日期 (Date), 文章分類 (Category), 文章標籤 (Tags), 文章超文件檔案名稱 (Slug), 以及文章作者 (Author) 等資料. 由於 &lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Markdown&lt;/a&gt; 內容轉檔後, 每一篇文章必須以獨一的超文件名稱存檔, 因此每一篇 &lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Markdown&lt;/a&gt; 文章中的 Slug 必須採用不同的名稱, 否則 &lt;a href="https://blog.getpelican.com/"&gt;Pelican&lt;/a&gt; 轉檔時就會顯示出無法兩篇文章共用相同檔名的錯誤, 而無法正確完成轉檔.&lt;/p&gt;
+&lt;p&gt;本篇網誌範例的開頭關鍵內容如下:&lt;/p&gt;
+&lt;pre class="brush: html"&gt;
+---
+Title: w11 寫 Pelican 網誌
+Date: 2022-05-11 11:00
+Category: wcm
+Tags: 2022SpringWCM
+Slug: wcm2022-w11-write-pelican-blog
+Author: kmolab
+---
+&lt;/pre&gt;
+
+&lt;h2&gt;網誌摘要&lt;/h2&gt;
+&lt;p&gt;在關鍵內容之後, 通常會列出網誌文章的摘要, 並以下列 html 註解內容與網誌本文進行區隔. 意即這一行區隔之前的內容為摘要, 而之後就是網誌本文.&lt;/p&gt;
+&lt;pre class="brush: html"&gt;
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;/pre&gt;
+
+&lt;h2&gt;Markdown 文章配置&lt;/h2&gt;
+&lt;p&gt;使用 &lt;a href="https://leoeditor.com/"&gt;Leo Editor&lt;/a&gt; 編輯網誌時, 可以利用節點指令中的 auto 或 clean 編輯 &lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Markdown&lt;/a&gt; 網誌文章 (edit 指令只能導入單一節點內容存檔, 而 auto 與 clean 節點指令則可以導入子節點內容), 並以子節點加上內文 others 指令來配置文章內容, 此功能可透過樹狀結構來管理類似 XML 標註架構的 &lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Markdown&lt;/a&gt; 文章. 若再配合 &lt;a href="https://leoeditor.com/"&gt;Leo Editor&lt;/a&gt; 中特有的 cloned 節點, 可以多篇文章共用同一個 cloned 節點內容. 例如: 可以將文章內所提及的 Anchor 標註統一採用 cloned 節點進行管理. 以下在 others 前方加上 @, 就是 &lt;a href="https://leoeditor.com/"&gt;Leo Editor&lt;/a&gt; 內文中的一種指令, 代表要將隨後的子節點內容放在 others 標示的位置上.&lt;/p&gt;
+&lt;h2&gt;如何放入圖片?&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Pelican&lt;/a&gt; 格式的文章中也支援 html 標註, 因此可以直接利用 img 標註引用圖片.&lt;/p&gt;
+&lt;h2&gt;如何嵌入影片?&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Pelican&lt;/a&gt; 格式的文章中也支援 html 標註, 因此可以直接利用 video 標註引用影片.&lt;/p&gt;
+&lt;h2&gt;如何引用程式碼?&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Pelican&lt;/a&gt; 格式的文章中也支援 html 標註, 因此可以直接利用 pre 標註與語法高亮標示呈現程式碼.&lt;/p&gt;
+&lt;h2&gt;如何加入 Brython 程式?&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Pelican&lt;/a&gt; 格式的文章中也支援 html 標註, 因此可以直接將 &lt;a href="https://brython.info/"&gt;Brython&lt;/a&gt; 對應的 Javascript 標註導入 &lt;a href="https://brython.info/"&gt;Brython&lt;/a&gt; 程式庫與啟動 scripts.&lt;/p&gt;
+&lt;h2&gt;如何加入 STL 零件?&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Markdown"&gt;Pelican&lt;/a&gt; 格式的文章中也支援 html 標註, 因此可以直接利用 Javascript 標定 STL 零組件.&lt;/p&gt;</content><category term="wcm"></category><category term="2022SpringWCM"></category></entry><entry><title>w9 網際內容管理策略</title><link href="./wcm2022-w9-wcm-stratege.html" rel="alternate"></link><published>2022-04-19T11:00:00+08:00</published><updated>2022-05-01T23:46:53+08:00</updated><author><name>kmolab</name></author><id>tag:None,2022-04-19:./wcm2022-w9-wcm-stratege.html</id><summary type="html">&lt;p&gt;將課程資料的靜態網頁以 &lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt; 伺服, 除了方便學員查驗各週的改版內容外, 還能直接以瀏覽器擷取. 方便性高, 但是, 免費的 &lt;a href="https://github.com"&gt;Github&lt;/a&gt; 帳號只能透過公開的倉儲使用 &lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;將課程資料的靜態網頁以 &lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt; 伺服, 除了方便學員查驗各週的改版內容外, 還能直接以瀏覽器擷取. 方便性高, 但是, 免費的 &lt;a href="https://github.com"&gt;Github&lt;/a&gt; 帳號只能透過公開的倉儲使用 &lt;a href="https://pages.github.com/"&gt;Github Pages&lt;/a&gt;.&lt;/p&gt;
 
 

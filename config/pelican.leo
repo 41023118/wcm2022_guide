@@ -73,6 +73,12 @@
 <v t="leo.20220419055847.1"></v>
 </v>
 </v>
+<v t="leo.20220501202840.1"><vh>w11 寫 Pelican 網誌</vh>
+<v t="leo.20220501202937.1"><vh>@clean 20220501.md</vh>
+<v t="leo.20220501203121.1"><vh>w11 寫 Pelican 網誌</vh></v>
+<v t="leo.20220419055847.1"></v>
+</v>
+</v>
 </v>
 </v>
 <v t="yen.20170108171733.83"><vh>產生 .key 與 .crt 指令</vh></v>
@@ -584,7 +590,12 @@ Author: kmolab
 [uwsgi]: https://uwsgi-docs.readthedocs.io/en/latest/
 [Fossil SCM]: https://fossil-scm.org
 [NGINX]: https://nginx.org
-[Apache]: https://www.apachelounge.com/download/</t>
+[Apache]: https://www.apachelounge.com/download/
+[Pelican]: https://blog.getpelican.com/
+[Markdown]: https://en.wikipedia.org/wiki/Markdown
+[Blog]: https://en.wikipedia.org/wiki/Blog
+[Leo Editor]: https://leoeditor.com/
+[Brython]: https://brython.info/</t>
 <t tx="leo.20220419060307.1">當期課程網站
 ----
 
@@ -640,6 +651,91 @@ http {
 
 
 
+
+</t>
+<t tx="leo.20220501202840.1"></t>
+<t tx="leo.20220501202937.1">@language md
+---
+Title: w11 寫 Pelican 網誌
+Date: 2022-05-11 11:00
+Category: wcm
+Tags: 2022SpringWCM
+Slug: wcm2022-w11-write-pelican-blog
+Author: kmolab
+---
+
+[Pelican] 是一個建立網誌系統的輔助程式套件, 以 Python 編寫, 使用者可以使用 [Markdown] 格式建立文章, 然後交由 [Pelican] 轉為網際日誌超文件檔案.
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+@others</t>
+<t tx="leo.20220501203121.1">何謂網誌?
+====
+
+[Blog] 中文稱為部落格, 全稱為 Weblog. 通常指一種依照日期逆向順序排列的敘事網站內容. 使用者可以透過關鍵字查詢網誌內容, 也可以透過各種分類方式列出網誌文章. 其中包括按照文章主題、作者與關鍵字排列閱讀網誌內容.
+
+由於網誌作者每新增一篇文章, 網站就必須重新配置文章分類連結、作者提供文章連結以及關鍵字查詢更新等整合事項, 因此將一篇文章發布在網誌系統的工作流程通常由程式進行轉檔, 而 [Pelican] 就是負責將使用者所提供的各篇文章內容整合轉檔為網誌系統的工具之一.
+
+如何寫網誌?
+====
+
+網誌關鍵內容
+----
+
+利用 [Markdown] 編寫 [Pelican] 網誌文章的最前頭, 必須要提供文章標題 (Title), 文章日期 (Date), 文章分類 (Category), 文章標籤 (Tags), 文章超文件檔案名稱 (Slug), 以及文章作者 (Author) 等資料. 由於 [Markdown] 內容轉檔後, 每一篇文章必須以獨一的超文件名稱存檔, 因此每一篇 [Markdown] 文章中的 Slug 必須採用不同的名稱, 否則 [Pelican] 轉檔時就會顯示出無法兩篇文章共用相同檔名的錯誤, 而無法正確完成轉檔.
+
+本篇網誌範例的開頭關鍵內容如下:
+
+&lt;pre class="brush: html"&gt;
+@language md
+---
+Title: w11 寫 Pelican 網誌
+Date: 2022-05-11 11:00
+Category: wcm
+Tags: 2022SpringWCM
+Slug: wcm2022-w11-write-pelican-blog
+Author: kmolab
+---
+&lt;/pre&gt;
+
+網誌摘要
+----
+
+在關鍵內容之後, 通常會列出網誌文章的摘要, 並以下列 html 註解內容與網誌本文進行區隔. 意即這一行區隔之前的內容為摘要, 而之後就是網誌本文.
+
+&lt;pre class="brush: html"&gt;
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+&lt;/pre&gt;
+
+Markdown 文章配置
+----
+
+使用 [Leo Editor] 編輯網誌時, 可以利用節點指令中的 auto 或 clean 編輯 [Markdown] 網誌文章 (edit 指令只能導入單一節點內容存檔, 而 auto 與 clean 節點指令則可以導入子節點內容), 並以子節點加上內文 others 指令來配置文章內容, 此功能可透過樹狀結構來管理類似 XML 標註架構的 [Markdown] 文章. 若再配合 [Leo Editor] 中特有的 cloned 節點, 可以多篇文章共用同一個 cloned 節點內容. 例如: 可以將文章內所提及的 Anchor 標註統一採用 cloned 節點進行管理. 以下在 others 前方加上 @, 就是 [Leo Editor] 內文中的一種指令, 代表要將隨後的子節點內容放在 others 標示的位置上.
+
+如何放入圖片?
+----
+
+[Pelican] [Markdown] 格式的文章中也支援 html 標註, 因此可以直接利用 img 標註引用圖片.
+
+如何嵌入影片?
+----
+
+[Pelican] [Markdown] 格式的文章中也支援 html 標註, 因此可以直接利用 video 標註引用影片.
+
+如何引用程式碼?
+----
+
+[Pelican] [Markdown] 格式的文章中也支援 html 標註, 因此可以直接利用 pre 標註與語法高亮標示呈現程式碼.
+
+如何加入 Brython 程式?
+----
+
+[Pelican] [Markdown] 格式的文章中也支援 html 標註, 因此可以直接將 [Brython] 對應的 Javascript 標註導入 [Brython] 程式庫與啟動 scripts.
+
+如何加入 STL 零件?
+----
+
+[Pelican] [Markdown] 格式的文章中也支援 html 標註, 因此可以直接利用 Javascript 標定 STL 零組件.
 
 </t>
 <t tx="yen.20170108171605.1"></t>
