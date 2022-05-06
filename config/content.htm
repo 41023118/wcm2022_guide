@@ -1177,8 +1177,48 @@ var winkVideoData_brython_open_read = {
 <p>靈活運用上述 Brython 程式碼, 再加上 Heroku 上的 Flask 程式, 可以直接從教務主機中擷取資料:</p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/e00a3b68d4defee1987d18cc998b377a/raw/b1ab86e88df787b0fbc2ed627c532287d9c2cefc/w10_5j_ajax.py">輸入學期與課程代號, 取出修課學員學號</a></p>
 <h3>w11_5j</h3>
+<p>利用網際內容管理方式配置學員資料倉儲, 並以瀏覽器擷取資料進行分析應用的流程圖:</p>
 <p><img alt="" height="453" src="/images/w11_5j_flowchart.png" width="400"/></p>
-<p>接下來希望在這個頁面設定 Brython 程式環境, 將程式取得的學員 Blogger 網誌連結直接顯示在下方:</p><h2>配置 Brython</h2>
+<p>配置 Brython 程式環境的步驟:</p>
+<ol>
+<li>導入 brython.js 解譯程式庫</li>
+<li>導入 brython_stdlib 標準程式庫</li>
+<li>在頁面中啟動 Brython</li>
+<li>在頁面中編寫 Brython 程式</li>
+</ol>
+<script src="/static/brython.js">
+</script>
+<script src="/static/brython_stdlib.js"></script>
+<script>
+window.onload=function(){
+brython();
+}
+</script>
+<p>接下來希望在這個頁面設定 Brython 程式環境, 將程式取得的學員 Blogger 網誌連結直接顯示在下方:</p>
+<script type="text/python3">
+from browser import html
+from browser import document
+ 
+brython_div = document["brython_div"]
+ 
+# 根據 href 與 content 將 html 元件中的 anchor 插入頁面
+def makeLink(href, content):
+    brython_div <= html.A(content, href=href)
+    brython_div <= html.BR()
+ 
+# 將 5j 學號、帳號、組別與 blogger 的網址設為 studlist_url
+studlist_url = "https://mde.tw/studlist/2022spring/5j.txt"
+# 利用 open() 與 read() 讀出資料
+data = open(studlist_url).read().split("\n")[1:-1]
+#print(data)
+for i in data:
+    stud_no = str(i.split("\t")[0])
+    content = stud_no + " blogger"
+    blogger_account = i.split("\t")[3]
+    href = "https://" + str(blogger_account) + ".blogspot.com"
+    makeLink(href, content)
+</script>
+<div id="brython_div"></div><h2>配置 Brython</h2>
 <p>在動態網頁中配置 Brython:</p>
 <p>導入 Brython 程式庫:</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
