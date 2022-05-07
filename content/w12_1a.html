@@ -142,11 +142,13 @@ img.add_border {
     <div id="tipue_search_content">四技任務 << <a href='四技任務.html'>Previous</a> <a href='五專任務.html'>Next</a> >> 五專任務<br /><h1>w12_1a</h1>
 <h4>cmsimde 網站的配置</h4>
 <p>請各組分別至電腦輔助設計室中帶有 3 個開機磁區的電腦設定一台 W10 虛擬主機, 將各分組的動態與靜態網站以可攜 Python, <a href="https://nginx.org/">nginx</a>, <a href="https://www.stunnel.org/">stunnel</a>, <a href="https://nssm.cc/">NSSM</a> 與 <a href="https://docs.pylonsproject.org/projects/waitress/en/latest/">waitress</a> 進行配置.</p>
-<p>Python 加上 flask flask_cors bs4 lxml pelican markdown leo pyopenssl 等模組, 可採用 self-signed certificate https 啟動 cmsimde 所建立的動態網頁系統.</p>
-<p><a href="https://nginx.org/">nginx</a> 可以採用 self-signed certificate https 協定伺服 cmsimde 所建立的靜態網頁系統.</p>
-<p><a href="https://www.stunnel.org/">stunnel</a> 可以配合內部 http nginx 網站, 代理外部 request 的 https 協定連結.</p>
-<p><a href="https://nssm.cc/">NSSM</a> 可以用來將採 cmsimde 建立的網站系統設定為 Windows 的服務.</p>
-<p><a href="https://docs.pylonsproject.org/projects/waitress/en/latest/">waitress</a> 可以用來將採 cmsimde 建立的動態網站系統, 以 WSGI 模式啟動.</p>
+<ol>
+<li>Python 加上 flask flask_cors bs4 lxml pelican markdown leo pyopenssl 等模組, 可採用 self-signed certificate https 啟動 cmsimde 所建立的動態網頁系統.</li>
+<li><a href="https://nginx.org/">nginx</a> 可以採用 self-signed certificate https 協定伺服 cmsimde 所建立的靜態網頁系統.</li>
+<li><a href="https://www.stunnel.org/">stunnel</a> 可以配合內部 http nginx 網站, 代理外部 request 的 https 協定連結.</li>
+<li><a href="https://nssm.cc/">NSSM</a> 可以用來將採 cmsimde 建立的網站系統設定為 Windows 的服務.</li>
+<li><a href="https://docs.pylonsproject.org/projects/waitress/en/latest/">waitress</a> 可以用來將採 cmsimde 建立的動態網站系統, 以 WSGI 模式啟動.</li>
+</ol>
 <h4>網際協同內容管理</h4>
 <ol>
 <li>各分組的 wcm2022ag1 位於第一組組長的倉儲帳號下, 請組長將所有組員設為該分組倉儲的協同管理者</li>
@@ -161,7 +163,9 @@ img.add_border {
 <li>在頁面中編寫 Brython 程式</li>
 </ol>
 <h4>採協同模式建立各分組的 Tetris 網際程式</h4>
-<p>將 Tetris.py Brython 程式碼存在各分組倉儲的 downloads 目錄下, 由各學員採協同設計模式進行程式註解與開發後, 透過 Github Pages 在 Brython 環境的 URL 連結下, 以 ?src=Tetris.py_的_URL 呼叫執行.</p><br />四技任務 << <a href='四技任務.html'>Previous</a> <a href='五專任務.html'>Next</a> >> 五專任務</div>
+<p>將 Tetris.py Brython 程式碼存在各分組倉儲的 downloads 目錄下, 由各學員採協同設計模式進行程式註解與開發後, 透過 Github Pages 在 Brython 環境的 URL 連結下, 以 ?src=Tetris.py_的_URL 呼叫執行.</p>
+<p>範例: 原始的 tetris_game.py: <a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://mde.tw/wcm2022_guide/downloads/tetris_game.py">https://mde.tw/wcm2022_guide/content/run.html?src=https://mde.tw/wcm2022_guide/downloads/tetris_game.py</a></p>
+<p>當多人同時維護組長帳號下分組倉儲中的 tetris_game.py 時, 各組員在近端編輯之前必須要先設法讓程式版本與遠端倉儲同步 (git pull), 改版後進行提交推送時, 若當下遠端程式內容已經被其他組員改版, 就必須再設法利用 git pull 拉回資料後, 設法解決衝突後, 才能執行 git push.</p><br />四技任務 << <a href='四技任務.html'>Previous</a> <a href='五專任務.html'>Next</a> >> 五專任務</div>
         
     <!-- footer -->
       <div class="container">
