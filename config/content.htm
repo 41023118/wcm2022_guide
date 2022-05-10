@@ -1221,12 +1221,66 @@ key = privkey.pem
 ; 伺服器採即時反應
 TIMEOUTclose = 0</pre>
 <h4>nssm 建立系統服務:</h4>
+<p style="padding-left: 30px;">以系統管理者啟動 cmd</p>
 <p style="padding-left: 30px;">nssm install nginx</p>
 <p style="padding-left: 30px;">nssm install stunnel</p>
 <h4>nssm 編輯系統服務:</h4>
+<p style="padding-left: 30px;">以系統管理者啟動 cmd</p>
 <p style="padding-left: 30px;">nssm edit nginx</p>
 <p style="padding-left: 30px;">nssm edit stunnel</p>
-<p></p>
+<p>nssm 刪除系統服務:</p>
+<p style="padding-left: 30px;">以系統管理者啟動 cmd</p>
+<p style="padding-left: 30px;">nssm remove server_name</p><h3>cmsimde_and_stunnel</h3>
+<p>在 cmsimde 倉儲中以 waitress 啟用動態網站:</p>
+<p>waitress_for_wcm2022.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 暫時關閉系統 Proxy 設定後, 安裝 waitress 模組
+# pip install waitress
+from waitress import serve
+import sys
+import os
+# 將 cmsimde 目錄納入模組搜尋
+sys.path.append(os.path.join("./cmsimde"))
+
+# 導入 flaskapp
+import flaskapp
+
+# run cmsimde dynamic site with production waitress
+# 必須配合 https 伺服器承接 port 5000 送出的資料
+serve(flaskapp.app, host='127.0.0.1', port=5000, url_scheme='https')</pre>
+<p>將 cmsimde 動態網站所需的 stunnel.conf 設定加入:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">; https 連線設定 for nginx
+[https]
+; 從 port 443 接受外部 IPv6 網路連線
+accept  = :::443
+; 資料來源從 http://[::1]:9443 取得
+connect = ::1:9443
+; https 數位簽章
+cert = fullchain.pem
+key = privkey.pem
+; 伺服器採即時反應
+TIMEOUTclose = 0
+
+; https 連線設定 for cmsimde 動態網站
+[https]
+; 從 port 8443 接受外部 IPv6 網路連線
+accept  = :::8443
+; 資料來源從 http://127.0.0.1:5000 取得
+connect = 5000
+; https 數位簽章
+cert = fullchain.pem
+key = privkey.pem
+; 伺服器採即時反應
+TIMEOUTclose = 0</pre>
+<h4>nssm 建立系統服務:</h4>
+<p style="padding-left: 30px;">以系統管理者啟動 cmd</p>
+<p style="padding-left: 30px;">利用 python.exe 執行 waitress_for_wcm2022.py</p>
+<p style="padding-left: 30px;">nssm install server_name</p>
+<h4>nssm 編輯系統服務:</h4>
+<p style="padding-left: 30px;">以系統管理者啟動 cmd</p>
+<p style="padding-left: 30px;">nssm edit server_name</p>
+<h4>nssm 刪除系統服務:</h4>
+<p style="padding-left: 30px;">以系統管理者啟動 cmd</p>
+<p style="padding-left: 30px;">nssm remove server_name</p>
 <p></p><h2>五專任務</h2>
 <p>請自行利用 @gm Google email 帳號登記 <a href="https://www.blogger.com">Blogger</a> 網誌系統 (請以個人的 Github 帳號登錄個人網誌 domain, 例如: <a href="https://github_帳號.blogspot.com">https://github_帳號.blogspot.com</a>)</p>
 <p>並在個人 Blogger 中分別以計算機概論與網際內容管理課程內容摘要與心得, 建立至少兩篇網誌文章.</p>

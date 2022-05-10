@@ -2,7 +2,7 @@
         <head>
         <title>WCM_GUIDE</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -139,192 +139,58 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Portable Python << <a href='Portable Python.html'>Previous</a> <a href='PC2Server.html'>Next</a> >> PC2Server<br /><h1>Fossil SCM</h1>
-<p>利用 Fossil SCM 與 Google API 建立的網際伺服器範例: <a href="https://pj5073.cycu.org">https://pj5073.cycu.org</a></p>
-<p>如何在一台 2009 年出廠的電腦設定 Fossil SCM server?</p>
-<p>Windows:</p>
-<p>nssm install fossil_multi</p>
-<p>nssm edit fossil_multi</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">fossil.exe server C:\pj2022\multi_repo --port 9001 --https --notfound default</pre>
-<p>nssm install fossil_server</p>
-<p>nssm edit fossil_server</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">fossil.exe server C:\pj2022\repo\pj2022.fossil --port 9000 --https</pre>
-<p>nssm install fossilapp</p>
-<p>C:\compile_copsim\data\Python395\python.exe waitress_server.py</p>
-<p>waitress_server.py</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># pip install waitress
+    <div id="tipue_search_content">nginx_and_stunnel << <a href='nginx_and_stunnel.html'>Previous</a> <a href='五專任務.html'>Next</a> >> 五專任務<br /><h1>cmsimde_and_stunnel</h1>
+<p>在 cmsimde 倉儲中以 waitress 啟用動態網站:</p>
+<p>waitress_for_wcm2022.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 暫時關閉系統 Proxy 設定後, 安裝 waitress 模組
+# pip install waitress
 from waitress import serve
+import sys
+import os
+# 將 cmsimde 目錄納入模組搜尋
+sys.path.append(os.path.join("./cmsimde"))
 
-# under cmsimde import fossilapp
-import fossilapp
+# 導入 flaskapp
+import flaskapp
 
 # run cmsimde dynamic site with production waitress
-serve(fossilapp.app, host='127.0.0.1', port=5001, url_scheme='https')</pre>
-<p>nssm install fossiloauth</p>
-<p>C:\compile_copsim\data\Python395\python.exe waitress_server.py</p>
-<p>waitress_server.py</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># pip install waitress
-from waitress import serve
-
-# under cmsimde import fossilapp
-import fossiloauth
-
-# run cmsimde dynamic site with production waitress
-serve(fossiloauth.app, host='127.0.0.1', port=5000, url_scheme='https')</pre>
-<p>stunnel.conf</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">; for single repository server: fossil_server
+# 必須配合 https 伺服器承接 port 5000 送出的資料
+serve(flaskapp.app, host='127.0.0.1', port=5000, url_scheme='https')</pre>
+<p>將 cmsimde 動態網站所需的 stunnel.conf 設定加入:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">; https 連線設定 for nginx
 [https]
-accept  = wcm.cycu.org:443
-connect = 9000
+; 從 port 443 接受外部 IPv6 網路連線
+accept  = :::443
+; 資料來源從 http://[::1]:9443 取得
+connect = ::1:9443
+; https 數位簽章
 cert = fullchain.pem
 key = privkey.pem
+; 伺服器採即時反應
 TIMEOUTclose = 0
 
-; for multiple repository server: fossil_multi
+; https 連線設定 for cmsimde 動態網站
 [https]
-accept  = wcm.cycu.org:5443
-connect = 9001
-cert = fullchain.pem
-key = privkey.pem
-TIMEOUTclose = 0
-
-; for fossiloauth
-[https]
-accept = wcm.cycu.org:8443
+; 從 port 8443 接受外部 IPv6 網路連線
+accept  = :::8443
+; 資料來源從 http://127.0.0.1:5000 取得
 connect = 5000
+; https 數位簽章
 cert = fullchain.pem
 key = privkey.pem
-TIMEOUTclose = 0
-
-; for fossilapp
-[https]
-accept = wcm.cycu.org:9443
-connect = 5001
-cert = fullchain.pem
-key = privkey.pem
+; 伺服器採即時反應
 TIMEOUTclose = 0</pre>
-<p>nginx.conf</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">worker_processes  1;
-
-events {
-    worker_connections  1024;
-}
-
-
-http {
-    include       mime.types;
-    default_type  application/octet-stream;
-
-    sendfile        on;
-
-    keepalive_timeout  65;
-
-    server {
-        listen       [::]:80 default ipv6only=on;
-        server_name  wcm.cycu.org;
-        return       301 https://$server_name$request_uri;
-    }
-    
-       server {
-        listen       [::]:88 ipv6only=off;
-        listen       88;
-        
-        allow 140.130.17.0/24;
-        allow 2001:288:6004:17::0/32;
-        deny all;
-        
-        location / {
-            root C:/pj2022/nginx-1.20.2/spring2022;
-        }
-        autoindex on;
-    }
-}
-</pre>
-<p>Ubuntu:</p>
-<p>stunnel.conf</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[https]
-accept = :443
-accept = :::443
-cert = /etc/letsencrypt/live/c3.cycu.org/fullchain.pem
-key = /etc/letsencrypt/live/c3.cycu.org/privkey.pem 
-exec = /usr/bin/fossil
-execargs = /usr/bin/fossil http /home/pj2022/repository/pj2022.fossil --https --nojail</pre>
-<p>flask_oauth2.ini</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[uwsgi]
-socket = :8080
-uid = pj2022 
-gid = pj2022 
-plugins-dir = /usr/lib/uwsgi/plugins/
-plugin = python3
-master = true
-process = 4
-threads = 2
-chdir = /home/pj2022/fossiloauth
-wsgi-file = /home/pj2022/fossiloauth/wsgi.py</pre>
-<p>nginx /etc/nginx/sites-available/default</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># for redirect to https
-server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    root /home/pj2022/pj2022/;
-    index index.html;
-}
-
-# for fossiloauth
-server {
-    listen 8443 ssl default_server;
-    listen [::]:8443 ssl default_server;
-    
-    location / {
-        include uwsgi_params;
-        uwsgi_pass  127.0.0.1:8080;
-    }
-    
-    ssl_certificate /etc/letsencrypt/live/c3.cycu.org/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/c3.cycu.org/privkey.pem;
-    ssl_session_timeout 5m;
-    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
-    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
-    ssl_prefer_server_ciphers on;
-    try_files $uri $uri/ =404;
-}
-
-# for fossilapp
-server {
-    listen 9443 ssl default_server;
-    listen [::]:9443 ssl default_server;
-    
-    location / {
-        include uwsgi_params;
-        uwsgi_pass  127.0.0.1:8081;
-    }
-    
-    ssl_certificate /etc/letsencrypt/live/c3.cycu.org/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/c3.cycu.org/privkey.pem;
-    ssl_session_timeout 5m;
-    ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
-    ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
-    ssl_prefer_server_ciphers on;
-    try_files $uri $uri/ =404;
-}
-</pre>
-<p>/etc/systemd/system/cmsimde.service</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[Unit]
-Description=uWSGI to serve CMSiMDE
-After=network.target
-   
-[Service]
-User=pj2022
-Group=pj2022
-WorkingDirectory=/home/pj2022/uwsgi_ini
-ExecStart=/usr/bin/uwsgi --emperor /home/pj2022/uwsgi_ini
-   
-[Install]
-WantedBy=multi-user.target
-
-</pre>
-<p></p>
-<p></p><br />Portable Python << <a href='Portable Python.html'>Previous</a> <a href='PC2Server.html'>Next</a> >> PC2Server</div>
+<h4>nssm 建立系統服務:</h4>
+<p style="padding-left: 30px;">以系統管理者啟動 cmd</p>
+<p style="padding-left: 30px;">利用 python.exe 執行 waitress_for_wcm2022.py</p>
+<p style="padding-left: 30px;">nssm install server_name</p>
+<h4>nssm 編輯系統服務:</h4>
+<p style="padding-left: 30px;">以系統管理者啟動 cmd</p>
+<p style="padding-left: 30px;">nssm edit server_name</p>
+<h4>nssm 刪除系統服務:</h4>
+<p style="padding-left: 30px;">以系統管理者啟動 cmd</p>
+<p style="padding-left: 30px;">nssm remove server_name</p>
+<p></p><br />nginx_and_stunnel << <a href='nginx_and_stunnel.html'>Previous</a> <a href='五專任務.html'>Next</a> >> 五專任務</div>
         
     <!-- footer -->
       <div class="container">
