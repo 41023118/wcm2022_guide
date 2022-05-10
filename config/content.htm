@@ -1281,6 +1281,21 @@ TIMEOUTclose = 0</pre>
 <h4>nssm 刪除系統服務:</h4>
 <p style="padding-left: 30px;">以系統管理者啟動 cmd</p>
 <p style="padding-left: 30px;">nssm remove server_name</p>
+<p></p><h3>Fossil server</h3>
+<p>Windows 10 在 port 9000 配合 Stunnel 的 https 代理, 啟動 Fossil server 的設定:</p>
+<p style="padding-left: 30px;"><a href="https://fossil-scm.org/home/help/server">fossil.exe server</a> C:\pj2022\repo\pj2022.fossil --port 9000 --https</p>
+<p>在 Ubuntu 則直接交由 Stunnel 設定啟動 Fossil Server:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[https]
+; for IPv4
+accept = :443
+; for IPv6 
+accept = :::443
+cert = /etc/stunnel/fullchain.pem
+key = /etc/stunnel/privkey.pem
+exec = /usr/bin/fossil
+execargs = /usr/bin/fossil http /home/pj2022/repository/pj2022.fossil --https --nojail
+; 針對多倉儲設定, 以 pj2022.fossil 作為 default repository
+; execargs = /usr/bin/fossil http /home/pj2022/repository/ --https --nojail --notfound pj2022</pre>
 <p></p><h2>五專任務</h2>
 <p>請自行利用 @gm Google email 帳號登記 <a href="https://www.blogger.com">Blogger</a> 網誌系統 (請以個人的 Github 帳號登錄個人網誌 domain, 例如: <a href="https://github_帳號.blogspot.com">https://github_帳號.blogspot.com</a>)</p>
 <p>並在個人 Blogger 中分別以計算機概論與網際內容管理課程內容摘要與心得, 建立至少兩篇網誌文章.</p>
