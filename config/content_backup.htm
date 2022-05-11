@@ -1326,7 +1326,7 @@ execargs = /usr/bin/fossil http /home/pj2022/repository/pj2022.fossil --https --
 </pre>
 <p>當使用者在 Windows 操作系統安裝設定 Virtualbox 虛擬主機後, 以虛擬主機名稱命名 (以 NXServer 為例) 的目錄將會配置在 "C:\Users\%username%\VirtualBox VMs" 目錄中, 其中的 %username% 代表安裝 Virtualbox 所使用的使用者名稱.</p>
 <p>而該安裝目錄 NXServer 中, 將配置 NXServer.vbox 與 NXServer.vbox-prev 等兩個檔案. 其中包含 Machine uuid 與 HardDisk uuid 等相關設定資訊.</p>
-<p>Virtualbox .vbox xml tags:</p>
+<p>Virtualbox .vbox 設定檔案所使用的 tags:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">AttachedDevice
 VirtualBox
 LongMode
@@ -1360,7 +1360,7 @@ Clipboard
 MediaRegistry</pre>
 <p>至於與 Virtualbox 系統設定檔案則位於 C:\Users\%username%\.VirtualBox\VirtualBox.xml</p>
 <p>儘管使用者可以透過上述設定檔案, 採手動配置虛擬主機, 將 .vdi 與設定檔案透過可攜隨身碟配置, 但 VirtualBox 每次啟動仍會以啟動後的暫存設定蓋過上述兩個設定檔案.</p>
-<p>Virtualbox .xml  tags:</p>
+<p>Virtualbox .xml 設定檔案所使用的 tags:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">DHCPServer
 MachineRegistry
 DHCPServers
