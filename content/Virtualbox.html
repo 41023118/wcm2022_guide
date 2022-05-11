@@ -2,7 +2,7 @@
         <head>
         <title>WCM_GUIDE</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -139,51 +139,78 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Pyscript << <a href='Pyscript.html'>Previous</a> <a href='WCMS.html'>Next</a> >> WCMS<br /><h1>Wifi</h1>
-<p>電腦輔助設計室中的 <a href="https://www.asus.com/tw/Networking-IoT-Servers/WiFi-Routers/ASUS-WiFi-Routers/RT-AC66U-plus/">Wifi Gigabit 路由器(分享器)</a>設定(2022/03/13 <a href="https://www.tp-link.com/tw/home-networking/wifi-router/archer-ax72/">同一價位機種</a>), 原先採 WAN 接到 NAT 的 output 集線器, 必須經過兩次路由才能連外, 且無法啟動 IPv6 網路連線.</p>
-<p>經將 WAN 直接連到系主幹後, 將 IPv6 以 Passthrough 設定後, 可讓手機或筆電經由 810WIFI 連線後取得雙協定支援網路.</p>
-<p>筆電透過 810WIFI 連線後 IPv4 部分為內部網路 192.168.50.X, 而 IPv6 部分則擁有兩個由學校配發的 IPv6 網路位址, 可用來設定 <a href="https://support.microsoft.com/en-us/windows/how-to-use-remote-desktop-5fe128d5-8fb1-7a23-3b8a-41e636865e8c">Remote Desktop</a>、WWW 或 Fossil SCM 伺服器.</p>
-<p>以下說明影片就是在將 Wifi router 設為 IPv6/IPv4 雙網路協定後的使用流程:</p>
-<p>
-<script>
-var winkVideoData2 = {
-  dataVersion: 1,
-  frameRate: 10,
-  buttonFrameLength: 5,
-  buttonFrameOffset: 2,
-  frameStops: {
-  },
-};
-</script>
-</p>
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData2" height="630" muted="true" width="1008">
-<source src="./../downloads/w4_wifi/w4_wifi.mp4" type="video/mp4"/></video>
-<div class="winkVideoOverlayClass"></div>
-<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
-<div class="winkVideoControlBarProgressLeftClass"></div>
-<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
-<div class="winkVideoControlBarProgressRightClass"></div>
-<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
-<div class="winkVideoControlBarProgressThumbClass"></div>
-</div>
-<div class="winkVideoPlayOverlayClass"></div>
-</div>
-<p>將畫面中的 master 分支內容合併至內建 main 分支後, <a href="https://www.cloudbees.com/blog/git-delete-branch-how-to-for-both-local-and-remote">可以使用</a> git delete 刪除近端倉儲的 master 分支, 並用 git push --delete 刪除遠端倉儲分支:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Y:\mdecycu\wcm2022_guide&gt;git branch -d master
-Deleted branch master (was 5c2b8db).
+    <div id="tipue_search_content">Compile Fossil SCM << <a href='Compile Fossil SCM.html'>Previous</a> <a href='五專任務.html'>Next</a> >> 五專任務<br /><h1>Virtualbox</h1>
+<p>這個章節在協助學員了解與 Virtualbox 有關的相關安裝與設定內容:</p>
+<p>電腦輔助設計室於 2022/05/11 所安裝的 Virtualbox 為 6.1.28 版, 可以從系統的登錄檔案中查核:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Windows Registry Editor Version 5.00
 
-Y:\mdecycu\wcm2022_guide&gt;git branch
-* main
+[HKEY_LOCAL_MACHINE\SOFTWARE\Oracle]
 
-Y:\mdecycu\wcm2022_guide&gt;git push --delete origin master
-To mdecycu:mdecycu/wcm2022_guide.git
- - [deleted]         master</pre>
-<p>git branch -d master 指令是用來刪除近端倉儲的 master 分支.</p>
-<p>git branch 則可用來查驗目前工作目錄(working directory)所在分支.</p>
-<p>git push --delete origin master 則是透過 git push 刪除遠端(url 名稱存為 origin)倉儲中的 master 分支.</p>
+[HKEY_LOCAL_MACHINE\SOFTWARE\Oracle\VirtualBox]
+"Version"="6.1.28"
+"VersionExt"="6.1.28"
+"InstallDir"="C:\\Program Files\\Oracle\\VirtualBox\\"</pre>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\SOFTWARE\Oracle]
+
+[HKEY_CURRENT_USER\SOFTWARE\Oracle\VirtualBox]
+
+[HKEY_CURRENT_USER\SOFTWARE\Oracle\VirtualBox\Install]
+@="installed"
+
+</pre>
+<p>當使用者在 Windows 操作系統安裝設定 Virtualbox 虛擬主機後, 以虛擬主機名稱命名 (以 NXServer 為例) 的目錄將會配置在 "C:\Users\%username%\VirtualBox VMs" 目錄中, 其中的 %username% 代表安裝 Virtualbox 所使用的使用者名稱.</p>
+<p>而該安裝目錄 NXServer 中, 將配置 NXServer.vbox 與 NXServer.vbox-prev 等兩個檔案. 其中包含 Machine uuid 與 HardDisk uuid 等相關設定資訊.</p>
+<p>Virtualbox .vbox 設定檔案所使用的 tags:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">AttachedDevice
+VirtualBox
+LongMode
+HardDisks
+HardwareVirtExLargePages
+Paravirt
+BIOS
+Memory
+VideoCapture
+Hardware
+USB
+Network
+AudioAdapter
+StorageController
+PAE
+StorageControllers
+Image
+Machine
+Adapter
+HardDisk
+SmbiosUuidLittleEndian
+IOAPIC
+Display
+HID
+Controller
+Controllers
+RemoteDisplay
+CPU
+NAT
+Clipboard
+MediaRegistry</pre>
+<p>至於與 Virtualbox 系統設定檔案則位於 C:\Users\%username%\.VirtualBox\VirtualBox.xml</p>
+<p>儘管使用者可以透過上述設定檔案, 採手動配置虛擬主機, 將 .vdi 與設定檔案透過可攜隨身碟配置, 但 VirtualBox 每次啟動仍會以啟動後的暫存設定蓋過上述兩個設定檔案.</p>
+<p>Virtualbox .xml 設定檔案所使用的 tags:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">DHCPServer
+MachineRegistry
+DHCPServers
+ExtraDataItem
+USBDeviceFilters
+Global
+NetserviceRegistry
+VirtualBox
+ExtraData
+MachineEntry
+SystemProperties</pre>
+<p><br/><br/></p>
 <p></p>
-<p></p>
-<br />Pyscript << <a href='Pyscript.html'>Previous</a> <a href='WCMS.html'>Next</a> >> WCMS</div>
+<p></p><br />Compile Fossil SCM << <a href='Compile Fossil SCM.html'>Previous</a> <a href='五專任務.html'>Next</a> >> 五專任務</div>
         
     <!-- footer -->
       <div class="container">
