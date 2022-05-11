@@ -1107,7 +1107,55 @@ set HTTPS_PROXY=http://kmolab:kmolab10@[2001:288:6004:xx::xx]:3128
 
 c:\heroku\bin\heroku update</pre>
 <h2>odoo</h2>
-<p><a href="https://github.com/odoo/odoo">https://github.com/odoo/odoo</a> </p><h1>Midterm</h1>
+<p><a href="https://github.com/odoo/odoo">https://github.com/odoo/odoo</a></p>
+<h2>PyGObject</h2>
+<p><a href="/downloads/python-gtk-3-tutorial.pdf">python-gtk-3-tutorial.pdf</a></p>
+<h4>Install PyGObject on Windows (要在 IPv4 網路連線下執行):</h4>
+<ol>
+<li>Run Y:\msys64_20210419\mingw64.exe</li>
+<li>Execute pacman -Suy</li>
+<li>Execute pacman -Sy mingw-w64-x86_64-gtk3 mingw-w64-x86_64-python3 mingw-w64-x86_64-python3-gobject</li>
+<li>安裝結束後, 複製一份 y:\wscite502 名稱定為 y:\wscite502_msys2, 然後修改 python.properties 將 pythonw 指向 msys2 目錄中所安裝的 Python.</li>
+<li>假如要使用 <a href="https://glade.gnome.org/">glade</a>: pacman -Sy mingw-w64-x86_64-glade</li>
+</ol>
+<p>python.properties 修改 line 152-157:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">if PLAT_WIN
+	python.command=Y:\msys64_20210419\mingw64\bin\pythonw
+if PLAT_GTK
+	python.command=python3
+if PLAT_MAC
+	python.command=python</pre>
+<p>測試執行 gtk_ex1.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import gi
+
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+
+win = Gtk.Window()
+win.connect("destroy", Gtk.main_quit)
+win.show_all()
+Gtk.main()</pre>
+<p>button_hello.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import gi
+
+gi.require_version("Gtk", "3.0")
+from gi.repository import Gtk
+
+class MyWindow(Gtk.Window):
+    def __init__(self):
+        super().__init__(title="Hello World")
+
+        self.button = Gtk.Button(label="Click Here")
+        self.button.connect("clicked", self.on_button_clicked)
+        self.add(self.button)
+    def on_button_clicked(self, widget):
+        print("Hello World!")
+ 
+win = MyWindow()
+win.connect("destroy", Gtk.main_quit)
+win.show_all()
+Gtk.main()</pre>
+<p>pacman -S mingw-w64-x86_64-python3-yaml<br/><br/>pacman -S mingw-w64-x86_64-python3-matplotlib<br/><br/>pacman -S mingw-w64-x86_64-python3-pandas<br/><br/>pacman -S mingw-w64-x86_64-python3-scipy<br/><br/>pacman -S mingw-w64-x86_64-python3-numpy<br/><br/>pacman -S mingw-w64-x86_64-cython</p><h1>Midterm</h1>
 <p><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/e00a3b68d4defee1987d18cc998b377a/raw/3582dddbb1f6deecec9fcce65f191a2415e4d7a5/j5_w8_grp.py">五專倉儲與網頁連結</a></p>
 <h4>期中課程內容整理</h4>
 <p style="padding-left: 30px;"><a href="https://mde.tw/wcm2022_guide/blog/wcm2022-w7-review.html">https://mde.tw/wcm2022_guide/blog/wcm2022-w7-review.html</a></p>
@@ -1304,6 +1352,7 @@ execargs = /usr/bin/fossil http /home/pj2022/repository/pj2022.fossil --https --
 <p>Makefile.mingw 設定：<br/><br/>7. <a href="https://www.msys2.org/">MSYS2</a> 所使用的 Makefile 位於 Fossil SCM 原始碼目錄中的 win/Makefile.mingw 檔案, 以 SciTE 編輯此一檔案時, 將第 22 行改為:<br/><br/>PREFIX = x86_64-w64-mingw32-<br/><br/>表示編譯完成的 fossil.exe 要在 x86_64-w64-mingw32 平台上執行.<br/><br/>8. 第 65 行改為:<br/><br/>FOSSIL_ENABLE_SSL = 1</p>
 <p>9. 從 <a href="http://gnuwin32.sourceforge.net/downlinks/make-dep-zip.php">http://gnuwin32.sourceforge.net/downlinks/make-dep-zip.php</a> 下載 libintl3.dll 與 libiconv2.dll, 放至 y:\<br/><br/>表示編譯後的 fossil.exe 要能夠在 https 網路協定中使用.<br/>OpenSSL 靜態程式庫檔案:<br/><br/>10. 將 pacman -S openssl-devel 安裝後, 在Y:\msys64_20210419\mingw64\lib 目錄中的 libssl.a 與 libcrypto.a 檔案放入 Fossil SCM 原始碼目錄中.<br/>執行編譯與連結:<br/><br/>make -f win/Makefile.mingw LIB="-l:libssl.a -l:libcrypto.a -lgdi32 -lmingwex -lz -lws2_32 -municode"<br/><br/>11. 此處採直接連結 libssl.a 與 libcrypto.a 的方式進行編譯, 完成後的 fossil.exe, 檔案大小約 4.6MB, 需要配合 Y:\msys64_20210419\mingw64\bin\zlib1.dll 才能執行.</p>
 <h3>Virtualbox</h3>
+<p><a href="/downloads/w7_vbox/get_vb_xml.leo">get_vb_xml.leo</a></p>
 <p>這個章節在協助學員了解與 Virtualbox 有關的相關安裝與設定內容:</p>
 <p>電腦輔助設計室於 2022/05/11 所安裝的 Virtualbox 為 6.1.28 版, 可以從系統的登錄檔案中查核:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Windows Registry Editor Version 5.00
