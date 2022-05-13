@@ -79,6 +79,12 @@
 <v t="leo.20220419055847.1"></v>
 </v>
 </v>
+<v t="leo.20220513215339.1"><vh>IPv6</vh>
+<v t="leo.20220513215519.1"><vh>@clean 20220513.md</vh>
+<v t="leo.20220513215851.1"><vh>IPv6 路由不通</vh></v>
+<v t="leo.20220419055847.1"></v>
+</v>
+</v>
 </v>
 </v>
 <v t="yen.20170108171733.83"><vh>產生 .key 與 .crt 指令</vh></v>
@@ -738,6 +744,33 @@ Markdown 文章配置
 [Pelican] [Markdown] 格式的文章中也支援 html 標註, 因此可以直接利用 Javascript 標定 STL 零組件.
 
 </t>
+<t tx="leo.20220513215339.1"></t>
+<t tx="leo.20220513215519.1">@language md
+---
+Title: 學校 IPv6 網路不通
+Date: 2022-05-13 11:00
+Category: wcm
+Tags: 2022SpringWCM
+Slug: wcm2022-w12-IPv6-failed-on-nfu-network
+Author: kmolab
+---
+
+從前天下午大約兩點開始, 學校的 IPv6 路由就已經無法對外連線, 但對一般師生來說, 這似乎不是甚麼大不了的問題.
+
+&lt;!-- PELICAN_END_SUMMARY --&gt;
+
+@others</t>
+<t tx="leo.20220513215851.1">因為 IPv6 網路協定, 在這裡就好像化外之物, 在乎的用戶並沒有很多.
+
+希望查核 www.nfu.edu.tw 的 IPv6 是否連通, 可以使用 &lt;https://ready.chair6.net/?url=www.nfu.edu.tw&gt;.
+
+&lt;img src="../images/nfu_2022_0513_failed_onIPv6.png" width="600" height="400"&gt;&lt;/image&gt;
+
+由於 IPv6 connectivity 已經斷線超過 60 個小時, 因此過去兩天上課不得不僅依靠時斷時通的 IPv4 網路連線.
+
+但也有好消息, 幾經波折, [Github Pages] 終於[支援 IPv6].
+
+[支援 IPv6]: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site</t>
 <t tx="yen.20170108171605.1"></t>
 <t tx="yen.20170108171605.2">QTreeWidget {
     /* These apply to the selected item, but not to editing items.*/

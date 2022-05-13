@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./</loc>
-<lastmod>2022-05-02T00:05:01-00:00</lastmod>
+<lastmod>2022-05-13T22:25:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./archives.html</loc>
-<lastmod>2022-05-02T00:05:01-00:00</lastmod>
+<lastmod>2022-05-13T22:25:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tags.html</loc>
-<lastmod>2022-05-02T00:05:01-00:00</lastmod>
+<lastmod>2022-05-13T22:25:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./categories.html</loc>
-<lastmod>2022-05-02T00:05:01-00:00</lastmod>
+<lastmod>2022-05-13T22:25:14-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -34,6 +34,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>./pages/about/</loc>
 <lastmod>2022-03-31T21:49:59+08:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>./wcm2022-w12-IPv6-failed-on-nfu-network.html</loc>
+<lastmod>2022-05-13T22:24:59+08:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -89,21 +96,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>./category/wcm.html</loc>
-<lastmod>2022-05-11T11:00:00+08:06</lastmod>
+<lastmod>2022-05-13T22:24:59+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./tag/2022springwcm.html</loc>
-<lastmod>2022-05-11T11:00:00+08:06</lastmod>
+<lastmod>2022-05-13T22:24:59+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>./author/kmolab.html</loc>
-<lastmod>2022-05-11T11:00:00+08:06</lastmod>
+<lastmod>2022-05-13T22:24:59+08:06</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

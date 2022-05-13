@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+      <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
 
-  <title>網際內容管理 - Categories</title>
+  <title>學校 IPv6 網路不通</title>
 
 
   <meta name="HandheldFriendly" content="True" />
@@ -18,6 +18,7 @@
 
   <!-- Feed -->
         <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="網際內容管理 Full Atom Feed" />
+          <link href="./feeds/{slug}.atom.xml" type="application/atom+xml" rel="alternate" title="網際內容管理 Categories Atom Feed" />
 
   <link href="./theme/css/style.css" type="text/css" rel="stylesheet" />
 
@@ -38,6 +39,52 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
+
+    <link href="./wcm2022-w12-IPv6-failed-on-nfu-network.html" rel="canonical" />
+
+        <meta name="description" content="從前天下午大約兩點開始, 學校的 IPv6 路由就已經無法對外連線, 但對一般師生來說, 這似乎不是甚麼大不了的問題.">
+
+        <meta name="author" content="kmolab">
+
+        <meta name="tags" content="2022SpringWCM">
+
+
+
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="網際內容管理"/>
+<meta property="og:title" content="學校 IPv6 網路不通"/>
+<meta property="og:description" content="從前天下午大約兩點開始, 學校的 IPv6 路由就已經無法對外連線, 但對一般師生來說, 這似乎不是甚麼大不了的問題."/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="./wcm2022-w12-IPv6-failed-on-nfu-network.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2022-05-13 11:00:00+08:00"/>
+<meta property="article:modified_time" content="2022-05-13 22:24:59.960314+08:00"/>
+<meta property="article:author" content="./author/kmolab.html">
+<meta property="article:section" content="wcm"/>
+<meta property="article:tag" content="2022SpringWCM"/>
+<meta property="og:image" content="./theme/images/post-bg.jpg">
+
+<!-- Twitter Card -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "name": "學校 IPv6 網路不通",
+  "headline": "學校 IPv6 網路不通",
+  "datePublished": "2022-05-13 11:00:00+08:00",
+  "dateModified": "2022-05-13 22:24:59.960314+08:00",
+  "author": {
+    "@type": "Person",
+    "name": "kmolab",
+    "url": "./author/kmolab.html"
+  },
+  "image": "./theme/images/post-bg.jpg",
+  "url": "./wcm2022-w12-IPv6-failed-on-nfu-network.html",
+  "description": "從前天下午大約兩點開始, 學校的 IPv6 路由就已經無法對外連線, 但對一般師生來說, 這似乎不是甚麼大不了的問題."
+}
+</script>
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
 <script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
@@ -133,9 +180,14 @@ init_mathjax();
     </ul>
   </div>
 </nav>
+    <!-- Progressbar -->
+    <div class="progress-container">
+        <span class="progress-bar"></span>
+    </div>
+
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <header id="blog-header" class="has-cover">
+    <header id="post-header" class="has-cover">
       <div class="inner">
         <nav id="navigation">
             <span id="home-button" class="nav-button">
@@ -145,7 +197,14 @@ init_mathjax();
             <a class="menu-button"><i class="ic ic-menu"></i> Menu</a>
           </span>
         </nav>
-        <h1 class="post-title">網際內容管理 - Categories</h1>
+        <h1 class="post-title">學校 IPv6 網路不通</h1>
+        <!-- TODO : Proper class for headline -->
+        <span class="post-meta">
+                <a href="./author/kmolab.html">Kmolab</a>
+            | <time datetime="週五 13 五月 2022">週五 13 五月 2022</time>
+        </span>
+        <!-- TODO : Modified check -->
+            <span class="post-meta"> | Updated on 週五 13 五月 2022</span>
             <div class="post-cover cover" style="background-image: url('./theme/images/post-bg.jpg')">
       </div>
     </header>
@@ -159,21 +218,59 @@ init_mathjax();
     </form>
 </section>
 
-    <article class="post">
-      <div class="inner">
-        <a href="./category/misc.html">Misc</a> (1)
-      </div>
-    </article>
-    <article class="post">
-      <div class="inner">
-        <a href="./category/server.html">Server</a> (1)
-      </div>
-    </article>
-    <article class="post">
-      <div class="inner">
-        <a href="./category/wcm.html">wcm</a> (4)
-      </div>
-    </article>
+
+    <!-- Post content -->
+    <main class="content" role="main">
+        <article class="post">
+        <div class="inner">
+            <section class="post-content">
+                <p>從前天下午大約兩點開始, 學校的 IPv6 路由就已經無法對外連線, 但對一般師生來說, 這似乎不是甚麼大不了的問題.</p>
+
+
+<p>因為 IPv6 網路協定, 在這裡就好像化外之物, 在乎的用戶並沒有很多.</p>
+<p>希望查核 www.nfu.edu.tw 的 IPv6 是否連通, 可以使用 <a href="https://ready.chair6.net/?url=www.nfu.edu.tw">https://ready.chair6.net/?url=www.nfu.edu.tw</a>.</p>
+<p><img src="../images/nfu_2022_0513_failed_onIPv6.png" width="600" height="400"></image></p>
+<p>由於 IPv6 connectivity 已經斷線超過 60 個小時, 因此過去兩天上課不得不僅依靠時斷時通的 IPv4 網路連線.</p>
+<p>但也有好消息, 幾經波折, <a href="https://pages.github.com/">Github Pages</a> 終於<a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">支援 IPv6</a>.</p>
+            </section>
+
+            <section class="post-info">
+                <div class="post-share">
+                    <a class="twitter" href="https://twitter.com/share?text=學校 IPv6 網路不通&amp;url=./wcm2022-w12-IPv6-failed-on-nfu-network.html" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=./wcm2022-w12-IPv6-failed-on-nfu-network.html" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
+                    </a>
+                    <a class="googleplus" href="https://plus.google.com/share?url=./wcm2022-w12-IPv6-failed-on-nfu-network.html" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="ic ic-googleplus"></i><span class="hidden">Google+</span>
+                    </a>
+                    <div class="clear"></div>
+                </div>
+
+                <aside class="post-tags">
+<a href="./tag/2022springwcm.html">2022SpringWCM</a>                </aside>
+
+                <div class="clear"></div>
+
+
+                </section>
+
+
+                <aside class="post-nav">
+                    <a class="post-nav-prev" href="./wcm2022-w11-write-pelican-blog.html">
+                        <section class="post-nav-teaser">
+                            <i class="ic ic-arrow-right"></i>
+                                <h2 class="post-nav-title">w11 寫 Pelican 網誌</h2>
+                            <p class="post-nav-excerpt">Pelican 是一個建立網誌系統的輔助程式套件, 以 Python 編寫, 使用者可以使用 Markdown 格式建立文章, 然後交由 Pelican 轉為網際日誌超文件檔案.</p>
+                        </section>
+                    </a>
+                    <div class="clear"></div>
+                </aside>
+
+            </div>
+        </article>
+    </main>
       <!-- TODO : Body class -->
     <div id="body-class" style="display: none;" class=""></div>
 
