@@ -195,7 +195,27 @@ for i in data:
     href = "https://" + str(blogger_account) + ".blogspot.com"
     makeLink(href, content)
 </script>
-<div id="brython_div"></div><br />五專任務 << <a href='五專任務.html'>Previous</a> <a href='配置 Brython.html'>Next</a> >> 配置 Brython</div>
+<div id="brython_div"></div>
+<script type="text/python3">
+from browser import html
+from browser import document
+ 
+brython_div = document["brython_div"]
+
+sum = 0
+
+for i in range(1, 11):
+    #print(i)
+    sum = sum + i
+    
+#print(sum)
+note = "從 1 累加到 10, 總和為: " + str(sum)
+#print(note)
+
+brython_div <= html.BR()
+brython_div <= html.BR()
+brython_div <= note
+</script><br />五專任務 << <a href='五專任務.html'>Previous</a> <a href='配置 Brython.html'>Next</a> >> 配置 Brython</div>
         
     <!-- footer -->
       <div class="container">

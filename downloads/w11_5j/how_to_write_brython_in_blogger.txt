@@ -1,0 +1,36 @@
+<!-- 導入 brython.js 程式庫 -->
+<script src="https://mde.tw/wcm2022_guide/cmsimde/static/brython.js">
+</script>
+
+<!-- 導入 brython_stdlib.js 標準程式庫 -->
+<script src="https://mde.tw/wcm2022_guide/cmsimde/static/brython_stdlib.js">
+</script>
+
+<!-- 啟動 brython -->
+<script>
+window.onload=function(){
+brython();
+}
+</script>
+
+<!-- 執行所需要的 Brython 程式 -->
+<script type="text/python3">
+from browser import html
+from browser import document
+ 
+brython_div = document["brython_div"]
+
+sum = 0
+
+for i in range(1, 11):
+    #print(i)
+    sum = sum + i
+    
+#print(sum)
+note = "從 1 累加到 10, 總和為: " + str(sum)
+#print(note)
+
+brython_div <= note
+</script>
+<div id="brython_div"></div>
+
