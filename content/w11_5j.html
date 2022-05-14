@@ -170,6 +170,7 @@ brython();
 }
 </script>
 <p><a href="./../downloads/w11_5j/5j.txt">5j.txt</a></p>
+<p>可以放入 Blogger html 編輯區執行 Brython 的超文件檔案: <a href="./../downloads/w11_5j/how_to_write_brython_in_blogger.txt">how_to_write_brython_in_blogger.txt</a></p>
 <p>接下來希望在這個頁面設定 Brython 程式環境, 將程式取得的學員 Blogger 網誌連結直接顯示在下方:</p>
 <script type="text/python3">
 from browser import html
@@ -183,8 +184,8 @@ def makeLink(href, content):
     brython_div <= html.BR()
  
 # 將 5j 學號、帳號、組別與 blogger 的網址設為 studlist_url
-#studlist_url = "https://mde.tw/studlist/2022spring/5j.txt"
-studlist_url = "/downloads/w11_5j/5j.txt"
+studlist_url = "https://mde.tw/studlist/2022spring/5j.txt"
+#studlist_url = "/downloads/w11_5j/5j.txt"
 # 利用 open() 與 read() 讀出資料
 data = open(studlist_url).read().split("\n")[1:-1]
 print(data)
@@ -212,7 +213,6 @@ for i in range(1, 11):
 note = "從 1 累加到 10, 總和為: " + str(sum)
 #print(note)
 
-brython_div <= html.BR()
 brython_div <= html.BR()
 brython_div <= note
 </script>

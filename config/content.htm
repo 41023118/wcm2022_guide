@@ -1521,6 +1521,7 @@ brython();
 }
 </script>
 <p><a href="/downloads/w11_5j/5j.txt">5j.txt</a></p>
+<p>可以放入 Blogger html 編輯區執行 Brython 的超文件檔案: <a href="/downloads/w11_5j/how_to_write_brython_in_blogger.txt">how_to_write_brython_in_blogger.txt</a></p>
 <p>接下來希望在這個頁面設定 Brython 程式環境, 將程式取得的學員 Blogger 網誌連結直接顯示在下方:</p>
 <script type="text/python3">
 from browser import html
@@ -1534,8 +1535,8 @@ def makeLink(href, content):
     brython_div <= html.BR()
  
 # 將 5j 學號、帳號、組別與 blogger 的網址設為 studlist_url
-#studlist_url = "https://mde.tw/studlist/2022spring/5j.txt"
-studlist_url = "/downloads/w11_5j/5j.txt"
+studlist_url = "https://mde.tw/studlist/2022spring/5j.txt"
+#studlist_url = "/downloads/w11_5j/5j.txt"
 # 利用 open() 與 read() 讀出資料
 data = open(studlist_url).read().split("\n")[1:-1]
 print(data)
@@ -1563,7 +1564,6 @@ for i in range(1, 11):
 note = "從 1 累加到 10, 總和為: " + str(sum)
 #print(note)
 
-brython_div <= html.BR()
 brython_div <= html.BR()
 brython_div <= note
 </script>
@@ -1771,7 +1771,15 @@ var winkVideoData_w11_1a = {
 <p>以下批次檔案指令可以透過 Windows 遠端桌面 client 連接至遠端指定電腦:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">REM https://docs.microsoft.com/zh-tw/windows-server/administration/windows-commands/mstsc
 %windir%\system32\mstsc.exe /v:2001:288:6004:XX:XXXX::XX</pre>
-<h1>Development</h1>
+<p>在 Windows 設定允許使用者採遠端桌面登入時, 為了防範惡意攻擊, 可以額外將防火牆設定為只允許特定網段或 IP 位址的電腦連線.</p>
+<p>開啟防火牆</p>
+<p>選擇進階設定</p>
+<p>選擇輸入規則中的遠端桌面 (使用者模式 - TCP-In) 進入領域頁面 - 遠端 IP 位址 - 新增設定, 允許下列網段連線:</p>
+<p style="padding-left: 30px;">140.130.XX.0/24</p>
+<p style="padding-left: 30px;">2001:288:6004:XX::/32</p>
+<p style="padding-left: 30px;">XX.XXX.XXX.XX</p>
+<p></p>
+<p></p><h1>Development</h1>
 <p></p>
 <pre></pre><h2>Portable Python</h2>
 <h4>何謂可攜式 Python 程式環境?</h4>
