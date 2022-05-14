@@ -140,6 +140,17 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">cmsimde_and_stunnel << <a href='cmsimde_and_stunnel.html'>Previous</a> <a href='Compile Fossil SCM.html'>Next</a> >> Compile Fossil SCM<br /><h1>Fossil server</h1>
+<p>Fossil SCM 的倉儲檔案格式採用 SQLite, 且 Fossil SCM 開發目的即在能夠採分散式版次管理的方式, 管理 SQLite 資料庫系統的原始碼 (<a href="https://sqlite.org/src/doc/trunk/README.md">SQLite 原始碼</a>).</p>
+<p style="padding-left: 30px;"><a href="https://fossil-scm.org/fossil-book/uv/FossilBook.pdf">Fossilbook</a></p>
+<p style="padding-left: 30px;"><a href="http://www.kiatoa.com/cgi-bin/fossils/opensrc/doc/tip/docs/fossil-quickref.pdf">Fossil quick ref</a></p>
+<p>SQLite 相關參考電子書: <a href="https://link.springer.com/book/10.1007/978-1-4302-3226-1">The Definitive Guide to SQLite</a></p>
+<p>查驗 Fossil SCM 版本:</p>
+<p style="padding-left: 30px;">fossil version</p>
+<h4>建立 Fossil SCM 倉儲檔案:</h4>
+<p style="padding-left: 30px;">fossil init wcm2022.fossil</p>
+<h4>Fossil 倉儲的 ocal ui 介面:</h4>
+<p style="padding-left: 30px;">fossil ui wcm2022.fossil</p>
+<p style="padding-left: 30px;">啟動後以瀏覽器 <a href="http://localhost:8080/help">http://localhost:8080/help</a> 可列出所有相關指令</p>
 <p>Windows 10 在 port 9000 配合 Stunnel 的 https 代理, 啟動 Fossil server 的設定:</p>
 <p style="padding-left: 30px;"><a href="https://fossil-scm.org/home/help/server">fossil.exe server</a> C:\pj2022\repo\pj2022.fossil --port 9000 --https</p>
 <p>在 Ubuntu 則直接交由 Stunnel 設定啟動 Fossil Server:</p>
@@ -153,8 +164,7 @@ key = /etc/stunnel/privkey.pem
 exec = /usr/bin/fossil
 execargs = /usr/bin/fossil http /home/pj2022/repository/pj2022.fossil --https --nojail
 ; 針對多倉儲設定, 以 pj2022.fossil 作為 default repository
-; execargs = /usr/bin/fossil http /home/pj2022/repository/ --https --nojail --notfound pj2022</pre>
-<br />cmsimde_and_stunnel << <a href='cmsimde_and_stunnel.html'>Previous</a> <a href='Compile Fossil SCM.html'>Next</a> >> Compile Fossil SCM</div>
+; execargs = /usr/bin/fossil http /home/pj2022/repository/ --https --nojail --notfound pj2022</pre><br />cmsimde_and_stunnel << <a href='cmsimde_and_stunnel.html'>Previous</a> <a href='Compile Fossil SCM.html'>Next</a> >> Compile Fossil SCM</div>
         
     <!-- footer -->
       <div class="container">
