@@ -2,7 +2,7 @@
         <head>
         <title>WCM_GUIDE</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -139,74 +139,36 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='cmsimde.html'>Next</a> >> cmsimde<br /><h1>Local and Remote</h1>
-<p>Local 指的是近端, 也就是使用者所使用的個人電腦、平板或手機, 而 Remote 則指能夠讓近端透過各種網路協定擷取資料的伺服器電腦.</p>
-<p>在網際內容管理課程中除了透過 http(s) 協定, 以瀏覽器解取 Remote 端全球資訊網伺服器中的資料外, 還透過 git 以 https、sftp 或 ssh 網路協定, 用於擷取檔案, 或將改版資料推向 Github Remote 端.</p>
-<p>PC to PC connection - python -m http.server, flask server, nginx server, fossil scm server, filezilla server, Ubuntu server.</p>
-<p>PC Hardware + Windows 10 + <a href="https://nfu.onthehub.com/WebStore/Welcome.aspx">License</a></p>
-<p>Python http.server - 簡單的 WWW server, 可用於電腦間的檔案攫取.</p>
-<p>nginx WWW server - 常用的 WWW server, 可透過設定, 讓特定 IP 可以連線.</p>
-<p style="padding-left: 30px;">nginx 在課程實作上, 可以用來伺服 cmsimde 的靜態網頁, 功能如同 <a href="https://pages.github.com/">Github Pages</a>.</p>
-<p style="padding-left: 30px;">cmsimde 動態網頁因為需要 Python 與特定模組才能執行, 在 Windows 可以利用 Python 與 <a href="https://nssm.cc/">NSSM</a> 結合配置, 而在 Ubuntu 則可以透過 Python 與 <a href="https://uwsgi-docs.readthedocs.io/en/latest/">uWSGI</a> 配置執行, 屆時 nginx 則可與 <a href="https://letsencrypt.org/">Let's Encrypt</a> 結合, 擔任轉換 https 協定的任務.</p>
-<p style="padding-left: 30px;"><a href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy">pgp</a> 與 <a href="https://www.gpg4win.org/">https://www.gpg4win.org/</a></p>
-<p style="padding-left: 60px;"><a href="https://www.gnupg.org/gph/en/manual.pdf">https://www.gnupg.org/gph/en/manual.pdf</a></p>
-<p style="padding-left: 30px;">請問如何設定 nginx, 讓其中所伺服的檔案只允許系上電腦下載.</p>
-<p style="padding-left: 30px;">請問如何利用 gpg4win 查驗所下載的 nginx 檔案與官方網站所附的數位簽章吻合.</p>
-<p>Fossil SCM server</p>
-<p>Local Area Network</p>
-<p>Wide Are Network</p>
-<p>Remote Desktop</p>
-<p>只允許系上 IPv6 網段擷取伺服器 port 88 的 nginx 設定:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">       server {
-        listen       [::]:88 ipv6only=off;
-        listen       88;
-        
-        #allow 140.130.XX.0/24;
-        allow 2001:288:6004:XX::0/32;
-        deny all;
-        
-        location / {
-            root C:/pj2022/nginx-1.20.2/spring2022;
-        }
-        
-        autoindex on;
-    }</pre>
-<p><!--配合 Wink 檔案將 js 檔案設定如下--></p>
-<p>
-<script>
-var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
-</script>
-</p>
-<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData" height="630" muted="true" width="1008">
-<source src="./../downloads/w7_review/w7_review.mp4" type="video/mp4"/></video>
-<div class="winkVideoOverlayClass"></div>
-<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
-<div class="winkVideoControlBarProgressLeftClass"></div>
-<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
-<div class="winkVideoControlBarProgressRightClass"></div>
-<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
-<div class="winkVideoControlBarProgressThumbClass"></div>
-</div>
-<div class="winkVideoPlayOverlayClass"></div>
-</div>
-<p>以下說明 nginx 安裝流程:</p>
-<script>
-var winkVideoData2 = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
-</script>
-<!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData2" height="630" muted="true" width="1008">
-<source src="./../downloads/w7_nginx/w7_nginx.mp4" type="video/mp4"/></video>
-<div class="winkVideoOverlayClass"></div>
-<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
-<div class="winkVideoControlBarProgressLeftClass"></div>
-<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
-<div class="winkVideoControlBarProgressRightClass"></div>
-<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
-<div class="winkVideoControlBarProgressThumbClass"></div>
-</div>
-<div class="winkVideoPlayOverlayClass"></div>
-</div><br />About << <a href='About.html'>Previous</a> <a href='cmsimde.html'>Next</a> >> cmsimde</div>
+    <div id="tipue_search_content">Compile Fossil SCM << <a href='Compile Fossil SCM.html'>Previous</a> <a href='Virtualbox.html'>Next</a> >> Virtualbox<br /><h1>Compile SQLite</h1>
+<p>從 <a href="https://sqlite.org/download.html">https://sqlite.org/download.html</a> 下載 <a href="https://sqlite.org/2022/sqlite-amalgamation-3380500.zip">https://sqlite.org/2022/sqlite-amalgamation-3380500.zip</a></p>
+<p>根據 <a href="https://sqlite.org/howtocompile.html">https://sqlite.org/howtocompile.html</a> 中的說明, 假如不需要 dynamic loading 的功能, 則在解開 SQLite 原始碼後, 在 MSYS2 環境下的 Windows 命令列視窗中執行:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">gcc -DSQLITE_THREADSAFE=0 -DSQLITE_OMIT_LOAD_EXTENSION shell.c sqlite3.c -o sqlite3</pre>
+<p>就可以將 sqlite3.c, shell.c, sqlite3.h 與 sqlite3ext.h 編譯出 sqlite3.exe</p>
+<p>假如需要 dynamic loading 的功能, 則 MSYS2 需要額外安裝 pacman -S mingw-w64-x86_64-dlfcn:</p>
+<p>使用者可以直接從 <a href="https://packages.msys2.org/package/mingw-w64-x86_64-dlfcn">https://packages.msys2.org/package/mingw-w64-x86_64-dlfcn</a> 下載 zst 格式的套件檔案, 然後啟動 Y:\msys64_20210419\mingw64.exe 後, cd /c/tmp 後, 以</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">pacman -U mingw-w64-x86_64-dlfcn-1.3.0-2-any.pkg.tar.zst</pre>
+<p>安裝後, 就得到 libdl.a 程式庫檔案, 之後就能以:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">gcc shell.c sqlite3.c -lpthread -ldl -lm -o sqlite3</pre>
+<p>編譯出 sqlite.exe</p>
+<hr/>
+<p>由於 Fossil SCM 內建 SQLite, 其倉儲檔案就是一個 SQLite 資料庫, 因此除了使用 fossil sql 可以利用 SQL 語法查詢資料內容外, 也可以直接使用 sqlite3.exe 查詢 .fossil 檔案的內容.</p>
+<p>fossil init test.fossil</p>
+<p>可以初始建立 test.fossil 倉儲, 執行後 Fossil SCM 會顯示出管理者用戶名稱 (操作系統登入帳號) 與對應的密碼.</p>
+<p>倉儲建立之後, 也可以利用 sqlite3.exe 查詢倉儲檔案中各資料表的內容.</p>
+<p>sqlite3 test.fossil</p>
+<p>&gt; .schema user</p>
+<p>CREATE TABLE user(<br/>  uid INTEGER PRIMARY KEY,<br/>  login TEXT UNIQUE,<br/>  pw TEXT,<br/>  cap TEXT,<br/>  cookie TEXT,<br/>  ipaddr TEXT,<br/>  cexpire DATETIME,<br/>  info TEXT,<br/>  mtime DATE,<br/>  photo BLOB<br/>);</p>
+<p>&gt;  select login, pw, info from user;</p>
+<p>pj2022|CT5tJqSiHn|<br/>anonymous|151162380A2A4568|Anon<br/>nobody||Nobody<br/>developer||Dev<br/>reader||Reader</p>
+<p>.schema user 是用來查詢 user 資料表的內容, 其中有 login, pw 與 info 等欄位設定. 接著利用 SQL 語法, 選擇從 user 資料表中的 login, pw 與 info 欄位內容執行查詢, 結果就列出相關欄位現有的資料內容.</p>
+<p>以 sqlite3 test.fossil 進入 SQLite 指令模式後, 可以透過 Ctrl + c 退回命令列模式.</p>
+<p>假如直接利用 fossil 查詢資料庫相關內容, 則可以使用 fossil sql 指令:</p>
+<p>y:\&gt; fossil sql -R test.fossil<br/>SQLite version 3.38.0 2022-02-22 18:58:40<br/>Enter ".help" for usage hints.<br/>sqlite&gt; .schema user</p>
+<p>CREATE TABLE repository.user(<br/>  uid INTEGER PRIMARY KEY,<br/>  login TEXT UNIQUE,<br/>  pw TEXT,<br/>  cap TEXT,<br/>  cookie TEXT,<br/>  ipaddr TEXT,<br/>  cexpire DATETIME,<br/>  info TEXT,<br/>  mtime DATE,<br/>  photo BLOB<br/>);</p>
+<p>sqlite&gt; select login, pw, info from user;</p>
+<p>'pj2022','CT5tJqSiHn',''<br/>'anonymous','151162380A2A4568','Anon'<br/>'nobody','','Nobody'<br/>'developer','','Dev'<br/>'reader','','Reader'</p>
+<p>假如要列出 Fossil SCM 倉儲檔案中的所有資料表內容:</p>
+<p>sqlite&gt; .schema<br/>CREATE TABLE repository.blob(<br/>  rid INTEGER PRIMARY KEY,<br/>  rcvid INTEGER,<br/>  size INTEGER,<br/>  uuid TEXT UNIQUE NOT NULL,<br/>  content BLOB,<br/>  CHECK( length(uuid)&gt;=40 AND rid&gt;0 )<br/>);<br/>CREATE TABLE repository.delta(<br/>  rid INTEGER PRIMARY KEY,<br/>  srcid INTEGER NOT NULL REFERENCES blob<br/>);<br/>CREATE INDEX repository.delta_i1 ON delta(srcid);<br/>CREATE TABLE repository.rcvfrom(<br/>  rcvid INTEGER PRIMARY KEY,<br/>  uid INTEGER REFERENCES user,<br/>  mtime DATETIME,<br/>  nonce TEXT UNIQUE,<br/>  ipaddr TEXT<br/>);<br/>CREATE TABLE repository.user(<br/>  uid INTEGER PRIMARY KEY,<br/>  login TEXT UNIQUE,<br/>  pw TEXT,<br/>  cap TEXT,<br/>  cookie TEXT,<br/>  ipaddr TEXT,<br/>  cexpire DATETIME,<br/>  info TEXT,<br/>  mtime DATE,<br/>  photo BLOB<br/>);<br/>CREATE TABLE repository.config(<br/>  name TEXT PRIMARY KEY NOT NULL,<br/>  value CLOB,<br/>  mtime DATE,<br/>  CHECK( typeof(name)='text' AND length(name)&gt;=1 )<br/>);<br/>CREATE TABLE repository.shun(<br/>  uuid UNIQUE,<br/>  mtime DATE,<br/>  scom TEXT<br/>);<br/>CREATE TABLE repository.private(rid INTEGER PRIMARY KEY);<br/>CREATE TABLE repository.reportfmt(<br/>   rn INTEGER PRIMARY KEY,<br/>   owner TEXT,<br/>   title TEXT UNIQUE,<br/>   mtime DATE,<br/>   cols TEXT,<br/>   sqlcode TEXT<br/>);<br/>CREATE TABLE repository.concealed(<br/>  hash TEXT PRIMARY KEY,<br/>  mtime DATE,<br/>  content TEXT<br/>);<br/>CREATE TABLE repository.filename(<br/>  fnid INTEGER PRIMARY KEY,<br/>  name TEXT UNIQUE<br/>);<br/>CREATE TABLE repository.mlink(<br/>  mid INTEGER,<br/>  fid INTEGER,<br/>  pmid INTEGER,<br/>  pid INTEGER,<br/>  fnid INTEGER REFERENCES filename,<br/>  pfnid INTEGER,<br/>  mperm INTEGER,<br/>  isaux BOOLEAN DEFAULT 0<br/>);<br/>CREATE INDEX repository.mlink_i1 ON mlink(mid);<br/>CREATE INDEX repository.mlink_i2 ON mlink(fnid);<br/>CREATE INDEX repository.mlink_i3 ON mlink(fid);<br/>CREATE INDEX repository.mlink_i4 ON mlink(pid);<br/>CREATE TABLE repository.plink(<br/>  pid INTEGER REFERENCES blob,<br/>  cid INTEGER REFERENCES blob,<br/>  isprim BOOLEAN,<br/>  mtime DATETIME,<br/>  baseid INTEGER REFERENCES blob,<br/>  UNIQUE(pid, cid)<br/>);<br/>CREATE INDEX repository.plink_i2 ON plink(cid,pid);<br/>CREATE TABLE repository.leaf(rid INTEGER PRIMARY KEY);<br/>CREATE TABLE repository.event(<br/>  type TEXT,<br/>  mtime DATETIME,<br/>  objid INTEGER PRIMARY KEY,<br/>  tagid INTEGER,<br/>  uid INTEGER REFERENCES user,<br/>  bgcolor TEXT,<br/>  euser TEXT,<br/>  user TEXT,<br/>  ecomment TEXT,<br/>  comment TEXT,<br/>  brief TEXT,<br/>  omtime DATETIME<br/>);<br/>CREATE INDEX repository.event_i1 ON event(mtime);<br/>CREATE TABLE repository.phantom(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.orphan(<br/>  rid INTEGER PRIMARY KEY,<br/>  baseline INTEGER<br/>);<br/>CREATE INDEX repository.orphan_baseline ON orphan(baseline);<br/>CREATE TABLE repository.unclustered(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.unsent(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.tag(<br/>  tagid INTEGER PRIMARY KEY,<br/>  tagname TEXT UNIQUE<br/>);<br/>CREATE TABLE repository.tagxref(<br/>  tagid INTEGER REFERENCES tag,<br/>  tagtype INTEGER,<br/>  srcid INTEGER REFERENCES blob,<br/>  origid INTEGER REFERENCES blob,<br/>  value TEXT,<br/>  mtime TIMESTAMP,<br/>  rid INTEGER REFERENCE blob,<br/>  UNIQUE(rid, tagid)<br/>);<br/>CREATE INDEX repository.tagxref_i1 ON tagxref(tagid, mtime);<br/>CREATE TABLE repository.backlink(<br/>  target TEXT,<br/>  srctype INT,<br/>  srcid INT,<br/>  mtime TIMESTAMP,<br/>  UNIQUE(target, srctype, srcid)<br/>);<br/>CREATE INDEX repository.backlink_src ON backlink(srcid, srctype);<br/>CREATE TABLE repository.attachment(<br/>  attachid INTEGER PRIMARY KEY,<br/>  isLatest BOOLEAN DEFAULT 0,<br/>  mtime TIMESTAMP,<br/>  src TEXT,<br/>  target TEXT,<br/>  filename TEXT,<br/>  comment TEXT,<br/>  user TEXT<br/>);<br/>CREATE INDEX repository.attachment_idx1 ON attachment(target, filename, mtime);<br/>CREATE INDEX repository.attachment_idx2 ON attachment(src);<br/>CREATE TABLE repository.ticket(<br/>  tkt_id INTEGER PRIMARY KEY,<br/>  tkt_uuid TEXT UNIQUE,<br/>  tkt_mtime DATE,<br/>  tkt_ctime DATE,<br/>  type TEXT,<br/>  status TEXT,<br/>  subsystem TEXT,<br/>  priority TEXT,<br/>  severity TEXT,<br/>  foundin TEXT,<br/>  private_contact TEXT,<br/>  resolution TEXT,<br/>  title TEXT,<br/>  comment TEXT<br/>);<br/>CREATE TABLE repository.ticketchng(<br/>  tkt_id INTEGER REFERENCES ticket,<br/>  tkt_rid INTEGER REFERENCES blob,<br/>  tkt_mtime DATE,<br/>  login TEXT,<br/>  username TEXT,<br/>  mimetype TEXT,<br/>  icomment TEXT<br/>);<br/>CREATE INDEX repository.ticketchng_idx1 ON ticketchng(tkt_id, tkt_mtime);<br/>CREATE TABLE repository.cherrypick(<br/>  parentid INT,<br/>  childid INT,<br/>  isExclude BOOLEAN DEFAULT false,<br/>  PRIMARY KEY(parentid, childid)<br/>) WITHOUT ROWID;<br/>CREATE INDEX repository.cherrypick_cid ON cherrypick(childid);<br/>CREATE VIEW repository.artifact(rid,rcvid,size,atype,srcid,hash,content) AS     SELECT blob.rid,rcvid,size,1,srcid,uuid,content      FROM blob LEFT JOIN delta ON (blob.rid=delta.rid)<br/>/* repository.artifact(rid,rcvid,size,atype,srcid,hash,content) */;<br/>CREATE TABLE repository.sqlite_stat1(tbl,idx,stat);<br/>CREATE TABLE repository.chat(<br/>  msgid INTEGER PRIMARY KEY AUTOINCREMENT,<br/>  mtime JULIANDAY,<br/>  lmtime TEXT,<br/>  xfrom TEXT,<br/>  xmsg  TEXT,<br/>  fname TEXT,<br/>  fmime TEXT,<br/>  mdel INT,<br/>  file  BLOB<br/>);<br/>CREATE TABLE repository.sqlite_sequence(name,seq);<br/>CREATE TABLE configdb.global_config(<br/>  name TEXT PRIMARY KEY,<br/>  value TEXT<br/>);<br/>sqlite&gt;</p><br />Compile Fossil SCM << <a href='Compile Fossil SCM.html'>Previous</a> <a href='Virtualbox.html'>Next</a> >> Virtualbox</div>
         
     <!-- footer -->
       <div class="container">
