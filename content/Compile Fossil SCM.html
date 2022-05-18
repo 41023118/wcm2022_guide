@@ -152,7 +152,8 @@ img.add_border {
 <p>7. Makefile.mingw 設定：<br/><br/><a href="https://www.msys2.org/">MSYS2</a> 所使用的 Makefile 位於 Fossil SCM 原始碼目錄中的 win/Makefile.mingw 檔案, 以 SciTE 編輯此一檔案時, 將第 22 行改為:<br/><br/>PREFIX = x86_64-w64-mingw32-<br/><br/>表示編譯完成的 fossil.exe 要在 x86_64-w64-mingw32 平台上執行.<br/><br/>第 65 行改為:<br/><br/>FOSSIL_ENABLE_SSL = 1</p>
 <p>8. 從 <a href="http://gnuwin32.sourceforge.net/downlinks/make-dep-zip.php">http://gnuwin32.sourceforge.net/downlinks/make-dep-zip.php</a> 下載 libintl3.dll 與 libiconv2.dll, 放至 y:\<br/><br/>表示編譯後的 fossil.exe 要能夠在 https 網路協定中使用.</p>
 <p>9. OpenSSL 靜態程式庫檔案:<br/><br/>將 pacman -S openssl-devel 安裝後, 在Y:\msys64_20210419\mingw64\lib 目錄中的 libssl.a 與 libcrypto.a 檔案放入 Fossil SCM 原始碼目錄中.</p>
-<p>10. 執行編譯與連結:<br/><br/>make -f win/Makefile.mingw LIB="-l:libssl.a -l:libcrypto.a -lgdi32 -lmingwex -lz -lws2_32 -municode"<br/><br/>此處採直接連結 libssl.a 與 libcrypto.a 的方式進行編譯, 完成後的 fossil.exe, 檔案大小約 8 MB.</p><br />Fossil server << <a href='Fossil server.html'>Previous</a> <a href='Compile SQLite.html'>Next</a> >> Compile SQLite</div>
+<p>10. 執行編譯與連結:<br/><br/>make -f win/Makefile.mingw LIB="-l:libssl.a -l:libcrypto.a -lgdi32 -lmingwex -lz -lws2_32 -municode"<br/><br/>此處採直接連結 libssl.a 與 libcrypto.a 的方式進行編譯, 完成後的 fossil.exe, 檔案大小約 8 MB.</p>
+<br />Fossil server << <a href='Fossil server.html'>Previous</a> <a href='Compile SQLite.html'>Next</a> >> Compile SQLite</div>
         
     <!-- footer -->
       <div class="container">
