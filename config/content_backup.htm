@@ -211,7 +211,7 @@ canvas = html.CANVAS(width = 600, height = 400)
 #canvas.style = {"width": "100%"}
 canvas.id = "taiwan_flag"
 # 將圖畫至 id 為 brython_div 的 cnavas 標註
-brython_div = doc["brython_div"]
+brython_div = doc["brython_div_roc"]
 brython_div <= canvas
 # 準備繪圖畫布
 canvas = doc["taiwan_flag"]
@@ -260,7 +260,8 @@ ctx.closePath()
 # 填色設為白色
 ctx.fillStyle = '#fff'
 ctx.fill()
-</script><h1>About</h1>
+</script>
+<div id="brython_div_roc"></div><h1>About</h1>
 <p>倉儲: <a href="https://github.com/mdecycu/wcm2022_guide">https://github.com/mdecycu/wcm2022_guide</a></p>
 <p>網頁: <a href="https://mde.tw/wcm2022_guide">https://mde.tw/wcm2022_guide</a></p>
 <p>網際內容管理課程要求每一位學員利用 <a href="https://github.com/wcm2022/wcm2022">wcm2022 template</a> 與 <a href="https://pages.github.com/">Github Pages</a> 建立名稱為 wcm2022 的倉儲以及網頁. 因此需要在近端執行 Python 程式, 且需要 flask flask_cors bs4 lxml pelican markdown leo pyopenssl 等 Python 模組.</p>
