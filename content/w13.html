@@ -139,55 +139,198 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Virtualbox << <a href='Virtualbox.html'>Previous</a> <a href='w11_5j.html'>Next</a> >> w11_5j<br /><h1>五專任務</h1>
-<p>請自行利用 @gm Google email 帳號登記 <a href="https://www.blogger.com">Blogger</a> 網誌系統 (請以個人的 Github 帳號登錄個人網誌 domain, 例如: <a href="https://github_帳號.blogspot.com">https://github_帳號.blogspot.com</a>)</p>
-<p>並在個人 Blogger 中分別以計算機概論與網際內容管理課程內容摘要與心得, 建立至少兩篇網誌文章.</p>
-<p>希望透過線上程式讀取學員學號與 blogger 帳號, 然後直接在網頁上建立各學員的 blogger 連結:</p>
-<p>第一步: 先設法以 Brython (Browser Python, 也就是可以直接在網頁上執行的 Python), <a href="https://mde.tw/wcm2022_guide/content/run.html">讀取</a> <a href="https://mde.tw/studlist/2022spring/5j.txt">https://mde.tw/studlist/2022spring/5j.txt</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
-from browser import document
-
-brython_div = document["brython_div"]
-
-# 根據 href 與 content 將 html 元件中的 anchor 插入頁面
-def makeLink(href, content):
-    brython_div &lt;= html.A(content, href=href)
-    brython_div &lt;= html.BR()
-
-# 將 5j 學號、帳號、組別與 blogger 的網址設為 studlist_url
-studlist_url = "https://mde.tw/studlist/2022spring/5j.txt"
-# 利用 open() 與 read() 讀出資料
-data = open(studlist_url).read()
-print(data)</pre>
-<p>加入註解後, 程式內容為: <a href="./../downloads/w10_5j/w10_5j_step1.txt">w10_5j_step1.txt</a></p>
-<p></p>
+    <div id="tipue_search_content">Online << <a href='Online.html'>Previous</a> <a href='About.html'>Next</a> >> About<br /><h1>w13</h1>
+<!-- 導入 Brython 程式庫 -->
+<p>
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
 <p>
 <script>
-var winkVideoData_brython_open_read = {
-  dataVersion: 1,
-  frameRate: 10,
-  buttonFrameLength: 5,
-  buttonFrameOffset: 2,
-  frameStops: {
-  },
-};
+window.onload=function(){brython();}
 </script>
 </p>
-<div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="./../cmsimde/static" data-varname="winkVideoData_brython_open_read" height="630" muted="true" width="1008">
-<source src="./../downloads/w10_5j/brython_open_read.mp4" type="video/mp4"/></video>
-<div class="winkVideoOverlayClass"></div>
-<div class="winkVideoControlBarClass"><button class="winkVideoControlBarPlayButtonClass"></button> <button class="winkVideoControlBarPauseButtonClass"></button>
-<div class="winkVideoControlBarProgressLeftClass"></div>
-<div class="winkVideoControlBarProgressEmptyMiddleClass"></div>
-<div class="winkVideoControlBarProgressRightClass"></div>
-<div class="winkVideoControlBarProgressFilledMiddleClass"></div>
-<div class="winkVideoControlBarProgressThumbClass"></div>
-</div>
-<div class="winkVideoPlayOverlayClass"></div>
-</div>
-<p>靈活運用上述 Brython 程式碼, 再加上 Heroku 上的 Flask 程式, 可以直接從教務主機中擷取資料:</p>
-<p style="padding-left: 30px;"><a href="https://mde.tw/wcm2022_guide/content/run.html?src=https://gist.githubusercontent.com/mdecourse/e00a3b68d4defee1987d18cc998b377a/raw/b1ab86e88df787b0fbc2ed627c532287d9c2cefc/w10_5j_ajax.py">輸入學期與課程代號, 取出修課學員學號</a></p>
-<br />Virtualbox << <a href='Virtualbox.html'>Previous</a> <a href='w11_5j.html'>Next</a> >> w11_5j</div>
+<p>1a</p>
+<p>
+<script type="text/python3">
+#print("可執行 Brython")
+# 這個程式用於 demo 綠色方塊沿著特定網格路徑行走
+# 從 Brython 程式庫中的 browser 模組導入 document 類別, 並以簡寫設定為 doc
+from browser import document as doc
+# 從 browser 模組導入 html 類別, 主要用於建立 CANVAS 標註物件, 並插入頁面中
+from browser import html
+# 用於定時執行特定函式
+import browser.timer
+# 導入亂數模組
+from random import random, randint
+
+# 利用 html 建立一個 CANVAS 標註物件, 與變數 canvas 對應
+canvas = html.CANVAS(width = 600, height = 600)
+# 將 canvas 標註的 id 設為 "canvas"
+canvas.id = "canvas"
+# 將 document 中 id 為 "brython_div" 的標註 
+# 設為與 brython_div 變數對應
+brython_div = doc["brython_div"]
+# 將 canvas 標註放入 brython_div 所在位置
+# 頁面中原本就已經放入 <div id="brython_div"></div> 標註
+brython_div <= canvas
+# 將頁面中 id 為 canvas 的 CANVAS 設為與 canvas 變數對應
+canvas = doc["canvas"]
+# 將 canvas 的 2d 繪圖 context 命名為 ctx
+ctx = canvas.getContext("2d")
+
+# 建立一個 dRect() 函式
+# s default 為 1, c defaul 為紅色
+def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath();
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke();
+    
+# 建立畫直線函式
+def draw_line(x1, y1, x2, y2, color="#ff0000"):
+    ctx.beginPath()
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.strokeStyle = color
+    ctx.stroke()
+
+# 建立 write Text 函式
+def wText(x, y, t, s=14, c='#0000ff'):
+    ctx.font = str(s) + "px Arial";
+    ctx.fillText(t, x, y)
+
+# 定義畫格線的函式
+def grid(startx, starty, w, h, wnum, hnum, pixel=1, color="#ff0000"):
+    # 利用迴圈與座標增量繪圖
+    # 因為輸入 wnum 與 hnum 為格子數, 畫格線數則需加上 1
+    for i in range(wnum+1):
+        for j in range(hnum+1):
+            # 畫上下直線
+            yend = starty + h*(hnum)
+            xend = startx + w*(wnum)
+            x = startx + i*w
+            draw_line(x, starty, x, yend, color)
+            # 畫左右直線
+            y = starty + j*h
+            draw_line(startx, y, xend, y, color)
+            #wText(w/2-10, y-w/2, str(j))
+
+# 從兩個座標點求中心點座標
+def center(lx, ly, rx, ry):
+    # lx is x coord of the left up corner
+    # rx is the x coord of th right down corner
+    x = (lx + rx)/2
+    y = (ly + ry)/2
+    return x, y
+    
+# 畫出填色方塊
+def draw_rect(gx, gy, gw, gh, color="lime"):
+    # gx is the grid coord at x direction
+    # gy is the grid coord at y direction
+    # gw is the with of the green rect
+    # gh is the height of the green rect
+    lx = origx + (gx-1)*w
+    ly = origy + (gy-1)*h
+    rx = origx + gx*w
+    ry = origy + gy*h
+    cx, cy = center(lx, ly, rx, ry)
+    # glx is the x coord of the left corner
+    # gly is the y coord of the left corner
+    glx = cx - gw/2
+    gly = cy - gh/2
+    # 利用設定的顏色值畫出 rectangle
+    ctx.fillStyle = color
+    ctx.fillRect(glx, gly, gw, gh)
+
+# 以白色覆蓋位於 (nowx, nowy) 
+# 且比目標方塊長寬各大於 1 pixel的方塊
+def wipe():
+    draw_rect(nowx, nowy, 30+1, 30+1, color="white")
+
+# 畫出位於 (nowx, nowy) 的綠色方塊
+def draw():
+    draw_rect(nowx, nowy, 30, 30, color="lime")
+
+# 繞著外圍行走
+def walk():
+    global stepx, stepy
+    # 向下
+    if nowy < hnum and nowx == 1:
+        stepx = 0
+        stepy = 1
+    # 向右
+    elif nowx < wnum and nowy == hnum:
+        stepx = 1
+        stepy = 0
+    # 向上
+    elif nowy == hnum and nowx == wnum:
+        stepx = 0
+        stepy = -1
+    # 向左
+    elif nowx == wnum and nowy == 1:
+        stepx = -1
+        stepy = 0
+        
+# 每隔短暫時間即呼叫執行一次的函式
+def game():
+    # 因 nowx 與 nowy 在函式外宣告
+    # 且在函式內改變對應值, 因此需宣告為 global
+    global nowx, nowy
+    walk()
+    wipe()
+    nowx += stepx
+    nowy += stepy
+    draw()
+
+# 綠色方塊起點座標與 x 及 y 方向的座標增量
+nowx = 1
+nowy = 1
+stepx = 0
+stepy = 0
+# 設定格數
+# width 方向格子數
+wnum = 15
+# height 方向格子數
+hnum = 15
+# 設定線寬
+pixel = 1
+# 設定 w 寬度
+w = int(canvas.width/wnum) - pixel
+# 設定 h 高度
+h = int(canvas.height/hnum) - pixel
+# 設定繪圖座標點起點位置
+origx = 1
+origy = 1
+# 利用 grid 函式畫出格線
+grid(origx, origy, w, h, wnum, hnum, pixel=1, color="black")
+
+'''
+# 利用 draw_rect 以 grid 座標畫出正方形, 內建為 lime
+draw_rect(3, 3, 30, 30)
+
+# 利用隨機亂數產生五個紅色方塊
+# wnum 與 hnum 為 x 與 y 方向的格子個數
+# w 與 h 方向上的方塊 pixel 數
+wrect_size = 30
+hrect_size = 30
+# 利用 for 迴圈產生五個紅色方塊
+for i in range(5):
+    xcoord = randint(1, wnum)
+    ycoord = randint(1, hnum)
+    draw_rect(xcoord, ycoord, wrect_size, hrect_size, color="red")
+'''
+browser.timer.set_interval(game, 100)
+</script>
+</p>
+<p style="padding-left: 30px;"><a href="https://gmnfuedutw-my.sharepoint.com/:v:/g/personal/yen_gm_nfu_edu_tw/Ed28wq2Xd0VLrm1SKZy78LkBf5UobfUnygLpvSCDsFpQsw?e=Kuz5l4">第一段線上教學影片</a> (說明如何在個人動態與靜態網頁中配置 Brython 程式環境, 並啟動執行線上程式)</p>
+<p style="padding-left: 30px;"><a href="https://gmnfuedutw-my.sharepoint.com/:v:/g/personal/yen_gm_nfu_edu_tw/EaLwVno77RVAgiw8yRIDVLwB22KQU1195xBbzSC3oYdepg?e=Qggh7Y">第二段線上教學影片</a> (說明下列 Brython 程式各行功能)</p>
+<p style="padding-left: 30px;">執行結果如下:</p>
+<div id="brython_div"></div>
+<p>5j</p>
+<br />Online << <a href='Online.html'>Previous</a> <a href='About.html'>Next</a> >> About</div>
         
     <!-- footer -->
       <div class="container">
