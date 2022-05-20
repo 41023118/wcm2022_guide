@@ -9,13 +9,18 @@
 <p><img alt="" class="add_border" height="492" src="/images/20220517_online_learning.png" width="800"/></p>
 <h2>w13</h2>
 <!-- 導入 Brython 程式庫 -->
+<p>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
+</p>
 <!-- 啟動 Brython -->
+<p>
 <script>
 window.onload=function(){brython();}
 </script>
+</p>
 <p>1a</p>
+<p>
 <script type="text/python3">
 #print("可執行 Brython")
 # 這個程式用於 demo 綠色方塊沿著特定網格路徑行走
@@ -187,11 +192,75 @@ for i in range(5):
 '''
 browser.timer.set_interval(game, 100)
 </script>
+</p>
 <p style="padding-left: 30px;"><a href="https://gmnfuedutw-my.sharepoint.com/:v:/g/personal/yen_gm_nfu_edu_tw/Ed28wq2Xd0VLrm1SKZy78LkBf5UobfUnygLpvSCDsFpQsw?e=Kuz5l4">第一段線上教學影片</a> (說明如何在個人動態與靜態網頁中配置 Brython 程式環境, 並啟動執行線上程式)</p>
 <p style="padding-left: 30px;"><a href="https://gmnfuedutw-my.sharepoint.com/:v:/g/personal/yen_gm_nfu_edu_tw/EaLwVno77RVAgiw8yRIDVLwB22KQU1195xBbzSC3oYdepg?e=Qggh7Y">第二段線上教學影片</a> (說明下列 Brython 程式各行功能)</p>
 <p style="padding-left: 30px;">執行結果如下:</p>
 <div id="brython_div"></div>
-<p>5j</p><h1>About</h1>
+<p>5j</p>
+<p style="padding-left: 30px;"><a href="https://gmnfuedutw-my.sharepoint.com/:v:/g/personal/yen_gm_nfu_edu_tw/ESyTyRWxM7pOqzcJzTpxVywByem3U7iDs3oBNiZrDDyx8w?e=L0jCPI">第一段線上教學影片</a> (說明如何配置網頁上的 Brython 程式環境, 以及如何處理倉儲中不同提交版本的衝突)</p>
+<script type="text/python3">
+# 畫中華民國國旗
+# 導入 doc
+from browser import document as doc
+# 以下將利用 html 產生所需的繪圖畫布
+from browser import html
+# 利用 math 函式庫執行三角函數運算
+import math
+canvas = html.CANVAS(width = 600, height = 400)
+#canvas.style = {"width": "100%"}
+canvas.id = "taiwan_flag"
+# 將圖畫至 id 為 brython_div 的 cnavas 標註
+brython_div = doc["brython_div"]
+brython_div <= canvas
+# 準備繪圖畫布
+canvas = doc["taiwan_flag"]
+ctx = canvas.getContext("2d")
+# 進行座標轉換, x 軸不變, y 軸反向且移動 canvas.height 單位光點
+# ctx.setTransform(1, 0, 0, -1, 0, canvas.height)
+# 以下採用 canvas 原始座標繪圖
+flag_w = canvas.width
+flag_h = canvas.height
+circle_x = flag_w/4
+circle_y = flag_h/4
+# 先畫滿地紅
+ctx.fillStyle='rgb(255, 0, 0)'
+ctx.fillRect(0,0,flag_w,flag_h)
+# 再畫青天
+ctx.fillStyle='rgb(0, 0, 150)'
+ctx.fillRect(0,0,flag_w/2,flag_h/2)
+# 畫十二道光芒白日
+ctx.beginPath()
+star_radius = flag_w/8
+angle = 0
+for i in range(24):
+    angle += 5*math.pi*2/12
+    toX = circle_x + math.cos(angle)*star_radius
+    toY = circle_y + math.sin(angle)*star_radius
+    # 只有 i 為 0 時移動到 toX, toY, 其餘都進行 lineTo
+    if (i):
+        ctx.lineTo(toX, toY)
+    else:
+        ctx.moveTo(toX, toY)
+ctx.closePath()
+# 將填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+# 白日:藍圈
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w*17/240, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為藍色
+ctx.fillStyle = 'rgb(0, 0, 149)'
+ctx.fill()
+# 白日:白心
+ctx.beginPath()
+ctx.arc(circle_x, circle_y, flag_w/16, 0, math.pi*2, True)
+ctx.closePath()
+# 填色設為白色
+ctx.fillStyle = '#fff'
+ctx.fill()
+</script><h1>About</h1>
 <p>倉儲: <a href="https://github.com/mdecycu/wcm2022_guide">https://github.com/mdecycu/wcm2022_guide</a></p>
 <p>網頁: <a href="https://mde.tw/wcm2022_guide">https://mde.tw/wcm2022_guide</a></p>
 <p>網際內容管理課程要求每一位學員利用 <a href="https://github.com/wcm2022/wcm2022">wcm2022 template</a> 與 <a href="https://pages.github.com/">Github Pages</a> 建立名稱為 wcm2022 的倉儲以及網頁. 因此需要在近端執行 Python 程式, 且需要 flask flask_cors bs4 lxml pelican markdown leo pyopenssl 等 Python 模組.</p>
@@ -232,7 +301,8 @@ browser.timer.set_interval(game, 100)
     })();
 </script>
 </p>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript><h2>Local and Remote</h2>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<h2>Local and Remote</h2>
 <p>Local 指的是近端, 也就是使用者所使用的個人電腦、平板或手機, 而 Remote 則指能夠讓近端透過各種網路協定擷取資料的伺服器電腦.</p>
 <p>在網際內容管理課程中除了透過 http(s) 協定, 以瀏覽器解取 Remote 端全球資訊網伺服器中的資料外, 還透過 git 以 https、sftp 或 ssh 網路協定, 用於擷取檔案, 或將改版資料推向 Github Remote 端.</p>
 <p>PC to PC connection - python -m http.server, flask server, nginx server, fossil scm server, filezilla server, Ubuntu server.</p>
@@ -284,9 +354,11 @@ var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, butto
 <div class="winkVideoPlayOverlayClass"></div>
 </div>
 <p>以下說明 nginx 安裝流程:</p>
+<p>
 <script>
 var winkVideoData2 = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData2" height="630" muted="true" width="1008">
 <source src="/downloads/w7_nginx/w7_nginx.mp4" type="video/mp4"/></video>
@@ -471,6 +543,7 @@ var winkVideoData = {
 <p>htpasswd -c c:/location_of_password_file/.htpasswd username</p>
 <p>上述指令在命令列視窗中執行後, 需要輸入兩次與 username 對應的驗證密碼.</p>
 <p></p>
+<p>
 <script>
 var winkVideoData_nginx_htpasswd = {
   dataVersion: 1,
@@ -481,6 +554,7 @@ var winkVideoData_nginx_htpasswd = {
   },
 };
 </script>
+</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData_nginx_htpasswd" height="630" muted="true" width="1008">
 <source src="/downloads/w10_nginx_htpasswd/w10_nginx_htpasswd.mp4" type="video/mp4"/></video>
 <div class="winkVideoOverlayClass"></div>
@@ -1236,9 +1310,11 @@ To mdecycu:mdecycu/wcm2022_guide.git
 <p>Wink 影片嵌入 cmsimde 超文件檔案: <a href="/downloads/w7_hp_virtualbox_win/w7_hp_virtualbox_win.txt">w7_hp_virtualbox_win.txt</a></p>
 <p>Wink 影片嵌入 blog 超文件檔案: <a href="/downloads/embed_wink_into_blog.txt">embed_wink_into_blog.txt</a></p>
 <p> 以下影片說明如何利用電腦輔助設計室中的電腦, 安裝 Windows 10 虛擬主機:</p>
+<p>
 <script>
 var winkVideoData = { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData" height="630" muted="true" width="1008">
 <source src="/downloads/w7_vbox/w7_vbox.mp4" type="video/mp4"/></video>
@@ -1402,9 +1478,11 @@ Gtk.main()</pre>
 <div style="padding-left: 30px;">7-9 backup3</div>
 <div style="padding-left: 30px;"></div>
 <div></div>
+<p>
 <script>
 var winkVideoData_w12_1a= { dataVersion: 1, frameRate: 10, buttonFrameLength: 5, buttonFrameOffset: 2, frameStops: { }, };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData_w12_1a" height="630" muted="true" width="1008">
 <source src="/downloads/w12_1a/w12_1a.mp4" type="video/mp4"/></video></div>
@@ -1634,8 +1712,9 @@ execargs = /usr/bin/fossil http /home/pj2022/repository/pj2022.fossil --https --
 <p>sqlite&gt; select login, pw, info from user;</p>
 <p>'pj2022','CT5tJqSiHn',''<br/>'anonymous','151162380A2A4568','Anon'<br/>'nobody','','Nobody'<br/>'developer','','Dev'<br/>'reader','','Reader'</p>
 <p>假如要列出 Fossil SCM 倉儲檔案中的所有資料表內容:</p>
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-<p>sqlite&gt; .schema<br/>CREATE TABLE repository.blob(<br/>  rid INTEGER PRIMARY KEY,<br/>  rcvid INTEGER,<br/>  size INTEGER,<br/>  uuid TEXT UNIQUE NOT NULL,<br/>  content BLOB,<br/>  CHECK( length(uuid)&gt;=40 AND rid&gt;0 )<br/>);<br/>CREATE TABLE repository.delta(<br/>  rid INTEGER PRIMARY KEY,<br/>  srcid INTEGER NOT NULL REFERENCES blob<br/>);<br/>CREATE INDEX repository.delta_i1 ON delta(srcid);<br/>CREATE TABLE repository.rcvfrom(<br/>  rcvid INTEGER PRIMARY KEY,<br/>  uid INTEGER REFERENCES user,<br/>  mtime DATETIME,<br/>  nonce TEXT UNIQUE,<br/>  ipaddr TEXT<br/>);<br/>CREATE TABLE repository.user(<br/>  uid INTEGER PRIMARY KEY,<br/>  login TEXT UNIQUE,<br/>  pw TEXT,<br/>  cap TEXT,<br/>  cookie TEXT,<br/>  ipaddr TEXT,<br/>  cexpire DATETIME,<br/>  info TEXT,<br/>  mtime DATE,<br/>  photo BLOB<br/>);<br/>CREATE TABLE repository.config(<br/>  name TEXT PRIMARY KEY NOT NULL,<br/>  value CLOB,<br/>  mtime DATE,<br/>  CHECK( typeof(name)='text' AND length(name)&gt;=1 )<br/>);<br/>CREATE TABLE repository.shun(<br/>  uuid UNIQUE,<br/>  mtime DATE,<br/>  scom TEXT<br/>);<br/>CREATE TABLE repository.private(rid INTEGER PRIMARY KEY);<br/>CREATE TABLE repository.reportfmt(<br/>   rn INTEGER PRIMARY KEY,<br/>   owner TEXT,<br/>   title TEXT UNIQUE,<br/>   mtime DATE,<br/>   cols TEXT,<br/>   sqlcode TEXT<br/>);<br/>CREATE TABLE repository.concealed(<br/>  hash TEXT PRIMARY KEY,<br/>  mtime DATE,<br/>  content TEXT<br/>);<br/>CREATE TABLE repository.filename(<br/>  fnid INTEGER PRIMARY KEY,<br/>  name TEXT UNIQUE<br/>);<br/>CREATE TABLE repository.mlink(<br/>  mid INTEGER,<br/>  fid INTEGER,<br/>  pmid INTEGER,<br/>  pid INTEGER,<br/>  fnid INTEGER REFERENCES filename,<br/>  pfnid INTEGER,<br/>  mperm INTEGER,<br/>  isaux BOOLEAN DEFAULT 0<br/>);<br/>CREATE INDEX repository.mlink_i1 ON mlink(mid);<br/>CREATE INDEX repository.mlink_i2 ON mlink(fnid);<br/>CREATE INDEX repository.mlink_i3 ON mlink(fid);<br/>CREATE INDEX repository.mlink_i4 ON mlink(pid);<br/>CREATE TABLE repository.plink(<br/>  pid INTEGER REFERENCES blob,<br/>  cid INTEGER REFERENCES blob,<br/>  isprim BOOLEAN,<br/>  mtime DATETIME,<br/>  baseid INTEGER REFERENCES blob,<br/>  UNIQUE(pid, cid)<br/>);<br/>CREATE INDEX repository.plink_i2 ON plink(cid,pid);<br/>CREATE TABLE repository.leaf(rid INTEGER PRIMARY KEY);<br/>CREATE TABLE repository.event(<br/>  type TEXT,<br/>  mtime DATETIME,<br/>  objid INTEGER PRIMARY KEY,<br/>  tagid INTEGER,<br/>  uid INTEGER REFERENCES user,<br/>  bgcolor TEXT,<br/>  euser TEXT,<br/>  user TEXT,<br/>  ecomment TEXT,<br/>  comment TEXT,<br/>  brief TEXT,<br/>  omtime DATETIME<br/>);<br/>CREATE INDEX repository.event_i1 ON event(mtime);<br/>CREATE TABLE repository.phantom(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.orphan(<br/>  rid INTEGER PRIMARY KEY,<br/>  baseline INTEGER<br/>);<br/>CREATE INDEX repository.orphan_baseline ON orphan(baseline);<br/>CREATE TABLE repository.unclustered(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.unsent(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.tag(<br/>  tagid INTEGER PRIMARY KEY,<br/>  tagname TEXT UNIQUE<br/>);<br/>CREATE TABLE repository.tagxref(<br/>  tagid INTEGER REFERENCES tag,<br/>  tagtype INTEGER,<br/>  srcid INTEGER REFERENCES blob,<br/>  origid INTEGER REFERENCES blob,<br/>  value TEXT,<br/>  mtime TIMESTAMP,<br/>  rid INTEGER REFERENCE blob,<br/>  UNIQUE(rid, tagid)<br/>);<br/>CREATE INDEX repository.tagxref_i1 ON tagxref(tagid, mtime);<br/>CREATE TABLE repository.backlink(<br/>  target TEXT,<br/>  srctype INT,<br/>  srcid INT,<br/>  mtime TIMESTAMP,<br/>  UNIQUE(target, srctype, srcid)<br/>);<br/>CREATE INDEX repository.backlink_src ON backlink(srcid, srctype);<br/>CREATE TABLE repository.attachment(<br/>  attachid INTEGER PRIMARY KEY,<br/>  isLatest BOOLEAN DEFAULT 0,<br/>  mtime TIMESTAMP,<br/>  src TEXT,<br/>  target TEXT,<br/>  filename TEXT,<br/>  comment TEXT,<br/>  user TEXT<br/>);<br/>CREATE INDEX repository.attachment_idx1 ON attachment(target, filename, mtime);<br/>CREATE INDEX repository.attachment_idx2 ON attachment(src);<br/>CREATE TABLE repository.ticket(<br/>  tkt_id INTEGER PRIMARY KEY,<br/>  tkt_uuid TEXT UNIQUE,<br/>  tkt_mtime DATE,<br/>  tkt_ctime DATE,<br/>  type TEXT,<br/>  status TEXT,<br/>  subsystem TEXT,<br/>  priority TEXT,<br/>  severity TEXT,<br/>  foundin TEXT,<br/>  private_contact TEXT,<br/>  resolution TEXT,<br/>  title TEXT,<br/>  comment TEXT<br/>);<br/>CREATE TABLE repository.ticketchng(<br/>  tkt_id INTEGER REFERENCES ticket,<br/>  tkt_rid INTEGER REFERENCES blob,<br/>  tkt_mtime DATE,<br/>  login TEXT,<br/>  username TEXT,<br/>  mimetype TEXT,<br/>  icomment TEXT<br/>);<br/>CREATE INDEX repository.ticketchng_idx1 ON ticketchng(tkt_id, tkt_mtime);<br/>CREATE TABLE repository.cherrypick(<br/>  parentid INT,<br/>  childid INT,<br/>  isExclude BOOLEAN DEFAULT false,<br/>  PRIMARY KEY(parentid, childid)<br/>) WITHOUT ROWID;<br/>CREATE INDEX repository.cherrypick_cid ON cherrypick(childid);<br/>CREATE VIEW repository.artifact(rid,rcvid,size,atype,srcid,hash,content) AS     SELECT blob.rid,rcvid,size,1,srcid,uuid,content      FROM blob LEFT JOIN delta ON (blob.rid=delta.rid)<br/>/* repository.artifact(rid,rcvid,size,atype,srcid,hash,content) */;<br/>CREATE TABLE repository.sqlite_stat1(tbl,idx,stat);<br/>CREATE TABLE repository.chat(<br/>  msgid INTEGER PRIMARY KEY AUTOINCREMENT,<br/>  mtime JULIANDAY,<br/>  lmtime TEXT,<br/>  xfrom TEXT,<br/>  xmsg  TEXT,<br/>  fname TEXT,<br/>  fmime TEXT,<br/>  mdel INT,<br/>  file  BLOB<br/>);<br/>CREATE TABLE repository.sqlite_sequence(name,seq);<br/>CREATE TABLE configdb.global_config(<br/>  name TEXT PRIMARY KEY,<br/>  value TEXT<br/>);<br/>sqlite&gt;</p><h3>Virtualbox</h3>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
+<p>sqlite&gt; .schema<br/>CREATE TABLE repository.blob(<br/>  rid INTEGER PRIMARY KEY,<br/>  rcvid INTEGER,<br/>  size INTEGER,<br/>  uuid TEXT UNIQUE NOT NULL,<br/>  content BLOB,<br/>  CHECK( length(uuid)&gt;=40 AND rid&gt;0 )<br/>);<br/>CREATE TABLE repository.delta(<br/>  rid INTEGER PRIMARY KEY,<br/>  srcid INTEGER NOT NULL REFERENCES blob<br/>);<br/>CREATE INDEX repository.delta_i1 ON delta(srcid);<br/>CREATE TABLE repository.rcvfrom(<br/>  rcvid INTEGER PRIMARY KEY,<br/>  uid INTEGER REFERENCES user,<br/>  mtime DATETIME,<br/>  nonce TEXT UNIQUE,<br/>  ipaddr TEXT<br/>);<br/>CREATE TABLE repository.user(<br/>  uid INTEGER PRIMARY KEY,<br/>  login TEXT UNIQUE,<br/>  pw TEXT,<br/>  cap TEXT,<br/>  cookie TEXT,<br/>  ipaddr TEXT,<br/>  cexpire DATETIME,<br/>  info TEXT,<br/>  mtime DATE,<br/>  photo BLOB<br/>);<br/>CREATE TABLE repository.config(<br/>  name TEXT PRIMARY KEY NOT NULL,<br/>  value CLOB,<br/>  mtime DATE,<br/>  CHECK( typeof(name)='text' AND length(name)&gt;=1 )<br/>);<br/>CREATE TABLE repository.shun(<br/>  uuid UNIQUE,<br/>  mtime DATE,<br/>  scom TEXT<br/>);<br/>CREATE TABLE repository.private(rid INTEGER PRIMARY KEY);<br/>CREATE TABLE repository.reportfmt(<br/>   rn INTEGER PRIMARY KEY,<br/>   owner TEXT,<br/>   title TEXT UNIQUE,<br/>   mtime DATE,<br/>   cols TEXT,<br/>   sqlcode TEXT<br/>);<br/>CREATE TABLE repository.concealed(<br/>  hash TEXT PRIMARY KEY,<br/>  mtime DATE,<br/>  content TEXT<br/>);<br/>CREATE TABLE repository.filename(<br/>  fnid INTEGER PRIMARY KEY,<br/>  name TEXT UNIQUE<br/>);<br/>CREATE TABLE repository.mlink(<br/>  mid INTEGER,<br/>  fid INTEGER,<br/>  pmid INTEGER,<br/>  pid INTEGER,<br/>  fnid INTEGER REFERENCES filename,<br/>  pfnid INTEGER,<br/>  mperm INTEGER,<br/>  isaux BOOLEAN DEFAULT 0<br/>);<br/>CREATE INDEX repository.mlink_i1 ON mlink(mid);<br/>CREATE INDEX repository.mlink_i2 ON mlink(fnid);<br/>CREATE INDEX repository.mlink_i3 ON mlink(fid);<br/>CREATE INDEX repository.mlink_i4 ON mlink(pid);<br/>CREATE TABLE repository.plink(<br/>  pid INTEGER REFERENCES blob,<br/>  cid INTEGER REFERENCES blob,<br/>  isprim BOOLEAN,<br/>  mtime DATETIME,<br/>  baseid INTEGER REFERENCES blob,<br/>  UNIQUE(pid, cid)<br/>);<br/>CREATE INDEX repository.plink_i2 ON plink(cid,pid);<br/>CREATE TABLE repository.leaf(rid INTEGER PRIMARY KEY);<br/>CREATE TABLE repository.event(<br/>  type TEXT,<br/>  mtime DATETIME,<br/>  objid INTEGER PRIMARY KEY,<br/>  tagid INTEGER,<br/>  uid INTEGER REFERENCES user,<br/>  bgcolor TEXT,<br/>  euser TEXT,<br/>  user TEXT,<br/>  ecomment TEXT,<br/>  comment TEXT,<br/>  brief TEXT,<br/>  omtime DATETIME<br/>);<br/>CREATE INDEX repository.event_i1 ON event(mtime);<br/>CREATE TABLE repository.phantom(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.orphan(<br/>  rid INTEGER PRIMARY KEY,<br/>  baseline INTEGER<br/>);<br/>CREATE INDEX repository.orphan_baseline ON orphan(baseline);<br/>CREATE TABLE repository.unclustered(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.unsent(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.tag(<br/>  tagid INTEGER PRIMARY KEY,<br/>  tagname TEXT UNIQUE<br/>);<br/>CREATE TABLE repository.tagxref(<br/>  tagid INTEGER REFERENCES tag,<br/>  tagtype INTEGER,<br/>  srcid INTEGER REFERENCES blob,<br/>  origid INTEGER REFERENCES blob,<br/>  value TEXT,<br/>  mtime TIMESTAMP,<br/>  rid INTEGER REFERENCE blob,<br/>  UNIQUE(rid, tagid)<br/>);<br/>CREATE INDEX repository.tagxref_i1 ON tagxref(tagid, mtime);<br/>CREATE TABLE repository.backlink(<br/>  target TEXT,<br/>  srctype INT,<br/>  srcid INT,<br/>  mtime TIMESTAMP,<br/>  UNIQUE(target, srctype, srcid)<br/>);<br/>CREATE INDEX repository.backlink_src ON backlink(srcid, srctype);<br/>CREATE TABLE repository.attachment(<br/>  attachid INTEGER PRIMARY KEY,<br/>  isLatest BOOLEAN DEFAULT 0,<br/>  mtime TIMESTAMP,<br/>  src TEXT,<br/>  target TEXT,<br/>  filename TEXT,<br/>  comment TEXT,<br/>  user TEXT<br/>);<br/>CREATE INDEX repository.attachment_idx1 ON attachment(target, filename, mtime);<br/>CREATE INDEX repository.attachment_idx2 ON attachment(src);<br/>CREATE TABLE repository.ticket(<br/>  tkt_id INTEGER PRIMARY KEY,<br/>  tkt_uuid TEXT UNIQUE,<br/>  tkt_mtime DATE,<br/>  tkt_ctime DATE,<br/>  type TEXT,<br/>  status TEXT,<br/>  subsystem TEXT,<br/>  priority TEXT,<br/>  severity TEXT,<br/>  foundin TEXT,<br/>  private_contact TEXT,<br/>  resolution TEXT,<br/>  title TEXT,<br/>  comment TEXT<br/>);<br/>CREATE TABLE repository.ticketchng(<br/>  tkt_id INTEGER REFERENCES ticket,<br/>  tkt_rid INTEGER REFERENCES blob,<br/>  tkt_mtime DATE,<br/>  login TEXT,<br/>  username TEXT,<br/>  mimetype TEXT,<br/>  icomment TEXT<br/>);<br/>CREATE INDEX repository.ticketchng_idx1 ON ticketchng(tkt_id, tkt_mtime);<br/>CREATE TABLE repository.cherrypick(<br/>  parentid INT,<br/>  childid INT,<br/>  isExclude BOOLEAN DEFAULT false,<br/>  PRIMARY KEY(parentid, childid)<br/>) WITHOUT ROWID;<br/>CREATE INDEX repository.cherrypick_cid ON cherrypick(childid);<br/>CREATE VIEW repository.artifact(rid,rcvid,size,atype,srcid,hash,content) AS     SELECT blob.rid,rcvid,size,1,srcid,uuid,content      FROM blob LEFT JOIN delta ON (blob.rid=delta.rid)<br/>/* repository.artifact(rid,rcvid,size,atype,srcid,hash,content) */;<br/>CREATE TABLE repository.sqlite_stat1(tbl,idx,stat);<br/>CREATE TABLE repository.chat(<br/>  msgid INTEGER PRIMARY KEY AUTOINCREMENT,<br/>  mtime JULIANDAY,<br/>  lmtime TEXT,<br/>  xfrom TEXT,<br/>  xmsg  TEXT,<br/>  fname TEXT,<br/>  fmime TEXT,<br/>  mdel INT,<br/>  file  BLOB<br/>);<br/>CREATE TABLE repository.sqlite_sequence(name,seq);<br/>CREATE TABLE configdb.global_config(<br/>  name TEXT PRIMARY KEY,<br/>  value TEXT<br/>);<br/>sqlite&gt;</p>
+<h3>Virtualbox</h3>
 <p>利用 nssm 與 vboxheadless 啟動虛擬主機.</p>
 <p>nssm install nxserver</p>
 <p>nssm edit nxserver</p>
@@ -1644,10 +1723,7 @@ execargs = /usr/bin/fossil http /home/pj2022/repository/pj2022.fossil --https --
 <p style="padding-left: 30px;">Startup directory: C:\pj2022</p>
 <p style="padding-left: 30px;">Arguments: --startvm nxserver</p>
 <p style="padding-left: 30px;">Log on: 輸入管理者帳號與密碼</p>
-=======
 <p>sqlite&gt; .schema<br/>CREATE TABLE repository.blob(<br/>  rid INTEGER PRIMARY KEY,<br/>  rcvid INTEGER,<br/>  size INTEGER,<br/>  uuid TEXT UNIQUE NOT NULL,<br/>  content BLOB,<br/>  CHECK( length(uuid)&gt;=40 AND rid&gt;0 )<br/>);<br/>CREATE TABLE repository.delta(<br/>  rid INTEGER PRIMARY KEY,<br/>  srcid INTEGER NOT NULL REFERENCES blob<br/>);<br/>CREATE INDEX repository.delta_i1 ON delta(srcid);<br/>CREATE TABLE repository.rcvfrom(<br/>  rcvid INTEGER PRIMARY KEY,<br/>  uid INTEGER REFERENCES user,<br/>  mtime DATETIME,<br/>  nonce TEXT UNIQUE,<br/>  ipaddr TEXT<br/>);<br/>CREATE TABLE repository.user(<br/>  uid INTEGER PRIMARY KEY,<br/>  login TEXT UNIQUE,<br/>  pw TEXT,<br/>  cap TEXT,<br/>  cookie TEXT,<br/>  ipaddr TEXT,<br/>  cexpire DATETIME,<br/>  info TEXT,<br/>  mtime DATE,<br/>  photo BLOB<br/>);<br/>CREATE TABLE repository.config(<br/>  name TEXT PRIMARY KEY NOT NULL,<br/>  value CLOB,<br/>  mtime DATE,<br/>  CHECK( typeof(name)='text' AND length(name)&gt;=1 )<br/>);<br/>CREATE TABLE repository.shun(<br/>  uuid UNIQUE,<br/>  mtime DATE,<br/>  scom TEXT<br/>);<br/>CREATE TABLE repository.private(rid INTEGER PRIMARY KEY);<br/>CREATE TABLE repository.reportfmt(<br/>   rn INTEGER PRIMARY KEY,<br/>   owner TEXT,<br/>   title TEXT UNIQUE,<br/>   mtime DATE,<br/>   cols TEXT,<br/>   sqlcode TEXT<br/>);<br/>CREATE TABLE repository.concealed(<br/>  hash TEXT PRIMARY KEY,<br/>  mtime DATE,<br/>  content TEXT<br/>);<br/>CREATE TABLE repository.filename(<br/>  fnid INTEGER PRIMARY KEY,<br/>  name TEXT UNIQUE<br/>);<br/>CREATE TABLE repository.mlink(<br/>  mid INTEGER,<br/>  fid INTEGER,<br/>  pmid INTEGER,<br/>  pid INTEGER,<br/>  fnid INTEGER REFERENCES filename,<br/>  pfnid INTEGER,<br/>  mperm INTEGER,<br/>  isaux BOOLEAN DEFAULT 0<br/>);<br/>CREATE INDEX repository.mlink_i1 ON mlink(mid);<br/>CREATE INDEX repository.mlink_i2 ON mlink(fnid);<br/>CREATE INDEX repository.mlink_i3 ON mlink(fid);<br/>CREATE INDEX repository.mlink_i4 ON mlink(pid);<br/>CREATE TABLE repository.plink(<br/>  pid INTEGER REFERENCES blob,<br/>  cid INTEGER REFERENCES blob,<br/>  isprim BOOLEAN,<br/>  mtime DATETIME,<br/>  baseid INTEGER REFERENCES blob,<br/>  UNIQUE(pid, cid)<br/>);<br/>CREATE INDEX repository.plink_i2 ON plink(cid,pid);<br/>CREATE TABLE repository.leaf(rid INTEGER PRIMARY KEY);<br/>CREATE TABLE repository.event(<br/>  type TEXT,<br/>  mtime DATETIME,<br/>  objid INTEGER PRIMARY KEY,<br/>  tagid INTEGER,<br/>  uid INTEGER REFERENCES user,<br/>  bgcolor TEXT,<br/>  euser TEXT,<br/>  user TEXT,<br/>  ecomment TEXT,<br/>  comment TEXT,<br/>  brief TEXT,<br/>  omtime DATETIME<br/>);<br/>CREATE INDEX repository.event_i1 ON event(mtime);<br/>CREATE TABLE repository.phantom(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.orphan(<br/>  rid INTEGER PRIMARY KEY,<br/>  baseline INTEGER<br/>);<br/>CREATE INDEX repository.orphan_baseline ON orphan(baseline);<br/>CREATE TABLE repository.unclustered(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.unsent(<br/>  rid INTEGER PRIMARY KEY<br/>);<br/>CREATE TABLE repository.tag(<br/>  tagid INTEGER PRIMARY KEY,<br/>  tagname TEXT UNIQUE<br/>);<br/>CREATE TABLE repository.tagxref(<br/>  tagid INTEGER REFERENCES tag,<br/>  tagtype INTEGER,<br/>  srcid INTEGER REFERENCES blob,<br/>  origid INTEGER REFERENCES blob,<br/>  value TEXT,<br/>  mtime TIMESTAMP,<br/>  rid INTEGER REFERENCE blob,<br/>  UNIQUE(rid, tagid)<br/>);<br/>CREATE INDEX repository.tagxref_i1 ON tagxref(tagid, mtime);<br/>CREATE TABLE repository.backlink(<br/>  target TEXT,<br/>  srctype INT,<br/>  srcid INT,<br/>  mtime TIMESTAMP,<br/>  UNIQUE(target, srctype, srcid)<br/>);<br/>CREATE INDEX repository.backlink_src ON backlink(srcid, srctype);<br/>CREATE TABLE repository.attachment(<br/>  attachid INTEGER PRIMARY KEY,<br/>  isLatest BOOLEAN DEFAULT 0,<br/>  mtime TIMESTAMP,<br/>  src TEXT,<br/>  target TEXT,<br/>  filename TEXT,<br/>  comment TEXT,<br/>  user TEXT<br/>);<br/>CREATE INDEX repository.attachment_idx1 ON attachment(target, filename, mtime);<br/>CREATE INDEX repository.attachment_idx2 ON attachment(src);<br/>CREATE TABLE repository.ticket(<br/>  tkt_id INTEGER PRIMARY KEY,<br/>  tkt_uuid TEXT UNIQUE,<br/>  tkt_mtime DATE,<br/>  tkt_ctime DATE,<br/>  type TEXT,<br/>  status TEXT,<br/>  subsystem TEXT,<br/>  priority TEXT,<br/>  severity TEXT,<br/>  foundin TEXT,<br/>  private_contact TEXT,<br/>  resolution TEXT,<br/>  title TEXT,<br/>  comment TEXT<br/>);<br/>CREATE TABLE repository.ticketchng(<br/>  tkt_id INTEGER REFERENCES ticket,<br/>  tkt_rid INTEGER REFERENCES blob,<br/>  tkt_mtime DATE,<br/>  login TEXT,<br/>  username TEXT,<br/>  mimetype TEXT,<br/>  icomment TEXT<br/>);<br/>CREATE INDEX repository.ticketchng_idx1 ON ticketchng(tkt_id, tkt_mtime);<br/>CREATE TABLE repository.cherrypick(<br/>  parentid INT,<br/>  childid INT,<br/>  isExclude BOOLEAN DEFAULT false,<br/>  PRIMARY KEY(parentid, childid)<br/>) WITHOUT ROWID;<br/>CREATE INDEX repository.cherrypick_cid ON cherrypick(childid);<br/>CREATE VIEW repository.artifact(rid,rcvid,size,atype,srcid,hash,content) AS     SELECT blob.rid,rcvid,size,1,srcid,uuid,content      FROM blob LEFT JOIN delta ON (blob.rid=delta.rid)<br/>/* repository.artifact(rid,rcvid,size,atype,srcid,hash,content) */;<br/>CREATE TABLE repository.sqlite_stat1(tbl,idx,stat);<br/>CREATE TABLE repository.chat(<br/>  msgid INTEGER PRIMARY KEY AUTOINCREMENT,<br/>  mtime JULIANDAY,<br/>  lmtime TEXT,<br/>  xfrom TEXT,<br/>  xmsg  TEXT,<br/>  fname TEXT,<br/>  fmime TEXT,<br/>  mdel INT,<br/>  file  BLOB<br/>);<br/>CREATE TABLE repository.sqlite_sequence(name,seq);<br/>CREATE TABLE configdb.global_config(<br/>  name TEXT PRIMARY KEY,<br/>  value TEXT<br/>);<br/>sqlite&gt;</p>
-<h3>Virtualbox</h3>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 561c606c58658f44b7d9b1a9e897c1d6327f34c5
 <p><a href="/downloads/w7_vbox/get_vb_xml.leo">get_vb_xml.leo</a></p>
 <p>這個章節在協助學員了解與 Virtualbox 有關的相關安裝與設定內容:</p>
 <p>電腦輔助設計室於 2022/05/11 所安裝的 Virtualbox 為 6.1.28 版, 可以從系統的登錄檔案中查核:</p>
@@ -1742,6 +1818,7 @@ data = open(studlist_url).read()
 print(data)</pre>
 <p>加入註解後, 程式內容為: <a href="/downloads/w10_5j/w10_5j_step1.txt">w10_5j_step1.txt</a></p>
 <p></p>
+<p>
 <script>
 var winkVideoData_brython_open_read = {
   dataVersion: 1,
@@ -1752,6 +1829,7 @@ var winkVideoData_brython_open_read = {
   },
 };
 </script>
+</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData_brython_open_read" height="630" muted="true" width="1008">
 <source src="/downloads/w10_5j/brython_open_read.mp4" type="video/mp4"/></video>
 <div class="winkVideoOverlayClass"></div>
@@ -1776,6 +1854,7 @@ var winkVideoData_brython_open_read = {
 <li>在頁面中啟動 Brython</li>
 <li>在頁面中編寫 Brython 程式</li>
 </ol>
+<p>
 <script>
 var winkVideoData_brython_blogger = {
   dataVersion: 1,
@@ -1786,8 +1865,10 @@ var winkVideoData_brython_blogger = {
   },
 };
 </script>
+</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData_brython_blogger" height="630" muted="true" width="1008">
 <source src="/downloads/w11_5j/w11_5j_brython_blogger.mp4" type="video/mp4"/></video></div>
+<p>
 <script src="/static/brython.js">
 </script>
 <script src="/static/brython_stdlib.js"></script>
@@ -1796,9 +1877,11 @@ window.onload=function(){
 brython();
 }
 </script>
+</p>
 <p><a href="/downloads/w11_5j/5j.txt">5j.txt</a></p>
 <p>可以放入 Blogger html 編輯區執行 Brython 的超文件檔案: <a href="/downloads/w11_5j/how_to_write_brython_in_blogger.txt">how_to_write_brython_in_blogger.txt</a></p>
 <p>接下來希望在這個頁面設定 Brython 程式環境, 將程式取得的學員 Blogger 網誌連結直接顯示在下方:</p>
+<p>
 <script type="text/python3">
 from browser import html
 from browser import document
@@ -1823,7 +1906,9 @@ for i in data:
     href = "https://" + str(blogger_account) + ".blogspot.com"
     makeLink(href, content)
 </script>
+</p>
 <div id="brython_div"></div>
+<p>
 <script type="text/python3">
 from browser import html
 from browser import document
@@ -1843,6 +1928,7 @@ note = "從 1 累加到 10, 總和為: " + str(sum)
 brython_div <= html.BR()
 brython_div <= note
 </script>
+</p>
 <p><a href="https://github.com/joews/rubik-js">https://github.com/joews/rubik-js</a></p>
 <p><iframe height="600" src="https://joews.github.io/rubik-js/index.html" width="800"></iframe></p>
 <h2>配置 Brython</h2>
@@ -1877,6 +1963,7 @@ print = document["print"]
 print &lt;= "直接將資料列在頁面"
 &lt;/script&gt;</pre>
 <p></p>
+<p>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
 <script>
@@ -1884,12 +1971,15 @@ window.onload=function(){
 brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
 }
 </script>
+</p>
 <div id="print"></div>
+<p>
 <script type="text/python3">
 from browser import html, document
 print = document["print"]
 print <= "直接將資料列在頁面"
 </script>
+</p>
 <h2>設定 Pelican 網誌</h2>
 <p><a href="https://blog.getpelican.com/">Pelican</a> 網誌系統採 Python 編寫, 可以讓使用者以 Markdown 格式編寫網誌文章後, 經由 Python 程式轉為網誌超文件內容. 由於一般的網誌系統採用日期排序外, 還提供關鍵字搜尋、分類與索引的功能, 因此 Pelican 的功能就是從每一篇文章中取出中文字索引資料後, 存為 Javascript 與 Json 格式檔案, 以供關鍵字搜尋之用. 詳細流程可以參考:</p>
 <p><a href="https://www.snaums.de/informatik/tipue-search-engine.html">https://www.snaums.de/informatik/tipue-search-engine.html</a></p>
@@ -1927,6 +2017,7 @@ var winkVideoData_blogger = {
 &lt;div class="winkVideoPlayOverlayClass"&gt;&lt;/div&gt;
 &lt;/div&gt;</pre>
 <p>以下為利用 @gm 電子郵箱建立 Blogger 網誌的流程, 其中若使用 Proxy, 則需暫時關閉, 否則 Blogger 會以同一個 IP (Proxy server IP) 同時申請多個網誌的認定禁止新建網誌.</p>
+<p>
 <script>
 var winkVideoData_blogger = {
   dataVersion: 1,
@@ -1937,6 +2028,7 @@ var winkVideoData_blogger = {
   },
 };
 </script>
+</p>
 <!-- 接下來將 mp4 檔案從 downloads 目錄取出 -->
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData_blogger" height="630" muted="true" width="1008">
 <source src="/downloads/w9j_midterm/w9j_midterm.mp4" type="video/mp4"/></video>
@@ -2014,6 +2106,7 @@ Y:\&gt;C:\Windows\system32\mstsc.exe /v:2001:288:6004:XX:XXXX::XX</pre>
 <p>建立 Ubuntu 虛擬主機</p>
 <p><a href="http://wcm.cycu.org:88/wcm_w7_vdi.7z">wcm_w7_vdi.7z</a></p>
 <p><a href="http://wcm.cycu.org:88/wcm_w8.7z">wcm_w8.7z</a></p>
+<p>
 <script>
 var winkVideoData_w11_1a = {
   dataVersion: 1,
@@ -2024,6 +2117,7 @@ var winkVideoData_w11_1a = {
   },
 };
 </script>
+</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/static" data-varname="winkVideoData_w11_1a" height="630" muted="true" width="1008">
 <source src="/downloads/w11_1a/w11_1a.mp4" type="video/mp4"/></video></div>
 <h3>Ubuntu2204</h3>
@@ -2771,12 +2865,8 @@ doc["tetris"].bind("click", tetris.do)
 <p>下載 Leo Editor 之後, 用新版本的 leo 目錄取代原來位於 Y:\Python395\Lib\site-packages 目錄下的 leo 目錄即可.</p>
 <p>在系上網段<a href="http://wcm.cycu.org:88/leo661.7z">下載 Leo 6.6.1</a></p>
 <p>Leo's code uses the following conventions throughout:</p>
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-<p style="padding-left: 30px;">c:  a commander.<br/>ch: a character.<br/>d:  a dict.<br/>f:  an open file.<br/>fn: a file name.<br/>g:  the leoGlobals module.<br/>i, j, k: indices into a string.<br/>p:  a Position.<br/>s:  a string.<br/>t:  a text widget.<br/>u:  an undoer.<br/>w:  a gui widget.<br/>v:  a Vnode<br/>z:  a local temp.</p><h2>學習程式</h2>
-=======
 <p style="padding-left: 30px;">c:  a commander.<br/>ch: a character.<br/>d:  a dict.<br/>f:  an open file.<br/>fn: a file name.<br/>g:  the leoGlobals module.<br/>i, j, k: indices into a string.<br/>p:  a Position.<br/>s:  a string.<br/>t:  a text widget.<br/>u:  an undoer.<br/>w:  a gui widget.<br/>v:  a Vnode<br/>z:  a local temp.</p>
 <h2>學習程式</h2>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 561c606c58658f44b7d9b1a9e897c1d6327f34c5
 <p>學習任何東西, 最重要的就是心態, 先問問自己, 我學這個要幹嘛?</p>
 <p>學習運用英文的目的, 是為了能在未來推甄研究所或找工作時, 不會因為英文能力不佳而被刷掉.</p>
 <p>學習運用程式的目的, 是為了能利用它來運算複雜的模擬問題, 同時也看看能不能將繁雜重複的無聊工作交由自動化機器執行.</p>
