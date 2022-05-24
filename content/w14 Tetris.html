@@ -2,6 +2,7 @@
         <head>
         <title>WCM_GUIDE</title>
         <meta charset="utf-8">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -92,6 +93,7 @@ img.add_border {
 </head>
 <body>
 <div class='container-fluid'><nav>
+        
     <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -137,4 +139,156 @@ img.add_border {
           </div>
           
         </header>
-    </nav><section><h1>Site Map</h1><div id="tipue_search_content"></div><ul><li><a href='Online.html'>Online</a><ul><li><a href='w13.html'>w13</a><li><a href='w14.html'>w14</a><ul><li><a href='w14 Tetris.html'>w14 Tetris</a></li></li></ul></ul><li><a href='About.html'>About</a><ul><li><a href='Local and Remote.html'>Local and Remote</a><li><a href='cmsimde.html'>cmsimde</a><li><a href='Token and SSH.html'>Token and SSH</a><ul><li><a href='YubiKey.html'>YubiKey</a></li></ul><li><a href='Mac and RDT.html'>Mac and RDT</a><li><a href='Wink.html'>Wink</a><li><a href='Nginx.html'>Nginx</a></li></ul><li><a href='Topics.html'>Topics</a><ul><li><a href='OneDrive.html'>OneDrive</a><li><a href='Webpage.html'>Webpage</a><ul><li><a href='cms.html'>cms</a></li></ul><li><a href='PME.html'>PME</a><ul><li><a href='Brython.html'>Brython</a><li><a href='Pyscript.html'>Pyscript</a></li></ul><li><a href='Wifi.html'>Wifi</a><li><a href='WCMS.html'>WCMS</a><li><a href='Code.html'>Code</a><li><a href='Server.html'>Server</a><ul><li><a href='Win10.html'>Win10</a></li></ul><li><a href='IPv6 setup.html'>IPv6 setup</a><li><a href='Heroku.html'>Heroku</a><li><a href='odoo.html'>odoo</a><li><a href='PyGObject.html'>PyGObject</a></li></ul><li><a href='Midterm.html'>Midterm</a><ul><li><a href='四技任務.html'>四技任務</a><ul><li><a href='w12_1a.html'>w12_1a</a><li><a href='nginx_and_stunnel.html'>nginx_and_stunnel</a><li><a href='cmsimde_and_stunnel.html'>cmsimde_and_stunnel</a><li><a href='Fossil server.html'>Fossil server</a><li><a href='Compile Fossil SCM.html'>Compile Fossil SCM</a><li><a href='Compile SQLite.html'>Compile SQLite</a><li><a href='Virtualbox.html'>Virtualbox</a></li></ul><li><a href='五專任務.html'>五專任務</a><ul><li><a href='w11_5j.html'>w11_5j</a></li></ul><li><a href='配置 Brython.html'>配置 Brython</a><li><a href='設定 Pelican 網誌.html'>設定 Pelican 網誌</a><ul><li><a href='Blogger 網誌.html'>Blogger 網誌</a></li></ul><li><a href='計算機概論.html'>計算機概論</a><ul><li><a href='國外的相關課程.html'>國外的相關課程</a></li></ul><li><a href='電腦硬體拆解.html'>電腦硬體拆解</a><li><a href='建立 Virtualbox 虛擬主機.html'>建立 Virtualbox 虛擬主機</a><ul><li><a href='Ubuntu2204.html'>Ubuntu2204</a></li></ul><li><a href='Fossil SCM server.html'>Fossil SCM server</a><li><a href='Tetris on Brython.html'>Tetris on Brython</a><li><a href='Digital Thread.html'>Digital Thread</a><ul><li><a href='RDT.html'>RDT</a></li></li></ul></ul><li><a href='Development.html'>Development</a><ul><li><a href='Portable Python.html'>Portable Python</a><li><a href='Fossil SCM.html'>Fossil SCM</a><ul><li><a href='PC2Server.html'>PC2Server</a></li></ul><li><a href='Tetris.html'>Tetris</a><ul><li><a href='run.html'>run</a></li></li></ul></ul><li><a href='Leo Editor.html'>Leo Editor</a><ul><li><a href='學習程式.html'>學習程式</a></li></ul></section></div></body></html>
+    <div id="tipue_search_content">w14 << <a href='w14.html'>Previous</a> <a href='About.html'>Next</a> >> About<br /><h1>w14 Tetris</h1>
+<!-- 導入 Brython 程式庫 -->
+<p>
+<script src="./../cmsimde/static/brython.js"></script>
+<script src="./../cmsimde/static/brython_stdlib.js"></script>
+</p>
+<!-- 啟動 Brython -->
+<p>
+<script>
+window.onload=function(){brython();}
+</script>
+</p>
+<h4>Tetris in Brython</h4>
+<p>程式開發流程:</p>
+<ol>
+<li>以 Leo Editor 開啟 tetris_project.leo</li>
+<li>修改 w14_tetris_brython.py 節點中的內容</li>
+<li>完成改版後, 點按 cp-to-txt 將程式內容複製到 <a href="./../downloads/w14/w14_tetris_brython.txt">w14_tetris_brython.txt</a></li>
+<li>其中的 w14_tetris_brython.py 若採協同模式開發, 需處理內容衝突與合併</li>
+<li>完成協同編輯後, 點按 cp-to-txt 將程式內容複製到 <a href="./../downloads/w14/w14_tetris_brython.txt">w14_tetris_brython.txt</a></li>
+<li>後續的版本修改追蹤, 以 w14_tetris_brython.py 內容為主</li>
+<li>動態與靜態網頁中的 Tetris, 則透過 <a href="./../downloads/w14/w14_tetris_brython.txt">w14_tetris_brython.txt</a>, 以 Brython 環境執行</li>
+</ol>
+<p>程式碼:</p>
+<p style="padding-left: 30px;"><a href="./../downloads/w14/w14_tetris_brython.txt">w14_tetris_brython.txt</a></p>
+<p style="padding-left: 30px;"><a href="./../downloads/w14/leo_editor_cd2022_template.leo">leo_editor_cd2022_template.leo</a></p>
+<p style="padding-left: 30px;"><a href="./../downloads/w14/tetris_project.leo">tetris_project.leo</a> (利用 Leo Editor 編輯 w14_tetris_brython.py, 且在改版後使用 @button 程式中的  shutil.copy() 讓 <a href="./../downloads/w14/w14_tetris_brython.txt">w14_tetris_brython.txt</a> 內容同步)</p>
+<p style="padding-left: 30px;">圖形定義如下圖, 將各圖形及其旋轉組合, 以數列存放 (加入Z 字圖形將列為作業):</p>
+<p style="padding-left: 30px;">figures = [<br/>    [[1, 5, 9, 13], [4, 5, 6, 7]],<br/>    [[4, 5, 9, 10], [2, 6, 5, 9]],<br/>    [[6, 7, 9, 10], [1, 5, 6, 10]],<br/>    [[1, 2, 5, 9], [0, 4, 5, 6], [1, 5, 9, 8], [4, 5, 6, 10]],<br/>    [[1, 2, 6, 10], [5, 6, 7, 9], [2, 6, 10, 11], [3, 5, 6, 7]],<br/>    [[1, 4, 5, 6], [1, 4, 5, 9], [4, 5, 6, 9], [1, 5, 6, 9]],<br/>    [[1, 2, 5, 6]],<br/>]</p>
+<p style="padding-left: 30px;"><img alt="" height="280" src="./../images/Tetris_figure_definition.png" width="400"/></p>
+<p>(Tetris_figure_definition.png from <a href="https://levelup.gitconnected.com/writing-tetris-in-python-2a16bddb5318">https://levelup.gitconnected.com/writing-tetris-in-python-2a16bddb5318</a>)</p>
+<p>The more interesting function is to check if the currently flying figure intersecting with something fixed on the field. This may happen when the figure is moving left, right, down, or rotating.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class Tetris:
+    ...
+    def intersects(self):
+        intersection = False
+        for i in range(4):
+            for j in range(4):
+                if i * 4 + j in self.figure.image():
+                    if i + self.figure.y &gt; self.height - 1 or \
+                            j + self.figure.x &gt; self.width - 1 or \
+                            j + self.figure.x &lt; 0 or \
+                            self.field[i + self.figure.y][j + self.figure.x] &gt; 0:
+                        intersection = True
+        return intersection</pre>
+<script src="./../downloads/w14/w14_tetris_brython.txt" type="text/python3"></script>
+<div id="brython_div">It is pretty simple: we go and check each cell in the 4x4 matrix of the current Figure, whether it is out of game bounds and whether it is touching some busy game field. We check if self.field[..][..] &gt; 0, because there may be any color. And if there is a zero, that means that the field is empty, so there is no problem.<br/><br/>Having this function, we can now check if we are allowed to move or rotate the Figure. If it moves down and intersects, then this means we have reached the bottom, so we need to “freeze” the figure on our field:</div>
+<div>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class Tetris:
+    ...
+    def freeze(self):
+        for i in range(4):
+            for j in range(4):
+                if i * 4 + j in self.figure.image():
+                    self.field[i + self.figure.y][j + self.figure.x] = self.figure.color
+        self.break_lines()
+        self.new_figure()
+        if self.intersects():
+            game.state = "gameover"</pre>
+<p>After freezing, we have to check if there are some full horizontal lines that should be destroyed. Then we create a new Figure, and if it already intersects, then game over :)<br/><br/>Checking the full lines is relatively simple and straightforward, but pay attention to the fact that destroying a line goes from the bottom to the top:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class Tetris:
+    ...
+    def break_lines(self):
+        lines = 0
+        for i in range(1, self.height):
+            zeros = 0
+            for j in range(self.width):
+                if self.field[i][j] == 0:
+                    zeros += 1
+            if zeros == 0:
+                lines += 1
+                for i1 in range(i, 1, -1):
+                    for j in range(self.width):
+                        self.field[i1][j] = self.field[i1 - 1][j]
+        self.score += lines ** 2</pre>
+<p>Now, we are missing the moving methods:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class Tetris:
+    ...
+    def go_space(self):
+        while not self.intersects():
+            self.figure.y += 1
+        self.figure.y -= 1
+        self.freeze()
+
+    def go_down(self):
+        self.figure.y += 1
+        if self.intersects():
+            self.figure.y -= 1
+            self.freeze()
+
+    def go_side(self, dx):
+        old_x = self.figure.x
+        self.figure.x += dx
+        if self.intersects():
+            self.figure.x = old_x
+
+    def rotate(self):
+        old_rotation = self.figure.rotation
+        self.figure.rotate()
+        if self.intersects():
+            self.figure.rotation = old_rotation</pre>
+<p>As you can see, thego_space method practically duplicates the go_down method, but it goes down until it reaches the bottom or some fixed figure.<br/><br/>And in every method, we remember the last position, change the coordinates, and check if there is an intersection. If there is, we return to the previous state.</p>
+</div><br />w14 << <a href='w14.html'>Previous</a> <a href='About.html'>Next</a> >> About</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
