@@ -142,14 +142,9 @@ img.add_border {
     <div id="tipue_search_content">w11_5j << <a href='w11_5j.html'>Previous</a> <a href='設定 Pelican 網誌.html'>Next</a> >> 設定 Pelican 網誌<br /><h1>配置 Brython</h1>
 <p>在動態網頁中配置 Brython:</p>
 <p>導入 Brython 程式庫:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="./../cmsimde/static/brython.js"&gt;&lt;/script&gt;
-&lt;script src="./../cmsimde/static/brython_stdlib.js"&gt;&lt;/script&gt;</pre>
+<p><img caption="false" height="63" src="./../images/brython_include_library.png" width="300"/></p>
 <p>啟動 Brython:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script&gt;
-window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
-}
-&lt;/script&gt;</pre>
+<p><img alt="" height="105" src="./../images/brython_startup.png" width="400"/></p>
 <p>其中的 pythonpath 可以將 Python 模組放入後, 以 import 引用.</p>
 <p>完成上述 Brython 程式庫導入與啟動後, 就可以利用:</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script type="text/python3"&gt;
@@ -157,6 +152,10 @@ print("Brython 程式")
 &lt;/script&gt;</pre>
 <p>在 Brython 程式中的 print() 將會列印至 Web Developer Tools 中的 console 頁面.</p>
 <p>假如希望列印資料直接呈現在頁面, 則可以利用 Brython 中的 html 與 document 模組完成:</p>
+<p><img caption="false" height="132" src="./../images/brython_writing_scripts.png" width="300"/></p>
+<p>為了將 Brython 所產生的 html 嵌入頁面, 可以用 div 標定:</p>
+<p><img caption="false" height="51" src="./../images/brython_div_location.png" width="200"/></p>
+<p>上述程式碼範例:</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="./../cmsimde/static/brython.js"&gt;&lt;/script&gt;
 &lt;script src="./../cmsimde/static/brython_stdlib.js"&gt;&lt;/script&gt;
 &lt;script&gt;// &lt;![CDATA[
@@ -187,8 +186,7 @@ from browser import html, document
 print = document["print"]
 print <= "直接將資料列在頁面"
 </script>
-</p>
-<br />w11_5j << <a href='w11_5j.html'>Previous</a> <a href='設定 Pelican 網誌.html'>Next</a> >> 設定 Pelican 網誌</div>
+</p><br />w11_5j << <a href='w11_5j.html'>Previous</a> <a href='設定 Pelican 網誌.html'>Next</a> >> 設定 Pelican 網誌</div>
         
     <!-- footer -->
       <div class="container">

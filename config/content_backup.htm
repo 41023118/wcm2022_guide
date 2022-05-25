@@ -533,8 +533,78 @@ window.onload=function(){brython();}
 <p style="padding-left: 30px;">figures = [<br/>    [[1, 5, 9, 13], [4, 5, 6, 7]],<br/>    [[4, 5, 9, 10], [2, 6, 5, 9]],<br/>    [[6, 7, 9, 10], [1, 5, 6, 10]],<br/>    [[1, 2, 5, 9], [0, 4, 5, 6], [1, 5, 9, 8], [4, 5, 6, 10]],<br/>    [[1, 2, 6, 10], [5, 6, 7, 9], [2, 6, 10, 11], [3, 5, 6, 7]],<br/>    [[1, 4, 5, 6], [1, 4, 5, 9], [4, 5, 6, 9], [1, 5, 6, 9]],<br/>    [[1, 2, 5, 6]],<br/>]</p>
 <p style="padding-left: 30px;"><img alt="" height="280" src="/images/Tetris_figure_definition.png" width="400"/></p>
 <p>(Tetris_figure_definition.png from <a href="https://levelup.gitconnected.com/writing-tetris-in-python-2a16bddb5318">https://levelup.gitconnected.com/writing-tetris-in-python-2a16bddb5318</a>)</p>
+<p>The more interesting function is to check if the currently flying figure intersecting with something fixed on the field. This may happen when the figure is moving left, right, down, or rotating.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class Tetris:
+    ...
+    def intersects(self):
+        intersection = False
+        for i in range(4):
+            for j in range(4):
+                if i * 4 + j in self.figure.image():
+                    if i + self.figure.y &gt; self.height - 1 or \
+                            j + self.figure.x &gt; self.width - 1 or \
+                            j + self.figure.x &lt; 0 or \
+                            self.field[i + self.figure.y][j + self.figure.x] &gt; 0:
+                        intersection = True
+        return intersection</pre>
 <script src="/downloads/w14/w14_tetris_brython.txt" type="text/python3"></script>
-<div id="brython_div"></div><h1>About</h1>
+<div id="brython_div">It is pretty simple: we go and check each cell in the 4x4 matrix of the current Figure, whether it is out of game bounds and whether it is touching some busy game field. We check if self.field[..][..] &gt; 0, because there may be any color. And if there is a zero, that means that the field is empty, so there is no problem.<br/><br/>Having this function, we can now check if we are allowed to move or rotate the Figure. If it moves down and intersects, then this means we have reached the bottom, so we need to “freeze” the figure on our field:</div>
+<div>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class Tetris:
+    ...
+    def freeze(self):
+        for i in range(4):
+            for j in range(4):
+                if i * 4 + j in self.figure.image():
+                    self.field[i + self.figure.y][j + self.figure.x] = self.figure.color
+        self.break_lines()
+        self.new_figure()
+        if self.intersects():
+            game.state = "gameover"</pre>
+<p>After freezing, we have to check if there are some full horizontal lines that should be destroyed. Then we create a new Figure, and if it already intersects, then game over :)<br/><br/>Checking the full lines is relatively simple and straightforward, but pay attention to the fact that destroying a line goes from the bottom to the top:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class Tetris:
+    ...
+    def break_lines(self):
+        lines = 0
+        for i in range(1, self.height):
+            zeros = 0
+            for j in range(self.width):
+                if self.field[i][j] == 0:
+                    zeros += 1
+            if zeros == 0:
+                lines += 1
+                for i1 in range(i, 1, -1):
+                    for j in range(self.width):
+                        self.field[i1][j] = self.field[i1 - 1][j]
+        self.score += lines ** 2</pre>
+<p>Now, we are missing the moving methods:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class Tetris:
+    ...
+    def go_space(self):
+        while not self.intersects():
+            self.figure.y += 1
+        self.figure.y -= 1
+        self.freeze()
+
+    def go_down(self):
+        self.figure.y += 1
+        if self.intersects():
+            self.figure.y -= 1
+            self.freeze()
+
+    def go_side(self, dx):
+        old_x = self.figure.x
+        self.figure.x += dx
+        if self.intersects():
+            self.figure.x = old_x
+
+    def rotate(self):
+        old_rotation = self.figure.rotation
+        self.figure.rotate()
+        if self.intersects():
+            self.figure.rotation = old_rotation</pre>
+<p>As you can see, thego_space method practically duplicates the go_down method, but it goes down until it reaches the bottom or some fixed figure.<br/><br/>And in every method, we remember the last position, change the coordinates, and check if there is an intersection. If there is, we return to the previous state.</p>
+</div><h1>About</h1>
 <p>倉儲: <a href="https://github.com/mdecycu/wcm2022_guide">https://github.com/mdecycu/wcm2022_guide</a></p>
 <p>網頁: <a href="https://mde.tw/wcm2022_guide">https://mde.tw/wcm2022_guide</a></p>
 <p>網際內容管理課程要求每一位學員利用 <a href="https://github.com/wcm2022/wcm2022">wcm2022 template</a> 與 <a href="https://pages.github.com/">Github Pages</a> 建立名稱為 wcm2022 的倉儲以及網頁. 因此需要在近端執行 Python 程式, 且需要 flask flask_cors bs4 lxml pelican markdown leo pyopenssl 等 Python 模組.</p>
