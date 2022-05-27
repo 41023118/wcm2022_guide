@@ -156,37 +156,23 @@ print("Brython 程式")
 <p>為了將 Brython 所產生的 html 嵌入頁面, 可以用 div 標定:</p>
 <p><img caption="false" height="51" src="./../images/brython_div_location.png" width="200"/></p>
 <p>上述程式碼範例:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="./../cmsimde/static/brython.js"&gt;&lt;/script&gt;
-&lt;script src="./../cmsimde/static/brython_stdlib.js"&gt;&lt;/script&gt;
-&lt;script&gt;// &lt;![CDATA[
-window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
-}
-// ]]&gt;&lt;/script&gt;
-&lt;div id="print"&gt;&lt;/div&gt;
-&lt;script type="text/python3"&gt;
-from browser import html, document
-print = document["print"]
-print &lt;= "直接將資料列在頁面"
-&lt;/script&gt;</pre>
+<p><a href="./../downloads/w14/setup_brython.txt">setup_brython.txt</a></p>
 <p></p>
 <p>
 <script src="./../cmsimde/static/brython.js"></script>
 <script src="./../cmsimde/static/brython_stdlib.js"></script>
 <script>
 window.onload=function(){
-brython({debug:1, pythonpath:['./../cmsimde/static/','./../downloads/py/']});
+brython({debug:1, pythonpath:['/cmsimde/static/','/downloads/py/']});
 }
 </script>
-</p>
-<div id="print"></div>
-<p>
 <script type="text/python3">
 from browser import html, document
 print = document["print"]
-print <= "直接將資料列在頁面"
+print <= '這一行直接利用 Brython 將資料列在 id="print" 的頁面'
 </script>
-</p><br />w11_5j << <a href='w11_5j.html'>Previous</a> <a href='設定 Pelican 網誌.html'>Next</a> >> 設定 Pelican 網誌</div>
+</p>
+<div id="print"></div><br />w11_5j << <a href='w11_5j.html'>Previous</a> <a href='設定 Pelican 網誌.html'>Next</a> >> 設定 Pelican 網誌</div>
         
     <!-- footer -->
       <div class="container">

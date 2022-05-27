@@ -2291,37 +2291,23 @@ print("Brython 程式")
 <p>為了將 Brython 所產生的 html 嵌入頁面, 可以用 div 標定:</p>
 <p><img caption="false" height="51" src="/images/brython_div_location.png" width="200"/></p>
 <p>上述程式碼範例:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
-&lt;script src="/static/brython_stdlib.js"&gt;&lt;/script&gt;
-&lt;script&gt;// &lt;![CDATA[
-window.onload=function(){
-brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
-}
-// ]]&gt;&lt;/script&gt;
-&lt;div id="print"&gt;&lt;/div&gt;
-&lt;script type="text/python3"&gt;
-from browser import html, document
-print = document["print"]
-print &lt;= "直接將資料列在頁面"
-&lt;/script&gt;</pre>
+<p><a href="/downloads/w14/setup_brython.txt">setup_brython.txt</a></p>
 <p></p>
 <p>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
 <script>
 window.onload=function(){
-brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
+brython({debug:1, pythonpath:['/cmsimde/static/','/downloads/py/']});
 }
 </script>
-</p>
-<div id="print"></div>
-<p>
 <script type="text/python3">
 from browser import html, document
 print = document["print"]
-print <= "直接將資料列在頁面"
+print <= '這一行直接利用 Brython 將資料列在 id="print" 的頁面'
 </script>
-</p><h2>設定 Pelican 網誌</h2>
+</p>
+<div id="print"></div><h2>設定 Pelican 網誌</h2>
 <p><a href="https://blog.getpelican.com/">Pelican</a> 網誌系統採 Python 編寫, 可以讓使用者以 Markdown 格式編寫網誌文章後, 經由 Python 程式轉為網誌超文件內容. 由於一般的網誌系統採用日期排序外, 還提供關鍵字搜尋、分類與索引的功能, 因此 Pelican 的功能就是從每一篇文章中取出中文字索引資料後, 存為 Javascript 與 Json 格式檔案, 以供關鍵字搜尋之用. 詳細流程可以參考:</p>
 <p><a href="https://www.snaums.de/informatik/tipue-search-engine.html">https://www.snaums.de/informatik/tipue-search-engine.html</a></p>
 <p>從 <a href="https://docs.getpelican.com/en/latest/">https://docs.getpelican.com/en/latest/</a> Pelican 文件中可以進一步了解 Pelican Blog 的運作方式.</p>

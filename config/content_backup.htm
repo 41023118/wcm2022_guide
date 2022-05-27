@@ -2277,14 +2277,9 @@ brython_div <= note
 <h2>配置 Brython</h2>
 <p>在動態網頁中配置 Brython:</p>
 <p>導入 Brython 程式庫:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
-&lt;script src="/static/brython_stdlib.js"&gt;&lt;/script&gt;</pre>
+<p><img caption="false" height="63" src="/images/brython_include_library.png" width="300"/></p>
 <p>啟動 Brython:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script&gt;
-window.onload=function(){
-brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
-}
-&lt;/script&gt;</pre>
+<p><img alt="" height="105" src="/images/brython_startup.png" width="400"/></p>
 <p>其中的 pythonpath 可以將 Python 模組放入後, 以 import 引用.</p>
 <p>完成上述 Brython 程式庫導入與啟動後, 就可以利用:</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script type="text/python3"&gt;
@@ -2292,19 +2287,11 @@ print("Brython 程式")
 &lt;/script&gt;</pre>
 <p>在 Brython 程式中的 print() 將會列印至 Web Developer Tools 中的 console 頁面.</p>
 <p>假如希望列印資料直接呈現在頁面, 則可以利用 Brython 中的 html 與 document 模組完成:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="/static/brython.js"&gt;&lt;/script&gt;
-&lt;script src="/static/brython_stdlib.js"&gt;&lt;/script&gt;
-&lt;script&gt;// &lt;![CDATA[
-window.onload=function(){
-brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
-}
-// ]]&gt;&lt;/script&gt;
-&lt;div id="print"&gt;&lt;/div&gt;
-&lt;script type="text/python3"&gt;
-from browser import html, document
-print = document["print"]
-print &lt;= "直接將資料列在頁面"
-&lt;/script&gt;</pre>
+<p><img caption="false" height="132" src="/images/brython_writing_scripts.png" width="300"/></p>
+<p>為了將 Brython 所產生的 html 嵌入頁面, 可以用 div 標定:</p>
+<p><img caption="false" height="51" src="/images/brython_div_location.png" width="200"/></p>
+<p>上述程式碼範例:</p>
+<p><a href="/downloads/w14/setup_brython.txt">setup_brython.txt</a></p>
 <p></p>
 <p>
 <script src="/static/brython.js"></script>
@@ -2320,10 +2307,9 @@ brython({debug:1, pythonpath:['/static/','./../downloads/py/']});
 <script type="text/python3">
 from browser import html, document
 print = document["print"]
-print <= "直接將資料列在頁面"
+print <= "這一行直接利用 Brython 將資料列在頁面"
 </script>
-</p>
-<h2>設定 Pelican 網誌</h2>
+</p><h2>設定 Pelican 網誌</h2>
 <p><a href="https://blog.getpelican.com/">Pelican</a> 網誌系統採 Python 編寫, 可以讓使用者以 Markdown 格式編寫網誌文章後, 經由 Python 程式轉為網誌超文件內容. 由於一般的網誌系統採用日期排序外, 還提供關鍵字搜尋、分類與索引的功能, 因此 Pelican 的功能就是從每一篇文章中取出中文字索引資料後, 存為 Javascript 與 Json 格式檔案, 以供關鍵字搜尋之用. 詳細流程可以參考:</p>
 <p><a href="https://www.snaums.de/informatik/tipue-search-engine.html">https://www.snaums.de/informatik/tipue-search-engine.html</a></p>
 <p>從 <a href="https://docs.getpelican.com/en/latest/">https://docs.getpelican.com/en/latest/</a> Pelican 文件中可以進一步了解 Pelican Blog 的運作方式.</p>
