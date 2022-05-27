@@ -1,0 +1,9 @@
+1a_w14 task list:
+
+1. update studlist data
+2. reassign HW
+3. Q and A
+
+from 1a_stud_old.txt copare with 1a_stud.txt to get correct w14 registered data:
+
+1a_stud_w14.txt
